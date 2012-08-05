@@ -1,21 +1,21 @@
----------------------------------- 
-  LESS Hat - a bunch of smart Less mixins
+LESS Hat - a bunch of smart Less mixins
+----------------------------------  
+    
+  Why our mixins are smart? Because our mixins are universal.   
+  You could have gradient with 2 stops or 20 and everything it's still okey.  
+    
+  Petr Brzek & Jan Kuca  
+  From creators of http://csshat.com  
   
-  Why our mixins are smart? Because our mixins are universal. 
-  You could have gradient with 2 stops or 20 and everything it's still okey.
   
-  Petr Brzek & Jan Kuca
-  From creators of http://csshat.com
-----------------------------------
-
 TABLE OF MIXINS
 
-  @Shadow
-  @LinearGradient
-  @RadialGradient
-  @Rounded
-  @Opacity
-  @Size
+  @Shadow  
+  @LinearGradient  
+  @RadialGradient  
+  @Rounded  
+  @Opacity  
+  @Size  
   
 ----------------------------------
 
