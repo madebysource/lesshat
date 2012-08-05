@@ -104,11 +104,10 @@
   @mozArguments: ~`"@{arguments}".replace(/,\s* \d*(px|%) \d*(px|%)/,", circle")`;
 
   background-image: -moz-radial-gradient(@mozArguments);
-  background-image: -moz-radial-gradient(@arguments);
   background-image: -o-radial-gradient(@arguments);
   background-image: -webkit-radial-gradient(@arguments);
-  background-image: radial-gradient(@arguments);
   background-image: -o-radial-gradient(@arguments);
+  background-image: radial-gradient(@arguments);
 
 }
 
@@ -160,19 +159,16 @@
   height: @square;
 }
 
-.size(@height, @width) {
+.size(@width, @height) {
   width: @width;
   height: @height;
 }
 
 // Usign size mixin
 
-.size(10px) // render width:10px; height:10px;
+.size(10px); // render width:10px; height:10px;
 
-.size(10px, 20px) // render width:10px; height: 20px;
+.size(10px, 20px); // render width:10px; height: 20px;
 
 /* ---------------------------------- */
-
-
-
 
