@@ -11,13 +11,15 @@
 
 /*
  *  TABLE OF MIXINS
- *  
+ *
  *  @Shadow
  *  @LinearGradient
  *  @RadialGradient
  *  @Rounded
  *  @Opacity
  *  @Size
+ *  @Transition
+ *  @Animation
  */
 
 /* ---------------------------------- */
@@ -150,6 +152,33 @@
 .size(@width, @height) {
   width: @width;
   height: @height;
+}
+
+/* ---------------------------------- */
+
+/* @Transition */
+
+// Usign: .transition(~"color .5s ease-in, background .3s 1s ease-in-out");
+
+.transition(@arguments) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+
+/* ---------------------------------- */
+
+/* @Animation */
+
+// Usign: .animation(~"animation1 6s backwards 2s, animation2 3s linear alternate infinite");
+
+.animation(@arguments){
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  -o-animation: @arguments;
+  animation: @arguments;
 }
 
 /* ---------------------------------- */
