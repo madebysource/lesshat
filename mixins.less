@@ -24,21 +24,23 @@
 
 /* @Shadow */
 
+// Usign: .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
+
 .shadow(@arguments) {
   -webkit-box-shadow: @arguments;
   -moz-box-shadow: @arguments;
   box-shadow: @arguments;
 }
 
- // Usign shadow mixin
-
- .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
-
 /* ---------------------------------- */
 
 /* @LinearGradient */
 
 .l-gradient(@arguments){
+
+// Usign: .l-gradient(~" top ,rgba(30, 87 , 153 , .5) 0%,rgba(41,137,216, .2) 50%,rgba(32,124,202, .8) 100%");
+
+// Usign: .l-gradient(~"bottom, #1e5799 0%,#2989d8 50%,#207cca 100%");
 
  // Gradient for modern browsers
 
@@ -88,16 +90,11 @@
 
 }
 
-// Usign l-gradient mixin
-
-.l-gradient(~" top ,rgba(30, 87 , 153 , .5) 0%,rgba(41,137,216, .2) 50%,rgba(32,124,202, .8) 100%");
-
-
-.l-gradient(~"bottom, #1e5799 0%,#2989d8 50%,#207cca 100%");
-
 /* ---------------------------------- */
 
 /* @RadialGradient */
+
+// Usign: .r-gradient(~"65% 38%, 100px 100px, #000 0%, #fff 100%");
 
 .r-gradient(@arguments){
 
@@ -111,15 +108,13 @@
 
 }
 
-// Usign r-gradient mixin
-
-
-.r-gradient(~"65% 38%, 100px 100px, #000 0%, #fff 100%");
-
-
 /* ---------------------------------- */
 
 /* @Rounded */
+
+// Usign: .rounded(10px); // all corner rounded
+// Usign: .rounded(~"10px / 20px"); // horizontal and vertical rounded differently
+// Usign: .rounded(~"0 10px 0 0"); // only top right corner rounded
 
 .rounded(@radius) {
   -webkit-border-radius: @radius;
@@ -128,17 +123,11 @@
   -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
 }
 
-// Usign rounded mixin
-
-.rounded(10px); // all corner rounded
-
-.rounded(~"10px / 20px"); // horizontal and vertical rounded differently
-
-.rounded(~"0 10px 0 0"); // only top right corner rounded
-
 /* ---------------------------------- */
 
 /* @Opacity */
+
+// Usign: .opacity(.5);
 
 .opacity(@opacity) {
   -moz-opacity: @opacity;
@@ -146,13 +135,12 @@
   opacity: @opacity;
 }
 
-// Usign opacity mixin
-
-.opacity(.5);
-
 /* ---------------------------------- */
 
 /* @Size */
+
+// Usign: .size(10px); // render width:10px; height:10px;
+// Usign: .size(10px, 20px); // render width:10px; height: 20px;
 
 .size(@square) {
   width: @square;
@@ -164,11 +152,4 @@
   height: @height;
 }
 
-// Usign size mixin
-
-.size(10px); // render width:10px; height:10px;
-
-.size(10px, 20px); // render width:10px; height: 20px;
-
 /* ---------------------------------- */
-
