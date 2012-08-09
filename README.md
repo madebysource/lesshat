@@ -16,7 +16,7 @@ TABLE OF MIXINS
   @Rounded  
   @Opacity  
   @Size  
-  @Transition
+  @Transition  
   @Animation
   
 ----------------------------------
