@@ -125,7 +125,7 @@ USIGN MIXINS
             -o-transition: color .5s ease-in, background .3s 1s ease-in-out;
             transition: color .5s ease-in, background .3s 1s ease-in-out;
             
-  @Animation
+  @Animation  
   
     .animation(@arguments);
     
