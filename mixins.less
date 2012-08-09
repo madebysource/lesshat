@@ -26,7 +26,7 @@
 
 /* @Shadow */
 
-// Usign: .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
+// Use: .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
 
 .shadow(@arguments) {
   -webkit-box-shadow: @arguments;
@@ -38,13 +38,12 @@
 
 /* @LinearGradient */
 
+// Use: .l-gradient(~"top ,rgba(30, 87 , 153 , .5) 0%,rgba(41,137,216, .2) 50%,rgba(32,124,202, .8) 100%");
+// Use: .l-gradient(~"bottom, #1e5799 0%,#2989d8 50%,#207cca 100%");
+
 .l-gradient(@arguments){
 
-// Usign: .l-gradient(~" top ,rgba(30, 87 , 153 , .5) 0%,rgba(41,137,216, .2) 50%,rgba(32,124,202, .8) 100%");
-
-// Usign: .l-gradient(~"bottom, #1e5799 0%,#2989d8 50%,#207cca 100%");
-
- // Gradient for modern browsers
+  // Gradient for modern browsers
 
   @direction: ~`"@{arguments}".split(',')[0].trim()`;
   @angle: ~`(function angle(i){ if(/\d+/.test(i)){ return (parseInt(i)-90) * -1 + "deg"; } else if(i == "top"){ return "to bottom"; } else if(i == "left"){return "to right";} else if(i == "bottom"){ return "to top";} else if(i == "right"){ return "to left";} }("@{direction}"))`;
@@ -96,7 +95,7 @@
 
 /* @RadialGradient */
 
-// Usign: .r-gradient(~"65% 38%, 100px 100px, #000 0%, #fff 100%");
+// Use: .r-gradient(~"65% 38%, 100px 100px, #000 0%, #fff 100%");
 
 .r-gradient(@arguments){
 
@@ -114,9 +113,9 @@
 
 /* @Rounded */
 
-// Usign: .rounded(10px); // all corner rounded
-// Usign: .rounded(~"10px / 20px"); // horizontal and vertical rounded differently
-// Usign: .rounded(~"0 10px 0 0"); // only top right corner rounded
+// Use: .rounded(10px); // all corner rounded
+// Use: .rounded(~"10px / 20px"); // horizontal and vertical rounded differently
+// Use: .rounded(~"0 10px 0 0"); // only top right corner rounded
 
 .rounded(@radius) {
   -webkit-border-radius: @radius;
@@ -129,7 +128,7 @@
 
 /* @Opacity */
 
-// Usign: .opacity(.5);
+// Use: .opacity(.5);
 
 .opacity(@opacity) {
   -moz-opacity: @opacity;
@@ -141,8 +140,8 @@
 
 /* @Size */
 
-// Usign: .size(10px); // render width:10px; height:10px;
-// Usign: .size(10px, 20px); // render width:10px; height: 20px;
+// Use: .size(10px); // render width:10px; height:10px;
+// Use: .size(10px, 20px); // render width:10px; height: 20px;
 
 .size(@square) {
   width: @square;
@@ -158,7 +157,7 @@
 
 /* @Transition */
 
-// Usign: .transition(~"color .5s ease-in, background .3s 1s ease-in-out");
+// Use: .transition(~"color .5s ease-in, background .3s 1s ease-in-out");
 
 .transition(@arguments) {
   -webkit-transition: @arguments;
@@ -171,7 +170,7 @@
 
 /* @Animation */
 
-// Usign: .animation(~"animation1 6s backwards 2s, animation2 3s linear alternate infinite");
+// Use: .animation(~"animation1 6s backwards 2s, animation2 3s linear alternate infinite");
 
 .animation(@arguments){
   -webkit-animation: @arguments;
