@@ -1,8 +1,8 @@
 LESS Hat - a bunch of smart Less mixins
 ----------------------------------  
     
-  Why our mixins are smart? Because our mixins are universal.   
-  You could have gradient with 2 stops or 20 and everything it's still okey.  
+  Why our mixins are smart? Because they are universal.   
+  You could have gradient with 2 stops or 20 and it's still okey.  
     
   Petr Brzek & Jan Kuca  
   From creators of http://csshat.com  
