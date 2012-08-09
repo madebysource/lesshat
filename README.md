@@ -16,6 +16,8 @@ TABLE OF MIXINS
   @Rounded  
   @Opacity  
   @Size  
+  @Transition
+  @Animation
   
 ----------------------------------
 
@@ -111,6 +113,28 @@ USIGN MIXINS
     
     result: width: 10px;
             height: 20px;
+            
+  @Transition
+  
+    .transition(@arguments);
+    
+    .transition(~"color .5s ease-in, background .3s 1s ease-in-out");
+    
+    result: -webkit-transition: color .5s ease-in, background .3s 1s ease-in-out;
+            -moz-transition: color .5s ease-in, background .3s 1s ease-in-out;
+            -o-transition: color .5s ease-in, background .3s 1s ease-in-out;
+            transition: color .5s ease-in, background .3s 1s ease-in-out;
+            
+  @Animation
+  
+    .animation(@arguments);
+    
+    .animation(~"animation1 6s backwards 2s, animation2 3s linear alternate infinite");
+            
+    result: -webkit-animation: animation1 6s backwards 2s, animation2 3s linear alternate infinite;
+            -moz-animation: animation1 6s backwards 2s, animation2 3s linear alternate infinite;
+            -o-animation: animation1 6s backwards 2s, animation2 3s linear alternate infinite;
+            animation: animation1 6s backwards 2s, animation2 3s linear alternate infinite;
             
 ----------------------------------
 
