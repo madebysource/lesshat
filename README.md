@@ -11,8 +11,7 @@ LESS Hat - a bunch of smart Less mixins
 TABLE OF MIXINS
 
   @Shadow  
-  @LinearGradient  
-  @RadialGradient  
+  @Gradient  
   @Rounded  
   @Opacity  
   @Size  
@@ -33,38 +32,24 @@ USIGN MIXINS
             -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
             box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
             
-  @LinearGradient
+  @Gradient
   
-    - Only hex or rgba colors
-    
-    - Direction can be express by keyword (top, left, right, bottom) or degress (45deg)
+    - Hex, Rgb, Rgba, Hsl, Hsla colors supported
     
     - The mixin automatically creates gradient syntax for other browsers just like colorzilla.com/gradient-editor/.
-      FF3.6+, IE9 SVG, Chrome, Safari4+, Opera 11.10+,  W3C syntax. NOT IE6 - IE8 http://stackoverflow.com/questions/2503920/css-gradients-in-ie7-ie8-is-causing-text-to-become-aliased/2710452#2710452
+      FF3.6+, IE9 SVG in progress, Chrome, Safari4+, Opera 11.10+,  W3C syntax. NOT IE6 - IE8 http://stackoverflow.com/questions/2503920/css-gradients-in-ie7-ie8-is-causing-text-to-become-aliased/2710452#2710452
     
     
-    .l-gradient(@arguments);
+    .gradient(@arguments);
     
-    .l-gradient(~" top ,rgba(30, 87 , 153 , .5) 0%,rgba(41,137,216, .2) 50%,rgba(32,124,202, .8) 100%");
+    .gradient(~"linear-gradient(to bottom, #fefcea 0%,#f1da36 100%), radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%)");
     
-    result: background-image: url(' data:image/svg+xml;utf8,<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"> <stop stop-opacity=".5 " stop-color="rgb(30,87,153)" offset="0%" /><stop stop-opacity=".2 " stop-color="rgb(41,137,216)" offset="50%" /><stop stop-opacity=".8 " stop-color="rgb(32,124,202)" offset="100%" /> </linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#grad-ucgg-generated)" /></svg> ');
-            background-image: -moz-linear-gradient(top,rgba(30,87,153,.5) 0%,rgba(41,137,216,.2) 50%,rgba(32,124,202,.8) 100%);
-            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30,87,153,.5)), color-stop(50%, rgba(41,137,216,.2)), color-stop(100%, rgba(32,124,202,.8)));
-            background-image: -webkit-linear-gradient(top,rgba(30,87,153,.5) 0%,rgba(41,137,216,.2) 50%,rgba(32,124,202,.8) 100%);
-            background-image: -o-linear-gradient(top,rgba(30,87,153,.5) 0%,rgba(41,137,216,.2) 50%,rgba(32,124,202,.8) 100%);
-            background-image: linear-gradient(to bottom, rgba(30, 87 , 153 , .5) 0%,rgba(41,137,216, .2) 50%,rgba(32,124,202, .8) 100%);
+    result: background-image: -moz-linear-gradient(top, #fefcea 0%,#f1da36 100%), -moz-radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%);
+            background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fefcea),color-stop(100%,#f1da36)),radial-gradient(center,ellipse cover,color-stop(0%,hsla(212,67%,36%,1)),color-stop(50%,hsla(207,69%,51%,1)),color-stop(60%,hsla(208,73%,46%,1)),color-stop(100%,hsla(206,70%,70%,1)));
+            background-image: -webkit-linear-gradient(top, #fefcea 0%,#f1da36 100%), -webkit-radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%);
+            background-image: -o-linear-gradient(top, #fefcea 0%,#f1da36 100%), -o-radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%);
+            background-image: linear-gradient(to bottom, #fefcea 0%,#f1da36 100%), radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%);
 
-  @RadialGradient
-  
-    .r-gradient(@arguments);
-    
-    .r-gradient(~"65% 38%, 100px 100px, #000 0%, #fff 100%");
-    
-    result: background-image: -moz-radial-gradient(65% 38%, circle, #000 0%, #fff 100%);
-            background-image: -o-radial-gradient(65% 38%, 100px 100px, #000 0%, #fff 100%);
-            background-image: -webkit-radial-gradient(65% 38%, 100px 100px, #000 0%, #fff 100%);
-            background-image: -o-radial-gradient(65% 38%, 100px 100px, #000 0%, #fff 100%);
-            background-image: radial-gradient(65% 38%, 100px 100px, #000 0%, #fff 100%);
             
   @Rounded
   
