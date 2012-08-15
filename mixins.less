@@ -1,7 +1,7 @@
 /* ---------------------------------- */
 
 /*
- * LESS Hat 0.1
+ * LESS Hat 0.3.9
  * CSSHat.com
  * 2012
  * Petr Brzek & Jan Kuca
@@ -13,8 +13,7 @@
  *  TABLE OF MIXINS
  *
  *  @Shadow
- *  @LinearGradient
- *  @RadialGradient
+ *  @Gradient
  *  @Rounded
  *  @Opacity
  *  @Size
@@ -26,27 +25,29 @@
 
 /* @Shadow */
 
-// Use: .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
-
 .shadow(@arguments) {
   -webkit-box-shadow: @arguments;
   -moz-box-shadow: @arguments;
   box-shadow: @arguments;
 }
 
+// .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
+
 /* ---------------------------------- */
 
 /* @Gradient */
 
-// Use: .gradient(~"linear-gradient(to bottom, #fefcea 0%,#f1da36 100%), radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%);");
-
 .gradient(@arguments){  
 
-  @gradientMoz: ~`(function(){ $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-moz-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
-  @gradientWebkit: ~`(function(){ $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-webkit-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-webkit-radial-gradient");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
-  @gradientOpera: ~`(function(){ $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-o-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-o-radial-gradient");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
-  @gradientOldWebkit: ~`(function(){ $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var top = /top/; var right = /right/; var bottom = /bottom/; var left = /left/; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var diagonal1 = /45deg/; var diagonal2 = /-45deg/ ;var angle = /\d*deg/;  for (var i = 0; i< gradientStepsLength; i++) { if (/linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient\s*\(/, "-webkit-gradient(linear, "); if (top.test(gradientSteps[i]) || toBottom.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(top) ? top : toBottom; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, left bottom");} else if ( right.test(gradientSteps[i]) || toLeft.test(gradientSteps[i]) ) { var substitute = gradientSteps[i].match(right) ? right : toLeft; gradientSteps[i] = gradientSteps[i].replace(substitute, "right top, left top"); } else if( bottom.test(gradientSteps[i]) || toTop.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(bottom) ? bottom : toTop; gradientSteps[i] = gradientSteps[i].replace(substitute, "left bottom, left top"); } else if ( left.test(gradientSteps[i]) || toRight.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(left) ? left : toRight; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, right top"); } else if ( diagonal1.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal1, "left bottom, right top"); } else if ( diagonal2.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal2, "left top, right bottom"); } else { gradientSteps[i].replace(angle, "left top, left bottom");}} var syntax = gradientSteps.toString(); var rgbaArray = syntax.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var hslaArray = syntax.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var rgbaArraySugar = []; var hslaArraySugar = []; for (var j = 0; j < rgbaArray.length; j++) { rgbaArraySugar[j] = rgbaArray[j].replace(/,/g,"--");} for(var n = 0; n < hslaArray.length; n++) { hslaArraySugar[n] = hslaArray[n].replace(/,/g,"--"); } for(var k = 0; k < rgbaArray.length; k++) { syntax = syntax.replace(rgbaArray[k],rgbaArraySugar[k]); } for(var o = 0; o < hslaArray.length; o++) { syntax = syntax.replace(hslaArray[o],hslaArraySugar[o]);} syntax = syntax.substring(0, syntax.length - 1); var gradientArray = syntax.split(","); for( var m = 0; m < gradientArray.length; m++ ) { gradientArray[m] = gradientArray[m].replace(/(#\w{3,6})\s*(\d*%*)/g, "color-stop($2,$1)").replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/--/g,",").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g, "color-stop($2,$1)");  try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientArray[m] = gradientArray[m].trim(); } }  } gradientArray = gradientArray.join(",").replace(/^radial-gradient\(.*?color/g, "-webkit-gradient(radial, center center, 0px, center center, 100%, color"); return gradientArray; }())`;
+  @gradientMoz: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-moz-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
+  @gradientWebkit: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-webkit-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-webkit-radial-gradient");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
+  @gradientOpera: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-o-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-o-radial-gradient");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
+  @gradientOldWebkit: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var top = /top/; var right = /right/; var bottom = /bottom/; var left = /left/; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var diagonal1 = /45deg/; var diagonal2 = /-45deg/ ;var angle = /\d*deg/;  for (var i = 0; i< gradientStepsLength; i++) { if (/linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient\s*\(/, "-webkit-gradient(linear, "); if (top.test(gradientSteps[i]) || toBottom.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(top) ? top : toBottom; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, left bottom");} else if ( right.test(gradientSteps[i]) || toLeft.test(gradientSteps[i]) ) { var substitute = gradientSteps[i].match(right) ? right : toLeft; gradientSteps[i] = gradientSteps[i].replace(substitute, "right top, left top"); } else if( bottom.test(gradientSteps[i]) || toTop.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(bottom) ? bottom : toTop; gradientSteps[i] = gradientSteps[i].replace(substitute, "left bottom, left top"); } else if ( left.test(gradientSteps[i]) || toRight.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(left) ? left : toRight; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, right top"); } else if ( diagonal1.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal1, "left bottom, right top"); } else if ( diagonal2.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal2, "left top, right bottom"); } else { gradientSteps[i].replace(angle, "left top, left bottom");}} var syntax = gradientSteps.toString(); var rgbaArray = syntax.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var hslaArray = syntax.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var rgbaArraySugar = []; var hslaArraySugar = []; for (var j = 0; j < rgbaArray.length; j++) { rgbaArraySugar[j] = rgbaArray[j].replace(/,/g,"--");} for(var n = 0; n < hslaArray.length; n++) { hslaArraySugar[n] = hslaArray[n].replace(/,/g,"--"); } for(var k = 0; k < rgbaArray.length; k++) { syntax = syntax.replace(rgbaArray[k],rgbaArraySugar[k]); } for(var o = 0; o < hslaArray.length; o++) { syntax = syntax.replace(hslaArray[o],hslaArraySugar[o]);} syntax = syntax.substring(0, syntax.length - 1); var gradientArray = syntax.split(","); for( var m = 0; m < gradientArray.length; m++ ) { gradientArray[m] = gradientArray[m].replace(/(#\w{3,6})\s*(\d*%*)/g, "color-stop($2,$1)").replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/--/g,",").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g, "color-stop($2,$1)");  try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientArray[m] = gradientArray[m].trim(); } }  } gradientArray = gradientArray.join(",").replace(/^radial-gradient\(.*?color/g, "-webkit-gradient(radial, center center, 0px, center center, 100%, color"); return gradientArray; }())`;
   
+  //@gradientSvg: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var top = /top/; var right = /right/; var bottom = /bottom/; var left = /left/; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var diagonal1 = /45deg/; var diagonal2 = /-45deg/ ;var angle = /\d*deg/; for(var i = 0; i < gradientStepsLength; i++) { var direction = null; if( top.test(gradientSteps[i]) || toBottom.test(gradientSteps[i])) { direction = ' x1="0%" y1="0%" x2="0%" y2="100%">'; } else if ( right.test(gradientSteps[i]) || toLeft.test(gradientSteps[i]) ) { direction = ' x1="100%" y1="0%" x2="0%" y2="0%">'; } else if (bottom.test(gradientSteps[i]) || toTop.test(gradientSteps[i])) { direction = ' x1="0%" y1="100%" x2="0%" y2="0%">'; } else if (left.test(gradientSteps[i]) || toRight.test(gradientSteps[i])) { direction = ' x1="0%" y1="0%" x2="100%" y2="0%">'; } else if ( diagonal1.test(gradientSteps[i])) { direction = ' x1="0%" y1="100%" x2="100%" y2="0%">'; } else if ( diagonal2.test(gradientSteps[i])) { direction = ' x1="0%" y1="0%" x2="100%" y2="100%">'; } else { direction = ' x1="0%" y1="0%" x2="0%" y2="100%">'; } gradientSteps[i] = gradientSteps[i].replace(/^linear-gradient\((to bottom|to top|to left|to right|top|left|right|bottom|\d{,3}deg)?,/g, "").replace(/\)$/g, ""); var syntax = gradientSteps.toString(); var rgbaArray = syntax.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var rgbaArraySugar = []; } return rgbaArray; }())`;
+  
+
+  //background-image: @gradientSvg;
 
   background-image: @gradientMoz;
   background-image: @gradientOldWebkit;
@@ -56,92 +57,11 @@
 
 }
 
-
-
-// Use: .l-gradient(~"top ,rgba(30, 87 , 153 , .5) 0%,rgba(41,137,216, .2) 50%,rgba(32,124,202, .8) 100%");
-  //.l-gradient(~"0deg, #1e5799 0%,#2989d8 50%,#207cca 100%");
-
-.l-gradient(@arguments){
-
-  // Gradient for modern browsers
-
-  @direction: ~`"@{arguments}".split(',')[0].trim()`;
-  @angle: ~`(function angle(i){ if(/\d+/.test(i)){ return (parseInt(i)-90) * -1 + "deg"; } else if(i == "top"){ return "to bottom"; } else if(i == "left"){return "to right";} else if(i == "bottom"){ return "to top";} else if(i == "right"){ return "to left";} }("@{direction}"))`;
-  @hexOrRgb: ~`/rgb/.test("@{arguments}") ? "1" : "0"`;
-  @numberOfSteps: ~`"@{arguments}".split(',').reverse().length - 1`;
-  @gradientSyntaxRaw: ~`(function cycle(i){ return "@{arguments}".split(',').reverse()[i].trim() + "," + (i !== 0 ? cycle(i -1) : ''); }("@{numberOfSteps}"))`;
-  @gradientLength: ~`"@{gradientSyntaxRaw}".length -1`;
-  @gradientSyntaxTemp: ~`"@{gradientSyntaxRaw}".substring(0,+ "@{gradientLength}")`;
-  @gradientSyntax: ~`"@{gradientSyntaxTemp}".replace(/\s+/," ")`;
-  @gradientSyntaxWithoutDirectionTemp: ~`"@{arguments}".split(',').slice(1).join(',')`;
-  @gradientSyntaxWithoutDirection: ~`"@{gradientSyntaxWithoutDirectionTemp}".replace(/\s+/," ")`;
-
-  // Old -webkit-gradient()
-
-  @gradientSyntaxOldClean: ~`(function gradientSyntaxOldClean(source) {if ("@{hexOrRgb}" == "0"){ return "@{arguments}".replace(/,/g,' ')} else { return "@{arguments}";};}("@{arguments}"))`;
-  @gradientSyntaxOldRaw: ~`(function gradeintSyntaxRaw(i){ if ("@{hexOrRgb}" == "1") {var temp = i.split(' ').slice(1).join(' ').trim(); return temp.replace(/\s*/g, '').replace(/\)(\d+%)/g, ') $1').replace(/(\d+%)(rgba?)/g, '$1 $2');} else { var temp = i.split(' ').slice(1).join(' ').trim(); return temp.replace(/\s+/," "); } }("@{gradientSyntaxOldClean}"))`;
-  @colorFormat: ~`(function colorFormat(source) {if ("@{hexOrRgb}" == "1") {var source = "@{gradientSyntaxOldRaw}"; var rx = /(rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(1|\.\d+|0\.\d+))?\))\s+([^,]+)/g; var stops = source.match(rx); return stops.join(" ");} else {return "@{gradientSyntaxOldRaw}"; }}("@{gradientSyntaxOldRaw}"))`;
-  @gradientSyntaxOld: ~`(function cycle(source) {var parts = source.split(' ');var result = 'color-stop(' + parts[1] + ', ' + parts[0] + ')';var rest = parts.slice(2).join(' ');if (rest) {result += ', ' + cycle(rest);}return result;}("@{colorFormat}"))`;
-  @converter: ~`(function converter(source) {if (source == "top") {return "left top, left bottom";} else if(source == "left") {return "left top, right top,";} else if(source == "-45deg") {return "left top, right bottom,";} else if(source == "45deg") {return "left bottom, right top,";} else {return "left top, left bottom,";}}("@{direction}"))`;
-
-  // SVG gradient for IE9
-
-  @svgBegin: ~"data:image/svg+xml";
-  @svgDef: ~'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse"';
-  @svgConverter: ~`(function converter(source) {if (source == "top") {return ' x1="0%" y1="0%" x2="0%" y2="100%">' ;} else if (source == "bottom") {return ' x1="0%" y1="100%" x2="0%" y2="0%">' ;} else if(source == "left") {return ' x1="0%" y1="0%" x2="100%" y2="0%">';} else if(source == "right") {return ' x1="100%" y1="0%" x2="0%" y2="0%">';} else if(source == "-45deg") {return ' x1="0%" y1="0%" x2="100%" y2="100%">';} else if(source == "45deg") {return ' x1="0%" y1="100%" x2="100%" y2="0%">';} else {return ' x1="0%" y1="0%" x2="0%" y2="100%">';}}("@{direction}"))`;
-  @svgEnd: ~'</linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#grad-ucgg-generated)" /></svg>';
-  @svgColorFormat: ~`(function colorFormat(source) {if ("@{hexOrRgb}" == "1") { var rx = /(rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(1|\.\d+|0\.\d+))?\))\s+([^,]+)/g; var stops = source.match(rx); return stops.join("---");} else {return source; }}("@{gradientSyntaxOldRaw}"))`;
-  @svgTemp: ~`"@{svgColorFormat}".replace(/rgba/g,"rgb").replace(/(,[^,]+)\)/g,')')`;
-  @svgOpacity: ~`"@{svgColorFormat}".replace(/ *rgba\([\d ]+,[\d ]+,[\d ]+,([^,]+)\) *\d+% */g, '$1 ')`;
-  @svgNumberOfSteps: ~`"@{svgTemp}".split("---").length`;
-  @svgTempSplit: ~`"@{svgTemp}".split("---").join(" ")`;
-  @svgMark: ~"'";
-  @svgGradientHex: ~`(function cycle(source) { var parts = source.split(' ');var result = '<stop stop-color="' + parts[0] + '" offset="' + parts[1] + '" stop-opacity="1" />';var rest = parts.slice(2).join(' ');if (rest) {result += cycle(rest);}return result;}("@{svgTemp}"))`;
-  @svgGradientRgb: ~`(function cycle(source) { var result=''; var steps = "@{svgTemp}".split("---"); var opacity = "@{svgOpacity}".split("---"); var pokus = "@{svgTempSplit}".split(" "); var pokus2 = pokus.length; for(var i = 0, a = 0; i < pokus2 && a < steps.length; i++, a++){ result +='<stop stop-opacity="' + opacity[a] + '" stop-color="' + pokus[i] + '" offset="' + pokus[++i] + '" />' } return result; })("@{svgNumberOfSteps}")`;
-  @svgBody: ~`/rgb/.test("@{arguments}") ? '@{svgGradientRgb}' : '@{svgGradientHex}'`;
-  @svgFormat: ~`(function svgFormat(){ try { window.btoa(); return ';base64,' + window.btoa('@{svgDef}@{svgConverter}@{svgBody}@{svgEnd}'); } catch (e) { return ',@{svgDef}@{svgConverter}@{svgBody}@{svgEnd}';}; }())`;
-  @svgGradient: ~'@{svgMark}@{svgBegin}@{svgFormat}@{svgMark}';
-
-  @vole: ~`(function exist() { try { var testing = "".trim(); return 1; } catch (e) { return 0;}}())`;
-
-  //text-align: @lol;
-
-  // Finally the gradients
-
-  background-image:url(@svgGradient);
-  background-image: -moz-linear-gradient(@gradientSyntax);
-  background-image: -webkit-gradient(linear, @converter, @gradientSyntaxOld);
-  background-image: -webkit-linear-gradient(@gradientSyntax);
-  background-image: -o-linear-gradient(@gradientSyntax);
-  background-image: linear-gradient(@angle, @gradientSyntaxWithoutDirection);
-
-}
-
-/* ---------------------------------- */
-
-/* @RadialGradient */
-
-// Use: .r-gradient(~"65% 38%, 100px 100px, #000 0%, #fff 100%");
-
-.r-gradient(@arguments){
-
-  @mozArguments: ~`"@{arguments}".replace(/,\s* \d*(px|%) \d*(px|%)/,", circle")`;
-
-  background-image: -moz-radial-gradient(@mozArguments);
-  background-image: -o-radial-gradient(@arguments);
-  background-image: -webkit-radial-gradient(@arguments);
-  background-image: -o-radial-gradient(@arguments);
-  background-image: radial-gradient(@arguments);
-
-}
+// .gradient(~"linear-gradient(to bottom, #fefcea 0%,#f1da36 100%), radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%);");
 
 /* ---------------------------------- */
 
 /* @Rounded */
-
-// Use: .rounded(10px); // all corner rounded
-// Use: .rounded(~"10px / 20px"); // horizontal and vertical rounded differently
-// Use: .rounded(~"0 10px 0 0"); // only top right corner rounded
 
 .rounded(@radius) {
   -webkit-border-radius: @radius;
@@ -150,11 +70,13 @@
   -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
 }
 
+// .rounded(10px); // all corner rounded
+// .rounded(~"10px / 20px"); // horizontal and vertical rounded differently
+// .rounded(~"0 10px 0 0"); // only top right corner rounded
+
 /* ---------------------------------- */
 
 /* @Opacity */
-
-// Use: .opacity(.5);
 
 .opacity(@opacity) {
   -moz-opacity: @opacity;
@@ -162,12 +84,11 @@
   opacity: @opacity;
 }
 
+// .opacity(.5);
+
 /* ---------------------------------- */
 
 /* @Size */
-
-// Use: .size(10px); // render width:10px; height:10px;
-// Use: .size(10px, 20px); // render width:10px; height: 20px;
 
 .size(@square) {
   width: @square;
@@ -179,11 +100,12 @@
   height: @height;
 }
 
+// .size(10px); // render width:10px; height:10px;
+// .size(10px, 20px); // render width:10px; height: 20px;
+
 /* ---------------------------------- */
 
 /* @Transition */
-
-// Use: .transition(~"color .5s ease-in, background .3s 1s ease-in-out");
 
 .transition(@arguments) {
   -webkit-transition: @arguments;
@@ -192,11 +114,11 @@
   transition: @arguments;
 }
 
+// .transition(~"color .5s ease-in, background .3s 1s ease-in-out");
+
 /* ---------------------------------- */
 
 /* @Animation */
-
-// Use: .animation(~"animation1 6s backwards 2s, animation2 3s linear alternate infinite");
 
 .animation(@arguments){
   -webkit-animation: @arguments;
@@ -204,5 +126,7 @@
   -o-animation: @arguments;
   animation: @arguments;
 }
+
+// .animation(~"animation1 6s backwards 2s, animation2 3s linear alternate infinite");
 
 /* ---------------------------------- */
