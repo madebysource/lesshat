@@ -45,10 +45,20 @@
         //    .translate3d
         //    .translateX
         //    .translateY
+        //    .translateZ
     //    .scale
         //    .scale3d
         //    .scaleX
         //    .scaleY
+        //    .scaleZ
+    //    .rotate
+        //    .rotate3d
+        //    .rotateX
+        //    .rotateY
+        //    .rotateZ
+    //    .skew
+        //    .skewX
+        //    .skewY
 
 
 //  @GlobalConfig 
@@ -920,27 +930,29 @@
 
       //  Local config for disabling properties
 
-      @svg: true; //  SVG gradient for IE9
+      //@svg: true; //  SVG gradient for IE9
       @mozLocal: true; //  Firefox 4+ 
       @oldWebkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
       @operaLocal: true; // Opera 10.5+
       @w3cLocal: true; // Unprefixed W3C syntax
-
-      /* The magic */
       
-      @gradientMoz: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-moz-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
-      @gradientOldWebkit: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var top = /top/; var right = /right/; var bottom = /bottom/; var left = /left/; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var diagonal1 = /45deg/; var diagonal2 = /-45deg/ ;var angle = /\d*deg/;  for (var i = 0; i< gradientStepsLength; i++) { if (/linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient\s*\(/, "-webkit-gradient(linear, "); if (top.test(gradientSteps[i]) || toBottom.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(top) ? top : toBottom; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, left bottom");} else if ( right.test(gradientSteps[i]) || toLeft.test(gradientSteps[i]) ) { var substitute = gradientSteps[i].match(right) ? right : toLeft; gradientSteps[i] = gradientSteps[i].replace(substitute, "right top, left top"); } else if( bottom.test(gradientSteps[i]) || toTop.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(bottom) ? bottom : toTop; gradientSteps[i] = gradientSteps[i].replace(substitute, "left bottom, left top"); } else if ( left.test(gradientSteps[i]) || toRight.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(left) ? left : toRight; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, right top"); } else if ( diagonal1.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal1, "left bottom, right top"); } else if ( diagonal2.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal2, "left top, right bottom"); } else { gradientSteps[i].replace(angle, "left top, left bottom");}} var syntax = gradientSteps.toString(); var rgbaArray = syntax.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var hslaArray = syntax.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var rgbaArraySugar = []; var hslaArraySugar = []; for (var j = 0; j < rgbaArray.length; j++) { rgbaArraySugar[j] = rgbaArray[j].replace(/,/g,"--");} for(var n = 0; n < hslaArray.length; n++) { hslaArraySugar[n] = hslaArray[n].replace(/,/g,"--"); } for(var k = 0; k < rgbaArray.length; k++) { syntax = syntax.replace(rgbaArray[k],rgbaArraySugar[k]); } for(var o = 0; o < hslaArray.length; o++) { syntax = syntax.replace(hslaArray[o],hslaArraySugar[o]);} var gradientArray = syntax.split(","); for( var m = 0; m < gradientArray.length; m++ ) { gradientArray[m] = gradientArray[m].replace(/(#\w{3,6})\s*(\d*%*)/g, "color-stop($2,$1)").replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/--/g,",").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g, "color-stop($2,$1)");  try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientArray[m] = gradientArray[m].trim(); } }  } gradientArray = gradientArray.join(",").replace(/radial-gradient\(.*?color/g, "-webkit-gradient(radial, center center, 0px, center center, 100%, color"); return gradientArray; }())`;
-      @gradientWebkit: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-webkit-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-webkit-radial-gradient");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
-      @gradientOpera: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-o-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-o-radial-gradient");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
+      
+      @gradientMoz: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-moz-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
+      @gradientOldWebkit: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var top = /top/; var right = /right/; var bottom = /bottom/; var left = /left/; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var diagonal1 = /45deg/; var diagonal2 = /-45deg/ ;var angle = /\d*deg/;  for (var i = 0; i< gradientStepsLength; i++) { if (/linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient\s*\(/, "-webkit-gradient(linear, "); if (top.test(gradientSteps[i]) || toBottom.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(top) ? top : toBottom; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, left bottom");} else if ( right.test(gradientSteps[i]) || toLeft.test(gradientSteps[i]) ) { var substitute = gradientSteps[i].match(right) ? right : toLeft; gradientSteps[i] = gradientSteps[i].replace(substitute, "right top, left top"); } else if( bottom.test(gradientSteps[i]) || toTop.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(bottom) ? bottom : toTop; gradientSteps[i] = gradientSteps[i].replace(substitute, "left bottom, left top"); } else if ( left.test(gradientSteps[i]) || toRight.test(gradientSteps[i])) { var substitute = gradientSteps[i].match(left) ? left : toRight; gradientSteps[i] = gradientSteps[i].replace(substitute, "left top, right top"); } else if ( diagonal1.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal1, "left bottom, right top"); } else if ( diagonal2.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(diagonal2, "left top, right bottom"); } else { gradientSteps[i].replace(angle, "left top, left bottom");}} var syntax = gradientSteps.toString(); var rgbaArray = syntax.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var hslaArray = syntax.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g) || 0; var rgbaArraySugar = []; var hslaArraySugar = []; for (var j = 0; j < rgbaArray.length; j++) { rgbaArraySugar[j] = rgbaArray[j].replace(/,/g,"--");} for(var n = 0; n < hslaArray.length; n++) { hslaArraySugar[n] = hslaArray[n].replace(/,/g,"--"); } for(var k = 0; k < rgbaArray.length; k++) { syntax = syntax.replace(rgbaArray[k],rgbaArraySugar[k]); } for(var o = 0; o < hslaArray.length; o++) { syntax = syntax.replace(hslaArray[o],hslaArraySugar[o]);} var gradientArray = syntax.split(","); for( var m = 0; m < gradientArray.length; m++ ) { gradientArray[m] = gradientArray[m].replace(/(#\w{3,6})\s*(\d*%*)/g, "color-stop($2,$1)").replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g, "color-stop($2,$1)").replace(/--/g,",").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g, "color-stop($2,$1)");  try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientArray[m] = gradientArray[m].trim(); } }  } if ( /((ellipse).*(center)|(circle).*(center))/g.test(gradientArray) && /color-stop\(\s*\d*%/g.test(gradientArray) ) { gradientArray = gradientArray.join(",").replace(/radial-gradient\(.*?color/g, "-webkit-gradient(radial, center center, 0px, center center, 100%, color");} else { gradientArray = false; } return gradientArray; }())`;
+      @gradientWebkit: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-webkit-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-webkit-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
+      @gradientOpera: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; var toTop = /to\s*top/; var toRight = /to\s*right/; var toBottom = /to\s*bottom/; var toLeft = /to\s*left/; var angle = /\d*deg/; for (var i = 0; i< gradientStepsLength; i++) { if ( /linear/.test(gradientSteps[i])) { gradientSteps[i] = gradientSteps[i].replace(/linear-gradient/, "-o-linear-gradient"); if ( toTop.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toTop, "bottom"); } else if ( toRight.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toRight, "left"); } else if ( toBottom.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toBottom, "top"); } else if ( toLeft.test(gradientSteps[i]) ) { gradientSteps[i] = gradientSteps[i].replace(toLeft, "right" );} else if ( angle.test(gradientSteps[i]) ) { var newAngle = gradientSteps[i].match(/\d*deg/); newAngle = (parseInt(newAngle) - 90) * -1 + "deg"; gradientSteps[i] = gradientSteps[i].replace(angle, newAngle); } } else{ gradientSteps[i] = gradientSteps[i].replace(/radial-gradient/, "-o-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");   }; try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`;
       @gradientW3C: ~`(function(){ var $source = "@{arguments}"; var exist = null; var gradientSteps = $source.split(/,(?=\s*(?:linear|radial))/g); var gradientStepsLength = gradientSteps.length; for (var i = 0; i< gradientStepsLength; i++) { try { "".trim(); exist = true; } catch(e) { exist = false; } if ( exist ) {  gradientSteps[i] = gradientSteps[i].trim(); } } return gradientSteps; }())`; 
 
+      
       .result(@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { background-image: @arguments; }
       .result(@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+      .result(@arguments, @signal, @boolean, @localBoolean, @gradientOldWebkit) when (@boolean = true) and (@localBoolean = true) and (isstring(@gradientOldWebkit)) { background-image: @arguments; }
+      .result(@arguments, @signal, @boolean, @localBoolean, @gradientOldWebkit) when not (@boolean = true), not (@localBoolean = true), not (isstring(@gradientOldWebkit)) { }
 
       .result(@gradientMoz, @mozSignal, @moz, @mozLocal);
       // --  this comment must be here because of LESS bug 
-      .result(@gradientOldWebkit, @webkitSignal, @oldWebkit, @oldWebkitLocal);
+      .result(@gradientOldWebkit, @webkitSignal, @oldWebkit, @oldWebkitLocal, @gradientOldWebkit);
       // --
       .result(@gradientWebkit, @webkitSignal, @webkit, @webkitLocal);
       // --
@@ -950,7 +962,7 @@
 
 }
 
-    //  element{  .gradient(~"radial-gradient(center, ellipse cover, hsla(212,67%,36%,1) 0%,hsla(207,69%,51%,1) 50%,hsla(208,73%,46%,1) 60%,hsla(206,70%,70%,1) 100%)");  }
+      element{  .gradient(~"radial-gradient(ellipse at center, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)");  }
 
 
 //  .opacity
@@ -1312,6 +1324,43 @@
     //  element{  .translateY(15px);  }
 
 
+//  .translateZ
+
+  .translateZ(@x:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: translateZ(@x);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .translateZ(32px);  }
+
+
 //  .scale
 
     .scale(@x:1){
@@ -1491,3 +1540,336 @@
   }  
 
       //  element{  .scaleX(1.5); }
+
+
+//  .scaleZ
+
+    .scaleZ(@x:1){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleZ(@x);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }  
+
+      //  element{  .scaleZ(2.7); }
+
+
+//  .rotate
+
+  .rotate(@angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotate(@angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotate(@angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotate(@angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotate(@angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: rotate(@angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .rotate(45deg);  }
+
+
+//  .rotate3d
+
+  .rotate3d(@x:0, @y:0, @z: 0, @angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotate3d(@x, @y, @z, @angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotate3d(@x, @y, @z, @angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotate3d(@x, @y, @z, @angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotate3d(@x, @y, @z, @angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: rotate3d(@x, @y, @z, @angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .rotate3d(1, 2.0, 3.0, 10deg);  }
+
+
+//  .rotateX
+
+  .rotateX(@angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotateX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: rotateX(@angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .rotateX(63deg);  }
+
+
+//  .rotateY
+
+  .rotateY(@angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotateY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: rotateY(@angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .rotateY(24deg);  }
+
+
+//  .rotateZ
+
+  .rotateZ(@angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateZ(@angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateZ(@angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateZ(@angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: rotateZ(@angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: rotateZ(@angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .rotateZ(280deg);  }
+
+
+//  .skew
+
+  .skew(@angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skew(@angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skew(@angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skew(@angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: skew(@angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: skew(@angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .skew(20deg);  }
+
+
+//  .skewX
+
+  .skewX(@angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skewX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skewX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skewX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: skewX(@angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: skewX(@angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .skewX(24deg);  }
+
+
+//  .skewY
+
+  .skewY(@angle:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skewY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skewY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skewY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: skewY(@angle);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: skewY(@angle);}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .skewY(36deg);  }
