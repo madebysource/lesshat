@@ -18,7 +18,7 @@
 	<!-- <link rel="stylesheet" type="text/less" href="lib/lesshat.less"> -->
 	<script type="text/javascript" src="lib/less-1.3.0.js"></script>
 
-	<script src="js/libs/modernizr-2.5.3.min.js"></script>
+	<!-- <script src="js/libs/modernizr-2.5.3.min.js"></script> -->
 </head>
 <body>
 	<header>
@@ -29,7 +29,7 @@ know about the updates Subscribe or Fork us on <a href="#" class="link">GitHub</
 		<p class="twitter"><img src="twitter.png" alt="Tweet about us!" width="18" height="14">If you like <a href="#" class="link">Tweet!</a></p>
 	</header>
 	<section>
-		<ul>		
+		<ul id="menu">		
 			<li><a class="active" href="#">.animation</a></li>
 			<li><a href="#">.appearence</a></li>
 			<li><a href="#">.backface–visibility</a></li>
@@ -44,46 +44,49 @@ know about the updates Subscribe or Fork us on <a href="#" class="link">GitHub</
 			<li><a href="#">.font–face</a></li>
 			<li><a href="#">.gradient</a></li>
 			<li><a href="#">.opacity</a></li>
-			<li><a class="cs" href="#">.perspective</a></li>
+			<li><a class="red" data-text="EN ROUTE" href="#">.perspective</a></li>
 			<li><a href="#">.size</a></li>
 			<li><a href="#">.transform</a></li>
-			<li><a class="cs" href="#">.translate</a></li>
+			<li><a class="green" data-text="COMPLETE" href="#">.translate</a></li>
 			<li><a href="#">.scale</a></li>
 		</ul>
-		<div class="main">
+		<div id="main">
+			<div id="gradient-hack"></div>
 			<article>
 				<h2>.shadow</h2>
 				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
-				<table class="compare">
-					<thead>
-						<tr>
-							<th>Gradient</th>
-							<th>LESS Hat</th>
-							<th>Compass</th>
-							<th>Less Elements</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Global</td>
-							<td></td>
-							<td class="no"></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Unlimited</td>
-							<td class="no"></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Turbo brtual long text</td>
-							<td class="no"></td>
-							<td></td>
-							<td class="no"></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="border-radius-hack">
+					<table class="compare">
+						<thead>
+							<tr>
+								<th>Gradient</th>
+								<th>LESS Hat</th>
+								<th>Compass</th>
+								<th>Less Elements</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Global</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unlimited</td>
+								<td class="no"></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Turbo brtual long text</td>
+								<td class="no"></td>
+								<td></td>
+								<td class="no"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 				<p class="detail"><strong>CoffeeScript is a little language that compiles into JavaScript.</strong> Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 
 				<div class="code clearfix">
@@ -111,36 +114,97 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
 			<article>
 				<h2>.shadow</h2>
 				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
-				<table class="compare">
-					<thead>
-						<tr>
-							<th>Gradient</th>
-							<th>LESS Hat</th>
-							<th>Compass</th>
-							<th>Less Elements</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Global</td>
-							<td></td>
-							<td class="no"></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Unlimited</td>
-							<td class="no"></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Turbo brtual long text</td>
-							<td class="no"></td>
-							<td></td>
-							<td class="no"></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="border-radius-hack">
+					<table class="compare">
+						<thead>
+							<tr>
+								<th>Gradient</th>
+								<th>LESS Hat</th>
+								<th>Compass</th>
+								<th>Less Elements</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Global</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unlimited</td>
+								<td class="no"></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Turbo brtual long text</td>
+								<td class="no"></td>
+								<td></td>
+								<td class="no"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="detail"><strong>CoffeeScript is a little language that compiles into JavaScript.</strong> Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
+
+				<div class="code clearfix">
+					<textarea id="" cols="30" rows="10">
+.shadow(@arguments);
+
+.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
+
+result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
+-moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
+box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
+				</textarea>
+				<code>.shadow(@arguments);
+
+.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
+
+result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
+-moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
+box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
+				</div>
+
+				
+			</article>
+
+			<article>
+				<h2>.shadow</h2>
+				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
+				<div class="border-radius-hack">
+					<table class="compare">
+						<thead>
+							<tr>
+								<th>Gradient</th>
+								<th>LESS Hat</th>
+								<th>Compass</th>
+								<th>Less Elements</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Global</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unlimited</td>
+								<td class="no"></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Turbo brtual long text</td>
+								<td class="no"></td>
+								<td></td>
+								<td class="no"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 				<p class="detail"><strong>CoffeeScript is a little language that compiles into JavaScript.</strong> Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 
 				<div class="code clearfix">
@@ -187,6 +251,26 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
 		'onChange': refresh,
 		'lineWrapping': true
 	});
+	</script>
+
+	<script type="text/javascript">
+		var menu = document.getElementById('menu');
+		var stopY = menu.offsetTop - 25;
+        var gradient = document.getElementById('gradient-hack');
+		window.onscroll = function (oEvent) {
+			var topY = window.pageYOffset;
+			if (topY >= stopY) {
+				menu.style.position='fixed';
+				gradient.style.position='fixed';
+				gradient.style.top='0';
+			}
+			else
+			{
+				menu.style.position='static';
+				gradient.style.position='absolute';
+				gradient.style.top='-25px';
+			}
+		}
 	</script>
 
 </body>
