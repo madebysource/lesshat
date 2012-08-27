@@ -13,6 +13,11 @@
 	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
 
+ 	<link rel="stylesheet" type="text/css" href="lib/codemirror.css">
+	<script type="text/javascript" src="lib/codemirror.js"></script>
+	<!-- <link rel="stylesheet" type="text/less" href="lib/lesshat.less"> -->
+	<script type="text/javascript" src="lib/less-1.3.0.js"></script>
+
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
@@ -161,6 +166,28 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
 			</article>
 		</div>
 	</section>
+
+	<script type="text/javascript" defer>
+	var lesshat = document.getElementById('lesshat');
+	var css = document.getElementById('css');
+	var parser = new less.Parser;
+	var refresh = function(e)
+	{
+		// console.log('change', e, lesshat.value);
+		parser.parse('@import "lib/lesshat.less";\n'+ e.getValue(), function(e, tree) {
+			if (!e) {
+				var code = tree.toCSS();
+				css.innerText = code;
+				console.log('code', code);
+				// style.innerText = code;
+			}
+		});
+	};
+	var editor = CodeMirror.fromTextArea(lesshat, {
+		'onChange': refresh,
+		'lineWrapping': true
+	});
+	</script>
 
 </body>
 </html>
