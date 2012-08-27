@@ -13,6 +13,11 @@
 	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
 
+ 	<link rel="stylesheet" type="text/css" href="lib/codemirror.css">
+	<script type="text/javascript" src="lib/codemirror.js"></script>
+	<!-- <link rel="stylesheet" type="text/less" href="lib/lesshat.less"> -->
+	<script type="text/javascript" src="lib/less-1.3.0.js"></script>
+
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
@@ -53,7 +58,7 @@ know about the updates Subscribe or Fork us on <a href="#" class="link">GitHub</
 					<p class="detail"><strong>CoffeeScript is a little language that compiles into JavaScript.</strong> Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 
 					<div class="code clearfix">
-						<textarea id="" cols="30" rows="10">
+						<textarea id="lesshat" cols="30" rows="10">
 .shadow(@arguments);
 
 .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
@@ -62,7 +67,7 @@ result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 					</textarea>
-					<code>.shadow(@arguments);
+					<code id="css">.shadow(@arguments);
 
 .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
 
@@ -115,6 +120,28 @@ result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 	-moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 	box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code></pre>
 		</section> -->
+
+	<script type="text/javascript" defer>
+	var lesshat = document.getElementById('lesshat');
+	var css = document.getElementById('css');
+	var parser = new less.Parser;
+	var refresh = function(e)
+	{
+		// console.log('change', e, lesshat.value);
+		parser.parse('@import "lib/lesshat.less";\n'+ e.getValue(), function(e, tree) {
+			if (!e) {
+				var code = tree.toCSS();
+				css.innerText = code;
+				console.log('code', code);
+				// style.innerText = code;
+			}
+		});
+	};
+	var editor = CodeMirror.fromTextArea(lesshat, {
+		'onChange': refresh,
+		'lineWrapping': true
+	});
+	</script>
 
 </body>
 </html>
