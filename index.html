@@ -30,14 +30,14 @@
 </head>
 <body><!-- TODO: Add feedback, tweet button, flattr -->
 	<header>
-		<h1><strong>LESS Hat</strong> a supersonic bunch of smart LESS mixins</h1>
-		<p class="description">We create kick-ass universal mixins library for all types of CSS cases.</p>
+		<h1><strong>LESS Hat.</strong> A supersonic bunch of smart LESS mixins</h1>
+		<p class="description">Kick-ass universal mixins library for all types of CSS cases from makers of <a href="http://csshat.com">CSS Hat</a>.</p>
 		<a href="#" class="download">Download LESS Hat 1.0</a>
 		<p class="twitter"><img src="twitter.png" alt="Tweet about us!" width="18" height="14">If you like <a href="#" class="link">Tweet!</a></p>
 	</header>
 	<section>
 		<ul id="menu">	
-			<li><a class="active" href="#introduction">Introduction</a></li>
+			<li><a class="active" href="#">Introduction</a></li>
 			<br>	
 			<li><a href="#animation">.animation</a>
 				<ul>
@@ -51,12 +51,12 @@
 					<li><a href="#" class="red" data-text="EN ROUTE">.keyframes</a></li>
 				</ul>
 			</li>
-			<li><a href="#appearence">.appearence</a></li>
-			<li><a href="#">.backface–visibility</a></li>
-			<li><a href="#">.background–clip</a></li>
-			<li><a href="#">.background–origin</a></li>
-			<li><a href="#">.background–size</a></li>
-			<li><a href="#">.border–radius</a>
+			<li><a href="#appearance">.appearance</a></li>
+			<li><a href="#backface–visibility">.backface–visibility</a></li>
+			<li><a href="#background–clip">.background–clip</a></li>
+			<li><a href="#background–origin">.background–origin</a></li>
+			<li><a href="#background–size">.background–size</a></li>
+			<li><a href="#border–radius">.border–radius</a>
 				<ul>
 					<li><a href="#">.border-top-left-radius</a></li>
 					<li><a href="#">.border-top-right-radius</a></li>
@@ -75,10 +75,10 @@
 					<li><a href="#">.column-width</a></li>				
 				</ul>
 			</li>
-			<li><a href="#fontface">.font–face</a></li>
-			<li><a href="#" class="green" data-text="TOP MIXIN">.gradient</a></li>
-			<li><a href="#">.opacity</a></li>
-			<li><a href="#">.perspective</a>
+			<li><a href="#font–face">.font–face</a></li>
+			<li><a href="#gradient" class="green" data-text="TOP MIXIN">.gradient</a></li>
+			<li><a href="#opacity">.opacity</a></li>
+			<li><a href="#perspective">.perspective</a>
 				<ul>
 					<li><a href="#">.perspective-origin</a></li>
 				</ul>
@@ -111,7 +111,7 @@
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
-			<article id="introduction">
+			<article>
 				<h2>Introduction</h2>
 			<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
     
@@ -130,60 +130,60 @@
     
     		<div class="border-radius-hack">
 				<table class="compare">
-						<thead>
-							<tr>
-								<th>Property</th>
-								<th>LESS Hat</th>
-								<th>LESS Elements</th>
-								<th>Compass - Sass</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Animations</td>
-								<td></td>
-								<td class="no"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Unlimited box-shadows</td>
-								<td></td>
-								<td class="no"></td>
-								<td class="no"></td>
-							</tr>
-							<tr>
-								<td>Multiple gradients</td>
-								<td></td>
-								<td class="no"></td>
-								<td class="no"></td>
-							</tr>
-							<tr>
-								<td>3D Transforms</td>
-								<td></td>
-								<td class="no"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Font-face</td>
-								<td></td>
-								<td class="no"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Multiple transitions</td>
-								<td></td>
-								<td class="no"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Opacity</td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+					<thead>
+						<tr>
+							<th>Property</th>
+							<th>LESS Hat</th>
+							<th>LESS Elements</th>
+							<th>Compass - Sass</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Animations</td>
+							<td></td>
+							<td class="no"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Unlimited box-shadows</td>
+							<td></td>
+							<td class="no"></td>
+							<td class="no"></td>
+						</tr>
+						<tr>
+							<td>Multiple gradients</td>
+							<td></td>
+							<td class="no"></td>
+							<td class="no"></td>
+						</tr>
+						<tr>
+							<td>3D Transforms</td>
+							<td></td>
+							<td class="no"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Font-face</td>
+							<td></td>
+							<td class="no"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Multiple transitions</td>
+							<td></td>
+							<td class="no"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Opacity</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
     
     
     		<p class="detail">Thus, ladies and gentlemen, welcome LESS Hat!</p>
@@ -191,93 +191,18 @@
 			</article>
 
 			<article id="animation">
-				<h2>.shadow</h2>
-				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
-				<div class="border-radius-hack">
-					<table class="compare">
-						<thead>
-							<tr>
-								<th>Gradient</th>
-								<th>LESS Hat</th>
-								<th>Compass</th>
-								<th>Less Elements</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Global</td>
-								<td></td>
-								<td class="no"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Unlimited</td>
-								<td class="no"></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Turbo brtual long text</td>
-								<td class="no"></td>
-								<td></td>
-								<td class="no"></td>
-							</tr>
-						</tbody>
-					</table>
+				<h2>.animation <code class="mixin-sample" style="font-weight: normal; color: #BBB;">(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");</code></h2>
+				<div class="detail">
+					<p>
+						CSS3 animation according to specs: <a href="http://www.w3.org/TR/css3-animations/">W3C specification</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&redirectslug=CSS%2FCSS_animations">examples</a>.
+					</p>
 				</div>
-				<p class="detail"><strong>CoffeeScript is a little language that compiles into JavaScript.</strong> Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 
 				<div class="code clearfix">
 					<textarea cols="30" rows="10" data-css="css">.compare{
-	text-align: center;
-	thead{
-		font-weight: 700;
-		tr{
-			background-color: #f5f5f5;
-		}
-	}
-	tbody{
-		tr{
-			&:nth-child(even){
-				background-color: #f5f5f5;
-			}
-			td{
-				background: url(yes.png) no-repeat center center;
-				&:first-of-type{
-					background: none;
-				}
-				&.no{
-					background: url(no.png) no-repeat center center;
-				}
-			}
-		}
-	}
+	.animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");
 }</textarea>
-					<textarea id="css">.compare{
-	text-align: center;
-	thead{
-		font-weight: 700;
-		tr{
-			background-color: #f5f5f5;
-		}
-	}
-	tbody{
-		tr{
-			&:nth-child(even){
-				background-color: #f5f5f5;
-			}
-			td{
-				background: url(yes.png) no-repeat center center;
-				&:first-of-type{
-					background: none;
-				}
-				&.no{
-					background: url(no.png) no-repeat center center;
-				}
-			}
-		}
-	}
-}</textarea>
+					<textarea id="css"></textarea>
 				</div>
 
 				
