@@ -36,14 +36,13 @@ return function() {
 var lesshat = document.querySelectorAll('textarea[data-css]');
 var css = document.getElementById('css');
 var parser = new less.Parser;
-var refresh = function(less, cssElement, ok, err)
+var refresh = function(less, target, ok, err)
 {
 	// console.log('change', e, lesshat.value);
 	parser.parse('@import "lib/lesshat.less";\n'+ less, function(e, tree) {
 		if (!e) {
 			var code = tree.toCSS();
-			// cssElement.innerText = code;
-			cssElement.dataset['syntax'].setValue(code);
+			target.setValue(code);
 			console.log('code', code);
 			ok && ok();
 		}
@@ -56,20 +55,20 @@ var refresh = function(less, cssElement, ok, err)
 Array.prototype.forEach.call(lesshat, function(l)
 {
 	var target = l.dataset['css'] && document.getElementById(l.dataset['css']);
-	var editor = CodeMirror.fromTextArea(l, {
-		// 'onChange': refresh,
-		'onChange': throttle(function(e) {
-			refresh(
-				e.getValue(),
-				target);
-		}, 100),
-		'tabSize': 2,
-	});
+	var syntax;
 	if (target) {
-		var syntax = CodeMirror.fromTextArea(target, {
+		syntax = CodeMirror.fromTextArea(target, {
 			'tabSize': 2,
 			'readOnly': 'nocursor',
 		});
 		target.dataset['syntax'] = syntax;
 	}
+	var editor = CodeMirror.fromTextArea(l, {
+		'onChange': throttle(function(e) {
+			refresh(
+				e.getValue(),
+				syntax);
+		}, 100),
+		'tabSize': 2,
+	});
 });
