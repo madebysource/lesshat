@@ -59,7 +59,7 @@ Array.prototype.forEach.call(lesshat, function(l)
 	if (target) {
 		syntax = CodeMirror.fromTextArea(target, {
 			'tabSize': 2,
-			'readOnly': 'nocursor',
+			'readOnly': 'nocursor'
 		});
 		target.dataset['syntax'] = syntax;
 	}
@@ -69,8 +69,9 @@ Array.prototype.forEach.call(lesshat, function(l)
 				e.getValue(),
 				syntax);
 		}, 100),
-		'tabSize': 2,
+		'tabSize': 2
 	});
+	refresh(editor.getValue(), syntax);
 });
 
 $(document).ready(function()
