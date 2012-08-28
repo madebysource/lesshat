@@ -37,9 +37,9 @@
 	</header>
 	<section>
 		<ul id="menu">	
-			<li><a class="active" href="#">Introduction</a></li>
+			<li><a class="active" href="#introduction">Introduction</a></li>
 			<br>	
-			<li><a href="#">.animation</a>
+			<li><a href="#animation">.animation</a>
 				<ul>
 					<li><a href="#">.animation-delay</a></li>
 					<li><a href="#">.animation-direction</a></li>
@@ -51,7 +51,7 @@
 					<li><a href="#" class="red" data-text="EN ROUTE">.keyframes</a></li>
 				</ul>
 			</li>
-			<li><a href="#">.appearence</a></li>
+			<li><a href="#appearence">.appearence</a></li>
 			<li><a href="#">.backface–visibility</a></li>
 			<li><a href="#">.background–clip</a></li>
 			<li><a href="#">.background–origin</a></li>
@@ -75,7 +75,7 @@
 					<li><a href="#">.column-width</a></li>				
 				</ul>
 			</li>
-			<li><a href="#">.font–face</a></li>
+			<li><a href="#fontface">.font–face</a></li>
 			<li><a href="#" class="green" data-text="TOP MIXIN">.gradient</a></li>
 			<li><a href="#">.opacity</a></li>
 			<li><a href="#">.perspective</a>
@@ -111,7 +111,7 @@
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
-			<article>
+			<article id="introduction">
 				<h2>Introduction</h2>
 			<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
     
@@ -190,7 +190,7 @@
 
 			</article>
 
-			<article>
+			<article id="animation">
 				<h2>.shadow</h2>
 				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 				<div class="border-radius-hack">
@@ -403,25 +403,11 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 		</div>
 	</section>
 
+	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
-
-	<script type="text/javascript">
-		var menu = document.getElementById('menu');
-		var stopY = menu.offsetTop;
-        var gradient = document.getElementById('gradient-hack');
-		window.onscroll = function (oEvent) {
-			var topY = window.pageYOffset;
-			if (topY >= stopY) {
-				menu.style.position='fixed';
-				gradient.style.position='fixed';
-			}
-			else
-			{
-				menu.style.position='static';
-				gradient.style.position='absolute';
-			}
-		}
-	</script>
+	<script type="text/javascript" src="Anchor.js"></script>
+	<script type="text/javascript" src="Menu.js"></script>
+	<script type="text/javascript" src="Section.js"></script>
 
 </body>
 </html>

@@ -72,3 +72,12 @@ Array.prototype.forEach.call(lesshat, function(l)
 		'tabSize': 2,
 	});
 });
+
+$(document).ready(function()
+{
+	window.$window = $(window);
+	window.$body = $(document.body);
+	new Menu({container:'#menu'});
+	new Section({container:'#introduction', id: 'introduction'});
+	new Section({container:'#animation', id: 'animation'});
+});
