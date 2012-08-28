@@ -407,20 +407,18 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 
 	<script type="text/javascript">
 		var menu = document.getElementById('menu');
-		var stopY = menu.offsetTop - 25;
+		var stopY = menu.offsetTop;
         var gradient = document.getElementById('gradient-hack');
 		window.onscroll = function (oEvent) {
 			var topY = window.pageYOffset;
 			if (topY >= stopY) {
 				menu.style.position='fixed';
 				gradient.style.position='fixed';
-				gradient.style.top='0';
 			}
 			else
 			{
 				menu.style.position='static';
 				gradient.style.position='absolute';
-				gradient.style.top='-25px';
 			}
 		}
 	</script>

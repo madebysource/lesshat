@@ -88,13 +88,15 @@ header{
 }
 section{
 	width: 960px;
-	padding-top: 25px;
 	margin: 0 auto;
 	ul{
+		padding-top: 25px;
+		background: #fff;
+		z-index: 5;
 		width: 215px;
 		float: left;
-		box-shadow: 1px 0 #dadada;
-		top: 25px;
+		box-shadow: inset -1px 0 #dadada;
+		top: 0;
 		li{
 			ul{
 				display: none;
@@ -136,17 +138,18 @@ section{
 	#main{
 		float: right;
 		width: 685px;
-		padding: 0 30px;
+		padding: 25px 30px 0 30px;
 		position: relative;
 		#gradient-hack{
 			display: block;
 			height: 35px;
 			width: 100%;
-			top: -25px;
+			top: 0;
+			left: 0;
 			width: 100%;
 			background-image: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, #fff 100%);
 			position: absolute;
-			z-index: 10;
+			z-index: 4;
 		}
 		article{
 			h2{
