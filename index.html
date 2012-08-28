@@ -33,7 +33,7 @@
 		<h1><strong>LESS Hat</strong> a supersonic bunch of smart LESS mixins</h1>
 		<p class="description">Kick-ass universal mixins library for all types of CSS cases from makers of <a href="http://csshat.com">CSS Hat</a>.</p>
 		<a href="#" class="download">Download LESS Hat 1.0</a>
-		<br><br>
+		<p class="twitter"><img src="twitter.png" alt="Tweet about us!" width="18" height="14">If you like <a href="#" class="link">Tweet!</a></p>
 	</header>
 	<section>
 		<ul id="menu">	
@@ -407,20 +407,18 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 
 	<script type="text/javascript">
 		var menu = document.getElementById('menu');
-		var stopY = menu.offsetTop - 25;
+		var stopY = menu.offsetTop;
         var gradient = document.getElementById('gradient-hack');
 		window.onscroll = function (oEvent) {
 			var topY = window.pageYOffset;
 			if (topY >= stopY) {
 				menu.style.position='fixed';
 				gradient.style.position='fixed';
-				gradient.style.top='0';
 			}
 			else
 			{
 				menu.style.position='static';
 				gradient.style.position='absolute';
-				gradient.style.top='-25px';
 			}
 		}
 	</script>
