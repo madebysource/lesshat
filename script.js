@@ -63,7 +63,6 @@ Array.prototype.forEach.call(lesshat, function(l)
 				e.getValue(),
 				target);
 		}, 100),
-		'lineWrapping': true,
 		'tabSize': 2,
 	});
 	if (target) {
