@@ -10,10 +10,14 @@ a{
 	color: #d8d6f8;
 	text-decoration: none;
 	position: relative;
-	&.link{
+	header p &{
 		border-bottom: 1px solid #d8d6f8;
+		&:hover{
+			border-bottom: 1px solid #fff;
+		}
 	}
 	&:hover{
+		color: #fff;
 		border-bottom: 0;
 	}
 	&:active{
@@ -39,9 +43,9 @@ header{
 	.description{
 		font-size: 18px;
 		color: #a79db9;
-		max-width: 620px;
-		display: block;
-		margin: 0 auto;
+		//max-width: 620px;
+		//display: block;
+		//margin: 0 auto;
 		padding-top:10px;
 	}
 	.download{
@@ -60,7 +64,9 @@ header{
 			background-image: -webkit-linear-gradient(90deg, #d98900 0%, #e9b324 100%);
 		}
 		&:active{
-			background-image: -webkit-linear-gradient(90deg, #e9b324 0%, #d98900 100%);		
+			background-image: -webkit-linear-gradient(90deg, #e9b324 0%, #d98900 100%);
+			box-shadow:	0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
+
 		}
 		&:before{
 			content: '';
@@ -78,11 +84,22 @@ header{
 	.twitter{
 		padding: 20px 0 30px 0;
 		color: #a79db9;
-		img{
-			margin-right: 7px;
-		}
 		a{
 			font-weight: bold;
+			border-bottom: none;
+			padding-left: 25px;
+				border-bottom: none;
+			background: url(twitter.png) no-repeat center left;
+			&:hover{
+				border-bottom: none;
+				background: url(twitter-hover.png) no-repeat center left;
+			}
+			span{
+				border-bottom: 1px solid #d8d6f8;
+				&:hover{
+					border-bottom: 1px solid #fff;
+				}
+			}
 		}
 	}
 }
@@ -165,7 +182,7 @@ section{
 			}
 			.detail{
 				line-height: 24px;
-				margin-bottom: 28px;
+				padding-bottom: 28px;
 			}
 			.compare{
 				text-align: center;
