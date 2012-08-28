@@ -93,4 +93,8 @@ $(document).ready(function()
 	window.$window = $(window);
 	window.$body = $(document.body);
 	new Menu({container:'#menu'});
+	new Section({container:'#introduction', id: 'introduction'});
+	new Section({container:'#animation', id: 'animation'});
+	new Section({container:'#appearance', id: 'appearance'});
+	new Section({container:'#backface–visibility', id: 'backface–visibility'});
 });
