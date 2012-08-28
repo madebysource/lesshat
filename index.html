@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>LESSHat is a buch of smart LESS mixins</title>
+	<title>LESSHat a supersonic bunch of smart LESS mixins</title>
 
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
@@ -28,38 +28,168 @@
 	}
 	</style>
 </head>
-<body>
+<body><!-- TODO: Add feedback, tweet button, flattr -->
 	<header>
-		<h1><strong>LESS Hat</strong> – a bunch of smart Less mixins</h1>
-		<p class="description">Why our mixins are smart? Because they are universal. To be first to
-know about the updates Subscribe or Fork us on <a href="#" class="link">GitHub</a></p>
+		<h1><strong>LESS Hat</strong> a supersonic bunch of smart LESS mixins</h1>
+		<p class="description">We create kick-ass universal mixins library for all types of CSS cases.</p>
 		<a href="#" class="download">Download LESS Hat 1.0</a>
-		<p class="twitter"><img src="twitter.png" alt="Tweet about us!" width="18" height="14">If you like <a href="#" class="link">Tweet!</a></p>
+		<br><br>
 	</header>
 	<section>
-		<ul id="menu">		
-			<li><a class="active" href="#">.animation</a></li>
+		<ul id="menu">	
+			<li><a class="active" href="#">Introduction</a></li>
+			<br>	
+			<li><a href="#">.animation</a>
+				<ul>
+					<li><a href="#">.animation-delay</a></li>
+					<li><a href="#">.animation-direction</a></li>
+					<li><a href="#">.animation-duration</a></li>
+					<li><a href="#">.animation-timing-function</a></li>
+					<li><a href="#">.animation-iteration-count</a></li>
+					<li><a href="#">.animation-name</a></li>
+					<li><a href="#">.animation-play-state</a></li>
+					<li><a href="#" class="red" data-text="EN ROUTE">.keyframes</a></li>
+				</ul>
+			</li>
 			<li><a href="#">.appearence</a></li>
 			<li><a href="#">.backface–visibility</a></li>
 			<li><a href="#">.background–clip</a></li>
 			<li><a href="#">.background–origin</a></li>
 			<li><a href="#">.background–size</a></li>
-			<li><a href="#">.border–radius</a></li>
+			<li><a href="#">.border–radius</a>
+				<ul>
+					<li><a href="#">.border-top-left-radius</a></li>
+					<li><a href="#">.border-top-right-radius</a></li>
+					<li><a href="#">.border-bottom-left-radius</a></li>
+					<li><a href="#">.border-bottom-right-radius</a></li>
+				</ul>
+			</li>
 			<li><a href="#">.border–image</a></li>
 			<li><a href="#">.box–shadow</a></li>
 			<li><a href="#">.box–sizing</a></li>
-			<li><a href="#">.columns</a></li>
+			<li><a href="#">.columns</a>
+				<ul>
+					<li><a href="#">.column-count</a></li>
+					<li><a href="#">.column-gap</a></li>
+					<li><a href="#">.column-rule</a></li>
+					<li><a href="#">.column-width</a></li>				
+				</ul>
+			</li>
 			<li><a href="#">.font–face</a></li>
-			<li><a href="#">.gradient</a></li>
+			<li><a href="#" class="green" data-text="TOP MIXIN">.gradient</a></li>
 			<li><a href="#">.opacity</a></li>
-			<li><a class="red" data-text="EN ROUTE" href="#">.perspective</a></li>
+			<li><a href="#">.perspective</a>
+				<ul>
+					<li><a href="#">.perspective-origin</a></li>
+				</ul>
+			</li>
 			<li><a href="#">.size</a></li>
-			<li><a href="#">.transform</a></li>
-			<li><a class="green" data-text="COMPLETE" href="#">.translate</a></li>
+			<li><a href="#">.transform</a>
+				<ul>
+					<li><a href="#">.translate</a></li>
+					<li><a href="#">.translate3d</a></li>
+					<li><a href="#">.translateX</a></li>
+					<li><a href="#">.translateY</a></li>
+					<li><a href="#">.translateZ</a></li>
+					<li><a href="#">.scale</a></li>
+					<li><a href="#">.scale3d</a></li>
+					<li><a href="#">.scaleX</a></li>
+					<li><a href="#">.scaleY</a></li>
+					<li><a href="#">.scaleZ</a></li>
+					<li><a href="#">.rotate</a></li>
+					<li><a href="#">.rotate3d</a></li>
+					<li><a href="#">.rotateX</a></li>
+					<li><a href="#">.rotateY</a></li>
+					<li><a href="#">.rotateZ</a></li>
+					<li><a href="#">.skew</a></li>
+					<li><a href="#">.skewX</a></li>
+					<li><a href="#">.skewY</a></li>
+				</ul>
+			</li>
+			<li><a href="#">.translate</a></li>
 			<li><a href="#">.scale</a></li>
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
+			<article>
+				<h2>Introduction</h2>
+			<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
+    
+    		<p>We required the mixins to be:</p>
+
+    		<dl class="detail">
+    			<dt><strong>Universal:</strong></dt>
+    			<dd>If it is possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.</dd>
+    			<dt><strong>Cross-browser:</strong></dt>
+    			<dd>The library should export CSS for all available browsers. Old gradient syntax for iOS4? Totally!</dd>
+    			<dt><strong>Configurable:</strong></dt>
+    			<dd>Building a webkit app? Turn off all other browsers and get just CSS3 plus -webkit- extensions without the clutter.</dd>
+    		</dl>
+
+    		<p class="detail">We looked at existing libraries, and found out they compare poorly:</p>
+    
+    		<div class="border-radius-hack">
+				<table class="compare">
+						<thead>
+							<tr>
+								<th>Property</th>
+								<th>LESS Hat</th>
+								<th>LESS Elements</th>
+								<th>Compass - Sass</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Animations</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unlimited box-shadows</td>
+								<td></td>
+								<td class="no"></td>
+								<td class="no"></td>
+							</tr>
+							<tr>
+								<td>Multiple gradients</td>
+								<td></td>
+								<td class="no"></td>
+								<td class="no"></td>
+							</tr>
+							<tr>
+								<td>3D Transforms</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Font-face</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Multiple transitions</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Opacity</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+    
+    
+    		<p class="detail">Thus, ladies and gentlemen, welcome LESS Hat!</p>
+
+			</article>
+
 			<article>
 				<h2>.shadow</h2>
 				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
