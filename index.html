@@ -123,7 +123,31 @@ know about the updates Subscribe or Fork us on <a href="#" class="link">GitHub</
 		}
 	}
 }</textarea>
-					<code id="css">.compare {<br>  text-align: center;<br>}<br>.compare thead {<br>  font-weight: 700;<br>}<br>.compare thead tr {<br>  background-color: #f5f5f5;<br>}<br>.compare tbody tr:nth-child(even) {<br>  background-color: #f5f5f5;<br>}<br>.compare tbody tr td {<br>  background: url(yes.png) no-repeat center center;<br>}<br>.compare tbody tr td:first-of-type {<br>  background: none;<br>}<br>.compare tbody tr td.no {<br>  background: url(no.png) no-repeat center center;<br>}<br></code>
+					<textarea id="css">.compare{
+	text-align: center;
+	thead{
+		font-weight: 700;
+		tr{
+			background-color: #f5f5f5;
+		}
+	}
+	tbody{
+		tr{
+			&:nth-child(even){
+				background-color: #f5f5f5;
+			}
+			td{
+				background: url(yes.png) no-repeat center center;
+				&:first-of-type{
+					background: none;
+				}
+				&.no{
+					background: url(no.png) no-repeat center center;
+				}
+			}
+		}
+	}
+}</textarea>
 				</div>
 
 				
@@ -176,13 +200,13 @@ result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 				</textarea>
-				<code id="css2">.shadow(@arguments);
+				<textarea id="css2">.shadow(@arguments);
 
 .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
 
 result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
+box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 				</div>
 
 				
@@ -235,13 +259,13 @@ result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 				</textarea>
-				<code id="css3">.shadow(@arguments);
+				<textarea id="css3">.shadow(@arguments);
 
-.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
+.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");§
 
 result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
+box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 				</div>
 
 				
@@ -309,29 +333,26 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
 	};
 	Array.prototype.forEach.call(lesshat, function(l)
 	{
-		var lastLine = null;
+		var target = l.dataset['css'] && document.getElementById(l.dataset['css']);
 		var editor = CodeMirror.fromTextArea(l, {
 			// 'onChange': refresh,
 			'onChange': throttle(function(e) {
 				refresh(
 					e.getValue(),
-					l.dataset['css'] && document.getElementById(l.dataset['css']),
+					target,
 					function(e) {
-						if (lastLine) {
-							editor.setLineClass(lastLine, '');
-							lastLine = null;
-						}		
 					},
 					function(e) {
-						lastLine = e.line - 1;
-						lastLine = lastLine >= 0 ? lastLine : 0;
-						editor.setLineClass(lastLine, 'errline');
 					});
-				editor.refresh();
 			}, 100),
 			//'lineWrapping': true,
 			'tabSize': 2
 		});
+		if (target) {
+			CodeMirror.fromTextArea(target, {
+				'readOnly': 'nocursor'
+			});
+		}
 	});
 	</script>
 
