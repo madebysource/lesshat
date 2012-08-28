@@ -80,4 +80,5 @@ $(document).ready(function()
 	new Menu({container:'#menu'});
 	new Section({container:'#introduction', id: 'introduction'});
 	new Section({container:'#animation', id: 'animation'});
+	new Section({container:'#appearence', id: 'appearence'});
 });
