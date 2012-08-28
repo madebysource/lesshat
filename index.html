@@ -309,7 +309,6 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
 	};
 	Array.prototype.forEach.call(lesshat, function(l)
 	{
-		var lastLine = null;
 		var editor = CodeMirror.fromTextArea(l, {
 			// 'onChange': refresh,
 			'onChange': throttle(function(e) {
@@ -317,17 +316,9 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
 					e.getValue(),
 					l.dataset['css'] && document.getElementById(l.dataset['css']),
 					function(e) {
-						if (lastLine) {
-							editor.setLineClass(lastLine, '');
-							lastLine = null;
-						}		
 					},
 					function(e) {
-						lastLine = e.line - 1;
-						lastLine = lastLine >= 0 ? lastLine : 0;
-						editor.setLineClass(lastLine, 'errline');
 					});
-				editor.refresh();
 			}, 100),
 			'lineWrapping': true,
 			'tabSize': 2
