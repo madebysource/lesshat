@@ -52,10 +52,17 @@ var refresh = function(less, target, ok, err)
 		}
 	});
 };
+var errCheck = function(target, err)
+{
+	if (err) {
+		target.setValue('Seems like there is something wrong\nwith the less code');
+	}
+};
 Array.prototype.forEach.call(lesshat, function(l)
 {
 	var target = l.dataset['css'] && document.getElementById(l.dataset['css']);
 	var syntax;
+	var check = debounce(errCheck, 1200);
 	if (target) {
 		syntax = CodeMirror.fromTextArea(target, {
 			'tabSize': 2,
@@ -67,7 +74,14 @@ Array.prototype.forEach.call(lesshat, function(l)
 		'onChange': throttle(function(e) {
 			refresh(
 				e.getValue(),
-				syntax);
+				syntax,
+				function() {
+					check(syntax, false);
+				},
+				function(e) {
+					check(syntax, true);
+				}
+			);
 		}, 100),
 		'tabSize': 2
 	});
