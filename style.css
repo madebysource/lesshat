@@ -4,7 +4,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 1.3;
-  min-width: 960px;
 }
 a {
   color: #d8d6f8;
@@ -27,7 +26,7 @@ a:active {
 header {
   text-align: center;
   background-color: #181927;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 header:before {
   content: '';
@@ -169,6 +168,9 @@ section #main #gradient-hack {
   position: absolute;
   z-index: 4;
 }
+section #main article {
+  padding-bottom: 100px;
+}
 section #main article h2 {
   font-size: 25px;
   font-weight: 700;
@@ -222,7 +224,6 @@ section #main article .code {
   background-clip: padding-box;
   background-color: #f5f5f5;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08), inset 0 0 2px rgba(0, 0, 0, 0.09);
-  margin-bottom: 100px;
 }
 section #main article .code textarea {
   float: left;
@@ -271,4 +272,16 @@ section #main article .code:before {
   top: 10px;
   bottom: 10px;
   left: 340px;
+}
+@media only screen and (max-width: 960px) {
+  #menu {
+    display: none;
+  }
+  section {
+    width: auto;
+  }
+  section div#main {
+    float: none;
+    width: auto;
+  }
 }
