@@ -22,7 +22,7 @@ var Menu = function(opt)
 
 	this.init();
 };
-Menu.FIXED_TRESHOLD = 205;
+Menu.FIXED_TRESHOLD = $('header').height();
 Menu.prototype.init = function()
 {
 	var self = this;
