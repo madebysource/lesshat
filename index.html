@@ -228,22 +228,56 @@
 				<p class="detail"><strong>CoffeeScript is a little language that compiles into JavaScript.</strong> Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 
 				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="css">
-.shadow(@arguments);
-
-.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
-
-result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
--moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
-				</textarea>
-				<code id="css">.shadow(@arguments);
-
-.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
-
-result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
--moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
+					<textarea cols="30" rows="10" data-css="css">.compare{
+	text-align: center;
+	thead{
+		font-weight: 700;
+		tr{
+			background-color: #f5f5f5;
+		}
+	}
+	tbody{
+		tr{
+			&:nth-child(even){
+				background-color: #f5f5f5;
+			}
+			td{
+				background: url(yes.png) no-repeat center center;
+				&:first-of-type{
+					background: none;
+				}
+				&.no{
+					background: url(no.png) no-repeat center center;
+				}
+			}
+		}
+	}
+}</textarea>
+					<textarea id="css">.compare{
+	text-align: center;
+	thead{
+		font-weight: 700;
+		tr{
+			background-color: #f5f5f5;
+		}
+	}
+	tbody{
+		tr{
+			&:nth-child(even){
+				background-color: #f5f5f5;
+			}
+			td{
+				background: url(yes.png) no-repeat center center;
+				&:first-of-type{
+					background: none;
+				}
+				&.no{
+					background: url(no.png) no-repeat center center;
+				}
+			}
+		}
+	}
+}</textarea>
 				</div>
 
 				
@@ -296,13 +330,13 @@ result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 				</textarea>
-				<code id="css2">.shadow(@arguments);
+				<textarea id="css2">.shadow(@arguments);
 
 .shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
 
 result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
+box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 				</div>
 
 				
@@ -355,13 +389,13 @@ result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 				</textarea>
-				<code id="css3">.shadow(@arguments);
+				<textarea id="css3">.shadow(@arguments);
 
-.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");
+.shadow(~"0 1px 10px #000, inset 0 -2px 5px red");§
 
 result: -webkit-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
 -moz-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;
-box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
+box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 				</div>
 
 				
@@ -369,91 +403,7 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</code>
 		</div>
 	</section>
 
-	<script type="text/javascript">
-	var debounce = function(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      if (immediate && !timeout) func.apply(context, args);
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  };
- 	var throttle = function(func, wait) {
-    var context, args, timeout, throttling, more, result;
-    var whenDone = debounce(function(){ more = throttling = false; }, wait);
-    return function() {
-      context = this; args = arguments;
-      var later = function() {
-        timeout = null;
-        if (more) func.apply(context, args);
-        whenDone();
-      };
-      if (!timeout) timeout = setTimeout(later, wait);
-      if (throttling) {
-        more = true;
-      } else {
-        result = func.apply(context, args);
-      }
-      whenDone();
-      throttling = true;
-      return result;
-    };
-  };
-	</script>
-
-	<script type="text/javascript" defer>
-	var lesshat = document.querySelectorAll('textarea[data-css]');
-	var css = document.getElementById('css');
-	var parser = new less.Parser;
-	var refresh = function(less, cssElement, ok, err)
-	{
-		// console.log('change', e, lesshat.value);
-		parser.parse('@import "lib/lesshat.less";\n'+ less, function(e, tree) {
-			if (!e) {
-				var code = tree.toCSS();
-				cssElement.innerText = code;
-				console.log('code', code);
-				// style.innerText = code;
-				ok();
-			}
-			else {
-				console.log('e', e);
-				err(e);
-			}
-		});
-	};
-	Array.prototype.forEach.call(lesshat, function(l)
-	{
-		var lastLine = null;
-		var editor = CodeMirror.fromTextArea(l, {
-			// 'onChange': refresh,
-			'onChange': throttle(function(e) {
-				refresh(
-					e.getValue(),
-					l.dataset['css'] && document.getElementById(l.dataset['css']),
-					function(e) {
-						if (lastLine) {
-							editor.setLineClass(lastLine, '');
-							lastLine = null;
-						}		
-					},
-					function(e) {
-						lastLine = e.line - 1;
-						lastLine = lastLine >= 0 ? lastLine : 0;
-						editor.setLineClass(lastLine, 'errline');
-					});
-				editor.refresh();
-			}, 100),
-			'lineWrapping': true,
-			'tabSize': 2
-		});
-	});
-	</script>
+	<script type="text/javascript" src="script.js"></script>
 
 	<script type="text/javascript">
 		var menu = document.getElementById('menu');
