@@ -1,5 +1,3 @@
-var fs = require('fs');
-
 var docs = [
 	{
 		name: '.animation',
@@ -53,15 +51,4 @@ docs.map(function(doc) {
 	});
 });
 
-// source = '{{#each this}}{{this.name}}{{/each}}';
-
-var handlebars = require('handlebars');
-
-var index = fs.readFileSync('./index.template.html', 'UTF-8');
-var template = handlebars.compile(index);
-
-var result = template(docs);
-
-// console.log(docs[0].parts);
-
-console.log(result);
+module.exports = docs;
