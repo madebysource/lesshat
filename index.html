@@ -20,6 +20,18 @@
 	<script type="text/javascript" src="lib/less-1.3.0.js"></script>
 
 	<!-- <script src="js/libs/modernizr-2.5.3.min.js"></script> -->
+
+<!-- 	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-5463802-47']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script> -->
 </head>
 <body><!-- TODO: Add feedback, tweet button, flattr -->
 	<header>
@@ -270,11 +282,31 @@
 
 	<div style="clear:both;"></div>
 
+	<div id="popup">
+		<div id="dialog">
+			<a href="#" id="close"></a>
+			<h3>Yay, you just got the best LESS framework in universe!</h3>
+			<form id="subscription" novalidate action="https://mailing.abdoc.net/api/subscribe/9f560f4c5bc55a95c02c2acbaeb67492" method="get">
+						<input type="hidden" name="source" value="lesshat popup">
+						<input type="email"  name="email" placeholder="Subscribe for LESS Hat updates" id="email">
+						<input type="submit" value="Subscribe" id="submit">
+			</form>
+			<a href="https://twitter.com/csshat" class="twitter-follow-button" data-show-count="false">Follow @csshat</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<div class="bottom">
+				<a href="#" class="csshat">What is CSS Hat?</a>
+			</div>
+		</div>	
+	</div>
+
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="Anchor.js"></script>
 	<script type="text/javascript" src="Menu.js"></script>
 	<script type="text/javascript" src="Section.js"></script>
+	<script type="text/javascript" src="Jsonp.js"></script>
 
 </body>
 </html>

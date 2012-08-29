@@ -38,55 +38,24 @@ var css = document.getElementById('css');
 var parser = new less.Parser;
 var refresh = function(less, target, ok, err)
 {
-	// console.log('change', e, lesshat.value);
 	parser.parse('@import "lib/lesshat.less";\n'+ less, function(e, tree) {
 		if (!e) {
 			var code = tree.toCSS();
 			target.setValue(code);
-			console.log('code', code);
 			ok && ok();
 		}
 		else {
-			console.log('e', e);
 			err && err(e);
 		}
 	});
 };
-var errCheck = function(target, err)
+var errCheck = function(editor, element, err)
 {
+	$(element).toggleClass('error', err);
 	if (err) {
-		target.setValue('Seems like there is something wrong\nwith the less code');
+		editor.setValue('Seems like there is something wrong\nwith the less code');
 	}
 };
-Array.prototype.forEach.call(lesshat, function(l)
-{
-	var target = l.dataset['css'] && document.getElementById(l.dataset['css']);
-	var syntax;
-	var check = debounce(errCheck, 1200);
-	if (target) {
-		syntax = CodeMirror.fromTextArea(target, {
-			'tabSize': 2,
-			'readOnly': 'nocursor'
-		});
-		target.dataset['syntax'] = syntax;
-	}
-	var editor = CodeMirror.fromTextArea(l, {
-		'onChange': throttle(function(e) {
-			refresh(
-				e.getValue(),
-				syntax,
-				function() {
-					check(syntax, false);
-				},
-				function(e) {
-					check(syntax, true);
-				}
-			);
-		}, 100),
-		'tabSize': 2
-	});
-	refresh(editor.getValue(), syntax);
-});
 
 $(document).ready(function()
 {
@@ -97,4 +66,159 @@ $(document).ready(function()
 	new Section({container:'#animation', id: 'animation'});
 	new Section({container:'#appearance', id: 'appearance'});
 	new Section({container:'#backface–visibility', id: 'backface–visibility'});
+
+	Subscription.init();
+
+	Array.prototype.forEach.call(lesshat, function(l)
+	{
+		var target = l.dataset['css'] && document.getElementById(l.dataset['css']);
+		var syntax;
+		var check = debounce(errCheck, 1200);
+		if (target) {
+			syntax = CodeMirror.fromTextArea(target, {
+				'tabSize': 2,
+				'readOnly': 'nocursor'
+			});
+		}
+		var editor = CodeMirror.fromTextArea(l, {
+			'onChange': throttle(function(e) {
+				refresh(
+					e.getValue(),
+					syntax,
+					function() {
+						check(syntax, syntax.getWrapperElement(), false);
+					},
+					function(e) {
+						check(syntax, syntax.getWrapperElement(), true);
+					}
+				);
+			}, 100),
+			'tabSize': 2
+		});
+		refresh(editor.getValue(), syntax);
+	});
+
+	var $popup = $('#popup');
+	var $close = $popup.find('#close');
+
+	$('header a.download').bind('click touchstart', function(e)
+	{
+		$popup.addClass('active');
+	});
+
+	$close.bind('click touchstart', function(e)
+	{
+		$popup.removeClass('active');
+	})
 });
+
+Subscription =
+{
+	form : $('#subscription'),
+
+	mail : $('#email'),
+	
+	// flash : $('.flash'),
+
+	email : '',
+
+	lock : false,
+
+	error_lock : false,
+
+	jsonp : null,
+	
+	init : function()
+	{
+		Subscription.behavior();
+	},
+	
+	behavior : function()
+	{
+
+		Subscription.mail.blur(function(e)
+		{
+			Subscription.email = Subscription.mail.val();
+
+			if ( !Subscription.check() && Subscription.lock === false )
+			{
+				Subscription.mail.addClass('invalid');
+			}
+		});
+
+		Subscription.mail.focus(function(e)
+		{
+			Subscription.mail.removeClass('invalid');
+		});
+
+		Subscription.form.bind('submit', function(e)
+		{
+			e.preventDefault();
+
+			if ( Subscription.error_lock === false ){
+
+				Subscription.email = Subscription.mail.val();
+				
+				if ( Subscription.check() && Subscription.lock === false )
+				{
+					Subscription.mail.removeClass('invalid');
+					Subscription.lock = true;
+					Subscription.send();
+				}else{
+					Subscription.form.addClass('invalid');
+					Subscription.mail.addClass('invalid');
+					Subscription.error_lock = true;
+				
+					setTimeout(function()
+					{
+						Subscription.form.removeClass('invalid');
+						Subscription.error_lock = false;
+					}, 1000);
+				}
+			}
+		});
+	},
+	
+	check : function()
+	{
+		var exp = /^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i;
+
+		return exp.test(Subscription.email);
+	},
+	
+	send : function()
+	{
+		Subscription.jsonp = new Jsonp({
+			'callback': $.proxy(function(data)
+			{
+				Subscription.sendCallback(data);
+			}, this)
+		});
+
+		Subscription.jsonp.get(Subscription.form.attr('action') + '/jsonp?' + Subscription.form.serialize());
+		if (_gaq) _gaq.push(['_trackEvent','Subscription','Submit']);
+	},
+
+	sendCallback : function(data)
+	{
+		// Subscription.flash.addClass('active');
+		// Subscription.flash.text(data.message);
+		if(data.status === 'success'){
+			Subscription.mail.attr('disabled', true);
+			$('#submit').attr('disabled', true);
+			$('#email').attr('value','');
+			$('#email').attr('placeholder','Thanks for subscribing');
+		}
+		else{
+			$('#email').attr('value','');
+		}
+		
+		// setTimeout(function()
+		// {
+		// 	Subscription.flash.removeClass('active');
+		// }, 4000);
+		
+		Subscription.lock = false;
+	}
+};
+

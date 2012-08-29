@@ -1,3 +1,4 @@
+@import "lib/lesshat.less";
 body{
 	background-color: #fff;
 	color: #494949;
@@ -54,14 +55,14 @@ header{
 		margin-top: 20px;
 		display: inline-block;
 		background-clip: padding-box;
-		box-shadow:	0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
-		background-image: -webkit-linear-gradient(90deg, #e89300 0%, #f2ba25 100%);
+		.box-shadow(~"0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25");
+		.gradient(~"90deg, #e89300 0%, #f2ba25 100%");
 		&:hover{
-			background-image: -webkit-linear-gradient(90deg, #d98900 0%, #e9b324 100%);
+			.gradient(~"90deg, #d98900 0%, #e9b324 100%");
 		}
 		&:active{
-			background-image: -webkit-linear-gradient(90deg, #e9b324 0%, #d98900 100%);
-			box-shadow:	0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
+			.gradient(~"90deg, #e9b324 0%, #d98900 100%");
+			.box-shadow(~"0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
 
 		}
 		&:before{
@@ -84,7 +85,7 @@ header{
 			font-weight: bold;
 			border-bottom: none;
 			padding-left: 25px;
-				border-bottom: none;
+			border-bottom: none;
 			background: url(twitter.png) no-repeat center left;
 			&:hover{
 				border-bottom: none;
@@ -108,7 +109,7 @@ section{
 		z-index: 5;
 		width: 215px;
 		float: left;
-		box-shadow: inset -1px 0 #dadada;
+		.box-shadow(~"inset -1px 0 #dadada");
 		top: 0;
 		li{
 			ul{
@@ -134,7 +135,7 @@ section{
 					top: 7px;
 					right: 10px;
 					padding: 3px 8px;
-					border-radius: 3px;
+					.border-radius(3px);
 					font-weight: 300;
 				}
 				&.red&:after{
@@ -166,7 +167,7 @@ section{
 			top: 0;
 			left: 0;
 			width: 100%;
-			background-image: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, #fff 100%);
+			.gradient(~"90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, #fff 100%");
 			position: absolute;
 			z-index: 4;
 		}
@@ -214,7 +215,7 @@ section{
 
 			}
 			.border-radius-hack{
-				border-radius: 5px;
+				.border-radius(5px);
 				border: solid 1px #dedede;
 				overflow: hidden;
 				margin-bottom: 28px;
@@ -224,35 +225,31 @@ section{
 			.code{
 				position: relative;
 				display: block;
-				border-radius: 3px;
+				.border-radius(3px);
 				padding: 20px;
 				background-clip: padding-box;
 				background-color: #f5f5f5;
-				box-shadow:	inset 0 1px 2px rgba(0,0,0,.08), inset 0 0 2px rgba(0,0,0,.09);
+				.box-shadow(~"inset 0 1px 2px rgba(0,0,0,.08), inset 0 0 2px rgba(0,0,0,.09)");
 				textarea{
 					float: left;
 				}
 				.CodeMirror:first-of-type{
-					float: left;
-					width: 300px;
-					position: relative;
+					padding-bottom: 10px;
+					border-bottom: 1px #c1c1c1 dashed;
 					&:before{
 						content: 'LESS';
 						right: -7px;
 					}
 				}
 				.CodeMirror:last-of-type{
-					float: right;
-					width: 300px;
-					font-family: monospace;
-					line-height: 1em;
-					position: relative;
+					padding-top: 10px;
 					&:before{
 						content: 'CSS';
 						right: -7px;
 					}
 				}
-				code:before, .CodeMirror:before{
+				.CodeMirror{
+					&:before{
 						font-family: 'Open Sans', sans-serif;
 						position: absolute;
 						color: #858585;
@@ -261,19 +258,124 @@ section{
 						top: -7px;
 						padding: 3px 8px;
 						font-weight: 700;
-						border-radius: 3px;
+						.border-radius(3px);
 						background-clip: padding-box;
 						background-color: #ddd;
-						box-shadow:	inset 0 1px 1px rgba(0,0,0,.09), inset 0 0 0 1px rgba(0,0,0,.09);
+						.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.09), -15px 0 #f5f5f5");
+					}
+					&.error{
+						pre span{
+							color: #eb5858 !important;
+						}
+						&:before{
+							content: 'Parse error';
+							text-shadow: 0 1px 0 rgba(133,0,0,.3);
+							background-color: #eb5858;
+							color: #fff;
+						}
+					}
 				}
-				&:before{
-					content: '';
-					position: absolute;
-					display: block;
-					width: 0px;
-					border-left: 1px #c1c1c1 dashed;
-					top: 10px;bottom: 10px;left: 340px;
+			}
+		}
+	}
+}
+#popup{
+	position: fixed;
+	top: 0;left: 0;right: 0; bottom: 0;z-index: 10;
+	background: rgba(0, 0, 0, .4);
+	overflow-y: auto;
+	padding: 40px 20px;
+	display: none;
+	&.active{
+		display: block;
+	}
+	#dialog{
+		position: relative;
+		max-width: 740px;
+		display: block;
+		margin: 0 auto;
+		background: #fff;
+		.border-radius(3px);
+		background-clip: padding-box;
+		text-align: center;
+		.box-shadow(~"0 1px 3px rgba(0,0,0,.75)");
+		#close{
+			width: 39px;
+			height: 41px;
+			display: block;
+			background: url(close.png) top left no-repeat;
+			position: absolute;
+			top:-19px; right:-19px;
+			z-index: 11;
+		}
+		h3{
+			font-size: 18px;
+			font-weight: 700;
+			padding: 2em 20px;
+		}
+		form{
+			padding-bottom: 2em;
+			#email{
+				padding: 10px;
+				color: #a9a9a9;
+				text-shadow: 0 1px 0 rgba(255,255,255,.4);
+				width: 200px;
+				.border-radius(3px);
+				background-clip: padding-box;
+				background-color: #f4f4f4;
+				.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.19)");
+				outline: none;
+				border: none;
+			}
+			#submit{
+				text-shadow: 0 1px 0 rgba(255,255,255,.4);
+				outline: none;
+				border: none;
+				color: #583d0a;
+				font-weight: bold;
+				.border-radius(3px);
+				padding: 10px;
+				background-clip: padding-box;
+				.box-shadow(~"0 0 0 rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.29)");
+				.gradient(~"90deg, #e89300 0%, #f2ba25 100%");
+				&:hover{
+					.gradient(~"90deg, #d98900 0%, #e9b324 100%");
 				}
+				&:active{
+					.gradient(~"90deg, #e9b324 0%, #d98900 100%");
+					.box-shadow(~"0 0 0 rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.29)");	
+				}
+			}
+		}
+		iframe:first-of-type{
+			margin-right: 10px;
+		}
+		.bottom{
+			margin-top: 20px;
+			.border-radius(6px);
+			text-align: center;
+			.box-shadow(~"0 -1px 0 #d6d6d6");
+			background: #eaeaea url(cool-tweet.png) center 30px no-repeat;
+			.csshat{
+				text-shadow: 0 1px 1px rgba(0,0,0,.6);
+				padding: 7px 20px;
+				margin: 160px 0 30px 0;
+				font-size: 18px;
+				color: #fff;
+				font-weight: 600;
+				.border-radius(6px);
+				.gradient(~"top,  #00adfc 0%, #005db7 100%");
+				.box-shadow(~"0 0 0 1px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.29), inset 0 0 0 1px rgba(255,255,255,.22), 0 0 0 1px #1c6292;");
+				cursor: pointer;
+				-webkit-user-select:none;
+				display: inline-block;
+			}
+			.csshat:hover{
+				.gradient(~"top,  #00a0ea 0%, #0056ac 100%");
+			}
+			.csshat:active{
+				.gradient(~"top,  #0085bf 0%, #0056ad 100%");
+				.box-shadow(~"0 0 0 1px rgba(0,0,0,.38), 0 0 0 1px #1c6292;");
 			}
 		}
 	}
