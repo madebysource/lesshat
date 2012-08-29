@@ -178,8 +178,43 @@
 					</table>
 				</div>
 				<p class="detail">Thus, ladies and gentlemen, welcome LESS Hat!</p>
-
 			</article>
+
+			<!-- move to style.less -->
+			<style>
+				h3 {
+					font-weight: bold;
+					margin-top: 1em;
+					margin-bottom: 1em;
+				}
+				.detail p {
+					margin-bottom: 1em;
+				}
+				code.mixin {
+					font-weight: 300;
+					display: block;
+					font-size: 20px;
+					line-height: 1.5em;
+				}
+				code.mixin.hide-name .mixin-name {
+					visibility: hidden;
+				}
+				code.mixin .mixin-usage {
+					font-weight: 300;
+					color: #BBB;
+				}
+				code.mixin a {
+					visibility: hidden;
+					font-size: 14px;
+					text-decoration: underline;
+				}
+				code.mixin:hover a {
+					visibility: visible;
+					color: navy;
+				}
+			</style>
+
+			<!-- paste handlebars output here -->
 
 			<article id="animation">
 				<h2>.animation <code class="mixin-sample" style="font-weight: 300; color: #BBB;">(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");</code></h2>
@@ -187,6 +222,25 @@
 					<p>
 						CSS3 animation according to specs: <a href="http://www.w3.org/TR/css3-animations/">W3C specification</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&redirectslug=CSS%2FCSS_animations">examples</a>.
 					</p>
+
+					<!-- <h3>Individual properties:</h3> -->
+
+					<code class="mixin"><span class="mixin-name">.animation-delay</span> <span class="mixin-usage">(1s);</span> <a href="http://www.w3.org/TR/css3-animations/#animation-delay-property">W3C</a> <a href="https://developer.mozilla.org/en-US/docs/CSS/animation-delay">MDN</a></code>
+					<code class="mixin hide-name"><span class="mixin-name">.animation-delay</span> <span class="mixin-usage">(~"750ms, 2s");</span></code>
+
+					<code class="mixin"><span class="mixin-name">.animation-direction</span> <span class="mixin-usage">.animation-direction</span></code>
+					<code class="mixin hide-name"><span class="mixin-name">.animation-direction</span> <span class="mixin-usage">(~"normal, alternate");</span></code>
+
+					<code class="mixin"><span class="mixin-name">.animation-duration</span> <span class="mixin-usage">(2s);</span></code>
+
+					<code class="mixin"><span class="mixin-name">.animation-timing-function</span> <span class="mixin-usage">(ease-in-out);</span></code>
+
+					<code class="mixin"><span class="mixin-name">.animation-iteration-count</span> <span class="mixin-usage">(3);</span></code>
+
+					<code class="mixin"><span class="mixin-name">.animation-name</span> <span class="mixin-usage">(my-really-cool-animation);</span></code>
+
+					<code class="mixin"><span class="mixin-name">.animation-play-state</span> <span class="mixin-usage">(paused);</span></code>
+
 				</div>
 
 				<div class="code clearfix">
@@ -196,6 +250,7 @@
 					<textarea id="css"></textarea>
 				</div>
 			</article>
+
 
 			<article id="appearance">
 				<h2>.shadow</h2>
