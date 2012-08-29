@@ -38,16 +38,13 @@ var css = document.getElementById('css');
 var parser = new less.Parser;
 var refresh = function(less, target, ok, err)
 {
-	// console.log('change', e, lesshat.value);
 	parser.parse('@import "lib/lesshat.less";\n'+ less, function(e, tree) {
 		if (!e) {
 			var code = tree.toCSS();
 			target.setValue(code);
-			console.log('code', code);
 			ok && ok();
 		}
 		else {
-			console.log('e', e);
 			err && err(e);
 		}
 	});

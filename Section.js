@@ -42,7 +42,6 @@ Section.prototype.init = function()
 
 			self.lastMainViewCheck = true;
 			self.$container.addClass('viewed active');
-			console.log('active', self.id);
 			if ( self.id )
 				self.$window.triggerHandler(Section.EVENT_VIEW, self.id);
 		}
@@ -50,7 +49,6 @@ Section.prototype.init = function()
 		{
 			self.lastMainViewCheck = false;
 			self.$container.removeClass('active');
-			console.log('inactive', self.id);
 			if ( self.id )
 				self.$window.triggerHandler(Section.EVENT_EXIT, self.id);
 		}
