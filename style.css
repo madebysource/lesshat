@@ -247,6 +247,14 @@ section {
   width: 960px;
   margin: 0 auto;
 }
+section:before,
+section:after {
+  content: "";
+  display: table;
+}
+section:after {
+  clear: both;
+}
 section ul {
   padding-top: 25px;
   background: #fff;
@@ -339,6 +347,12 @@ section #main article h2 {
   font-weight: 700;
   margin-bottom: 20px;
 }
+section #main article:nth-of-type(2) h2 {
+  font-size: 24px;
+}
+section #main article code {
+  font-size: 18px;
+}
 section #main article .detail {
   padding-bottom: 20px;
   line-height: 1.8;
@@ -391,6 +405,16 @@ section #main article .border-radius-hack {
   overflow: hidden;
   margin-bottom: 28px;
   display: inline-block;
+}
+section #main article .same-mixin {
+  margin-bottom: 20px;
+}
+section #main article .mixin {
+  font-size: 15px;
+}
+section #main article .mixin p {
+  margin-left: 10px;
+  color: #bbb;
 }
 section #main article .code {
   position: relative;
