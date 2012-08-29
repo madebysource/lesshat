@@ -59,6 +59,11 @@
     //    .skew
     //    .skewX
     //    .skewY
+//    .transition
+    //    .transition-property
+    //    .transition-duration
+    //    .transition-timing-function
+    //    .transition-delay
 
 
 //  @GlobalConfig 
@@ -961,7 +966,7 @@
 
 }
 
-      element{  .gradient(~"linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)");  }
+   //   element{  .gradient(~"linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)");  }
 
 
 //  .opacity
@@ -1872,3 +1877,173 @@
   }
 
     //  element{  .skewY(36deg);  }
+
+
+//  .transition
+
+  .transition(@arguments:all){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transition: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 5) { transition: @arguments; }
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .transition(color 1s ease-in-out);  }
+
+
+//  .transition-property
+
+  .transition-property(@arguments:all){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-property: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-property: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transition-property: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 5) { transition-property: @arguments; }
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .transition-property(width);  }
+
+
+//  .transition-duration
+
+  .transition-duration(@arguments:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-duration: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-duration: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transition-duration: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 5) { transition-duration: @arguments; }
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .transition-duration(250ms);  }
+
+
+//  .transition-timing-function
+
+  .transition-timing-function(@arguments:ease){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-timing-function: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-timing-function: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transition-timing-function: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 5) { transition-timing-function: @arguments; }
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .transition-timing-function(cubic-bezier(0,0,1,1));  }
+
+
+//  .transition-delay
+
+  .transition-delay(@arguments:0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-delay: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-delay: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transition-delay: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 5) { transition-delay: @arguments; }
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .transition-delay(2s);  }
