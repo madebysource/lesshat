@@ -39,21 +39,31 @@ var docs = [
 
 docs.map(function(doc) {
 	doc.id = doc.name.replace('.', '');
+	doc.parts.map(function(part, index) {
+		part.isFirst = index == 0;
+
+		var params = part.parameters;
+		part.parameters = [];
+
+		params.map(function(parameter, index) {
+			part.parameters.push({ name: parameter, isFirst: index == 0 });
+		});
+	});
 });
 
-var source = '' +
+var source = '			<!-- this file was generated with `node docs.js > content.html` -->\n\n' +
 	'{{#each this}}' +
 	'			<article id="{{id}}">\n' +
 	'				<h2>{{name}}\n' +
 	'					<code class="mixin-sample">{{parameter}}</code>\n' +
 	'				</h2>\n' +
-	'				<div class="detail">{{doc}}</div>\n' +
+	'				<div class="detail">{{{doc}}}</div>\n' +
 					'{{#each parts}}{{#each parameters}}' +
-	'				<code class="mixin">\n' +
-	'					<span class="mixin-name">{{name}}</span>\n' +
-	'					<span class="mixin-usage">{{this}}</span>\n' +
-	'					<a href="{{w3c}}">W3C</a>\n' +
-	'					<a href="{{mdn}}">MDN</a>\n' +
+	'				<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">\n' +
+	'					<span class="mixin-name">{{../name}}</span>\n' +
+	'					<span class="mixin-usage">{{name}}</span>\n' +
+	'					<a href="{{../w3c}}">W3C</a>\n' +
+	'					<a href="{{../mdn}}">MDN</a>\n' +
 	'				</code>\n' +
 					'{{/each}}{{/each}}' +
 	'				<div class="code clearfix">\n' +
@@ -71,5 +81,7 @@ var handlebars = require('handlebars');
 var template = handlebars.compile(source);
 
 var result = template(docs);
+
+// console.log(docs[0].parts);
 
 console.log(result);
