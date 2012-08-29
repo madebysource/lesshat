@@ -52,9 +52,9 @@
 					<li><a href="#">.animation-iteration-count</a></li>
 					<li><a href="#">.animation-name</a></li>
 					<li><a href="#">.animation-play-state</a></li>
-					<li><a href="#" class="red" data-text="EN ROUTE">.keyframes</a></li>
 				</ul>
 			</li>
+			<li><a href="#" class="red" data-text="EN ROUTE">.keyframes</a></li>
 			<li><a href="#appearance">.appearance</a></li>
 			<li><a href="#backface–visibility">.backface–visibility</a></li>
 			<li><a href="#background–clip">.background–clip</a></li>
@@ -235,45 +235,170 @@
 
 			<article id="animation">
 				<h2>.animation
-					<code class="mixin-sample">(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);</code>
+					<code class="mixin-sample">(~&quot;animation-1, animation-2, ..., animation-n&quot;);</code>
+					<p class="default">Default value: none</p>
 				</h2>
-				<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3.org/TR/css3-animations/">W3C specification</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p></div>
-				<code class="mixin ">
-					<span class="mixin-name">.animation-delay</span>
-					<span class="mixin-usage">(1s);</span>
-					<a href="http://www.w3.org/TR/css3-animations/#animation-delay-property">W3C</a>
-					<a href="https://developer.mozilla.org/en-US/docs/CSS/animation-delay">MDN</a>
-				</code>
-				<code class="mixin hide-name">
-					<span class="mixin-name">.animation-delay</span>
-					<span class="mixin-usage">(~&quot;750ms, 2s&quot;);</span>
-					<a href="http://www.w3.org/TR/css3-animations/#animation-delay-property">W3C</a>
-					<a href="https://developer.mozilla.org/en-US/docs/CSS/animation-delay">MDN</a>
-				</code>
-				<code class="mixin ">
-					<span class="mixin-name">.animation-direction</span>
-					<span class="mixin-usage">();</span>
-					<a href="http://www.w3.org/TR/css3-animations/#animation-direction-property">W3C</a>
-					<a href="https://developer.mozilla.org/en-US/docs/CSS/animation-direction">MDN</a>
-				</code>
-				<code class="mixin hide-name">
-					<span class="mixin-name">.animation-direction</span>
-					<span class="mixin-usage">(~&quot;normal, alternate&quot;);</span>
-					<a href="http://www.w3.org/TR/css3-animations/#animation-direction-property">W3C</a>
-					<a href="https://developer.mozilla.org/en-US/docs/CSS/animation-direction">MDN</a>
-				</code>
-				<code class="mixin ">
-					<span class="mixin-name">.animation-duration</span>
-					<span class="mixin-usage">(2s);</span>
-					<a href="http://www.w3.org/TR/css3-animations/#animation-duration-property">W3C</a>
-					<a href="https://developer.mozilla.org/en-US/docs/CSS/animation-duration">MDN</a>
-				</code>
+
+				<div class="same-mixin">
+					<code class="mixin">
+						<span class="mixin-name">.animation-delay</span>
+						<span class="mixin-usage">(delay-1);</span>
+					</code>
+					<code class="mixin">
+						<span class="mixin-name">.animation-delay</span>
+						<span class="mixin-usage">(~&quot;delay-1, delay-2, ..., delay-n&quot;);</span>
+						<p>Default value: 0</p>
+					</code>
+				</div>
+				<div class="same-mixin">
+					<code class="mixin ">
+						<span class="mixin-name">.animation-direction</span>
+						<span class="mixin-usage">(direction-1);</span>
+					</code>
+					<code class="mixin">
+						<span class="mixin-name">.animation-direction</span>
+						<span class="mixin-usage">(~&quot;direction-1, direction-2, ..., direction-n&quot;);</span>
+						<p>Default value: normal</p>
+					</code>
+				</div>
+				<div class="same-mixin">
+					<code class="mixin ">
+						<span class="mixin-name">.animation-duration</span>
+						<span class="mixin-usage">(duration-1);</span>
+					</code>
+					<code class="mixin">
+						<span class="mixin-name">.animation-duration</span>
+						<span class="mixin-usage">(~&quot;duration-1, duration-2, ..., duration-n&quot;);</span>
+						<p>Default value: 0</p>
+					</code>
+				</div>
+				<div class="same-mixin">
+					<code class="mixin ">
+						<span class="mixin-name">.animation-timing-function</span>
+						<span class="mixin-usage">(function-1);</span>
+					</code>
+					<code class="mixin">
+						<span class="mixin-name">.animation-timing-function</span>
+						<span class="mixin-usage">(~&quot;function-1, function-2, ..., function-n&quot;);</span>
+						<p>Default value: ease</p>
+					</code>
+				</div>
+				<div class="same-mixin">
+					<code class="mixin ">
+						<span class="mixin-name">.animation-iteration-count</span>
+						<span class="mixin-usage">(count-1);</span>
+					</code>
+					<code class="mixin">
+						<span class="mixin-name">.animation-iteration-count</span>
+						<span class="mixin-usage">(~&quot;count-1, count-2, ..., count-n&quot;);</span>
+						<p>Default value: 0</p>
+					</code>
+				</div>
+				<div class="same-mixin">
+					<code class="mixin ">
+						<span class="mixin-name">.animation-name</span>
+						<span class="mixin-usage">(name-1);</span>
+					</code>
+					<code class="mixin">
+						<span class="mixin-name">.animation-name</span>
+						<span class="mixin-usage">(~&quot;name-1, name-2, ..., name-n&quot;);</span>
+						<p>Default value: none</p>
+					</code>
+				</div>
+				<div class="same-mixin">
+					<code class="mixin ">
+						<span class="mixin-name">.animation-play-state</span>
+						<span class="mixin-usage">(state-1);</span>
+					</code>
+					<code class="mixin">
+						<span class="mixin-name">.animation-play-state</span>
+						<span class="mixin-usage">(~&quot;state-1, state-2, ..., state-n&quot;);</span>
+						<p>Default value: running</p>
+					</code>
+				</div>
 				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-animation">.compare {
-						.animation(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);
-						}</textarea>
+					<textarea cols="30" rows="10" data-css="code-animation">.example-animation {
+	.animation(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);
+					}
+
+					.example-animation-delay {
+						.animation-delay(2s);
+						/* OR */
+						.animation-delay(~&quot;200ms, 2s&quot;);
+					}
+
+					.example-animation-direction {
+						.animation-direction();
+						/* OR */
+						.animation-direction(~&quot;normal, alternate&quot;);
+					}	
+
+					.example-animation-duration {  
+						.animation-duration(2s); 
+						/* OR */
+						.animation-duration(~&quot;3s, 2s&quot;); 
+					}
+
+					.example-animation-timing-function {  
+						.animation-timing-function(ease-in-out); 
+						/* OR */
+						.animation-timing-function(~&quot;ease-out, ease-in&quot;); 
+					}	
+
+					.example-animation-iteration-count {  
+						.animation-iteration-count(3); 
+						/* OR */
+						.animation-iteration-count(~&quot;2, 6&quot;); 
+					}
+
+					.example-animation-animation-name {  
+						.animation-name(myAnimation); 
+						/* OR */
+						.animation-name(~&quot;myAnimation, myAnimation2&quot;); 
+					}	
+
+					.example-animation-play-state {
+						.animation-play-state(paused);
+					}		
+					</textarea>
 					<textarea id="code-animation"></textarea>
 				</div>
+				<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3.org/TR/css3-animations/">W3C specification</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p></div>
+			</article>
+
+
+			<article id="appearance">
+				<h2>.appearance
+					<code class="mixin-sample">(appearance);</code>
+					<p class="default">Default value: none</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-appearance {
+						.appearance(button);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Appearance according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="backface">
+				<h2>.backface-visibility
+					<code class="mixin-sample">(visible);</code>
+					<p class="default">Default value: visible</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-backface-visibility {
+						.backface-visibility(hidden);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Backface-visibility according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">w3schools</a>.</p></div>
 			</article>
 
 

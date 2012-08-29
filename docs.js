@@ -1,9 +1,9 @@
 var docs = [
 	{
 		name: '.animation',
-		parameter: '(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");',
+		parameter: '(~"animation-1, animation-2, ..., animation-n");',
 		doc: '<p>CSS3 animation according to specs: <a href="http://www.w3.org/TR/css3-animations/">W3C specification</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p>',
-		code: '.compare {\n'
+		code: '.examp {\n'
 			+ '\t.animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");\n'
 			+ '}',
 		parts: [
@@ -57,7 +57,6 @@ var source = '			<!-- this file was generated with `node docs.js > content.html`
 	'				<h2>{{name}}\n' +
 	'					<code class="mixin-sample">{{parameter}}</code>\n' +
 	'				</h2>\n' +
-	'				<div class="detail">{{{doc}}}</div>\n' +
 					'{{#if parts}}{{#each parts}}{{#each parameters}}' +
 	'				<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">\n' +
 	'					<span class="mixin-name">{{../name}}</span>\n' +
@@ -70,6 +69,7 @@ var source = '			<!-- this file was generated with `node docs.js > content.html`
 	'					<textarea cols="30" rows="10" data-css="code-{{id}}">{{code}}</textarea>\n' +
 	'					<textarea id="code-{{id}}"></textarea>\n' +
 	'				</div>\n' +
+	'				<div class="detail">{{{doc}}}</div>\n' +
 	'			</article>\n' +
 	'{{/each}}' +
 	'';

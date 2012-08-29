@@ -118,7 +118,7 @@ header{
 		color: #a79db9;
 		padding-top:10px;
 	}
-	.download{
+	.download,.download:visited{
 		position: relative;
 		color: #583d0a;
 		text-decoration: none;
@@ -129,12 +129,12 @@ header{
 		display: inline-block;
 		background-clip: padding-box;
 		.box-shadow(~"0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
-		.gradient(~"linear-gradient(90deg, #e89300 0%, #f2ba25 100%)");
+		.gradient(~"linear-gradient(0deg, #e89300 0%, #f2ba25 100%)");
 		&:hover{
-			.gradient(~"linear-gradient(90deg, #d98900 0%, #e9b324 100%)");
+			.gradient(~"linear-gradient(0deg, #d98900 0%, #e9b324 100%)");
 		}
 		&:active{
-			.gradient(~"linear-gradient(90deg, #e9b324 0%, #d98900 100%)");
+			.gradient(~"linear-gradient(0deg, #e9b324 0%, #d98900 100%)");
 			.box-shadow(~"0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
 		}
 		&:before{
@@ -180,6 +180,14 @@ header{
 section{
 	width: 960px;
 	margin: 0 auto;
+	&:before,
+	&:after {
+    content:"";
+    display:table;
+	}
+	&:after {
+    clear:both;
+	}
 	ul{
 		padding-top: 25px;
 		background: #fff;
@@ -192,7 +200,7 @@ section{
 			ul{
 				display: none;
 			}
-			a{
+			a, a:visited{
 				position: relative;
 				color: #888;
 				padding: 7px;
@@ -260,6 +268,12 @@ section{
 				font-weight: 700;
 				margin-bottom: 20px;
 			}
+			&:nth-of-type(2) h2{
+				font-size:24px;
+			}
+			code{
+				font-size: 18px;
+			}
 			.detail{
 				padding-bottom: 20px;
 				line-height: 1.8;
@@ -311,6 +325,23 @@ section{
 				margin-bottom: 28px;
 				display: inline-block;
 
+			}
+			.same-mixin{
+				margin-bottom: 20px;
+			}
+			.default{
+				margin-left: 10px;
+				color: #bbb;
+				font-size:14px;
+				font-weight: normal;
+			}
+			.mixin{
+				font-size:15px;
+
+				p{
+					margin-left: 10px;
+					color: #bbb;
+				}
 			}
 			.code{
 				position: relative;
