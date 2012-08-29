@@ -1,40 +1,113 @@
-@import "lib/lesshat.less";
-body{
-	background-color: #fff;
-	color: #494949;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	line-height: 1.3;
+/*
+ * LESSHat.com
+ * 2012
+ * Martin Duris & Petr Brzek 
+ */
+ 
+// ----------------------------------
+
+
+//  TABLE OF CONTENTS
+//  
+//  @Importing
+//  @Colors
+//  @Fonts
+//  @Links
+//  @Global 
+//  @Header 
+//  @Sidebar 
+//	@Main
+
+// ----------------------------------
+
+// @Importing
+
+@import "lib/reset";
+@import "lib/lesshat";
+
+// ----------------------------------
+
+// @Colors
+
+ @color_base: #444;
+ @color_action: #1467AC;
+ @color_action_hover: darken(@color_action, 10%);
+ @color_header: #fff;
+
+// ----------------------------------
+
+// @Fonts
+
+::-moz-selection { background: @color_action; color: #fff; text-shadow: none; }
+::selection { background: @color_action; color: #fff; text-shadow: none; }
+
+html{
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	overflow-x: hidden;
 }
-a{
-	color: #d8d6f8;
-	text-decoration: none;
+html, body, input {
+    font-family: sans-serif;
+    color: @color_base;
+    background: #fff;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+h1, h2, h3, h4, strong{
+	font-weight: 700;
+}
+
+// ----------------------------------
+
+// @Links
+
+a, a:visited{
+	color: @color_action;
+	.transition(color 100ms);
 	position: relative;
-	header p &{
-		border-bottom: 1px solid #d8d6f8;
-		&:hover{
-			border-bottom: 1px solid #fff;
-		}
-	}
+
 	&:hover{
-		color: #fff;
-		border-bottom: 0;
+		color: @color_action_hover;
 	}
 	&:active{
 		top: 1px;
 	}
+	header p &, header p &:visited{
+		color: @color_header;
+		border-bottom: 1px solid #d8d6f8;
+
+		&:hover{
+			border-bottom: 1px solid #fff;
+		}
+	}
+	article &, article &:visited{
+		border-bottom: 1px solid @color_action;
+	}
 }
+
+// ----------------------------------
+
+// @Global
+
+*{
+	.box-sizing(border-box);
+}
+body{
+	color: @color_base;
+}
+
+// ----------------------------------
+
+// @Header
+
 header{
 	text-align: center;
 	background-color: #181927;
 	padding: 0 10px;
-	&:before{
-		content: '';
-		height: 10px;
-		background-color: #11121c;
-		display: block;
-
-	}
+	border-top: 10px solid #11121c;
 	h1{
 		font-size: 36px;
 		color: #fff;
@@ -63,7 +136,6 @@ header{
 		&:active{
 			.gradient(~"linear-gradient(90deg, #e9b324 0%, #d98900 100%)");
 			.box-shadow(~"0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
-
 		}
 		&:before{
 			content: '';
@@ -100,6 +172,11 @@ header{
 		}
 	}
 }
+
+// ----------------------------------
+
+// @Sidebar
+
 section{
 	width: 960px;
 	margin: 0 auto;
@@ -155,9 +232,14 @@ section{
 			}
 		}
 	}
+
+// ----------------------------------
+
+// @Main
+
 	#main{
 		float: right;
-		width: 685px;
+		width: 740px;
 		padding: 25px 30px 0 30px;
 		position: relative;
 		#gradient-hack{
@@ -167,23 +249,31 @@ section{
 			top: 0;
 			left: 0;
 			width: 100%;
-			.gradient(~"linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, #fff 100%)");
+			.gradient(~"linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, #fff 100%)");
 			position: absolute;
 			z-index: 4;
 		}
 		article{
-			padding-bottom: 100px;
+			padding-bottom: 50px;
 			h2{
-				font-size: 25px;
+				font-size: 28px;
 				font-weight: 700;
-				margin-bottom: 10px;
+				margin-bottom: 20px;
 			}
 			.detail{
-				line-height: 24px;
-				padding-bottom: 28px;
+				padding-bottom: 20px;
+				line-height: 1.8;
+			}
+			dt{
+				list-style: disc;
+			}
+			dd{
+				margin-left: 20px;
+				margin-bottom:10px;
 			}
 			.compare{
-				text-align: center;
+				text-align: left;
+				border-collapse: collapse;
 				thead{
 					font-weight: 700;
 					tr{

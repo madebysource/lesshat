@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.png">
 
  	<link rel="stylesheet" type="text/css" href="lib/codemirror.css">
 	<script type="text/javascript" src="lib/codemirror.js"></script>
@@ -42,8 +42,7 @@
 	</header>
 	<section>
 		<ul id="menu">	
-			<li><a href="#introduction">Introduction</a></li>
-			<br>	
+			<li><a href="#introduction" class="active">Introduction</a></li>	
 			<li><a href="#animation">.animation</a>
 				<ul>
 					<li><a href="#">.animation-delay</a></li>
@@ -111,8 +110,11 @@
 					<li><a href="#">.skewY</a></li>
 				</ul>
 			</li>
-			<li><a href="#">.translate</a></li>
-			<li><a href="#">.scale</a></li>
+			<li><a href="#">.transition</a></li>
+			<li><a href="#">.transition-property</a></li>
+			<li><a href="#">.transition-duration</a></li>
+			<li><a href="#">.transition-timing-function</a></li>
+			<li><a href="#">.transition-delay</a></li>
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
@@ -120,14 +122,14 @@
 				<h2>Introduction</h2>
 				<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
 	
-				<p>We required the mixins to be:</p>
+				<p class="detail"><b>We required the mixins to be:</b></p>
 
 				<dl class="detail">
-					<dt><strong>Universal:</strong></dt>
+					<dt><strong><li>Universal:</li></strong></dt>
 					<dd>If it is possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.</dd>
-					<dt><strong>Cross-browser:</strong></dt>
+					<dt><strong><li>Cross-browser:</li></strong></dt>
 					<dd>The library should export CSS for all available browsers. Old gradient syntax for iOS4? Totally!</dd>
-					<dt><strong>Configurable:</strong></dt>
+					<dt><strong><li>Configurable:</li></strong></dt>
 					<dd>Building a webkit app? Turn off all other browsers and get just CSS3 plus -webkit- extensions without the clutter.</dd>
 				</dl>
 
@@ -189,7 +191,7 @@
 						</tbody>
 					</table>
 				</div>
-				<p class="detail">Thus, ladies and gentlemen, welcome LESS Hat!</p>
+				<p class="detail"><strong>Thus, ladies and gentlemen, welcome LESS Hat!</strong></p>
 			</article>
 
 			<!-- move to style.less -->
