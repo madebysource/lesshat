@@ -273,10 +273,13 @@ section #main article .code .CodeMirror.error:before {
   right: 0;
   bottom: 0;
   z-index: 10;
-  display: block;
   background: rgba(0, 0, 0, 0.5);
   overflow-y: auto;
   padding: 40px 0;
+  display: none;
+}
+#popup.active {
+  display: block;
 }
 #popup #dialog {
   position: relative;
