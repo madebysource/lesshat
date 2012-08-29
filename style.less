@@ -118,7 +118,7 @@ header{
 		color: #a79db9;
 		padding-top:10px;
 	}
-	.download{
+	.download,.download:visited{
 		position: relative;
 		color: #583d0a;
 		text-decoration: none;
@@ -129,12 +129,12 @@ header{
 		display: inline-block;
 		background-clip: padding-box;
 		.box-shadow(~"0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
-		.gradient(~"linear-gradient(90deg, #e89300 0%, #f2ba25 100%)");
+		.gradient(~"linear-gradient(0deg, #e89300 0%, #f2ba25 100%)");
 		&:hover{
-			.gradient(~"linear-gradient(90deg, #d98900 0%, #e9b324 100%)");
+			.gradient(~"linear-gradient(0deg, #d98900 0%, #e9b324 100%)");
 		}
 		&:active{
-			.gradient(~"linear-gradient(90deg, #e9b324 0%, #d98900 100%)");
+			.gradient(~"linear-gradient(0deg, #e9b324 0%, #d98900 100%)");
 			.box-shadow(~"0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
 		}
 		&:before{
@@ -192,7 +192,7 @@ section{
 			ul{
 				display: none;
 			}
-			a{
+			a, a:visited{
 				position: relative;
 				color: #888;
 				padding: 7px;

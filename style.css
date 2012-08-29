@@ -175,7 +175,8 @@ header .description {
   color: #a79db9;
   padding-top: 10px;
 }
-header .download {
+header .download,
+header .download:visited {
   position: relative;
   color: #583d0a;
   text-decoration: none;
@@ -188,30 +189,30 @@ header .download {
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
   box-shadow: 0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
-  background-image: -moz-linear-gradient(0deg, #e89300 0%, #f2ba25 100%);
-  background-image: -webkit-gradient(linear,left top,right top,color-stop(0%,#e89300),color-stop(100%,#f2ba25));
-  background-image: -webkit-linear-gradient(0deg, #e89300 0%, #f2ba25 100%);
-  background-image: -o-linear-gradient(0deg, #e89300 0%, #f2ba25 100%);
-  background-image: linear-gradient(90deg, #e89300 0%, #f2ba25 100%);
+  background-image: -moz-linear-gradient(90deg, #e89300 0%, #f2ba25 100%);
+  background-image: -webkit-linear-gradient(90deg, #e89300 0%, #f2ba25 100%);
+  background-image: -o-linear-gradient(90deg, #e89300 0%, #f2ba25 100%);
+  background-image: linear-gradient(0deg, #e89300 0%, #f2ba25 100%);
 }
-header .download:hover {
-  background-image: -moz-linear-gradient(0deg, #d98900 0%, #e9b324 100%);
-  background-image: -webkit-gradient(linear,left top,right top,color-stop(0%,#d98900),color-stop(100%,#e9b324));
-  background-image: -webkit-linear-gradient(0deg, #d98900 0%, #e9b324 100%);
-  background-image: -o-linear-gradient(0deg, #d98900 0%, #e9b324 100%);
-  background-image: linear-gradient(90deg, #d98900 0%, #e9b324 100%);
+header .download:hover,
+header .download:visited:hover {
+  background-image: -moz-linear-gradient(90deg, #d98900 0%, #e9b324 100%);
+  background-image: -webkit-linear-gradient(90deg, #d98900 0%, #e9b324 100%);
+  background-image: -o-linear-gradient(90deg, #d98900 0%, #e9b324 100%);
+  background-image: linear-gradient(0deg, #d98900 0%, #e9b324 100%);
 }
-header .download:active {
-  background-image: -moz-linear-gradient(0deg, #e9b324 0%, #d98900 100%);
-  background-image: -webkit-gradient(linear,left top,right top,color-stop(0%,#e9b324),color-stop(100%,#d98900));
-  background-image: -webkit-linear-gradient(0deg, #e9b324 0%, #d98900 100%);
-  background-image: -o-linear-gradient(0deg, #e9b324 0%, #d98900 100%);
-  background-image: linear-gradient(90deg, #e9b324 0%, #d98900 100%);
+header .download:active,
+header .download:visited:active {
+  background-image: -moz-linear-gradient(90deg, #e9b324 0%, #d98900 100%);
+  background-image: -webkit-linear-gradient(90deg, #e9b324 0%, #d98900 100%);
+  background-image: -o-linear-gradient(90deg, #e9b324 0%, #d98900 100%);
+  background-image: linear-gradient(0deg, #e9b324 0%, #d98900 100%);
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
   box-shadow: 0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25);
 }
-header .download:before {
+header .download:before,
+header .download:visited:before {
   content: '';
   height: 16px;
   width: 16px;
@@ -260,21 +261,26 @@ section ul {
 section ul li ul {
   display: none;
 }
-section ul li a {
+section ul li a,
+section ul li a:visited {
   position: relative;
   color: #888;
   padding: 7px;
   display: block;
 }
-section ul li a:hover {
+section ul li a:hover,
+section ul li a:visited:hover {
   color: #626262;
 }
-section ul li a.active {
+section ul li a.active,
+section ul li a:visited.active {
   font-weight: bold;
   color: #0088d6;
 }
 section ul li a.red:after,
-section ul li a.green:after {
+section ul li a:visited.red:after,
+section ul li a.green:after,
+section ul li a:visited.green:after {
   content: attr(data-text);
   position: absolute;
   color: #fff;
@@ -290,11 +296,13 @@ section ul li a.green:after {
   background-clip: padding-box;
   font-weight: 300;
 }
-section ul li a.red:after {
+section ul li a.red:after,
+section ul li a:visited.red:after {
   text-shadow: 0 1px 0 rgba(133, 0, 0, 0.3);
   background-color: #eb5858;
 }
-section ul li a.green:after {
+section ul li a.green:after,
+section ul li a:visited.green:after {
   text-shadow: 0 1px 0 rgba(75, 133, 0, 0.3);
   background-color: #90c854;
 }
