@@ -409,6 +409,12 @@ section #main article .border-radius-hack {
 section #main article .same-mixin {
   margin-bottom: 20px;
 }
+section #main article .default {
+  margin-left: 10px;
+  color: #bbb;
+  font-size: 14px;
+  font-weight: normal;
+}
 section #main article .mixin {
   font-size: 15px;
 }
