@@ -66,7 +66,9 @@ var source = '			<!-- this file was generated with `node docs.js > content.html`
 	'				</code>\n' +
 					'{{/each}}{{/each}}{{/if}}' +
 	'				<div class="code clearfix">\n' +
-	'					<textarea cols="30" rows="10" data-css="code-{{id}}">{{code}}</textarea>\n' +
+	'					<textarea cols="30" rows="10" data-css="code-{{id}}">\n' +
+	'{{code}}\n' +
+	'					</textarea>\n' +
 	'					<textarea id="code-{{id}}"></textarea>\n' +
 	'				</div>\n' +
 	'				<div class="detail">{{{doc}}}</div>\n' +
