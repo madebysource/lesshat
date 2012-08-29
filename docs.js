@@ -65,7 +65,7 @@ var source = '			<!-- this file was generated with `node docs.js > content.html`
 	'					{{#if ../w3c}}<a href="{{../w3c}}">W3C</a>\n{{/if}}' +
 	'					{{#if ../mdn}}<a href="{{../mdn}}">MDN</a>\n{{/if}}' +
 	'				</code>\n' +
-					'{{/if}}{{/each}}{{/each}}' +
+					'{{/each}}{{/each}}{{/if}}' +
 	'				<div class="code clearfix">\n' +
 	'					<textarea cols="30" rows="10" data-css="code-{{id}}">{{code}}</textarea>\n' +
 	'					<textarea id="code-{{id}}"></textarea>\n' +
