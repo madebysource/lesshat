@@ -49,10 +49,11 @@ var refresh = function(less, target, ok, err)
 		}
 	});
 };
-var errCheck = function(target, err)
+var errCheck = function(editor, element, err)
 {
+	$(element).toggleClass('error', err);
 	if (err) {
-		target.setValue('Seems like there is something wrong\nwith the less code');
+		editor.setValue('Seems like there is something wrong\nwith the less code');
 	}
 };
 Array.prototype.forEach.call(lesshat, function(l)
@@ -65,7 +66,6 @@ Array.prototype.forEach.call(lesshat, function(l)
 			'tabSize': 2,
 			'readOnly': 'nocursor'
 		});
-		target.dataset['syntax'] = syntax;
 	}
 	var editor = CodeMirror.fromTextArea(l, {
 		'onChange': throttle(function(e) {
@@ -73,10 +73,10 @@ Array.prototype.forEach.call(lesshat, function(l)
 				e.getValue(),
 				syntax,
 				function() {
-					check(syntax, false);
+					check(syntax, syntax.getWrapperElement(), false);
 				},
 				function(e) {
-					check(syntax, true);
+					check(syntax, syntax.getWrapperElement(), true);
 				}
 			);
 		}, 100),
