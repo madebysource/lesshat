@@ -9,13 +9,13 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="style.css">
 	<link rel="shortcut icon" href="favicon.png">
 
  	<link rel="stylesheet" type="text/css" href="lib/codemirror.css">
 	<script type="text/javascript" src="lib/codemirror.js"></script>
-	<script type="text/javascript" src="lib/less.js"></script>
+	<script type="text/javascript" src="lib/codemirror-less.js"></script>
 	<!-- <link rel="stylesheet" type="text/less" href="lib/lesshat.less"> -->
 	<script type="text/javascript" src="lib/less-1.3.0.js"></script>
 
@@ -42,7 +42,8 @@
 	</header>
 	<section>
 		<ul id="menu">	
-			<li><a href="#introduction" class="active">Introduction</a></li>	
+			<li><a href="#introduction" class="active">Introduction</a></li>
+			<li><a href="#animation">Configuration</a>	
 			<li><a href="#animation">.animation</a>
 				<ul>
 					<li><a href="#">.animation-delay</a></li>
@@ -110,11 +111,16 @@
 					<li><a href="#">.skewY</a></li>
 				</ul>
 			</li>
-			<li><a href="#">.transition</a></li>
-			<li><a href="#">.transition-property</a></li>
-			<li><a href="#">.transition-duration</a></li>
-			<li><a href="#">.transition-timing-function</a></li>
-			<li><a href="#">.transition-delay</a></li>
+			<li><a href="#">.transform-origin</a></li>
+			<li><a href="#">.transform-style</a></li>
+			<li><a href="#">.transition</a>
+				<ul>
+					<li><a href="#">.transition-property</a></li>
+					<li><a href="#">.transition-duration</a></li>
+					<li><a href="#">.transition-timing-function</a></li>
+					<li><a href="#">.transition-delay</a></li>
+				</ul>
+			</li>
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
@@ -231,14 +237,33 @@
 
 			<!-- paste handlebars output here -->
 
-			<!-- this file was generated with `node docs.js > content.html` -->
+			<article id="configuration">
+				<h2>Configuration</h2>
 
-			<article id="animation">
-				<h2>.animation
-					<code class="mixin-sample">(~&quot;animation-1, animation-2, ..., animation-n&quot;);</code>
-					<p class="default">Default value: none</p>
-				</h2>
+				<p>Turn on/off browsers prefix. Config is global for all mixins and also for specific mixin.</p>
 
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">
+
+					@w3c: true; // Unprefixed W3C syntax
+				    @webkit: true; // Chrome 7+, Safari 5+, iOS5, Android
+				    @moz: true; //  Firefox 4+  
+				    @opera: true; // Opera 10.5+
+				    @ms: true;  // IE 10+
+				    @oldWebkit: true; // iOS4, Safari 4, Chrome < 6. Old webkit gradient syntax
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+			</article>
+
+			
+				<article id="animation">
+					<h2>.animation
+						<code class="mixin-sample">(~&quot;animation-1[, animation-2, ..., animation-n]&quot;);</code>
+						<p class="default">Default value: none</p>
+					</h2>
+					
 				<div class="same-mixin">
 					<code class="mixin">
 						<span class="mixin-name">.animation-delay</span>
@@ -246,7 +271,7 @@
 					</code>
 					<code class="mixin">
 						<span class="mixin-name">.animation-delay</span>
-						<span class="mixin-usage">(~&quot;delay-1, delay-2, ..., delay-n&quot;);</span>
+						<span class="mixin-usage">(~&quot;delay-1[, delay-2, ..., delay-n]&quot;);</span>
 						<p>Default value: 0</p>
 					</code>
 				</div>
@@ -257,7 +282,7 @@
 					</code>
 					<code class="mixin">
 						<span class="mixin-name">.animation-direction</span>
-						<span class="mixin-usage">(~&quot;direction-1, direction-2, ..., direction-n&quot;);</span>
+						<span class="mixin-usage">(~&quot;direction-1[, direction-2, ..., direction-n]&quot;);</span>
 						<p>Default value: normal</p>
 					</code>
 				</div>
@@ -268,7 +293,7 @@
 					</code>
 					<code class="mixin">
 						<span class="mixin-name">.animation-duration</span>
-						<span class="mixin-usage">(~&quot;duration-1, duration-2, ..., duration-n&quot;);</span>
+						<span class="mixin-usage">(~&quot;duration-1[, duration-2, ..., duration-n]&quot;);</span>
 						<p>Default value: 0</p>
 					</code>
 				</div>
@@ -279,7 +304,7 @@
 					</code>
 					<code class="mixin">
 						<span class="mixin-name">.animation-timing-function</span>
-						<span class="mixin-usage">(~&quot;function-1, function-2, ..., function-n&quot;);</span>
+						<span class="mixin-usage">(~&quot;function-1[, function-2, ..., function-n]&quot;);</span>
 						<p>Default value: ease</p>
 					</code>
 				</div>
@@ -290,7 +315,7 @@
 					</code>
 					<code class="mixin">
 						<span class="mixin-name">.animation-iteration-count</span>
-						<span class="mixin-usage">(~&quot;count-1, count-2, ..., count-n&quot;);</span>
+						<span class="mixin-usage">(~&quot;count-1[, count-2, ..., count-n]&quot;);</span>
 						<p>Default value: 0</p>
 					</code>
 				</div>
@@ -301,7 +326,7 @@
 					</code>
 					<code class="mixin">
 						<span class="mixin-name">.animation-name</span>
-						<span class="mixin-usage">(~&quot;name-1, name-2, ..., name-n&quot;);</span>
+						<span class="mixin-usage">(~&quot;name-1[, name-2, ..., name-n]&quot;);</span>
 						<p>Default value: none</p>
 					</code>
 				</div>
@@ -312,60 +337,61 @@
 					</code>
 					<code class="mixin">
 						<span class="mixin-name">.animation-play-state</span>
-						<span class="mixin-usage">(~&quot;state-1, state-2, ..., state-n&quot;);</span>
+						<span class="mixin-usage">(~&quot;state-1[, state-2, ..., state-n]&quot;);</span>
 						<p>Default value: running</p>
 					</code>
 				</div>
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-animation">.example-animation {
+					
+					<div class="code clearfix">
+						<textarea cols="30" rows="10" data-css="code-animation">
+			.example-animation {
 	.animation(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);
-					}
+			}
 
-					.example-animation-delay {
-						.animation-delay(2s);
-						/* OR */
-						.animation-delay(~&quot;200ms, 2s&quot;);
-					}
+			.example-animation-delay {
+				.animation-delay(2s);
+				/* OR */
+				.animation-delay(~&quot;200ms, 2s&quot;);
+			}
 
-					.example-animation-direction {
-						.animation-direction();
-						/* OR */
-						.animation-direction(~&quot;normal, alternate&quot;);
-					}	
+			.example-animation-direction {
+				.animation-direction();
+				/* OR */
+				.animation-direction(~&quot;normal, alternate&quot;);
+			}	
 
-					.example-animation-duration {  
-						.animation-duration(2s); 
-						/* OR */
-						.animation-duration(~&quot;3s, 2s&quot;); 
-					}
+			.example-animation-duration {  
+				.animation-duration(2s); 
+				/* OR */
+				.animation-duration(~&quot;3s, 2s&quot;); 
+			}
 
-					.example-animation-timing-function {  
-						.animation-timing-function(ease-in-out); 
-						/* OR */
-						.animation-timing-function(~&quot;ease-out, ease-in&quot;); 
-					}	
+			.example-animation-timing-function {  
+				.animation-timing-function(ease-in-out); 
+				/* OR */
+				.animation-timing-function(~&quot;ease-out, ease-in&quot;); 
+			}	
 
-					.example-animation-iteration-count {  
-						.animation-iteration-count(3); 
-						/* OR */
-						.animation-iteration-count(~&quot;2, 6&quot;); 
-					}
+			.example-animation-iteration-count {  
+				.animation-iteration-count(3); 
+				/* OR */
+				.animation-iteration-count(~&quot;2, 6&quot;); 
+			}
 
-					.example-animation-animation-name {  
-						.animation-name(myAnimation); 
-						/* OR */
-						.animation-name(~&quot;myAnimation, myAnimation2&quot;); 
-					}	
+			.example-animation-animation-name {  
+				.animation-name(myAnimation); 
+				/* OR */
+				.animation-name(~&quot;myAnimation, myAnimation2&quot;); 
+			}	
 
-					.example-animation-play-state {
-						.animation-play-state(paused);
-					}		
+			.example-animation-play-state {
+				.animation-play-state(paused);
+			}		
 					</textarea>
 					<textarea id="code-animation"></textarea>
-				</div>
+					</div>
 				<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3.org/TR/css3-animations/">W3C specification</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p></div>
-			</article>
-
+				</article>
 
 			<article id="appearance">
 				<h2>.appearance
@@ -615,8 +641,483 @@
 				<div class="detail"><p>Columns according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_columns.asp">w3schools</a>.</p></div>
 			</article>
 
+			<article id="column-count">
+				<h2>.column-count
+					<code class="mixin-sample">(length|normal);</code>
+					<p class="default">Default value: auto</p>
+				</h2>
 
-			<!-- /paste handlebars output here -->
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-column-count {
+						.column-count(3);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Column-count according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_column-count.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="column-gap">
+				<h2>.column-gap
+					<code class="mixin-sample">(number|auto);</code>
+					<p class="default">Default value: normal</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-column-gap {
+						.column-gap(40px);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Column-gap according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_column-gap.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="column-rule">
+				<h2>.column-rule
+					<code class="mixin-sample">(column-rule-width column-rule-style column-rule-color);</code>
+					<p class="default">Default value: medium none black</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-column-rule {
+						.column-rule(3px outset #ff00ff);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Column-rule according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_column-rule.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="column-width">
+				<h2>.column-width
+					<code class="mixin-sample">(auto|length);</code>
+					<p class="default">Default value: auto</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-column-width {
+						.column-width(100px);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Column-width according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_column-width.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="font-face">
+				<h2>.font-face
+					<code class="mixin-sample">(@fontname, @fontfile);</code>
+					<p class="default">Default value: auto</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-font-face {
+						 .font-face(ZendaRegular, zenda-webfont);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Font-face according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="gradient">
+				<h2>.gradient
+					<code class="mixin-sample">(~&quot;image-1, image-2, ..., image-n&quot;);</code>
+					<p>Input arguments by W3C syntax</p>
+					<p class="default">Default value: none</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-gradient {
+						 .gradient(~"linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)");
+					}
+		
+					.example-multiple-gradient {
+						 .gradient(~"linear-gradient(-45deg, rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%), radial-gradient(ellipse at center, #f0b7a1 0%,#8c3310 50%,#752201 51%,#bf6e4e 100%)");
+					}
+
+					.example-multiple-gradient-with-image {
+						 .gradient(~"url(myNiceKitty.png), linear-gradient(-45deg, rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%)");
+					}
+
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Linear gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">MDN</a>.</p>
+					<p>
+						Radial gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">MDN</a>.
+					</p>
+				</div>
+			</article>
+
+			<article id="opacity">
+				<h2>.opacity
+					<code class="mixin-sample">(value|inherit);</code>
+					<p class="default">Default value: 1</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-opacity {
+						 .opacity(0.5);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Opacity according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="perspective">
+				<h2>.perspective
+					<code class="mixin-sample">(number|none);</code>
+					<p class="default">Default value: none</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-perspective {
+						 .perspective(350px);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Perspective according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_perspective.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="perspective-origin">
+				<h2>.perspective-origin
+					<code class="mixin-sample">(x-axis y-axis);</code>
+					<p class="default">Default value: 50% 50%</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-perspective-origin {
+						 .perspective-origin(top left);
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Perspective-origin according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_perspective-origin.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="size">
+				<h2>.size
+					<code class="mixin-sample">(size-1 [, size-2]);</code>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-size {
+						 .size(200px); /* render square */
+
+						 .size(960px, 600px);
+
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+
+			</article>
+
+			<article id="transform">
+				<h2>.transform
+					<code class="mixin-sample">(none|transform-functions);</code>
+					<p class="default">Default value: none</p>
+				</h2>
+
+				<code class="mixin">
+						<span class="mixin-name">.translate</span>
+						<span class="mixin-usage">(@x:0, @y:0);</span>
+						<p class="default">Default value: 0, 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.translate3d</span>
+						<span class="mixin-usage">(@x:0, @y:0, @z);</span>
+						<p class="default">Default value: 0, 0, 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.translateX</span>
+						<span class="mixin-usage">(@x:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.translateY</span>
+						<span class="mixin-usage">(@y:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.translateZ</span>
+						<span class="mixin-usage">(@z:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.scale</span>
+						<span class="mixin-usage">(@x [, @y]);</span>
+						<p class="default">Default value: 1, 1</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.scale3d</span>
+						<span class="mixin-usage">(@x:1, @y:1, @z:1);</span>
+						<p class="default">Default value: 1, 1, 1</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.scaleX</span>
+						<span class="mixin-usage">(@x:1);</span>
+						<p class="default">Default value: 1</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.scaleY</span>
+						<span class="mixin-usage">(@y:1);</span>
+						<p class="default">Default value: 1</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.scaleZ</span>
+						<span class="mixin-usage">(@z:1);</span>
+						<p class="default">Default value: 1</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.rotate</span>
+						<span class="mixin-usage">(@angle:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.rotate3d</span>
+						<span class="mixin-usage">(@x:0, @y:0, @z: 0, @angle:0);</span>
+						<p class="default">Default value: 0, 0, 0, 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.rotateX</span>
+						<span class="mixin-usage">(@x:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.rotateY</span>
+						<span class="mixin-usage">(@y:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.rotateZ</span>
+						<span class="mixin-usage">(@z:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.skew</span>
+						<span class="mixin-usage">(@angle:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.skewX</span>
+						<span class="mixin-usage">(@angle:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.skewY</span>
+						<span class="mixin-usage">(@angle:0);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-transform {
+						 .transform(~"scale(.5) translate(10px, 20px)")
+					}
+
+					.example-translate {
+						 .translate(100px, 50px);
+					}
+
+					.example-translate3d {
+						 .translate(80px, 30px);
+					}
+
+					.example-translateX {
+						 .translate(40px);
+					}
+
+					.example-translateY {
+						 .translate(90px);
+					}
+
+					.example-translateZ {
+						 .translate(150px);
+					}
+
+					.example-scale {
+						 .scale(1.5);
+					}
+
+					.example-scale3d {
+						 .scale3d(1, 2, 1);
+					}
+
+					.example-scaleX {
+						 .scaleX(1);
+					}
+
+					.example-scaleY {
+						 .scaleY(1);
+					}
+
+					.example-scaleZ {
+						 .scaleZ(1);
+					}
+
+					.example-rotate {
+						 .rotate(60deg);
+					}
+
+					.example-rotate3d {
+						 .rotate3d(1, 2.0, 3.0, 10deg);
+					}
+
+					.example-rotateX {
+						 .rotateX(20deg);
+					}
+
+					.example-rotateY {
+						 .rotateY(35deg);
+					}
+
+					.example-rotateZ {
+						 .rotateZ(270deg);
+					}
+
+					.example-skew {
+						 .skew(20deg);
+					}
+
+					.example-skewX {
+						 .skewX(60deg);
+					}
+
+					.example-skewY {
+						 .skewY(35deg);
+					}
+					
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Transform according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transform.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="transform-origin">
+				<h2>.transform-origin
+					<code class="mixin-sample">(none|transform-functions);</code>
+					<p class="default">Default value: x-axis y-axis z-axis</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-transform-origin {
+						 .transform-origin(20% 40%)
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Transform-origin according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transform-origin.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="transform-style">
+				<h2>.transform-style
+					<code class="mixin-sample">(flat|preserve-3d);</code>
+					<p class="default">Default value: flat</p>
+				</h2>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-transform-style {
+						 .transform-style(preserve-3d)
+					}
+		
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Transform-style according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transform-style.asp">w3schools</a>.</p></div>
+			</article>
+
+			<article id="transition">
+				<h2>.transition
+					<code class="mixin-sample">(~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);</code>
+					<p class="default">Default value: all</p>
+				</h2>
+
+				<code class="mixin">
+						<span class="mixin-name">.transition-property</span>
+						<span class="mixin-usage">(none|all|property);</span>
+						<p class="default">Default value: all</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.transition-duration</span>
+						<span class="mixin-usage">(time);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.transition-timing-function</span>
+						<span class="mixin-usage">(function);</span>
+						<p class="default">Default value: ease</p>
+				</code>
+
+				<code class="mixin">
+						<span class="mixin-name">.transition-delay</span>
+						<span class="mixin-usage">(time);</span>
+						<p class="default">Default value: 0</p>
+				</code>
+
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-animation">.example-transition {
+						 .transition(color 1s ease-in-out);
+					}
+		
+					.example-multiple-transition {
+						 .transition(~&quot;color 1s ease-in-out, width .5s 1s ease-in&quot;);
+					}
+
+					.example-transition-property {
+						 .transition-property(width);
+					}
+
+					.example-transition-duration {
+						 .transition-duration(250ms);
+					}
+
+					.example-transition-function {
+						.transition-timing-function(cubic-bezier(0,0,1,1));
+					}
+
+					.example-transition-delay {
+						.transition-timing-delay(2s);
+					}
+
+					</textarea>
+					<textarea id="code-animation"></textarea>
+				</div>
+				<div class="detail"><p>Transition according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>.</p></div>
+			</article>
 
 		</div>
 	</section>

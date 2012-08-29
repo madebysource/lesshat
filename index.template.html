@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>LESSHat a supersonic bunch of smart LESS mixins</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.png">
+
+ 	<link rel="stylesheet" type="text/css" href="lib/codemirror.css">
+	<script type="text/javascript" src="lib/codemirror.js"></script>
+	<script type="text/javascript" src="lib/codemirror-less.js"></script>
+	<!-- <link rel="stylesheet" type="text/less" href="lib/lesshat.less"> -->
+	<script type="text/javascript" src="lib/less-1.3.0.js"></script>
+
+	<!-- <script src="js/libs/modernizr-2.5.3.min.js"></script> -->
+
+<!-- 	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-5463802-47']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script> -->
+</head>
+<body><!-- TODO: Add feedback, tweet button, flattr -->
+	<header>
+		<h1><strong>LESS&nbsp;Hat.</strong> A&nbsp;supersonic bunch of&nbsp;smart LESS&nbsp;mixins.</h1>
+		<p class="description">Kick-ass universal mixin library from makers of&nbsp;<a href="http://csshat.com">CSS&nbsp;Hat</a>.</p>
+		<a href="#" class="download">Download LESS&nbsp;Hat&nbsp;1.0</a>
+		<p class="twitter"><a href="#"><span>Take cover! It's&nbsp;supersonic!</span></a></p>
+	</header>
+	<section>
+		<ul id="menu">	
+			<li><a href="#introduction" class="active">Introduction</a></li>	
+			<li><a href="#animation">.animation</a>
+				<ul>
+					<li><a href="#">.animation-delay</a></li>
+					<li><a href="#">.animation-direction</a></li>
+					<li><a href="#">.animation-duration</a></li>
+					<li><a href="#">.animation-timing-function</a></li>
+					<li><a href="#">.animation-iteration-count</a></li>
+					<li><a href="#">.animation-name</a></li>
+					<li><a href="#">.animation-play-state</a></li>
+				</ul>
+			</li>
+			<li><a href="#" class="red" data-text="EN ROUTE">.keyframes</a></li>
+			<li><a href="#appearance">.appearance</a></li>
+			<li><a href="#backface–visibility">.backface–visibility</a></li>
+			<li><a href="#background–clip">.background–clip</a></li>
+			<li><a href="#background–origin">.background–origin</a></li>
+			<li><a href="#background–size">.background–size</a></li>
+			<li><a href="#border–radius">.border–radius</a>
+				<ul>
+					<li><a href="#">.border-top-left-radius</a></li>
+					<li><a href="#">.border-top-right-radius</a></li>
+					<li><a href="#">.border-bottom-left-radius</a></li>
+					<li><a href="#">.border-bottom-right-radius</a></li>
+				</ul>
+			</li>
+			<li><a href="#">.border–image</a></li>
+			<li><a href="#">.box–shadow</a></li>
+			<li><a href="#">.box–sizing</a></li>
+			<li><a href="#">.columns</a>
+				<ul>
+					<li><a href="#">.column-count</a></li>
+					<li><a href="#">.column-gap</a></li>
+					<li><a href="#">.column-rule</a></li>
+					<li><a href="#">.column-width</a></li>				
+				</ul>
+			</li>
+			<li><a href="#font–face">.font–face</a></li>
+			<li><a href="#gradient" class="green" data-text="TOP MIXIN">.gradient</a></li>
+			<li><a href="#opacity">.opacity</a></li>
+			<li><a href="#perspective">.perspective</a>
+				<ul>
+					<li><a href="#">.perspective-origin</a></li>
+				</ul>
+			</li>
+			<li><a href="#">.size</a></li>
+			<li><a href="#">.transform</a>
+				<ul>
+					<li><a href="#">.translate</a></li>
+					<li><a href="#">.translate3d</a></li>
+					<li><a href="#">.translateX</a></li>
+					<li><a href="#">.translateY</a></li>
+					<li><a href="#">.translateZ</a></li>
+					<li><a href="#">.scale</a></li>
+					<li><a href="#">.scale3d</a></li>
+					<li><a href="#">.scaleX</a></li>
+					<li><a href="#">.scaleY</a></li>
+					<li><a href="#">.scaleZ</a></li>
+					<li><a href="#">.rotate</a></li>
+					<li><a href="#">.rotate3d</a></li>
+					<li><a href="#">.rotateX</a></li>
+					<li><a href="#">.rotateY</a></li>
+					<li><a href="#">.rotateZ</a></li>
+					<li><a href="#">.skew</a></li>
+					<li><a href="#">.skewX</a></li>
+					<li><a href="#">.skewY</a></li>
+				</ul>
+			</li>
+			<li><a href="#">.transition</a></li>
+			<li><a href="#">.transition-property</a></li>
+			<li><a href="#">.transition-duration</a></li>
+			<li><a href="#">.transition-timing-function</a></li>
+			<li><a href="#">.transition-delay</a></li>
+		</ul>
+		<div id="main">
+			<div id="gradient-hack"></div>
+			<article id="introduction">
+				<h2>Introduction</h2>
+				<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
+	
+				<p class="detail"><b>We required the mixins to be:</b></p>
+
+				<dl class="detail">
+					<dt><strong><li>Universal:</li></strong></dt>
+					<dd>If it is possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.</dd>
+					<dt><strong><li>Cross-browser:</li></strong></dt>
+					<dd>The library should export CSS for all available browsers. Old gradient syntax for iOS4? Totally!</dd>
+					<dt><strong><li>Configurable:</li></strong></dt>
+					<dd>Building a webkit app? Turn off all other browsers and get just CSS3 plus -webkit- extensions without the clutter.</dd>
+				</dl>
+
+				<p class="detail">We looked at existing libraries, and found out they compare poorly:</p>
+
+				<div class="border-radius-hack">
+					<table class="compare">
+						<thead>
+							<tr>
+								<th>Property</th>
+								<th>LESS Hat</th>
+								<th>LESS Elements</th>
+								<th>Compass - Sass</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Animations</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unlimited box-shadows</td>
+								<td></td>
+								<td class="no"></td>
+								<td class="no"></td>
+							</tr>
+							<tr>
+								<td>Multiple gradients</td>
+								<td></td>
+								<td class="no"></td>
+								<td class="no"></td>
+							</tr>
+							<tr>
+								<td>3D Transforms</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Font-face</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Multiple transitions</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Opacity</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="detail"><strong>Thus, ladies and gentlemen, welcome LESS Hat!</strong></p>
+			</article>
+
+			<!-- move to style.less -->
+			<style>
+				h3 {
+					font-weight: bold;
+					margin-top: 1em;
+					margin-bottom: 1em;
+				}
+				.detail p {
+					margin-bottom: 1em;
+				}
+				h2 .mixin-sample,
+				code.mixin .mixin-usage {
+					font-weight: 300;
+					color: #BBB;
+				}
+				code.mixin {
+					font-weight: 300;
+					display: block;
+					font-size: 20px;
+					line-height: 1.5em;
+				}
+				code.mixin.hide-name .mixin-name {
+					visibility: hidden;
+				}
+				code.mixin a {
+					visibility: hidden;
+					font-size: 14px;
+					text-decoration: underline;
+				}
+				code.mixin:hover a {
+					visibility: visible;
+					color: navy;
+				}
+			</style>
+
+			<!-- paste handlebars output here -->
+
+			{{#each this}}
+				<article id="{{id}}">
+					<h2>{{name}}
+						<code class="mixin-sample">{{parameter}}</code>
+					</h2>
+					{{#if parts}}{{#each parts}}{{#each parameters}}
+					<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">
+						<span class="mixin-name">{{../name}}</span>
+						<span class="mixin-usage">{{name}}</span>
+						{{#if ../w3c}}<a href="{{../w3c}}">W3C</a>{{/if}}
+						{{#if ../mdn}}<a href="{{../mdn}}">MDN</a>{{/if}}
+					</code>
+					{{/each}}{{/each}}{{/if}}
+					<div class="code clearfix">
+						<textarea cols="30" rows="10" data-css="code-{{id}}">
+{{code}}
+						</textarea>
+						<textarea id="code-{{id}}"></textarea>
+					</div>
+					<div class="detail">{{{doc}}}</div>
+				</article>
+			{{/each}}
+
+		</div>
+	</section>
+
+	<div style="clear:both;"></div>
+
+	<div id="popup">
+		<div id="dialog">
+			<a href="#" id="close"></a>
+			<h3>Yay, you just got the best LESS framework in universe!</h3>
+			<form id="subscription" novalidate action="https://mailing.abdoc.net/api/subscribe/9f560f4c5bc55a95c02c2acbaeb67492" method="get">
+						<input type="hidden" name="source" value="lesshat popup">
+						<input type="email"  name="email" placeholder="Subscribe for LESS Hat updates" id="email">
+						<input type="submit" value="Subscribe" id="submit">
+			</form>
+			<a href="https://twitter.com/csshat" class="twitter-follow-button" data-show-count="false">Follow @csshat</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<div class="bottom">
+				<a href="#" class="csshat">What is CSS Hat?</a>
+			</div>
+		</div>	
+	</div>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="Anchor.js"></script>
+	<script type="text/javascript" src="Menu.js"></script>
+	<script type="text/javascript" src="Section.js"></script>
+	<script type="text/javascript" src="Jsonp.js"></script>
+
+</body>
+</html>
