@@ -20,24 +20,17 @@
 	<script type="text/javascript" src="lib/less-1.3.0.js"></script>
 
 	<!-- <script src="js/libs/modernizr-2.5.3.min.js"></script> -->
-	<style type="text/css">
-	.errline, .errline > * {
-		background: #FFC3C3;
-		color: red !important;
-		/*font-weight: bold;*/
-	}
-	</style>
 </head>
 <body><!-- TODO: Add feedback, tweet button, flattr -->
 	<header>
-		<h1><strong>LESS Hat.</strong> A supersonic bunch of smart LESS mixins</h1>
+		<h1><strong>LESS Hat.</strong> A supersonic bunch of smart LESS mixins.</h1>
 		<p class="description">Kick-ass universal mixins library for all types of CSS cases from makers of <a href="http://csshat.com">CSS Hat</a>.</p>
 		<a href="#" class="download">Download LESS Hat 1.0</a>
-		<p class="twitter"><img src="twitter.png" alt="Tweet about us!" width="18" height="14">If you like <a href="#" class="link">Tweet!</a></p>
+		<p class="twitter"><a href="#"><span>Take cover! It's supersonic!</span></a></p>
 	</header>
 	<section>
 		<ul id="menu">	
-			<li><a class="active" href="#">Introduction</a></li>
+			<li><a href="#introduction">Introduction</a></li>
 			<br>	
 			<li><a href="#animation">.animation</a>
 				<ul>
@@ -111,82 +104,80 @@
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
-			<article>
+			<article id="introduction">
 				<h2>Introduction</h2>
-			<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
-    
-    		<p>We required the mixins to be:</p>
+				<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
+	
+				<p>We required the mixins to be:</p>
 
-    		<dl class="detail">
-    			<dt><strong>Universal:</strong></dt>
-    			<dd>If it is possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.</dd>
-    			<dt><strong>Cross-browser:</strong></dt>
-    			<dd>The library should export CSS for all available browsers. Old gradient syntax for iOS4? Totally!</dd>
-    			<dt><strong>Configurable:</strong></dt>
-    			<dd>Building a webkit app? Turn off all other browsers and get just CSS3 plus -webkit- extensions without the clutter.</dd>
-    		</dl>
+				<dl class="detail">
+					<dt><strong>Universal:</strong></dt>
+					<dd>If it is possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.</dd>
+					<dt><strong>Cross-browser:</strong></dt>
+					<dd>The library should export CSS for all available browsers. Old gradient syntax for iOS4? Totally!</dd>
+					<dt><strong>Configurable:</strong></dt>
+					<dd>Building a webkit app? Turn off all other browsers and get just CSS3 plus -webkit- extensions without the clutter.</dd>
+				</dl>
 
-    		<p class="detail">We looked at existing libraries, and found out they compare poorly:</p>
-    
-    		<div class="border-radius-hack">
-				<table class="compare">
-					<thead>
-						<tr>
-							<th>Property</th>
-							<th>LESS Hat</th>
-							<th>LESS Elements</th>
-							<th>Compass - Sass</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Animations</td>
-							<td></td>
-							<td class="no"></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Unlimited box-shadows</td>
-							<td></td>
-							<td class="no"></td>
-							<td class="no"></td>
-						</tr>
-						<tr>
-							<td>Multiple gradients</td>
-							<td></td>
-							<td class="no"></td>
-							<td class="no"></td>
-						</tr>
-						<tr>
-							<td>3D Transforms</td>
-							<td></td>
-							<td class="no"></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Font-face</td>
-							<td></td>
-							<td class="no"></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Multiple transitions</td>
-							<td></td>
-							<td class="no"></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Opacity</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-    
-    
-    		<p class="detail">Thus, ladies and gentlemen, welcome LESS Hat!</p>
+				<p class="detail">We looked at existing libraries, and found out they compare poorly:</p>
+
+				<div class="border-radius-hack">
+					<table class="compare">
+						<thead>
+							<tr>
+								<th>Property</th>
+								<th>LESS Hat</th>
+								<th>LESS Elements</th>
+								<th>Compass - Sass</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Animations</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unlimited box-shadows</td>
+								<td></td>
+								<td class="no"></td>
+								<td class="no"></td>
+							</tr>
+							<tr>
+								<td>Multiple gradients</td>
+								<td></td>
+								<td class="no"></td>
+								<td class="no"></td>
+							</tr>
+							<tr>
+								<td>3D Transforms</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Font-face</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Multiple transitions</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Opacity</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="detail">Thus, ladies and gentlemen, welcome LESS Hat!</p>
 
 			</article>
 
@@ -204,11 +195,9 @@
 }</textarea>
 					<textarea id="css"></textarea>
 				</div>
-
-				
 			</article>
 
-			<article>
+			<article id="appearance">
 				<h2>.shadow</h2>
 				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 				<div class="border-radius-hack">
@@ -267,7 +256,7 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 				
 			</article>
 
-			<article>
+			<article id="backface–visibility">
 				<h2>.shadow</h2>
 				<p class="detail"><strong>CoffeeScript is a little language</strong> that compiles into JavaScript. Underneath all those awkward braces and semicolons, JavaScript has always had a gorgeous object model at its heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
 				<div class="border-radius-hack">
@@ -327,6 +316,8 @@ box-shadow: 0 1px 10px #000, inset 0 -2px 5px red;</textarea>
 			</article>
 		</div>
 	</section>
+
+	<div style="clear:both;"></div>
 
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="script.js"></script>

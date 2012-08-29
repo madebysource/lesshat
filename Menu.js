@@ -45,6 +45,9 @@ Menu.prototype.init = function()
 		self.$menu
 			.toggleClass('fixed', top >= Menu.FIXED_TRESHOLD);
 	});
+	this .$window.bind('resize', function (e) {
+		Menu.FIXED_TRESHOLD = $('header').height();
+	});
 };
 Menu.prototype.setInactive = function(id)
 {
