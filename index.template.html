@@ -231,58 +231,28 @@
 
 			<!-- paste handlebars output here -->
 
-			
-				<article id="animation">
-					<h2>.animation
-						<code class="mixin-sample">(~&quot;animation-1, animation-2, ..., animation-n&quot;);</code>
+			{{#each this}}
+				<article id="{{id}}">
+					<h2>{{name}}
+						<code class="mixin-sample">{{parameter}}</code>
 					</h2>
-					
-					<code class="mixin ">
-						<span class="mixin-name">.animation-delay</span>
-						<span class="mixin-usage">(1s);</span>
-						<a href="">W3C</a>
-						<a href="">MDN</a>
+					{{#if parts}}{{#each parts}}{{#each parameters}}
+					<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">
+						<span class="mixin-name">{{../name}}</span>
+						<span class="mixin-usage">{{name}}</span>
+						{{#if ../w3c}}<a href="{{../w3c}}">W3C</a>{{/if}}
+						{{#if ../mdn}}<a href="{{../mdn}}">MDN</a>{{/if}}
 					</code>
-					
-					<code class="mixin hide-name">
-						<span class="mixin-name">.animation-delay</span>
-						<span class="mixin-usage">(~&quot;750ms, 2s&quot;);</span>
-						<a href="">W3C</a>
-						<a href="">MDN</a>
-					</code>
-					
-					<code class="mixin ">
-						<span class="mixin-name">.animation-direction</span>
-						<span class="mixin-usage">();</span>
-						<a href="">W3C</a>
-						<a href="">MDN</a>
-					</code>
-					
-					<code class="mixin hide-name">
-						<span class="mixin-name">.animation-direction</span>
-						<span class="mixin-usage">(~&quot;normal, alternate&quot;);</span>
-						<a href="">W3C</a>
-						<a href="">MDN</a>
-					</code>
-					
-					<code class="mixin ">
-						<span class="mixin-name">.animation-duration</span>
-						<span class="mixin-usage">(2s);</span>
-						<a href="">W3C</a>
-						<a href="">MDN</a>
-					</code>
-					
+					{{/each}}{{/each}}{{/if}}
 					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-animation">
-.examp {
-	.animation(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);
-}
+						<textarea cols="30" rows="10" data-css="code-{{id}}">
+{{code}}
 						</textarea>
-						<textarea id="code-animation"></textarea>
+						<textarea id="code-{{id}}"></textarea>
 					</div>
-					<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3.org/TR/css3-animations/">W3C specification</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p></div>
+					<div class="detail">{{{doc}}}</div>
 				</article>
-			
+			{{/each}}
 
 		</div>
 	</section>

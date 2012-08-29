@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 var docs = [
 	{
 		name: '.animation',
@@ -51,36 +53,12 @@ docs.map(function(doc) {
 	});
 });
 
-var source = '			<!-- this file was generated with `node docs.js > content.html` -->\n\n' +
-	'{{#each this}}' +
-	'			<article id="{{id}}">\n' +
-	'				<h2>{{name}}\n' +
-	'					<code class="mixin-sample">{{parameter}}</code>\n' +
-	'				</h2>\n' +
-					'{{#if parts}}{{#each parts}}{{#each parameters}}' +
-	'				<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">\n' +
-	'					<span class="mixin-name">{{../name}}</span>\n' +
-	'					<span class="mixin-usage">{{name}}</span>\n' +
-	'					{{#if ../w3c}}<a href="{{../w3c}}">W3C</a>\n{{/if}}' +
-	'					{{#if ../mdn}}<a href="{{../mdn}}">MDN</a>\n{{/if}}' +
-	'				</code>\n' +
-					'{{/each}}{{/each}}{{/if}}' +
-	'				<div class="code clearfix">\n' +
-	'					<textarea cols="30" rows="10" data-css="code-{{id}}">\n' +
-	'{{code}}\n' +
-	'					</textarea>\n' +
-	'					<textarea id="code-{{id}}"></textarea>\n' +
-	'				</div>\n' +
-	'				<div class="detail">{{{doc}}}</div>\n' +
-	'			</article>\n' +
-	'{{/each}}' +
-	'';
-
 // source = '{{#each this}}{{this.name}}{{/each}}';
 
 var handlebars = require('handlebars');
 
-var template = handlebars.compile(source);
+var index = fs.readFileSync('./index.template.html', 'UTF-8');
+var template = handlebars.compile(index);
 
 var result = template(docs);
 
