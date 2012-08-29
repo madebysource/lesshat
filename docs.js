@@ -58,14 +58,14 @@ var source = '			<!-- this file was generated with `node docs.js > content.html`
 	'					<code class="mixin-sample">{{parameter}}</code>\n' +
 	'				</h2>\n' +
 	'				<div class="detail">{{{doc}}}</div>\n' +
-					'{{#each parts}}{{#each parameters}}' +
+					'{{#if parts}}{{#each parts}}{{#each parameters}}' +
 	'				<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">\n' +
 	'					<span class="mixin-name">{{../name}}</span>\n' +
 	'					<span class="mixin-usage">{{name}}</span>\n' +
-	'					<a href="{{../w3c}}">W3C</a>\n' +
-	'					<a href="{{../mdn}}">MDN</a>\n' +
+	'					{{#if ../w3c}}<a href="{{../w3c}}">W3C</a>\n{{/if}}' +
+	'					{{#if ../mdn}}<a href="{{../mdn}}">MDN</a>\n{{/if}}' +
 	'				</code>\n' +
-					'{{/each}}{{/each}}' +
+					'{{/if}}{{/each}}{{/each}}' +
 	'				<div class="code clearfix">\n' +
 	'					<textarea cols="30" rows="10" data-css="code-{{id}}">{{code}}</textarea>\n' +
 	'					<textarea id="code-{{id}}"></textarea>\n' +
