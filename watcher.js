@@ -10,7 +10,7 @@ var DATA = './docs.js';
 var watchOpt = {interval: 10};
 
 var cb = function(curr, prev) {
-    if (curr.mtime <= prev.mtime) {
+    if (curr && prev &&  curr.mtime <= prev.mtime) {
 		return;
     }
 
@@ -34,5 +34,6 @@ var cb = function(curr, prev) {
 
 fs.watchFile(TEMPLATE, watchOpt, cb);
 fs.watchFile(DATA, watchOpt, cb);
+cb();
 
 console.log('Watching ' + TEMPLATE + ' and ' + DATA);

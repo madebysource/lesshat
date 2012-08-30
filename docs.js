@@ -9,15 +9,18 @@ var docs = [
 			+ '\t @moz: true; //  Firefox 4+ \n'
 			+ '\t @opera: true; // Opera 10.5+ \n'
 			+ '\t @ms: true;  // IE 10+ \n'
-			+ '\t @oldWebkit: true; // iOS4, Safari 4, Chrome < 6. \n'
+			+ '\t @oldWebkit: true; // iOS4, Safari 4, Chrome < 6. \n',
 		parts: []
 	},
 		
 	{
 	name: '.animation',
+		/*
 	parameter: ['(animation);',
 				'(~"animation-1, animation-2, ..., animation-n");'
 				],
+				*/
+	parameter: '(animation) or (~"animation-1, animation-2, ..., animation-n");',
 	doc: '<p>CSS3 animation according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">w3schools</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p>',
 	code: '.example-animation {\n'
 		+ '\t.animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");\n'
@@ -157,9 +160,12 @@ var docs = [
 
 	{
 	name: '.background-size',
+		/*
 	parameter: ['(size);',
 				'(~"size-1 [, size-2, ..., size-n]")'
 				],
+				*/
+	parameter: '(size) or (~"size-1 [, size-2, ..., size-n]");',
 	doc: '<p>CSS3 background-size according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">w3schools</a></p>',
 	code: '.example-background-size {\n'
 		+ '\t.background-size(cover);\n'
@@ -198,7 +204,7 @@ var docs = [
 		{
 			name: '.border-top-left-radius',
 			parameters: [
-				'(radius);',
+				'(radius);'
 			],
 			source: 'http://www.w3schools.com/cssref/css3_pr_border-top-left-radius.asp'
 		},
@@ -239,8 +245,7 @@ var docs = [
 
 	{
 	name: '.box-shadow',
-	parameter: ['(~&quot;shadow-1[, shadow-2, ..., shadow-n]&quot;);'
-				],
+	parameter: '(~"shadow-1[, shadow-2, ..., shadow-n]");',
 	doc: '<p>CSS3 box-shadow according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools</a></p>',
 	code: '.example-box-shadow {\n'
 		+ '\t.box-shadow(~"0 1px 10px #000, inset 0 -2px 5px red");\n'
@@ -281,7 +286,7 @@ var docs = [
 		{
 			name: '.column-count',
 			parameters: [
-				'(length|normal);',
+				'(length|normal);'
 			],
 			source: 'http://www.w3schools.com/cssref/css3_pr_column-count.asp'
 		},
@@ -321,7 +326,7 @@ var docs = [
 
 	{
 	name: '.gradient',
-	parameter: ['(~&quot;image-1[, image-2, ..., image-n]&quot;);'],
+	parameter: '(~"image-1[, image-2, ..., image-n]");',
 	doc: '<p>Linear gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">MDN</a>.</p>'
 		+ '<p>Radial gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">MDN</a></p>'
 		+ '<p>W3C syntax input arguments</p>',
@@ -361,7 +366,7 @@ var docs = [
 		{
 			name: '.perspective-origin',
 			parameters: [
-				'(x-axis y-axis);',
+				'(x-axis y-axis);'
 			],
 			source: 'http://www.w3schools.com/cssref/css3_pr_perspective-origin.asp'
 		}
@@ -452,21 +457,21 @@ var docs = [
 		{
 			name: '.transform-origin',
 			parameters: [
-				'(x-axis y-axis z-axis);',
+				'(x-axis y-axis z-axis);'
 			],
 			source: ''
 		},
 		{
 			name: '.transform-style',
 			parameters: [
-				'(flat|preserve-3d);',
+				'(flat|preserve-3d);'
 			],
 			source: ''
 		},
 		{
 			name: '.translate',
 			parameters: [
-				'(@x:0, @y:0);',
+				'(@x:0, @y:0);'
 			],
 			source: ''
 		},
@@ -594,8 +599,11 @@ var docs = [
 
 	{
 	name: '.transition',
+	parameter: '(transition) or (~"transition-1 [, transition-2, ..., transition-n]");',
+	/*
 	parameter: [ '(transition);',
 				'(~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);'],
+	*/
 	doc: '<p>CSS3 transition according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>.</p>',
 	code: '.example-transition {\n'
 		+ '\t.transition(color 1s ease-in-out);\n'
@@ -661,7 +669,7 @@ docs.map(function(doc) {
 		part.parameters = [];
 
 		params.map(function(parameter, index) {
-			part.parameters.push({ name: parameter, isFirst: index == 0 });
+			parameter.isFirst = index == 0;
 		});
 	});
 });
