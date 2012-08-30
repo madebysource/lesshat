@@ -42,7 +42,23 @@
 	</header>
 	<section>
 		<ul id="menu">	
-			<li><a href="#introduction" class="active">Introduction</a></li>	
+			<li><a href="#introduction" class="active">Introduction</a></li>
+
+			{{#each properties}}
+			<li>
+				<a href="#{{id}}" {{#if upcoming}}class="red" data-text="EN ROUTE"{{/if}}{{#if topMixin}}class="green" data-text="TOP MIXIN"{{/if}}>{{name}}</a>
+				{{#if parts}}
+				<ul>
+					{{#each parts}}
+						<li>{{name}}</li>
+					{{/each}}
+				</ul>
+				{{/if}}
+			</li>
+			{{/each}}
+
+
+			<!--
 			<li><a href="#animation">.animation</a>
 				<ul>
 					<li><a href="#">.animation-delay</a></li>
@@ -115,6 +131,7 @@
 			<li><a href="#">.transition-duration</a></li>
 			<li><a href="#">.transition-timing-function</a></li>
 			<li><a href="#">.transition-delay</a></li>
+			-->
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
@@ -229,9 +246,8 @@
 				}
 			</style>
 
-			<!-- paste handlebars output here -->
-
-			{{#each this}}
+			{{#each properties}}
+				{{#unless upcoming}}
 				<article id="{{id}}">
 					<h2>{{name}}
 						<code class="mixin-sample">{{parameter}}</code>
@@ -252,6 +268,7 @@
 					</div>
 					<div class="detail">{{{doc}}}</div>
 				</article>
+				{{/unless}}
 			{{/each}}
 
 		</div>
