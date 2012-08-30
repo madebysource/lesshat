@@ -2,7 +2,6 @@ var docs = {
 	properties: [
 		{
 			name: 'Configuration',
-			status: 'upcoming',
 			parameter: '',
 			doc: '<p>Turn on/off browsers prefix. Config is global for all mixins and also for specific mixin.</p>',
 			code: '\n'
@@ -118,6 +117,11 @@ var docs = {
 					source: 'http://www.w3schools.com/cssref/css3_pr_animation-play-state.asp'
 				}
 			]
+		},
+
+		{
+			name: '.keyframes',
+			badge: 'upcoming'
 		},
 
 		{
@@ -329,6 +333,7 @@ var docs = {
 		{
 			name: '.gradient',
 			parameter: '(~"image-1[, image-2, ..., image-n]");',
+			badge: 'top',
 			doc: '<p>Linear gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">MDN</a>.</p>'
 				+ '<p>Radial gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">MDN</a></p>'
 				+ '<p>W3C syntax input arguments</p>',
@@ -664,8 +669,13 @@ var docs = {
 };
 
 docs.properties.map(function(doc) {
+
+	doc.topMixin = doc.badge && doc.badge == 'top';
+	doc.upcoming = doc.badge && doc.badge == 'upcoming';
+
 	doc.id = doc.name.replace('.', '');
-	doc.parts.map(function(part, index) {
+
+	doc.parts && doc.parts.map(function(part, index) {
 		part.isFirst = index == 0;
 
 		var params = part.parameters;

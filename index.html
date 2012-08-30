@@ -46,31 +46,12 @@
 
 			
 			<li>
-				<a href="#Configuration">Configuration</a>
+				<a href="#Configuration" >Configuration</a>
 				
 			</li>
-				<h2>Configuration
-					<code class="mixin-sample"></code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-Configuration">
-						
-	 @w3c: true; // Unprefixed W3C syntax 
-	 @webkit: true; // Chrome 7+, Safari 5+, iOS5, Android 
-	 @moz: true; //  Firefox 4+ 
-	 @opera: true; // Opera 10.5+ 
-	 @ms: true;  // IE 10+ 
-	 @oldWebkit: true; // iOS4, Safari 4, Chrome &lt; 6. 
-
-					</textarea>
-					<textarea id="code-Configuration"></textarea>
-				</div>
-				<div class="detail"><p>Turn on/off browsers prefix. Config is global for all mixins and also for specific mixin.</p></div>
-			</article>
 			
 			<li>
-				<a href="#animation">.animation</a>
+				<a href="#animation" >.animation</a>
 				
 				<ul>
 					
@@ -91,161 +72,39 @@
 				</ul>
 				
 			</li>
-				<h2>.animation
-					<code class="mixin-sample">(animation) or (~&quot;animation-1, animation-2, ..., animation-n&quot;);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-animation">
-						.example-animation {
-	.animation(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);
-}
-.example-animation-delay {
-	.animation-delay(2s);
-	 /* OR */ 
-	 .animation-delay(~&quot;200ms, 2s&quot;); 
-}
-.example-animation-direction {
-	.animation-direction();
-	 /* OR */ 
-	 .animation-direction(~&quot;normal, alternate&quot;); 
-}
-.example-animation-duration {
-	.animation-duration(2s);
-	 /* OR */ 
-	 .animation-duration(~&quot;3s, 2s&quot;); 
-}
-.example-animation-timing-function {
-	.animation-timing-function(ease-in-out);
-	 /* OR */ 
-	 .animation-timing-function(~&quot;ease-out, ease-in&quot;); 
-}
-.example-animation-iteration-count {
-	.animation-iteration-count(3);
-	 /* OR */ 
-	 .animation-iteration-count(~&quot;2, 6&quot;); 
-}
-.example-animation-animation-name {
-	.animation-name(myAnimation);
-	 /* OR */ 
-	 .animation-name(~&quot;myAnimation, myAnimation2&quot;); 
-}
-.example-animation-play-state {
-	.animation-play-state(paused);
-}
-
-					</textarea>
-					<textarea id="code-animation"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">w3schools</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p></div>
-			</article>
 			
 			<li>
-				<a href="#appearance">.appearance</a>
+				<a href="#keyframes" class="red" data-text="EN ROUTE">.keyframes</a>
 				
 			</li>
-				<h2>.appearance
-					<code class="mixin-sample">(appearance);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-appearance">
-						.example-appearance {
-	.appearance(button);
-}
-
-					</textarea>
-					<textarea id="code-appearance"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 appearance according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#backface-visibility">.backface-visibility</a>
+				<a href="#appearance" >.appearance</a>
 				
 			</li>
-				<h2>.backface-visibility
-					<code class="mixin-sample">(visible|hidden);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-backface-visibility">
-						.example-backface-visibility {
-	.backface-visibility(hidden);
-}
-
-					</textarea>
-					<textarea id="code-backface-visibility"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 backface-visibility according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#background-clip">.background-clip</a>
+				<a href="#backface-visibility" >.backface-visibility</a>
 				
 			</li>
-				<h2>.background-clip
-					<code class="mixin-sample">(border-box|padding-box|content-box);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-background-clip">
-						.example-background-clip {
-	.background-clip(padding-box);
-}
-
-					</textarea>
-					<textarea id="code-background-clip"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 background-clip according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-clip.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#background-origin">.background-origin</a>
+				<a href="#background-clip" >.background-clip</a>
 				
 			</li>
-				<h2>.background-origin
-					<code class="mixin-sample">(border-box|padding-box|content-box);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-background-origin">
-						.example-background-origin {
-	.background-origin(content-box);
-}
-
-					</textarea>
-					<textarea id="code-background-origin"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 background-origin according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-origin.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#background-size">.background-size</a>
+				<a href="#background-origin" >.background-origin</a>
 				
 			</li>
-				<h2>.background-size
-					<code class="mixin-sample">(size) or (~&quot;size-1 [, size-2, ..., size-n]&quot;);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-background-size">
-						.example-background-size {
-	.background-size(cover);
-}
-
-.example-background-size-2 {
-	.background-size(~&quot;100%, auto&quot;);
-}
-
-					</textarea>
-					<textarea id="code-background-size"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 background-size according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#border-radius">.border-radius</a>
+				<a href="#background-size" >.background-size</a>
+				
+			</li>
+			
+			<li>
+				<a href="#border-radius" >.border-radius</a>
 				
 				<ul>
 					
@@ -260,100 +119,24 @@
 				</ul>
 				
 			</li>
-				<h2>.border-radius
-					<code class="mixin-sample">(radius);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-border-radius">
-						.example-border-radius {
-	.border-radius(10px);
-}
-	/* OR */
-.example-border-radius-2 {
-	 .border-radius(0 10px 0 0); /* Only top right corner rounded */ 
-}
-.example-border-top-left-radius {
-	.border-top-left-radius(10px);
-}
-.example-border-top-right-radius {
-	.border-top-right-radius(15px);
-}
-.example-border-bottom-left-radius {
-	.border-bottom-left-radius(20px);
-}
-.example-border-bottom-right-radius {
-	.border-bottom-right-radius(25px);
-}
-
-					</textarea>
-					<textarea id="code-border-radius"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp">w3schools</a>.</p></div>
-			</article>
 			
 			<li>
-				<a href="#border-image">.border-image</a>
+				<a href="#border-image" >.border-image</a>
 				
 			</li>
-				<h2>.border-image
-					<code class="mixin-sample">(source slice width outset repeat);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-border-image">
-						.example-border-image {
-	.border-image(url(border.png) 30 30 round);
-}
-
-					</textarea>
-					<textarea id="code-border-image"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 border-image according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_border-image.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#box-shadow">.box-shadow</a>
+				<a href="#box-shadow" >.box-shadow</a>
 				
 			</li>
-				<h2>.box-shadow
-					<code class="mixin-sample">(~&quot;shadow-1[, shadow-2, ..., shadow-n]&quot;);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-box-shadow">
-						.example-box-shadow {
-	.box-shadow(~&quot;0 1px 10px #000, inset 0 -2px 5px red&quot;);
-}
-
-					</textarea>
-					<textarea id="code-box-shadow"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 box-shadow according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#box-sizing">.box-sizing</a>
+				<a href="#box-sizing" >.box-sizing</a>
 				
 			</li>
-				<h2>.box-sizing
-					<code class="mixin-sample">(content-box|border-box|inherit);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-box-sizing">
-						.example-box-sizing {
-	.box-sizing(border-box);
-}
-
-					</textarea>
-					<textarea id="code-box-sizing"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 box-sizing according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_box-sizing.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#columns">.columns</a>
+				<a href="#columns" >.columns</a>
 				
 				<ul>
 					
@@ -368,102 +151,24 @@
 				</ul>
 				
 			</li>
-				<h2>.columns
-					<code class="mixin-sample">(column-width column-count);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-columns">
-						.example-columns {
-	.columns(100px 3);
-}
-.example-column-count {
-	 .column-count(3); 
-}
-.example-column-gap {
-	.column-gap(40px);
-}
-.example-column-rule {
-	.column-rule(3px outset #ff00ff);
-}
-.example-column-width {
-	.column-width(100px);
-}
-
-					</textarea>
-					<textarea id="code-columns"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 columns according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_columns.asp">w3schools</a>.</p></div>
-			</article>
 			
 			<li>
-				<a href="#font-face">.font-face</a>
+				<a href="#font-face" >.font-face</a>
 				
 			</li>
-				<h2>.font-face
-					<code class="mixin-sample">(@fontname, @fontfile);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-font-face">
-						.example-font-face {
-	.font-face(ZendaRegular, zenda-webfont);
-}
-
-					</textarea>
-					<textarea id="code-font-face"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 font-face according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#gradient">.gradient</a>
+				<a href="#gradient" class="green" data-text="TOP MIXIN">.gradient</a>
 				
 			</li>
-				<h2>.gradient
-					<code class="mixin-sample">(~&quot;image-1[, image-2, ..., image-n]&quot;);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-gradient">
-						.example-gradient {
-	.gradient(~&quot;linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)&quot;);
-}
-.example-multiple-gradient {
-	.gradient(~&quot;linear-gradient(-45deg, rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%), radial-gradient(ellipse at center, #f0b7a1 0%,#8c3310 50%,#752201 51%,#bf6e4e 100%)&quot;);
-}
-.example-multiple-gradient-with-image {
-	.gradient(~&quot;url(myNiceKitty.png), linear-gradient(-45deg, rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%)&quot;);
-}
-
-					</textarea>
-					<textarea id="code-gradient"></textarea>
-				</div>
-				<div class="detail"><p>Linear gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">MDN</a>.</p><p>Radial gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">MDN</a></p><p>W3C syntax input arguments</p></div>
-			</article>
 			
 			<li>
-				<a href="#opacity">.opacity</a>
+				<a href="#opacity" >.opacity</a>
 				
 			</li>
-				<h2>.opacity
-					<code class="mixin-sample">(value|inherit);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-opacity">
-						.example-opacity {
-	.opacity(0.5);
-}
-
-					</textarea>
-					<textarea id="code-opacity"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 opacity according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#perspective">.perspective</a>
+				<a href="#perspective" >.perspective</a>
 				
 				<ul>
 					
@@ -472,50 +177,14 @@
 				</ul>
 				
 			</li>
-				<h2>.perspective
-					<code class="mixin-sample">(number|none);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-perspective">
-						.example-perspective {
-	.perspective(350px);
-}
-.example-perspective-origin {
-	.perspective-origin(top left);
-}
-
-					</textarea>
-					<textarea id="code-perspective"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 perspective according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_perspective.asp">w3schools</a></p></div>
-			</article>
 			
 			<li>
-				<a href="#size">.size</a>
+				<a href="#size" >.size</a>
 				
 			</li>
-				<h2>.size
-					<code class="mixin-sample">(size-1 [, size-2]);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-size">
-						.example-size {
-	.size(200px); /* render square */
-}
-.example-size-2 {
-	.size(960px, 600px);
-}
-
-					</textarea>
-					<textarea id="code-size"></textarea>
-				</div>
-				<div class="detail"><p>If you fill only first parameter second parameter will be the same.</p></div>
-			</article>
 			
 			<li>
-				<a href="#transform">.transform</a>
+				<a href="#transform" >.transform</a>
 				
 				<ul>
 					
@@ -562,84 +231,9 @@
 				</ul>
 				
 			</li>
-				<h2>.transform
-					<code class="mixin-sample">(none|transform-functions);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-transform">
-						.example-transform {
-	.transform(~&quot;scale(.5) translate(10px, 20px)&quot;);
-}
-.example-transform-origin {
-	 .transform-origin(20% 40%); 
-}
-.example-transform-style {
-	 .transform-style(preserve-3d); 
-}
-.example-translate {
-	 .translate(100px, 50px); 
-}
-.example-translate3d {
-	.translate(80px, 30px);
-}
-.example-translateX {
-	.translateX(40px);
-}
-.example-translateY {
-	.translateY(90px);
-}
-.example-translateZ {
-	.translateZ(150px);
-}
-.example-scale {
-	.scale(1.5);
-}
-.example-scale3d {
-	.scale3d(1, 2, 1);
-}
-.example-scaleX {
-	.scaleX(1);
-}
-.example-scaleY {
-	.scaleY(1);
-}
-.example-scaleZ {
-	.scaleZ(1);
-}
-.example-rotate {
-	.rotate(60deg);
-}
-.example-rotate3d {
-	.rotate3d(1, 2.0, 3.0, 10deg);
-}
-.example-rotateX {
-	.rotateX(20deg);
-}
-.example-rotateY {
-	.rotateY(35deg);
-}
-.example-rotateZ {
-	.rotateZ(270deg);
-}
-.example-skew {
-	.skew(20deg);
-}
-.example-skewX {
-	.rotateZ(60deg);
-}
-.example-skewY {
-	.rotateZ(35deg);
-}
-
-					</textarea>
-					<textarea id="code-transform"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 transform according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transform.asp">w3schools</a>.</p></div>
-			</article>
 			
 			<li>
-				<a href="#transition">.transition</a>
+				<a href="#transition" >.transition</a>
 				
 				<ul>
 					
@@ -654,39 +248,10 @@
 				</ul>
 				
 			</li>
-				<h2>.transition
-					<code class="mixin-sample">(transition) or (~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);</code>
-				</h2>
-				
-				<div class="code clearfix">
-					<textarea cols="30" rows="10" data-css="code-transition">
-						.example-transition {
-	.transition(color 1s ease-in-out);
-}
-.example-multiple-transition {
-	 .transition(~&quot;color 1s ease-in-out, width .5s 1s ease-in&quot;); 
-}
-.example-transition-property {
-	.transition-property(width);
-}
-.example-transition-duration {
-	.transition-duration(250ms);
-}
-.example-transition-function {
-	.transition-timing-function(cubic-bezier(0,0,1,1));
-}
-.example-transition-delay {
-	.transition-timing-delay(2s);
-}
-
-					</textarea>
-					<textarea id="code-transition"></textarea>
-				</div>
-				<div class="detail"><p>CSS3 transition according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>.</p></div>
-			</article>
 			
 
 
+			<!--
 			<li><a href="#animation">.animation</a>
 				<ul>
 					<li><a href="#">.animation-delay</a></li>
@@ -759,6 +324,7 @@
 			<li><a href="#">.transition-duration</a></li>
 			<li><a href="#">.transition-timing-function</a></li>
 			<li><a href="#">.transition-delay</a></li>
+			-->
 		</ul>
 		<div id="main">
 			<div id="gradient-hack"></div>
@@ -874,6 +440,7 @@
 			</style>
 
 			
+				
 				<article id="Configuration">
 					<h2>Configuration
 						<code class="mixin-sample"></code>
@@ -894,7 +461,9 @@
 					</div>
 					<div class="detail"><p>Turn on/off browsers prefix. Config is global for all mixins and also for specific mixin.</p></div>
 				</article>
+				
 			
+				
 				<article id="animation">
 					<h2>.animation
 						<code class="mixin-sample">(animation) or (~&quot;animation-1, animation-2, ..., animation-n&quot;);</code>
@@ -944,7 +513,11 @@
 					</div>
 					<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">w3schools</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p></div>
 				</article>
+				
 			
+				
+			
+				
 				<article id="appearance">
 					<h2>.appearance
 						<code class="mixin-sample">(appearance);</code>
@@ -961,7 +534,9 @@
 					</div>
 					<div class="detail"><p>CSS3 appearance according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="backface-visibility">
 					<h2>.backface-visibility
 						<code class="mixin-sample">(visible|hidden);</code>
@@ -978,7 +553,9 @@
 					</div>
 					<div class="detail"><p>CSS3 backface-visibility according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="background-clip">
 					<h2>.background-clip
 						<code class="mixin-sample">(border-box|padding-box|content-box);</code>
@@ -995,7 +572,9 @@
 					</div>
 					<div class="detail"><p>CSS3 background-clip according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-clip.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="background-origin">
 					<h2>.background-origin
 						<code class="mixin-sample">(border-box|padding-box|content-box);</code>
@@ -1012,7 +591,9 @@
 					</div>
 					<div class="detail"><p>CSS3 background-origin according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-origin.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="background-size">
 					<h2>.background-size
 						<code class="mixin-sample">(size) or (~&quot;size-1 [, size-2, ..., size-n]&quot;);</code>
@@ -1033,7 +614,9 @@
 					</div>
 					<div class="detail"><p>CSS3 background-size according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="border-radius">
 					<h2>.border-radius
 						<code class="mixin-sample">(radius);</code>
@@ -1066,7 +649,9 @@
 					</div>
 					<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp">w3schools</a>.</p></div>
 				</article>
+				
 			
+				
 				<article id="border-image">
 					<h2>.border-image
 						<code class="mixin-sample">(source slice width outset repeat);</code>
@@ -1083,7 +668,9 @@
 					</div>
 					<div class="detail"><p>CSS3 border-image according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_border-image.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="box-shadow">
 					<h2>.box-shadow
 						<code class="mixin-sample">(~&quot;shadow-1[, shadow-2, ..., shadow-n]&quot;);</code>
@@ -1100,7 +687,9 @@
 					</div>
 					<div class="detail"><p>CSS3 box-shadow according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="box-sizing">
 					<h2>.box-sizing
 						<code class="mixin-sample">(content-box|border-box|inherit);</code>
@@ -1117,7 +706,9 @@
 					</div>
 					<div class="detail"><p>CSS3 box-sizing according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_box-sizing.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="columns">
 					<h2>.columns
 						<code class="mixin-sample">(column-width column-count);</code>
@@ -1146,7 +737,9 @@
 					</div>
 					<div class="detail"><p>CSS3 columns according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_columns.asp">w3schools</a>.</p></div>
 				</article>
+				
 			
+				
 				<article id="font-face">
 					<h2>.font-face
 						<code class="mixin-sample">(@fontname, @fontfile);</code>
@@ -1163,7 +756,9 @@
 					</div>
 					<div class="detail"><p>CSS3 font-face according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="gradient">
 					<h2>.gradient
 						<code class="mixin-sample">(~&quot;image-1[, image-2, ..., image-n]&quot;);</code>
@@ -1186,7 +781,9 @@
 					</div>
 					<div class="detail"><p>Linear gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">MDN</a>.</p><p>Radial gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">MDN</a></p><p>W3C syntax input arguments</p></div>
 				</article>
+				
 			
+				
 				<article id="opacity">
 					<h2>.opacity
 						<code class="mixin-sample">(value|inherit);</code>
@@ -1203,7 +800,9 @@
 					</div>
 					<div class="detail"><p>CSS3 opacity according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="perspective">
 					<h2>.perspective
 						<code class="mixin-sample">(number|none);</code>
@@ -1223,7 +822,9 @@
 					</div>
 					<div class="detail"><p>CSS3 perspective according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_perspective.asp">w3schools</a></p></div>
 				</article>
+				
 			
+				
 				<article id="size">
 					<h2>.size
 						<code class="mixin-sample">(size-1 [, size-2]);</code>
@@ -1243,7 +844,9 @@
 					</div>
 					<div class="detail"><p>If you fill only first parameter second parameter will be the same.</p></div>
 				</article>
+				
 			
+				
 				<article id="transform">
 					<h2>.transform
 						<code class="mixin-sample">(none|transform-functions);</code>
@@ -1320,7 +923,9 @@
 					</div>
 					<div class="detail"><p>CSS3 transform according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transform.asp">w3schools</a>.</p></div>
 				</article>
+				
 			
+				
 				<article id="transition">
 					<h2>.transition
 						<code class="mixin-sample">(transition) or (~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);</code>
@@ -1352,6 +957,7 @@
 					</div>
 					<div class="detail"><p>CSS3 transition according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>.</p></div>
 				</article>
+				
 			
 
 		</div>

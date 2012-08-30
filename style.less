@@ -50,7 +50,7 @@ html, body, input {
     font-family: sans-serif;
     color: @color_base;
     background: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
     font-weight: 400;
@@ -189,14 +189,14 @@ section{
     clear:both;
 	}
 	ul{
-		padding-top: 25px;
+		padding: 25px 0;
 		background: #fff;
 		z-index: 5;
 		width: 215px;
 		float: left;
-		.box-shadow(~"inset -1px 0 #dadada");
 		top: 0;
 		li{
+			.box-shadow(~"inset -1px 0 #dadada");
 			ul{
 				display: none;
 			}
@@ -235,6 +235,8 @@ section{
 		}
 		&.fixed{
 			position: fixed;
+			overflow-y: auto;
+			bottom: 0;
 			& + #main  #gradient-hack{
 				position: fixed;
 			}
