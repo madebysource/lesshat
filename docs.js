@@ -702,8 +702,8 @@ var docs = {
 	]
 };
 
-function ucfirst(field) {
-	field.value = field.value.substr(0, 1).toUpperCase() + field.value.substr(1);
+function ucfirst(str) {
+	return str.substr(0, 1).toUpperCase() + str.substr(1);
 }
 
 docs.properties.map(function(doc) {
@@ -712,9 +712,9 @@ docs.properties.map(function(doc) {
 	doc.topMixin = doc.badge && doc.badge == 'top';
 	doc.upcoming = doc.badge && doc.badge == 'upcoming';
 
-	doc.id = doc.name.replace('.', '');
-	doc.nameWithoutDot = doc.name.replace('.', '');
-	doc.nameUpperCaseFirst = ucfirst(doc.nameWithoutDot);
+	doc.id = doc.name && doc.name.replace('.', '').replace(' ','-').toLowerCase();
+	doc.nameWithoutDot = doc.name && doc.name.replace('.', '');
+	doc.nameUpperCaseFirst = doc.name && ucfirst(doc.nameWithoutDot);
 
 	doc.hasLinks = doc.w3schools || doc.w3c || doc.mdn;
 

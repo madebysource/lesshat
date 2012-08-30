@@ -46,17 +46,17 @@
 
 			
 			<li >
-				<a href="#Design considerations" >Design considerations</a>
+				<a href="#configuration" >Configuration</a>
 				
 			</li>
 			
 			<li >
-				<a href="#Drawbacks" >Drawbacks</a>
+				<a href="#design-considerations" >Design considerations</a>
 				
 			</li>
 			
 			<li class="space-after">
-				<a href="#Configuration" >Configuration</a>
+				<a href="#drawbacks" >Drawbacks</a>
 				
 			</li>
 			
@@ -416,39 +416,7 @@
 
 			
 				
-				<article id="Design considerations">
-					<h2>Design considerations
-						<span class="mixin-sample"></span>
-					</h2>
-					
-					<div class="detail">
-						<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments), we are wrapping the aruments into a ~"..." block, so that we can push them as a single parameter, and parse it back inside the mixin.</p><p>Because of this, every mixin needs to parse it's arguments, and since LESS doesn't allow to add globally available functions, there is a parser inside each mixin. Not a best practice, but necessary. The good thing is that you can just include the mixin library with:</p><code>@import "lesshat";</code><p>and enjoy coding websites again.</p>
-					</div>
-					
-					
-					
-					
-				</article>
-				
-			
-				
-				<article id="Drawbacks">
-					<h2>Drawbacks
-						<span class="mixin-sample"></span>
-					</h2>
-					
-					<div class="detail">
-						<p>Error reporting in LESS sucks, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>
-					</div>
-					
-					
-					
-					
-				</article>
-				
-			
-				
-				<article id="Configuration">
+				<article id="configuration">
 					<h2>Configuration
 						<span class="mixin-sample"></span>
 					</h2>
@@ -473,6 +441,38 @@
 				
 			
 				
+				<article id="design-considerations">
+					<h2>Design considerations
+						<span class="mixin-sample"></span>
+					</h2>
+					
+					<div class="detail">
+						<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments), we are wrapping the aruments into a ~"..." block, so that we can push them as a single parameter, and parse it back inside the mixin.</p><p>Because of this, every mixin needs to parse it's arguments, and since LESS doesn't allow to add globally available functions, there is a parser inside each mixin. Not a best practice, but necessary. The good thing is that you can just include the mixin library with:</p><code>@import "lesshat";</code><p>and enjoy coding websites again.</p>
+					</div>
+					
+					
+					
+					
+				</article>
+				
+			
+				
+				<article id="drawbacks">
+					<h2>Drawbacks
+						<span class="mixin-sample"></span>
+					</h2>
+					
+					<div class="detail">
+						<p>Error reporting in LESS sucks, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>
+					</div>
+					
+					
+					
+					
+				</article>
+				
+			
+				
 				<article id="animation">
 					<h2>.animation
 						<span class="mixin-sample">(animation) or (~&quot;animation-1, animation-2, ..., animation-n&quot;);</span>
@@ -480,7 +480,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">animation on:</span>
+						<span class="specification">Animation on:</span>
 						
 						<a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN</a>
 						<a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">w3schools</a>
@@ -488,7 +488,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-animation {
 	.animation(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);
 }
@@ -541,7 +541,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">appearance on:</span>
+						<span class="specification">Appearance on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp">w3schools</a>
@@ -549,7 +549,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-appearance {
 	.appearance(button);
 }
@@ -567,7 +567,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">backface-visibility on:</span>
+						<span class="specification">Backface-visibility on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">w3schools</a>
@@ -575,7 +575,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-backface-visibility {
 	.backface-visibility(hidden);
 }
@@ -593,7 +593,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">background-clip on:</span>
+						<span class="specification">Background-clip on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_background-clip.asp">w3schools</a>
@@ -601,7 +601,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-background-clip {
 	.background-clip(padding-box);
 }
@@ -619,7 +619,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">background-origin on:</span>
+						<span class="specification">Background-origin on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_background-origin.asp&quot;&gt;w3schools&lt;/a&gt;&lt;/p&gt;">w3schools</a>
@@ -627,7 +627,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-background-origin {
 	.background-origin(content-box);
 }
@@ -645,7 +645,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">background-size on:</span>
+						<span class="specification">Background-size on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">w3schools</a>
@@ -653,7 +653,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-background-size {
 	.background-size(cover);
 }
@@ -675,7 +675,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">border-radius on:</span>
+						<span class="specification">Border-radius on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp">w3schools</a>
@@ -683,7 +683,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-border-radius {
 	.border-radius(10px);
 }
@@ -717,7 +717,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">border-image on:</span>
+						<span class="specification">Border-image on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_border-image.asp">w3schools</a>
@@ -725,7 +725,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-border-image {
 	.border-image(url(border.png) 30 30 round);
 }
@@ -743,7 +743,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">box-shadow on:</span>
+						<span class="specification">Box-shadow on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools</a>
@@ -751,7 +751,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-box-shadow {
 	.box-shadow(~&quot;0 1px 10px #000, inset 0 -2px 5px red&quot;);
 }
@@ -769,7 +769,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">box-sizing on:</span>
+						<span class="specification">Box-sizing on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_box-sizing.asp">w3schools</a>
@@ -777,7 +777,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-box-sizing {
 	.box-sizing(border-box);
 }
@@ -795,7 +795,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">columns on:</span>
+						<span class="specification">Columns on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_columns.asp">w3schools</a>
@@ -803,7 +803,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-columns {
 	.columns(100px 3);
 }
@@ -833,7 +833,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">font-face on:</span>
+						<span class="specification">Font-face on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">w3schools</a>
@@ -841,7 +841,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-font-face {
 	.font-face(ZendaRegular, zenda-webfont);
 }
@@ -864,7 +864,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-gradient {
 	.gradient(~&quot;linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)&quot;);
 }
@@ -888,7 +888,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">opacity on:</span>
+						<span class="specification">Opacity on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">w3schools</a>
@@ -896,7 +896,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-opacity {
 	.opacity(0.5);
 }
@@ -914,7 +914,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">perspective on:</span>
+						<span class="specification">Perspective on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_perspective.asp">w3schools</a>
@@ -922,7 +922,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-perspective {
 	.perspective(350px);
 }
@@ -948,7 +948,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-size {
 	.size(200px); /* render square */
 }
@@ -969,7 +969,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">transform on:</span>
+						<span class="specification">Transform on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_transform.asp">w3schools</a>
@@ -977,7 +977,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-transform {
 	.transform(~&quot;scale(.5) translate(10px, 20px)&quot;);
 }
@@ -1055,7 +1055,7 @@
 					
 					
 					<div class="links">
-						<span class="specification">transition on:</span>
+						<span class="specification">Transition on:</span>
 						
 						
 						<a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>
@@ -1063,7 +1063,7 @@
 					
 					
 					
-					<div class="code clearfix auto-css-transform">
+					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-transition {
 	.transition(color 1s ease-in-out);
 }

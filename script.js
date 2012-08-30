@@ -74,7 +74,7 @@ $(document).ready(function()
 			textarea = this;
 		$textarea.addClass('cm-source');
 
-		if ($textarea.parent(':first').hasClass('auto-css-transform')) {
+		if ($textarea.parent(':first').hasClass('auto-convert-less')) {
 			var $targetArea = $('<textarea></textarea>');
 			$textarea.after($targetArea);
 			$targetArea.addClass('cm-target');

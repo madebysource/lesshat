@@ -64,22 +64,23 @@ h1, h2, h3, h4, strong{
 
 // @Links
 
-a, a:visited{
+a, a:visited {
 	color: @color_action;
 	.transition(color 100ms);
 	position: relative;
 
-	&:hover{
+	&:hover {
 		color: @color_action_hover;
 	}
-	&:active{
+	&:active {
 		top: 1px;
 	}
-	header p &, header p &:visited{
+	header p &,
+	header p &:visited {
 		color: @color_header;
 		border-bottom: 1px solid #d8d6f8;
 
-		&:hover{
+		&:hover {
 			border-bottom: 1px solid #fff;
 		}
 	}
@@ -129,13 +130,19 @@ header{
 		display: inline-block;
 		background-clip: padding-box;
 		.box-shadow(~"0 1px 2px rgba(0,0,0,.71), inset 0 1px 0 rgba(255,255,255,.6), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
+		text-shadow: 0px 1px 0 rgba(255,255,255,0.3);
 		.gradient(~"linear-gradient(0deg, #e89300 0%, #f2ba25 100%)");
+		background-color: #e89300;
 		&:hover{
 			.gradient(~"linear-gradient(0deg, #d98900 0%, #e9b324 100%)");
+			text-shadow: 0px 1px 0 rgba(255,255,255,0.23);
+			background-color: #d98900;
 		}
 		&:active{
-			.gradient(~"linear-gradient(0deg, #e9b324 0%, #d98900 100%)");
+			.gradient(~"linear-gradient(0deg, #bf7900 0%, #cfa01f 100%)");
 			.box-shadow(~"0 1px 2px rgba(0,0,0,.71), 0 0 3px rgba(0,0,0,.43),	inset 0 0 2px rgba(255,255,255,.25)");
+			text-shadow: 0px 1px 0 rgba(255,255,255,0.15);
+			background-color: #d98900;
 		}
 		&:before{
 			content: '';
@@ -196,7 +203,8 @@ section{
 		float: left;
 		top: 0;
 		li{
-			.box-shadow(~"inset -1px 0 #dadada");
+			// .box-shadow(~"inset -1px 0 #dadada");
+			border-right: 1px solid #dadada;
 
 			&.space-after {
 				margin-bottom: 1em;
@@ -269,7 +277,14 @@ section{
 			z-index: 4;
 		}
 		article{
-			padding-bottom: 50px;
+			padding-bottom: 3em;
+
+			&#introduction {
+				margin-bottom: 3em;
+				padding-bottom: 3em;
+				border-bottom: 1px solid #dadada;
+			}
+
 			h2{
 				font-size: 28px;
 				font-weight: 700;
@@ -282,6 +297,10 @@ section{
 			}
 			p {
 				margin-bottom: 1em;
+			}
+			code {
+				margin-bottom: 1em;
+				display: block;
 			}
 			h2 .mixin-sample,
 			code.mixin .mixin-usage {
