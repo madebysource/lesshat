@@ -39,8 +39,6 @@
     //    .perspective-origin
 //    .size
 //    .transform
-    //    .transform-origin
-    //    .transform-style
     //    .translate
     //    .translate3d
     //    .translateX
@@ -59,6 +57,8 @@
     //    .skew
     //    .skewX
     //    .skewY
+//    .transform-origin
+//    .transform-style
 //    .transition
     //    .transition-property
     //    .transition-duration
@@ -1109,76 +1109,6 @@
     //  element{  .transform(~"scale(.5) translate(10px, 20px)"); }
 
 
-//  .transform-origin
-
-  .transform-origin(@arguments:50% 50% 0){
-
-      //  Local config for disabling properties
-
-      @w3cLocal: true; // Unprefixed W3C syntax
-      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
-      @operaLocal: true; // Opera 10.5+
-      @msLocal: true;  // IE 10+
-
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
-        .inception(@signal, @arguments);
-      }
-      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
-
-      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
-      .result(@arguments, @mozSignal, @moz, @mozLocal);
-      // --
-      .result(@arguments, @operaSignal, @opera, @operaLocal);
-      // --
-      .result(@arguments, @msSignal, @ms, @msLocal);
-      // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
-  }
-
-    //  element{  .transform-origin(20% 40%);  }
-
-
-//  .transform-style
-
-  .transform-style(@arguments:flat){
-
-      //  Local config for disabling properties
-
-      @w3cLocal: true; // Unprefixed W3C syntax
-      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
-      @msLocal: true;  // IE 10+
-
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
-        .inception(@signal, @arguments);
-      }
-      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
-
-      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
-      .result(@arguments, @mozSignal, @moz, @mozLocal);
-      // --
-      .result(@arguments, @msSignal, @ms, @msLocal);
-      // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
-  }
-
-    //  element{  .transform-style(preserve-3d); }
-
-
 //  .translate
 
   .translate(@x:0, @y:0){
@@ -1399,7 +1329,7 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-  .scale(@x, @y){
+  .scale(@x:0, @y:0){
 
       //  Local config for disabling properties
 
@@ -1548,7 +1478,7 @@
 
 //  .scaleZ
 
-    .scaleZ(@x:1){
+    .scaleZ(@z:1){
 
       //  Local config for disabling properties
 
@@ -1877,6 +1807,76 @@
   }
 
     //  element{  .skewY(36deg);  }
+
+
+//  .transform-origin
+
+  .transform-origin(@arguments:50% 50% 0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .transform-origin(20% 40%);  }
+
+
+//  .transform-style
+
+  .transform-style(@arguments:flat){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+  
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug 
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+    //  element{  .transform-style(preserve-3d); }
 
 
 //  .transition
