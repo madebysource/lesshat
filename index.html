@@ -45,12 +45,22 @@
 			<li><a href="#introduction" class="active">Introduction</a></li>
 
 			
-			<li>
+			<li >
+				<a href="#Design considerations" >Design considerations</a>
+				
+			</li>
+			
+			<li >
+				<a href="#Drawbacks" >Drawbacks</a>
+				
+			</li>
+			
+			<li class="space-after">
 				<a href="#Configuration" >Configuration</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#animation" >.animation</a>
 				
 				<ul>
@@ -73,37 +83,37 @@
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#keyframes" class="red" data-text="EN ROUTE">.keyframes</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#appearance" >.appearance</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#backface-visibility" >.backface-visibility</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#background-clip" >.background-clip</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#background-origin" >.background-origin</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#background-size" >.background-size</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#border-radius" >.border-radius</a>
 				
 				<ul>
@@ -120,22 +130,22 @@
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#border-image" >.border-image</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#box-shadow" >.box-shadow</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#box-sizing" >.box-sizing</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#columns" >.columns</a>
 				
 				<ul>
@@ -152,22 +162,22 @@
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#font-face" >.font-face</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#gradient" class="green" data-text="TOP MIXIN">.gradient</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#opacity" >.opacity</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#perspective" >.perspective</a>
 				
 				<ul>
@@ -178,12 +188,12 @@
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#size" >.size</a>
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#transform" >.transform</a>
 				
 				<ul>
@@ -232,7 +242,7 @@
 				
 			</li>
 			
-			<li>
+			<li >
 				<a href="#transition" >.transition</a>
 				
 				<ul>
@@ -404,74 +414,82 @@
 				<p class="detail"><strong>Thus, ladies and gentlemen, welcome LESS Hat!</strong></p>
 			</article>
 
-			<!-- move to style.less -->
-			<style>
-				h3 {
-					font-weight: bold;
-					margin-top: 1em;
-					margin-bottom: 1em;
-				}
-				.detail p {
-					margin-bottom: 1em;
-				}
-				h2 .mixin-sample,
-				code.mixin .mixin-usage {
-					font-weight: 300;
-					color: #BBB;
-				}
-				code.mixin {
-					font-weight: 300;
-					display: block;
-					font-size: 20px;
-					line-height: 1.5em;
-				}
-				code.mixin.hide-name .mixin-name {
-					visibility: hidden;
-				}
-				code.mixin a {
-					visibility: hidden;
-					font-size: 14px;
-					text-decoration: underline;
-				}
-				code.mixin:hover a {
-					visibility: visible;
-					color: navy;
-				}
-			</style>
-
+			
+				
+				<article id="Design considerations">
+					<h2>Design considerations
+						<span class="mixin-sample"></span>
+					</h2>
+					
+					<div class="detail">
+						<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments), we are wrapping the aruments into a ~"..." block, so that we can push them as a single parameter, and parse it back inside the mixin.</p><p>Because of this, every mixin needs to parse it's arguments, and since LESS doesn't allow to add globally available functions, there is a parser inside each mixin. Not a best practice, but necessary. The good thing is that you can just include the mixin library with:</p><code>@import "lesshat";</code><p>and enjoy coding websites again.</p>
+					</div>
+					
+					
+					
+					
+				</article>
+				
+			
+				
+				<article id="Drawbacks">
+					<h2>Drawbacks
+						<span class="mixin-sample"></span>
+					</h2>
+					
+					<div class="detail">
+						<p>Error reporting in LESS sucks, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>
+					</div>
+					
+					
+					
+					
+				</article>
+				
 			
 				
 				<article id="Configuration">
 					<h2>Configuration
-						<code class="mixin-sample"></code>
+						<span class="mixin-sample"></span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-Configuration">
-
-	 @w3c: true; // Unprefixed W3C syntax 
-	 @webkit: true; // Chrome 7+, Safari 5+, iOS5, Android 
-	 @moz: true; //  Firefox 4+ 
-	 @opera: true; // Opera 10.5+ 
-	 @ms: true;  // IE 10+ 
-	 @oldWebkit: true; // iOS4, Safari 4, Chrome &lt; 6. 
-
-						</textarea>
-						<textarea id="code-Configuration"></textarea>
+					<div class="detail">
+						<p>Turn on/off prefixes for individual browsers. Useful when doing internal project, or mobile app that should only work with webkit.</p><p>Config is global for all mixins (see the top of the file) and you can override specific mixins manually (at the beginning of every mixin).</p>
 					</div>
-					<div class="detail"><p>Turn on/off browsers prefix. Config is global for all mixins and also for specific mixin.</p></div>
+					
+					
+					
+					
+					<div class="code clearfix ">
+						<textarea cols="30" rows="10" class="less">@w3schools: true; // Unprefixed W3C syntax 
+@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android 
+@moz: true; //  Firefox 4+ 
+@opera: true; // Opera 10.5+ 
+@ms: true;  // IE 10+ 
+@oldWebkit: true; // iOS4, Safari 4, Chrome &lt; 6.</textarea>
+					</div>
+					
 				</article>
 				
 			
 				
 				<article id="animation">
 					<h2>.animation
-						<code class="mixin-sample">(animation) or (~&quot;animation-1, animation-2, ..., animation-n&quot;);</code>
+						<span class="mixin-sample">(animation) or (~&quot;animation-1, animation-2, ..., animation-n&quot;);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-animation">
-.example-animation {
+					
+					<div class="links">
+						<span class="specification">animation on:</span>
+						
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN</a>
+						<a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-animation {
 	.animation(~&quot;my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite&quot;);
 }
 .example-animation-delay {
@@ -507,11 +525,9 @@
 .example-animation-play-state {
 	.animation-play-state(paused);
 }
-
-						</textarea>
-						<textarea id="code-animation"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">w3schools</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN spec</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations">examples</a>.</p></div>
+					
 				</article>
 				
 			
@@ -520,111 +536,155 @@
 				
 				<article id="appearance">
 					<h2>.appearance
-						<code class="mixin-sample">(appearance);</code>
+						<span class="mixin-sample">(appearance);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-appearance">
-.example-appearance {
+					
+					<div class="links">
+						<span class="specification">appearance on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-appearance {
 	.appearance(button);
 }
-
-						</textarea>
-						<textarea id="code-appearance"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 appearance according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="backface-visibility">
 					<h2>.backface-visibility
-						<code class="mixin-sample">(visible|hidden);</code>
+						<span class="mixin-sample">(visible|hidden);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-backface-visibility">
-.example-backface-visibility {
+					
+					<div class="links">
+						<span class="specification">backface-visibility on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-backface-visibility {
 	.backface-visibility(hidden);
 }
-
-						</textarea>
-						<textarea id="code-backface-visibility"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 backface-visibility according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="background-clip">
 					<h2>.background-clip
-						<code class="mixin-sample">(border-box|padding-box|content-box);</code>
+						<span class="mixin-sample">(border-box|padding-box|content-box);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-background-clip">
-.example-background-clip {
+					
+					<div class="links">
+						<span class="specification">background-clip on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_background-clip.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-background-clip {
 	.background-clip(padding-box);
 }
-
-						</textarea>
-						<textarea id="code-background-clip"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 background-clip according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-clip.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="background-origin">
 					<h2>.background-origin
-						<code class="mixin-sample">(border-box|padding-box|content-box);</code>
+						<span class="mixin-sample">(border-box|padding-box|content-box);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-background-origin">
-.example-background-origin {
+					
+					<div class="links">
+						<span class="specification">background-origin on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_background-origin.asp&quot;&gt;w3schools&lt;/a&gt;&lt;/p&gt;">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-background-origin {
 	.background-origin(content-box);
 }
-
-						</textarea>
-						<textarea id="code-background-origin"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 background-origin according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-origin.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="background-size">
 					<h2>.background-size
-						<code class="mixin-sample">(size) or (~&quot;size-1 [, size-2, ..., size-n]&quot;);</code>
+						<span class="mixin-sample">(size) or (~&quot;size-1 [, size-2, ..., size-n]&quot;);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-background-size">
-.example-background-size {
+					
+					<div class="links">
+						<span class="specification">background-size on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-background-size {
 	.background-size(cover);
 }
 
 .example-background-size-2 {
 	.background-size(~&quot;100%, auto&quot;);
 }
-
-						</textarea>
-						<textarea id="code-background-size"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 background-size according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="border-radius">
 					<h2>.border-radius
-						<code class="mixin-sample">(radius);</code>
+						<span class="mixin-sample">(radius);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-border-radius">
-.example-border-radius {
+					
+					<div class="links">
+						<span class="specification">border-radius on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-border-radius {
 	.border-radius(10px);
 }
 	/* OR */
@@ -643,80 +703,108 @@
 .example-border-bottom-right-radius {
 	.border-bottom-right-radius(25px);
 }
-
-						</textarea>
-						<textarea id="code-border-radius"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 animation according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp">w3schools</a>.</p></div>
+					
 				</article>
 				
 			
 				
 				<article id="border-image">
 					<h2>.border-image
-						<code class="mixin-sample">(source slice width outset repeat);</code>
+						<span class="mixin-sample">(source slice width outset repeat);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-border-image">
-.example-border-image {
+					
+					<div class="links">
+						<span class="specification">border-image on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_border-image.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-border-image {
 	.border-image(url(border.png) 30 30 round);
 }
-
-						</textarea>
-						<textarea id="code-border-image"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 border-image according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_border-image.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="box-shadow">
 					<h2>.box-shadow
-						<code class="mixin-sample">(~&quot;shadow-1[, shadow-2, ..., shadow-n]&quot;);</code>
+						<span class="mixin-sample">(~&quot;shadow-1[, shadow-2, ..., shadow-n]&quot;);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-box-shadow">
-.example-box-shadow {
+					
+					<div class="links">
+						<span class="specification">box-shadow on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-box-shadow {
 	.box-shadow(~&quot;0 1px 10px #000, inset 0 -2px 5px red&quot;);
 }
-
-						</textarea>
-						<textarea id="code-box-shadow"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 box-shadow according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="box-sizing">
 					<h2>.box-sizing
-						<code class="mixin-sample">(content-box|border-box|inherit);</code>
+						<span class="mixin-sample">(content-box|border-box|inherit);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-box-sizing">
-.example-box-sizing {
+					
+					<div class="links">
+						<span class="specification">box-sizing on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_box-sizing.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-box-sizing {
 	.box-sizing(border-box);
 }
-
-						</textarea>
-						<textarea id="code-box-sizing"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 box-sizing according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_box-sizing.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="columns">
 					<h2>.columns
-						<code class="mixin-sample">(column-width column-count);</code>
+						<span class="mixin-sample">(column-width column-count);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-columns">
-.example-columns {
+					
+					<div class="links">
+						<span class="specification">columns on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_columns.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-columns {
 	.columns(100px 3);
 }
 .example-column-count {
@@ -731,42 +819,53 @@
 .example-column-width {
 	.column-width(100px);
 }
-
-						</textarea>
-						<textarea id="code-columns"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 columns according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_columns.asp">w3schools</a>.</p></div>
+					
 				</article>
 				
 			
 				
 				<article id="font-face">
 					<h2>.font-face
-						<code class="mixin-sample">(@fontname, @fontfile);</code>
+						<span class="mixin-sample">(@fontname, @fontfile);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-font-face">
-.example-font-face {
+					
+					<div class="links">
+						<span class="specification">font-face on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-font-face {
 	.font-face(ZendaRegular, zenda-webfont);
 }
-
-						</textarea>
-						<textarea id="code-font-face"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 font-face according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="gradient">
 					<h2>.gradient
-						<code class="mixin-sample">(~&quot;image-1[, image-2, ..., image-n]&quot;);</code>
+						<span class="mixin-sample">(~&quot;image-1[, image-2, ..., image-n]&quot;);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-gradient">
-.example-gradient {
+					<div class="detail">
+						<p>Takes multiple linear and radial gradients, generates CSS for all modern browsers including older webkit syntax (hello, iOS4!).</p><p>MDN docs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">linear gradient</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">radial gradient</a></p>
+					</div>
+					
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-gradient {
 	.gradient(~&quot;linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)&quot;);
 }
 .example-multiple-gradient {
@@ -775,86 +874,111 @@
 .example-multiple-gradient-with-image {
 	.gradient(~&quot;url(myNiceKitty.png), linear-gradient(-45deg, rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%)&quot;);
 }
-
-						</textarea>
-						<textarea id="code-gradient"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>Linear gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">MDN</a>.</p><p>Radial gradient according to specs: <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">MDN</a></p><p>W3C syntax input arguments</p></div>
+					
 				</article>
 				
 			
 				
 				<article id="opacity">
 					<h2>.opacity
-						<code class="mixin-sample">(value|inherit);</code>
+						<span class="mixin-sample">(value|inherit);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-opacity">
-.example-opacity {
+					
+					<div class="links">
+						<span class="specification">opacity on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-opacity {
 	.opacity(0.5);
 }
-
-						</textarea>
-						<textarea id="code-opacity"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 opacity according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="perspective">
 					<h2>.perspective
-						<code class="mixin-sample">(number|none);</code>
+						<span class="mixin-sample">(number|none);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-perspective">
-.example-perspective {
+					
+					<div class="links">
+						<span class="specification">perspective on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_perspective.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-perspective {
 	.perspective(350px);
 }
 .example-perspective-origin {
 	.perspective-origin(top left);
 }
-
-						</textarea>
-						<textarea id="code-perspective"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 perspective according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_perspective.asp">w3schools</a></p></div>
+					
 				</article>
 				
 			
 				
 				<article id="size">
 					<h2>.size
-						<code class="mixin-sample">(size-1 [, size-2]);</code>
+						<span class="mixin-sample">(size-1 [, size-2]);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-size">
-.example-size {
+					<div class="detail">
+						<p>If you fill only first parameter, second parameter will be the same.</p>
+					</div>
+					
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-size {
 	.size(200px); /* render square */
 }
 .example-size-2 {
 	.size(960px, 600px);
 }
-
-						</textarea>
-						<textarea id="code-size"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>If you fill only first parameter second parameter will be the same.</p></div>
+					
 				</article>
 				
 			
 				
 				<article id="transform">
 					<h2>.transform
-						<code class="mixin-sample">(none|transform-functions);</code>
+						<span class="mixin-sample">(none|transform-functions);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-transform">
-.example-transform {
+					
+					<div class="links">
+						<span class="specification">transform on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_transform.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-transform {
 	.transform(~&quot;scale(.5) translate(10px, 20px)&quot;);
 }
 .example-transform-origin {
@@ -917,23 +1041,30 @@
 .example-skewY {
 	.rotateZ(35deg);
 }
-
-						</textarea>
-						<textarea id="code-transform"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 transform according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transform.asp">w3schools</a>.</p></div>
+					
 				</article>
 				
 			
 				
 				<article id="transition">
 					<h2>.transition
-						<code class="mixin-sample">(transition) or (~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);</code>
+						<span class="mixin-sample">(transition) or (~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);</span>
 					</h2>
 					
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-transition">
-.example-transition {
+					
+					<div class="links">
+						<span class="specification">transition on:</span>
+						
+						
+						<a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>
+					</div>
+					
+					
+					
+					<div class="code clearfix auto-css-transform">
+						<textarea cols="30" rows="10" class="less">.example-transition {
 	.transition(color 1s ease-in-out);
 }
 .example-multiple-transition {
@@ -951,11 +1082,9 @@
 .example-transition-delay {
 	.transition-timing-delay(2s);
 }
-
-						</textarea>
-						<textarea id="code-transition"></textarea>
+</textarea>
 					</div>
-					<div class="detail"><p>CSS3 transition according to specs: <a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>.</p></div>
+					
 				</article>
 				
 			

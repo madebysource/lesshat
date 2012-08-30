@@ -33,7 +33,6 @@ return function() {
 };
 };
 
-var lesshat = document.querySelectorAll('textarea[data-css]');
 var css = document.getElementById('css');
 var parser = new less.Parser;
 var refresh = function(less, target, ok, err)
@@ -69,33 +68,49 @@ $(document).ready(function()
 
 	Subscription.init();
 
-	Array.prototype.forEach.call(lesshat, function(l)
-	{
-		var target = l.dataset['css'] && document.getElementById(l.dataset['css']);
-		var syntax;
-		var check = debounce(errCheck, 1200);
-		if (target) {
-			syntax = CodeMirror.fromTextArea(target, {
-				'tabSize': 2,
-				'readOnly': 'nocursor'
+	var lesshatTextarea = $('textarea.less');
+
+	lesshatTextarea.each(function(index) {
+		var $textarea = $(this),
+			textarea = this;
+		$textarea.addClass('cm-source');
+
+		if ($textarea.parent(':first').hasClass('auto-css-transform')) {
+			var $targetArea = $('<textarea></textarea>');
+			$textarea.after($targetArea);
+			$targetArea.addClass('cm-target');
+			var targetArea = $targetArea.get(0);
+
+			var syntax;
+			var check = debounce(errCheck, 1200);
+
+			if (targetArea) {
+				syntax = CodeMirror.fromTextArea(targetArea, {
+					'tabSize': 2,
+					'readOnly': 'nocursor'
+				});
+			}
+			var editor = CodeMirror.fromTextArea(textarea, {
+				'onChange': throttle(function(e) {
+					refresh(
+						e.getValue(),
+						syntax,
+						function() {
+							check(syntax, syntax.getWrapperElement(), false);
+						},
+						function(e) {
+							check(syntax, syntax.getWrapperElement(), true);
+						}
+					);
+				}, 100),
+				'tabSize': 2
+			});
+			refresh(editor.getValue(), syntax);
+		} else {
+			var editor = CodeMirror.fromTextArea(textarea, {
+				'tabSize': 2
 			});
 		}
-		var editor = CodeMirror.fromTextArea(l, {
-			'onChange': throttle(function(e) {
-				refresh(
-					e.getValue(),
-					syntax,
-					function() {
-						check(syntax, syntax.getWrapperElement(), false);
-					},
-					function(e) {
-						check(syntax, syntax.getWrapperElement(), true);
-					}
-				);
-			}, 100),
-			'tabSize': 2
-		});
-		refresh(editor.getValue(), syntax);
 	});
 
 	var $popup = $('#popup');

@@ -45,7 +45,7 @@
 			<li><a href="#introduction" class="active">Introduction</a></li>
 
 			{{#each properties}}
-			<li>
+			<li {{#if spaceAfter}}class="space-after"{{/if}}>
 				<a href="#{{id}}" {{#if upcoming}}class="red" data-text="EN ROUTE"{{/if}}{{#if topMixin}}class="green" data-text="TOP MIXIN"{{/if}}>{{name}}</a>
 				{{#if parts}}
 				<ul>
@@ -211,47 +211,25 @@
 				<p class="detail"><strong>Thus, ladies and gentlemen, welcome LESS Hat!</strong></p>
 			</article>
 
-			<!-- move to style.less -->
-			<style>
-				h3 {
-					font-weight: bold;
-					margin-top: 1em;
-					margin-bottom: 1em;
-				}
-				.detail p {
-					margin-bottom: 1em;
-				}
-				h2 .mixin-sample,
-				code.mixin .mixin-usage {
-					font-weight: 300;
-					color: #BBB;
-				}
-				code.mixin {
-					font-weight: 300;
-					display: block;
-					font-size: 20px;
-					line-height: 1.5em;
-				}
-				code.mixin.hide-name .mixin-name {
-					visibility: hidden;
-				}
-				code.mixin a {
-					visibility: hidden;
-					font-size: 14px;
-					text-decoration: underline;
-				}
-				code.mixin:hover a {
-					visibility: visible;
-					color: navy;
-				}
-			</style>
-
 			{{#each properties}}
 				{{#unless upcoming}}
 				<article id="{{id}}">
 					<h2>{{name}}
-						<code class="mixin-sample">{{parameter}}</code>
+						<span class="mixin-sample">{{parameter}}</span>
 					</h2>
+					{{#if doc}}
+					<div class="detail">
+						{{{doc}}}
+					</div>
+					{{/if}}
+					{{#if hasLinks}}
+					<div class="links">
+						<span class="specification">{{nameUpperCaseFirst}} on:</span>
+						{{#if w3c}}<a href="{{w3c}}">W3C</a>{{/if}}
+						{{#if mdn}}<a href="{{mdn}}">MDN</a>{{/if}}
+						{{#if w3schools}}<a href="{{w3schools}}">w3schools</a>{{/if}}
+					</div>
+					{{/if}}
 					{{#if parts}}{{#each parts}}{{#each parameters}}
 					<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">
 						<span class="mixin-name">{{../name}}</span>
@@ -260,13 +238,11 @@
 						{{#if ../mdn}}<a href="{{../mdn}}">MDN</a>{{/if}}
 					</code>
 					{{/each}}{{/each}}{{/if}}
-					<div class="code clearfix">
-						<textarea cols="30" rows="10" data-css="code-{{id}}">
-{{code}}
-						</textarea>
-						<textarea id="code-{{id}}"></textarea>
+					{{#if code}}
+					<div class="code clearfix {{#unless noCssTransformation}}auto-convert-less{{/unless}}">
+						<textarea cols="30" rows="10" class="less">{{code}}</textarea>
 					</div>
-					<div class="detail">{{{doc}}}</div>
+					{{/if}}
 				</article>
 				{{/unless}}
 			{{/each}}

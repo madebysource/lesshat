@@ -14,22 +14,26 @@ var cb = function(curr, prev) {
 		return;
     }
 
-	var index = fs.readFileSync(TEMPLATE, 'UTF-8');
+	try {
+		var index = fs.readFileSync(TEMPLATE, 'UTF-8');
 
-	var template = handlebars.compile(index);
+		var template = handlebars.compile(index);
 
-	// invalidate require cache
-	if (require.cache[path.join(__dirname, DATA)]) {
-		delete require.cache[path.join(__dirname, DATA)];
+		// invalidate require cache
+		if (require.cache[path.join(__dirname, DATA)]) {
+			delete require.cache[path.join(__dirname, DATA)];
+		}
+
+		var docs = require(DATA);
+
+		var result = template(docs);
+
+		fs.writeFileSync(TARGET, result, 'UTF-8');
+
+		console.log('Compiled.');
+	} catch (e) {
+		console.log('Error: ' + e.message);
 	}
-
-	var docs = require(DATA);
-
-	var result = template(docs);
-
-	fs.writeFileSync(TARGET, result, 'UTF-8');
-
-	console.log('Compiled.');
  };
 
 fs.watchFile(TEMPLATE, watchOpt, cb);
