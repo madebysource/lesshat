@@ -41,98 +41,25 @@
 		<p class="twitter"><a href="#"><span>Take cover! It's&nbsp;supersonic!</span></a></p>
 	</header>
 	<section>
-		<ul id="menu">	
-			<li><a href="#introduction" class="active">Introduction</a></li>
+		<div id="menu">
+			<ul id="menu-list">
+				<li><a href="#introduction" class="active">Introduction</a></li>
 
-			{{#each properties}}
-			<li {{#if spaceAfter}}class="space-after"{{/if}}>
-				<a href="#{{id}}" {{#if upcoming}}class="red" data-text="EN ROUTE"{{/if}}{{#if topMixin}}class="green" data-text="TOP MIXIN"{{/if}}>{{name}}</a>
-				{{#if parts}}
-				<ul>
-					{{#each parts}}
-						<li>{{name}}</li>
-					{{/each}}
-				</ul>
-				{{/if}}
-			</li>
-			{{/each}}
+				{{#each properties}}
+				<li {{#if spaceAfter}}class="space-after"{{/if}}>
+					<a href="#{{id}}" {{#if upcoming}}class="red" data-text="EN ROUTE"{{/if}}{{#if topMixin}}class="green" data-text="TOP MIXIN"{{/if}}>{{name}}</a>
+					{{#if parts}}
+					<ul>
+						{{#each parts}}
+							<li>{{name}}</li>
+						{{/each}}
+					</ul>
+					{{/if}}
+				</li>
+				{{/each}}
 
-
-			<!--
-			<li><a href="#animation">.animation</a>
-				<ul>
-					<li><a href="#">.animation-delay</a></li>
-					<li><a href="#">.animation-direction</a></li>
-					<li><a href="#">.animation-duration</a></li>
-					<li><a href="#">.animation-timing-function</a></li>
-					<li><a href="#">.animation-iteration-count</a></li>
-					<li><a href="#">.animation-name</a></li>
-					<li><a href="#">.animation-play-state</a></li>
-				</ul>
-			</li>
-			<li><a href="#" class="red" data-text="EN ROUTE">.keyframes</a></li>
-			<li><a href="#appearance">.appearance</a></li>
-			<li><a href="#backface–visibility">.backface–visibility</a></li>
-			<li><a href="#background–clip">.background–clip</a></li>
-			<li><a href="#background–origin">.background–origin</a></li>
-			<li><a href="#background–size">.background–size</a></li>
-			<li><a href="#border–radius">.border–radius</a>
-				<ul>
-					<li><a href="#">.border-top-left-radius</a></li>
-					<li><a href="#">.border-top-right-radius</a></li>
-					<li><a href="#">.border-bottom-left-radius</a></li>
-					<li><a href="#">.border-bottom-right-radius</a></li>
-				</ul>
-			</li>
-			<li><a href="#">.border–image</a></li>
-			<li><a href="#">.box–shadow</a></li>
-			<li><a href="#">.box–sizing</a></li>
-			<li><a href="#">.columns</a>
-				<ul>
-					<li><a href="#">.column-count</a></li>
-					<li><a href="#">.column-gap</a></li>
-					<li><a href="#">.column-rule</a></li>
-					<li><a href="#">.column-width</a></li>				
-				</ul>
-			</li>
-			<li><a href="#font–face">.font–face</a></li>
-			<li><a href="#gradient" class="green" data-text="TOP MIXIN">.gradient</a></li>
-			<li><a href="#opacity">.opacity</a></li>
-			<li><a href="#perspective">.perspective</a>
-				<ul>
-					<li><a href="#">.perspective-origin</a></li>
-				</ul>
-			</li>
-			<li><a href="#">.size</a></li>
-			<li><a href="#">.transform</a>
-				<ul>
-					<li><a href="#">.translate</a></li>
-					<li><a href="#">.translate3d</a></li>
-					<li><a href="#">.translateX</a></li>
-					<li><a href="#">.translateY</a></li>
-					<li><a href="#">.translateZ</a></li>
-					<li><a href="#">.scale</a></li>
-					<li><a href="#">.scale3d</a></li>
-					<li><a href="#">.scaleX</a></li>
-					<li><a href="#">.scaleY</a></li>
-					<li><a href="#">.scaleZ</a></li>
-					<li><a href="#">.rotate</a></li>
-					<li><a href="#">.rotate3d</a></li>
-					<li><a href="#">.rotateX</a></li>
-					<li><a href="#">.rotateY</a></li>
-					<li><a href="#">.rotateZ</a></li>
-					<li><a href="#">.skew</a></li>
-					<li><a href="#">.skewX</a></li>
-					<li><a href="#">.skewY</a></li>
-				</ul>
-			</li>
-			<li><a href="#">.transition</a></li>
-			<li><a href="#">.transition-property</a></li>
-			<li><a href="#">.transition-duration</a></li>
-			<li><a href="#">.transition-timing-function</a></li>
-			<li><a href="#">.transition-delay</a></li>
-			-->
-		</ul>
+			</ul>
+		</div>
 		<div id="main">
 			<div id="gradient-hack"></div>
 			<article id="introduction">

@@ -195,67 +195,73 @@ section{
 	&:after {
     clear:both;
 	}
-	ul{
+	#menu {
 		padding: 25px 0;
-		background: #fff;
-		z-index: 5;
-		width: 215px;
-		float: left;
-		top: 0;
-		li{
+
+		ul{
+			margin: 0;
+			padding: 0;
+			background: #fff;
+			z-index: 5;
+			width: 215px;
+			float: left;
+			top: 0;
+
 			// .box-shadow(~"inset -1px 0 #dadada");
 			border-right: 1px solid #dadada;
 
-			&.space-after {
-				margin-bottom: 1em;
-			}
+			li {
 
-			ul{
-				display: none;
+				&.space-after {
+					margin-bottom: 1em;
+				}
+
+				ul{
+					display: none;
+				}
+				a, a:visited{
+					position: relative;
+					color: #888;
+					padding: 7px;
+					display: block;
+					&:hover{
+						color:#626262;
+					}
+					&.active{
+						font-weight: bold;
+						color: #0088d6;
+					}
+					&.red&:after, &.green&:after{
+						content: attr(data-text);
+						position: absolute;
+						color: #fff;
+						font-size: 10px;
+						top: 7px;
+						right: 10px;
+						padding: 3px 8px;
+						.border-radius(3px);
+						font-weight: 300;
+					}
+					&.red&:after{
+						text-shadow: 0 1px 0 rgba(133,0,0,.3);
+						background-color: #eb5858;
+					}
+					&.green&:after{
+						text-shadow: 0 1px 0 rgba(75,133,0,.3);
+						background-color: #90c854;
+					}
+				}
 			}
-			a, a:visited{
-				position: relative;
-				color: #888;
-				padding: 7px;
-				display: block;
-				&:hover{
-					color:#626262;
-				}
-				&.active{
-					font-weight: bold;
-					color: #0088d6;
-				}
-				&.red&:after, &.green&:after{
-					content: attr(data-text);
-					position: absolute;
-					color: #fff;
-					font-size: 10px;
-					top: 7px;
-					right: 10px;
-					padding: 3px 8px;
-					.border-radius(3px);
-					font-weight: 300;
-				}
-				&.red&:after{
-					text-shadow: 0 1px 0 rgba(133,0,0,.3);
-					background-color: #eb5858;
-				}
-				&.green&:after{
-					text-shadow: 0 1px 0 rgba(75,133,0,.3);
-					background-color: #90c854;
-				}
-			}
-		}
-		&.fixed{
-			position: fixed;
-			overflow-y: auto;
-			bottom: 0;
-			& + #main  #gradient-hack{
+			&.fixed{
 				position: fixed;
+				overflow-y: auto;
+				bottom: 0;
+				& + #main  #gradient-hack{
+					position: fixed;
+				}
 			}
 		}
 	}
-
 // ----------------------------------
 
 // @Main
