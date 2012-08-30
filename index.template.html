@@ -42,7 +42,41 @@
 	</header>
 	<section>
 		<ul id="menu">	
-			<li><a href="#introduction" class="active">Introduction</a></li>	
+			<li><a href="#introduction" class="active">Introduction</a></li>
+
+			{{#each properties}}
+			<li>
+				<a href="#{{id}}">{{name}}</a>
+				{{#if parts.length}}
+				<ul>
+					{{#each parts}}
+						<li>{{name}}</li>
+					{{/each}}
+				</ul>
+				{{/if}}
+			</li>
+				<h2>{{name}}
+					<code class="mixin-sample">{{parameter}}</code>
+				</h2>
+				{{#if parts}}{{#each parts}}{{#each parameters}}
+				<code class="mixin{{#if isFirst}} {{else}} hide-name{{/if}}">
+					<span class="mixin-name">{{../name}}</span>
+					<span class="mixin-usage">{{name}}</span>
+					{{#if ../w3c}}<a href="{{../w3c}}">W3C</a>{{/if}}
+					{{#if ../mdn}}<a href="{{../mdn}}">MDN</a>{{/if}}
+				</code>
+				{{/each}}{{/each}}{{/if}}
+				<div class="code clearfix">
+					<textarea cols="30" rows="10" data-css="code-{{id}}">
+						{{code}}
+					</textarea>
+					<textarea id="code-{{id}}"></textarea>
+				</div>
+				<div class="detail">{{{doc}}}</div>
+			</article>
+			{{/each}}
+
+
 			<li><a href="#animation">.animation</a>
 				<ul>
 					<li><a href="#">.animation-delay</a></li>
@@ -229,7 +263,7 @@
 				}
 			</style>
 
-			{{#each this}}
+			{{#each properties}}
 				<article id="{{id}}">
 					<h2>{{name}}
 						<code class="mixin-sample">{{parameter}}</code>
