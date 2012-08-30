@@ -20,7 +20,7 @@ var Section = function(opt)
 			this.id = opt.id;
 		else
 		{
-			this.id = $container.attr('id');
+			this.id = this.$container.attr('id');
 		}
 
 	}
