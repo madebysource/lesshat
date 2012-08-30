@@ -1,24 +1,8 @@
 var docs = {
 	properties: [
 		{
-			name: 'Design considerations',
-			showInMenu: true,
-			doc: '<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments), we are wrapping the aruments into a ~"..." block, so that we can push them as a single parameter, and parse it back inside the mixin.</p>' +
-				'<p>Because of this, every mixin needs to parse it\'s arguments, and since LESS doesn\'t allow to add globally available functions, there is a parser inside each mixin. Not a best practice, but necessary. The good thing is that you can just include the mixin library with:</p>' +
-			'<code>@import "lesshat";</code>' +
-			'<p>and enjoy coding websites again.</p>'
-		},
-
-		{
-			name: 'Drawbacks',
-			showInMenu: true,
-			doc: '<p>Error reporting in LESS sucks, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
-		},
-
-		{
 			name: 'Configuration',
 			showInMenu: true,
-			spaceAfter: true,
 			doc: '<p>Turn on/off prefixes for individual browsers. Useful when doing internal project, or mobile app that should only work with webkit.</p>' +
 				'<p>Config is global for all mixins (see the top of the file) and you can override specific mixins manually (at the beginning of every mixin).</p>',
 			code: '@w3schools: true; // Unprefixed W3C syntax \n'
@@ -30,6 +14,22 @@ var docs = {
 			noCssTransformation: true,
 			parts: []
 		},
+		{
+			name: 'Design considerations',
+			showInMenu: true,
+			doc: '<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments), we are wrapping the aruments into a ~"..." block, so that we can push them as a single parameter, and parse it back inside the mixin.</p>' +
+				'<p>Because of this, every mixin needs to parse it\'s arguments, and since LESS doesn\'t allow to add globally available functions, there is a parser inside each mixin. Not a best practice, but necessary. The good thing is that you can just include the mixin library with:</p>' +
+			'<code>@import "lesshat";</code>' +
+			'<p>and enjoy coding websites again.</p>'
+		},
+
+		{
+			name: 'Drawbacks',
+			showInMenu: true,
+			spaceAfter: true,
+			doc: '<p>Error reporting in LESS sucks, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
+		},
+
 
 		{
 			name: '.animation',
