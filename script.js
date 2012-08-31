@@ -157,6 +157,7 @@ var refresh = function(less, target, ok, err)
 		if (!e) {
 			var code = tree.toCSS();
 			target.setValue(code);
+			Section.update_sizes();
 			ok && ok();
 		}
 		else {
@@ -168,7 +169,7 @@ var errCheck = function(editor, element, err)
 {
 	$(element).toggleClass('error', err);
 	if (err) {
-		editor.setValue('Seems like there is something wrong\nwith the less code');
+		editor.setValue('Seems like there is something wrong\nwith the LESS code');
 	}
 };
 
@@ -210,12 +211,12 @@ $(document).ready(function()
 					}
 					editor = CodeMirror.fromTextArea(textarea, {
 						'onChange': throttle(function(e) {
-							console.log('hm');
 							refresh(
 								mixins + '\n' + e.getValue(),
 								syntax,
 								function() {
 									errCheck(syntax, syntax.getWrapperElement(), false);
+									check(syntax, syntax.getWrapperElement(), false);
 								},
 								function(e) {
 									check(syntax, syntax.getWrapperElement(), true);
