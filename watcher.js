@@ -1,6 +1,10 @@
 var fs = require('fs');
 var path = require('path');
 var handlebars = require('handlebars');
+var growl;
+try	{
+	growl = require('growl');
+} catch(e) {}
 
 
 
@@ -31,8 +35,10 @@ var cb = function(curr, prev) {
 		fs.writeFileSync(TARGET, result, 'UTF-8');
 
 		console.log('Compiled.');
+		if (growl) growl('Compiled');
 	} catch (e) {
 		console.log('Error: ' + e.message);
+		if (growl) growl('Error: ' + e.message);
 	}
  };
 
