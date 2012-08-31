@@ -176,7 +176,7 @@ $(document).ready(function()
 {
 	window.$window = $(window);
 	window.$body = $(document.body);
-	new Menu({container:'#menu-list'});
+	new Menu({container:'#menu'});
 	$('#main article[id]').each(function(index, el) {
 		new Section({container: '#' + $(el).attr('id')});
 	});

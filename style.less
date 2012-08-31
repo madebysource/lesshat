@@ -195,70 +195,65 @@ section{
 	&:after {
     clear:both;
 	}
-	#menu {
-		padding: 25px 0;
-
-		ul{
-			margin: 0;
-			padding: 0;
-			background: #fff;
-			z-index: 5;
-			width: 215px;
-			float: left;
-			top: 0;
-
-			// .box-shadow(~"inset -1px 0 #dadada");
-			border-right: 1px solid #dadada;
-
-			li {
-
-				&.space-after {
-					margin-bottom: 1em;
+	#menu{
+		background: #fff;
+		z-index: 5;
+		width: 215px;
+		float: left;
+		top: 0;
+		li {
+			.box-shadow(~"inset -1px 0 #dadada");
+			&:first-of-type{
+				padding-top: 25px;
+			}
+			&:last-of-type{
+				padding-bottom: 25px;
+			}
+			&.space-after{
+				padding-bottom: 1em;
+			}
+			ul{
+				display: none;
+			}
+			a, a:visited{
+				position: relative;
+				color: #888;
+				padding: 7px;
+				display: block;
+				&:hover{
+					color:#626262;
 				}
-
-				ul{
-					display: none;
+				&.active{
+					font-weight: bold;
+					color: #0088d6;
 				}
-				a, a:visited{
-					position: relative;
-					color: #888;
-					padding: 7px;
-					display: block;
-					&:hover{
-						color:#626262;
-					}
-					&.active{
-						font-weight: bold;
-						color: #0088d6;
-					}
-					&.red&:after, &.green&:after{
-						content: attr(data-text);
-						position: absolute;
-						color: #fff;
-						font-size: 10px;
-						top: 7px;
-						right: 10px;
-						padding: 3px 8px;
-						.border-radius(3px);
-						font-weight: 300;
-					}
-					&.red&:after{
-						text-shadow: 0 1px 0 rgba(133,0,0,.3);
-						background-color: #eb5858;
-					}
-					&.green&:after{
-						text-shadow: 0 1px 0 rgba(75,133,0,.3);
-						background-color: #90c854;
-					}
+				&.red&:after, &.green&:after{
+					content: attr(data-text);
+					position: absolute;
+					color: #fff;
+					font-size: 10px;
+					top: 7px;
+					right: 10px;
+					padding: 3px 8px;
+					.border-radius(3px);
+					font-weight: 300;
+				}
+				&.red&:after{
+					text-shadow: 0 1px 0 rgba(133,0,0,.3);
+					background-color: #eb5858;
+				}
+				&.green&:after{
+					text-shadow: 0 1px 0 rgba(75,133,0,.3);
+					background-color: #90c854;
 				}
 			}
-			&.fixed{
+		}
+		&.fixed{
+			position: fixed;
+			overflow-y: auto;
+			bottom: 0;
+			& + #main  #gradient-hack{
 				position: fixed;
-				overflow-y: auto;
-				bottom: 0;
-				& + #main  #gradient-hack{
-					position: fixed;
-				}
 			}
 		}
 	}
@@ -438,6 +433,7 @@ section{
 					&:before{
 						content: 'CSS';
 						right: -7px;
+						top: -9px;
 					}
 				}
 				.CodeMirror {
@@ -528,12 +524,12 @@ section{
 				padding: 10px;
 				background-clip: padding-box;
 				.box-shadow(~"0 0 0 rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.29)");
-				.gradient(~"linear-gradient(90deg, #e89300 0%, #f2ba25 100%)");
+				.gradient(~"linear-gradient(bottom, #e89300 0%, #f2ba25 100%)");
 				&:hover{
-					.gradient(~"linear-gradient(90deg, #d98900 0%, #e9b324 100%)");
+					.gradient(~"linear-gradient(bottom, #d98900 0%, #e9b324 100%)");
 				}
 				&:active{
-					.gradient(~"linear-gradient(90deg, #e9b324 0%, #d98900 100%)");
+					.gradient(~"linear-gradient(bottom, #e9b324 0%, #d98900 100%)");
 					.box-shadow(~"0 0 0 rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.29)");	
 				}
 			}
