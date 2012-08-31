@@ -310,7 +310,7 @@
       //  element{  .animation-iteration-count(3);  }
 
 
-  //  .animationName
+  //  .animation-name
 
     .animation-name(@arguments: none){
 
@@ -473,7 +473,7 @@
 
 //  .background-origin
 
-  .background-origin(@arguments:padding){
+  .background-origin(@arguments:padding-box){
 
       //  Local config for disabling properties
 
@@ -531,7 +531,7 @@
 
 // .border-radius
 
-  .border-radius(@arguments) {
+  .border-radius(@arguments:0) {
 
       //  Local config for disabling properties
 
@@ -562,7 +562,7 @@
 
 // .border-top-left-radius
 
-  .border-top-left-radius(@arguments) {
+  .border-top-left-radius(@arguments:0) {
 
       //  Local config for disabling properties
 
@@ -591,7 +591,7 @@
 
 // .border-top-right-radius
 
-  .border-top-right-radius(@arguments) {
+  .border-top-right-radius(@arguments:0) {
 
       //  Local config for disabling properties
 
@@ -620,7 +620,7 @@
 
 // .border-bottom-left-radius
 
-  .border-bottom-left-radius(@arguments) {
+  .border-bottom-left-radius(@arguments:0) {
 
       //  Local config for disabling properties
 
@@ -649,7 +649,7 @@
 
 // .border-bottom-right-radius
 
-  .border-bottom-right-radius(@arguments) {
+  .border-bottom-right-radius(@arguments:0) {
 
       //  Local config for disabling properties
 
@@ -931,7 +931,7 @@
 
 //  .gradient
 
-  .gradient(@arguments){  
+  .gradient(@arguments:none){  
 
       //  Local config for disabling properties
 
@@ -1330,7 +1330,7 @@
 
 //  .translateZ
 
-  .translateZ(@x:0){
+  .translateZ(@z:0){
 
       //  Local config for disabling properties
 
@@ -1341,11 +1341,11 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 5) { transform: translateZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: translateZ(@z);}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
@@ -1399,7 +1399,7 @@
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-  .scale(@x, @y){
+  .scale(@x:0, @y:0){
 
       //  Local config for disabling properties
 
@@ -1548,7 +1548,7 @@
 
 //  .scaleZ
 
-    .scaleZ(@x:1){
+    .scaleZ(@z:1){
 
       //  Local config for disabling properties
 
@@ -1559,11 +1559,11 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleZ(@z);}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
