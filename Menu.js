@@ -45,7 +45,7 @@ Menu.prototype.init = function()
 		self.$menu
 			.toggleClass('fixed', top >= Menu.FIXED_TRESHOLD);
 	});
-	this .$window.bind('resize', function (e) {
+	this.$window.bind('resize', function (e) {
 		Menu.FIXED_TRESHOLD = $('header').outerHeight();
 	});
 };

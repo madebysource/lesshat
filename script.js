@@ -1,131 +1,41 @@
+/** Credits: underscore.js **/
 var debounce = function(func, wait, immediate) {
-var timeout;
-return function() {
-  var context = this, args = arguments;
-  var later = function() {
-    timeout = null;
-    if (!immediate) func.apply(context, args);
-  };
-  if (immediate && !timeout) func.apply(context, args);
-  clearTimeout(timeout);
-  timeout = setTimeout(later, wait);
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		if (immediate && !timeout) func.apply(context, args);
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+	};
 };
-};
-	var throttle = function(func, wait) {
-var context, args, timeout, throttling, more, result;
-var whenDone = debounce(function(){ more = throttling = false; }, wait);
-return function() {
-  context = this; args = arguments;
-  var later = function() {
-    timeout = null;
-    if (more) func.apply(context, args);
-    whenDone();
-  };
-  if (!timeout) timeout = setTimeout(later, wait);
-  if (throttling) {
-    more = true;
-  } else {
-    result = func.apply(context, args);
-  }
-  whenDone();
-  throttling = true;
-  return result;
-};
-};
-
-var css = document.getElementById('css');
-var parser = new less.Parser;
-var refresh = function(less, target, ok, err)
-{
-	parser.parse('@import "lib/lesshat.less";\n'+ less, function(e, tree) {
-		if (!e) {
-			var code = tree.toCSS();
-			target.setValue(code);
-			ok && ok();
-		}
-		else {
-			err && err(e);
-		}
-	});
-};
-var errCheck = function(editor, element, err)
-{
-	$(element).toggleClass('error', err);
-	if (err) {
-		editor.setValue('Seems like there is something wrong\nwith the less code');
-	}
-};
-
-$(document).ready(function()
-{
-	window.$window = $(window);
-	window.$body = $(document.body);
-	new Menu({container:'#menu-list'});
-	$('#main article[id]').each(function(index, el) {
-		new Section({container: '#' + $(el).attr('id')});
-	});
-
-	Subscription.init();
-
-	var lesshatTextarea = $('textarea.less');
-
-	lesshatTextarea.each(function(index) {
-		var $textarea = $(this),
-			textarea = this;
-		$textarea.addClass('cm-source');
-
-		if ($textarea.parent(':first').hasClass('auto-convert-less')) {
-			var $targetArea = $('<textarea></textarea>');
-			$textarea.after($targetArea);
-			$targetArea.addClass('cm-target');
-			var targetArea = $targetArea.get(0);
-
-			var syntax;
-			var check = debounce(errCheck, 1200);
-
-			if (targetArea) {
-				syntax = CodeMirror.fromTextArea(targetArea, {
-					'tabSize': 2,
-					'readOnly': 'nocursor'
-				});
-			}
-			var editor = CodeMirror.fromTextArea(textarea, {
-				'onChange': throttle(function(e) {
-					refresh(
-						e.getValue(),
-						syntax,
-						function() {
-							check(syntax, syntax.getWrapperElement(), false);
-						},
-						function(e) {
-							check(syntax, syntax.getWrapperElement(), true);
-						}
-					);
-				}, 100),
-				'tabSize': 2
-			});
-			refresh(editor.getValue(), syntax);
+var throttle = function(func, wait) {
+	var context, args, timeout, throttling, more, result;
+	var whenDone = debounce(function(){ more = throttling = false; }, wait);
+	return function() {
+		context = this; args = arguments;
+		var later = function() {
+			timeout = null;
+			if (more) func.apply(context, args);
+			whenDone();
+		};
+		if (!timeout) timeout = setTimeout(later, wait);
+		if (throttling) {
+			more = true;
 		} else {
-			var editor = CodeMirror.fromTextArea(textarea, {
-				'tabSize': 2
-			});
+			result = func.apply(context, args);
 		}
-	});
+		whenDone();
+		throttling = true;
+		return result;
+	};
+};
 
-	var $popup = $('#popup');
-	var $close = $popup.find('#close');
 
-	$('header a.download').bind('click touchstart', function(e)
-	{
-		$popup.addClass('active');
-	});
-
-	$close.bind('click touchstart', function(e)
-	{
-		$popup.removeClass('active');
-	})
-});
-
+/** mailing lib **/
 Subscription =
 {
 	form : $('#subscription'),
@@ -236,3 +146,112 @@ Subscription =
 	}
 };
 
+
+
+var css = document.getElementById('css');
+var parser = new less.Parser();
+var refresh = function(less, target, ok, err)
+{
+	// TODO: review import
+	parser.parse(less, function(e, tree) {
+		if (!e) {
+			var code = tree.toCSS();
+			target.setValue(code);
+			ok && ok();
+		}
+		else {
+			err && err(e);
+		}
+	});
+};
+var errCheck = function(editor, element, err)
+{
+	$(element).toggleClass('error', err);
+	if (err) {
+		editor.setValue('Seems like there is something wrong\nwith the less code');
+	}
+};
+
+$(document).ready(function()
+{
+	window.$window = $(window);
+	window.$body = $(document.body);
+	new Menu({container:'#menu-list'});
+	$('#main article[id]').each(function(index, el) {
+		new Section({container: '#' + $(el).attr('id')});
+	});
+
+	Subscription.init();
+
+	xhr("lib/lesshat.less", null, function(mixins) {
+		var lesshatTextarea = $('textarea.less');
+
+		lesshatTextarea.each(function(index) {
+			var $textarea = $(this),
+				textarea = this,
+				editor;
+			$textarea.addClass('cm-source');
+
+			try {
+				if ($textarea.parent(':first').hasClass('auto-convert-less')) {
+					var $targetArea = $('<textarea></textarea>');
+					$textarea.after($targetArea);
+					$targetArea.addClass('cm-target');
+					var targetArea = $targetArea.get(0);
+
+					var syntax;
+					var check = debounce(errCheck, 1200);
+
+					if (targetArea) {
+						syntax = CodeMirror.fromTextArea(targetArea, {
+							'tabSize': 2,
+							'readOnly': 'nocursor'
+						});
+					}
+					editor = CodeMirror.fromTextArea(textarea, {
+						'onChange': throttle(function(e) {
+							console.log('hm');
+							refresh(
+								mixins + '\n' + e.getValue(),
+								syntax,
+								function() {
+									errCheck(syntax, syntax.getWrapperElement(), false);
+								},
+								function(e) {
+									check(syntax, syntax.getWrapperElement(), true);
+								}
+							);
+						}, 100),
+						'tabSize': 2
+					});
+					refresh(mixins + '\n' + editor.getValue(), syntax);
+				} else {
+					editor = CodeMirror.fromTextArea(textarea, {
+						'tabSize': 2
+					});
+				}
+			} catch (e) {
+				console.error('Error initializing', textarea, e);
+			}
+		});
+	}, function(e){
+		console.error('Error loading lesshat mixins, please reload the page');
+	});
+
+
+	var $popup = $('#popup');
+	var $close = $popup.find('#close');
+
+	$('header a.download').bind('click touchstart', function(e) {
+		$popup.addClass('active');
+	});
+
+	$close.bind('click touchstart', function(e) {
+		$popup.removeClass('active');
+	});
+});
+
+$(document).load(function()
+{
+	console.log('load');
+});
