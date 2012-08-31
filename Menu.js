@@ -22,7 +22,7 @@ var Menu = function(opt)
 
 	this.init();
 };
-Menu.FIXED_TRESHOLD = $('header').height();
+Menu.FIXED_TRESHOLD = $('header').outerHeight();
 Menu.prototype.init = function()
 {
 	var self = this;
@@ -46,7 +46,7 @@ Menu.prototype.init = function()
 			.toggleClass('fixed', top >= Menu.FIXED_TRESHOLD);
 	});
 	this .$window.bind('resize', function (e) {
-		Menu.FIXED_TRESHOLD = $('header').height();
+		Menu.FIXED_TRESHOLD = $('header').outerHeight();
 	});
 };
 Menu.prototype.setInactive = function(id)
