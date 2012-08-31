@@ -662,7 +662,7 @@ var docs = {
 				+ '\t.transition-timing-function(cubic-bezier(0,0,1,1));\n'
 				+ '}\n'
 				+ '.example-transition-delay {\n'
-				+ '\t.transition-timing-delay(2s);\n'
+				+ '\t.transition-delay(2s);\n'
 				+ '}\n',
 			parts: [
 				{
