@@ -2,7 +2,7 @@ Less Hat - supersonic mixins for Less.js
   
   ROADMAP:  
           Add .keyframes mixin for css animation.  
-            Proposed syntax style .keyframes(~"MyAnimation{ 0%{ background:blue; } 100%{ background:red;}  }");
+            Proposed syntax style .keyframes(~"MyAnimation{ 0%{ background:blue; } 100%{ background:red;}  }");  
           Prefix free for all properties
             Example: .transition(transform 2s ease-in); // transform for all browsers
           <del>Add SVG support for gradient mixin including base64 support</del>   
