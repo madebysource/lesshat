@@ -1,11 +1,13 @@
-Less Hat - supersonic mixins for Less.js  
-  
-  ROADMAP:  
-          Add .keyframes mixin for css animation.  
-                &nbsp;&nbsp;&nbsp;Proposed syntax style .keyframes(~"MyAnimation{ 0%{ background:blue; } 100%{ background:red;}  }");  
-          Prefix free for all properties
-            Example: .transition(transform 2s ease-in); // transform for all browsers  
-          <del>Add SVG support for gradient mixin including base64 support</del>     
-          <del>Add smart direction logic for gradient mixin</del>   
-          <del>Create web about LESSHat</del>  
-        
+=LESS HAT
+
+==About
+
+A supersonic bunch of smart LESS mixins.
+
+Homepage and examples: http://lesshat.com
+
+From creators of: http://csshat.com
+
+==License
+
+LESS Hat is dual-licensed under the BSD and MIT licenses, see LICENSES file.
