@@ -109,6 +109,8 @@ header{
 	background-color: #181927;
 	padding: 0 10px;
 	border-top: 10px solid #11121c;
+	position: relative; // prevent hack flickering
+	z-index: 10;
 	h1{
 		font-size: 36px;
 		color: #fff;
@@ -281,9 +283,10 @@ section{
 			padding-bottom: 3em;
 
 			&#introduction {
-				margin-bottom: 3em;
-				padding-bottom: 3em;
 				border-bottom: 1px solid #dadada;
+			}
+			&#configuration {
+				padding-bottom: 3em;
 			}
 
 			h2{
@@ -468,7 +471,8 @@ section{
 }
 #popup{
 	position: fixed;
-	top: 0;left: 0;right: 0; bottom: 0;z-index: 10;
+	top: 0;left: 0;right: 0; bottom: 0;
+	z-index: 100;
 	background: rgba(0, 0, 0, .4);
 	overflow-y: auto;
 	padding: 40px 20px;
