@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>LESSHat a supersonic bunch of smart LESS mixins</title>
+	<title>LESSHat. A supersonic bunch of smart LESS mixins</title>
 
-	<meta name="description" content="">
+	<meta name="description" content="LESSHat. A uber cool bunch of smart LESS mixins. From creators of CSS Hat">
 	<meta name="viewport" content="width=device-width">
 
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -14,8 +14,6 @@
 	<link rel="shortcut icon" href="favicon.png">
 
  	<link rel="stylesheet" type="text/css" href="lib/codemirror.css">
-
-	<!-- <script src="js/libs/modernizr-2.5.3.min.js"></script> -->
 
 <!-- 	<script type="text/javascript">
 	var _gaq = _gaq || [];
@@ -29,17 +27,19 @@
 	})();
 	</script> -->
 </head>
-<body><!-- TODO: Add feedback, tweet button, flattr -->
+<body>
 	<header>
 		<h1><strong>LESS&nbsp;Hat.</strong> A&nbsp;supersonic bunch of&nbsp;smart LESS&nbsp;mixins.</h1>
 		<p class="description">Kick-ass universal mixin library from makers of&nbsp;<a href="http://csshat.com">CSS&nbsp;Hat</a>.</p>
 		<a href="#" class="download">Download LESS&nbsp;Hat&nbsp;1.0</a>
-		<p class="twitter"><a href="#"><span>Take cover! It's&nbsp;supersonic!</span></a></p>
+		<p class="twitter"><a href="LESSHat. A uber cool bunch of smart LESS mixins. http://lesshat.com. From creators of @CSSHat. %23LESSHat"><span>Take cover! It's&nbsp;supersonic!</span></a></p>
+		<a href="http://flattr.com/thing/864000/LESS-Hat-A-supersonic-bunch-of-smart-LESS-mixins-" class="flattr" target="_blank">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 	</header>
 	<section>
 		<div id="menu">
 			<ul id="menu-list">
-				<li><a href="#introduction" class="active">Introduction</a></li>
+				<li><a href="#introduction">Introduction</a></li>
 
 				{{#each properties}}
 				<li {{#if spaceAfter}}class="space-after"{{/if}}>
@@ -60,7 +60,7 @@
 			<div id="gradient-hack"></div>
 			<article id="introduction">
 				<h2>Introduction</h2>
-				<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
+				<p class="detail">Why LESS Hat? We were searching for a LESS mixin library that our <a href="https://csshat.com" target="_blank">CSS Hat</a> plugin could use for exporting Photoshop layer styles into CSS.</p>
 	
 				<p class="detail"><b>We required the mixins to be:</b></p>
 
@@ -105,6 +105,12 @@
 								<td class="no"></td>
 							</tr>
 							<tr>
+								<td>SVG gradients for IE9</td>
+								<td></td>
+								<td class="no"></td>
+								<td></td>
+							</tr>
+							<tr>
 								<td>3D Transforms</td>
 								<td></td>
 								<td class="no"></td>
@@ -136,6 +142,7 @@
 
 			{{#each properties}}
 				{{#unless upcoming}}
+					{{#unless notContent}}
 				<article id="{{id}}">
 					<h2>{{name}}
 						<span class="mixin-sample">{{parameter}}</span>
@@ -168,7 +175,32 @@
 					{{/if}}
 				</article>
 				{{/unless}}
+				{{/unless}}
 			{{/each}}
+
+
+			<article id="feedback">
+					<h2>Give us some feedback!
+					</h2>
+					
+			        <div id="disqus_thread"></div>
+			        <script type="text/javascript">
+			            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			            var disqus_shortname = 'lesshat'; // required: replace example with your forum shortname
+
+			            /* * * DON'T EDIT BELOW THIS LINE * * */
+			            (function() {
+			                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			            })();
+			        </script>
+			        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			</article>
+
+
+        
 
 		</div>
 	</section>

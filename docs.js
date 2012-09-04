@@ -14,20 +14,56 @@ var docs = {
 			noCssTransformation: true,
 			parts: []
 		},
+
 		{
 			name: 'Design considerations',
 			showInMenu: true,
-			doc: '<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments), we are wrapping the aruments into a ~"..." block, so that we can push them as a single parameter, and parse it back inside the mixin.</p>' +
+			doc: '<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see <a href="http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments">Stack Overflow</a>), we are wrapping the aruments into a <strong>~"..."</code></strong> block, so that we can push them as a single parameter, and parse it back inside the mixin.</p>' +
 				'<p>Because of this, every mixin needs to parse it\'s arguments, and since LESS doesn\'t allow to add globally available functions, there is a parser inside each mixin. Not a best practice, but necessary. The good thing is that you can just include the mixin library with:</p>' +
-			'<code>@import "lesshat";</code>' +
+			'<code><strong>@import "lesshat";</strong></code>' +
 			'<p>and enjoy coding websites again.</p>'
+		},
+
+		{
+			name: 'FAQ',
+			showInMenu: true,
+			doc: '<p class="question">What is LESS?</p>'+
+				'<p>Hey, start with official website <a href="http://lesscss.org" target="_blank">lesscss.org</a> and learn why it rocks so hard.</p>'+
+				'<p class="question">What is a good practice to using LESS?</p>'+
+				'<p>We don&apos;t recommended to use LESS directly in your client-side code, because it has to be compiled every time a page is viewed, but for development it&apos;s okay. You can use <a href="http://lesscss.org/#-server-side-usage">server-side</a> compiling via Node.js or some of desktop apps for example <a href="http://incident57.com/less/">LESS.app - free</a>, <a href="http://incident57.com/codekit/">Codekit - paid</a> or <a href="http://livereload.com/">LiveReload - paid</a>.</p>'+
+				'<p class="question">How is LESSHat licensed?</p>'+
+				'<p>LESSHat is available under the MIT and BSD licenses. You are free to use LESSHat without restriction for both open-source and closed-source applications.</p>'+
+				'<p class="question">Hey LESSHat is uber cool. It really made my day. Thanks!</p>'+
+				'<p>That&apos;s nice. We appreciate it. :) If you would like to support us you can <a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @csshat. %23lesshat"><strong>tweet</strong></a> about us or give us some small Flattr donation (Flattr button is above in header section).</p>'+
+				'<p class="question">I find a bug and I would like to report it. Where can I do that?</p>'+
+				'<p>The best way to report a bug is using the Github <a href="https://github.com/CSSHat/LESSHat/issues" target="_blank">issues</a>.</p>'
+		},
+
+		{
+			name: 'Roadmap',
+			showInMenu: true,
+			doc: '<ul><li>.keyframes mixin for css animation - see proposed syntax below</li>' +
+				  '<li>Prefix free for .transition mixin</li>' +
+				  '<li>Do you have any idea? Leave us a feedback in comment section below or on twitter <a href="http://twitter.com/CSSHat">@CSSHat</a> with hashtag #LESSHat.</li></ul>',
+			code: '.keyframes(animationName\n'
+				+ '\t~"0%,50% background: blue; transform: scale(.5);"\n'
+				+ '\t~"100% background:red;");\n',
+			noCssTransformation: true,
+			parts: []
+
 		},
 
 		{
 			name: 'Drawbacks',
 			showInMenu: true,
+			doc: '<p>Error reporting in LESS <a href="http://f.cl.ly/items/1M302K2y09173E3t3V2J/Screen%20Shot%202012-09-04%20at%209.32.33%20PM.png" target="_blank">sucks</a>, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
+		},
+
+		{
+			name: 'Feedback',
+			showInMenu: true,
 			spaceAfter: true,
-			doc: '<p>Error reporting in LESS sucks, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
+			notContent: true
 		},
 
 
@@ -365,7 +401,7 @@ var docs = {
 			name: '.gradient',
 			parameter: '(~"image-1[, image-2, ..., image-n]");',
 			badge: 'top',
-			doc: '<p>Takes multiple linear and radial gradients, generates CSS for all modern browsers including older webkit syntax (hello, iOS4!).</p>' +
+			doc: '<p>Takes multiple linear and radial gradients, generates CSS for all modern browsers including older webkit syntax (hello, iOS4!) and even <strong>SVG gradient</strong> fallback for IE9.</p>' +
 				'<p>MDN docs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">linear gradient</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">radial gradient</a></p>',
 			code: '.example-gradient {\n'
 				+ '\t.gradient(~"linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)");\n'
