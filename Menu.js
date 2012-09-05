@@ -77,7 +77,7 @@ Menu.prototype.moveIntoView = function(id) {
 	var animate = function(y) {
 		$menu
 			.stop() // cancel pending
-			.animate({'scrollTop': $menu.scrollTop() + y}, 500);
+			.animate({'scrollTop': $menu.scrollTop() + y}, 300);
 	};
 	if (offset.top < top) {
 		animate(- top + offset.top);
