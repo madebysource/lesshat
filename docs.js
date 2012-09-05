@@ -1,19 +1,20 @@
 var docs = {
 	properties: [
-		{
-			name: 'Configuration',
-			showInMenu: true,
-			doc: '<p>Turn on/off prefixes for individual browsers. Useful when doing internal project, or mobile app that should only work with webkit.</p>' +
-				'<p>Config is global for all mixins (see the top of the file) and you can override specific mixins manually (at the beginning of every mixin).</p>',
-			code: '@w3schools: true; // Unprefixed W3C syntax \n'
-				+ '@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android \n'
-				+ '@moz: true; //  Firefox 4+ \n'
-				+ '@opera: true; // Opera 10.5+ \n'
-				+ '@ms: true;  // IE 10+ \n'
-				+ '@oldWebkit: true; // iOS4, Safari 4, Chrome < 6.',
-			noCssTransformation: true,
-			parts: []
-		},
+		// TODO: fix w3schools / w3c mishmash
+		// {
+		// 	name: 'Configuration',
+		// 	showInMenu: true,
+		// 	doc: '<p>Turn on/off prefixes for individual browsers. Useful when doing internal project, or mobile app that should only work with webkit.</p>' +
+		// 		'<p>Config is global for all mixins (see the top of the file) and you can override specific mixins manually (at the beginning of every mixin).</p>',
+		// 	code: '@w3schools: true; // Unprefixed W3C syntax \n'
+		// 		+ '@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android \n'
+		// 		+ '@moz: true; //  Firefox 4+ \n'
+		// 		+ '@opera: true; // Opera 10.5+ \n'
+		// 		+ '@ms: true;  // IE 10+ \n'
+		// 		+ '@oldWebkit: true; // iOS4, Safari 4, Chrome < 6.',
+		// 	noCssTransformation: true,
+		// 	parts: []
+		// },
 
 		{
 			name: 'Design considerations',
