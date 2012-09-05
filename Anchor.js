@@ -31,7 +31,7 @@ Anchor.scrollTo = function(idOrTop)
 };
 Anchor.handleClick = function(e)
 {
-	var m = $(this).attr('href').match(/#\w+/i);
+	var m = $(this).attr('href').match(/#[\w-]+/i);
 	if ( m && m[0] )
 	{
 		e.preventDefault();
