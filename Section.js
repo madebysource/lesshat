@@ -3,9 +3,9 @@
 * @author: Tomas Ruzicka aka Zuse
 */
 
-var Section = function(opt)
-{
+var Section = function(opt) {
 	this.$window = $(window);
+	this.$body = $(document.body);
 	this.$container = null;
 	this.id = null;
 	if ( typeof opt === 'object' )
@@ -28,17 +28,20 @@ var Section = function(opt)
 
 	this.init();
 };
+
 Section.EVENT_VIEW = 'SECTION_VIEW';
 Section.EVENT_EXIT = 'SECTION_EXIT';
+// Sections stacked on each other
 Section.SECTIONS_HEIGHT = 0;
+// Height of viewport
 Section.WINDOW_HEIGHT = 0;
-Section.update_sizes = function()
-{
+
+Section.update_sizes = function() {
 	Section.SECTIONS_HEIGHT = $body.height();
 	Section.WINDOW_HEIGHT = $window.height();
 };
-Section.prototype.init = function()
-{
+
+Section.prototype.init = function() {
 	var self = this;
 	this.$window.bind('scroll', function(e)
 	{
@@ -62,6 +65,12 @@ Section.prototype.init = function()
 	});
 
 	this.lastMainViewCheck = false;
+	this.updateDimensions();
+
+	this.$container.data('section', this);
+};
+
+Section.prototype.updateDimensions = function() {
 	this.windowHeight = this.$window.height();
 	this.containerHeight = this.$container.outerHeight();
 	this.containerOffset = this.$container.offset();
@@ -71,30 +80,23 @@ Section.prototype.init = function()
 	if ( diff > 0 )
 		diff = -150;
 	this.containerScroll = this.containerOffset.top + diff;
-
-	this.$container.data('section', this);
 };
+
 // Detects whether the section is the main user focus
-Section.prototype.mainView = function()
-{
-	var top = this.$window.scrollTop(),
-		// center of the user view, getting close to the bottom as user approaches to the bottom
-		viewPortMiddle = top + Section.WINDOW_HEIGHT
-			- Math.min(Section.WINDOW_HEIGHT, Section.SECTIONS_HEIGHT - top - Section.WINDOW_HEIGHT) / 2 - /*threshold*/40;
-
-	console.log('viewPortMiddle', viewPortMiddle, top, viewPortMiddle === top + Section.WINDOW_HEIGHT / 2 ? '=' : '', viewPortMiddle < top + Section.WINDOW_HEIGHT / 2 ? '<' : '');
-	console.log('height', Section.SECTIONS_HEIGHT, Section.WINDOW_HEIGHT);
-
-	$lol = $('#lol');
-	if (!$lol.length)
-	$lol = $('<div>').attr('id', 'lol').css({
-		position:'absolute',left:0,width:'400px',height:'2px',background:'red'
-	}).appendTo($body);
-	$lol.css({'top':viewPortMiddle});
+Section.prototype.mainView = function() {
+	this.updateDimensions();
+	var top = this.$window.scrollTop();
+	// center of the user view, getting close to the bottom as user approaches to the bottom
+	// bottom:
+	var viewPortMiddle = top + this.$window.height();
+	// move to the center OR just small distance from the bottom
+	viewPortMiddle -= Math.min(this.$window.height(), this.$body.height() - top - this.$window.height() + /*threshold*/40) / 2;
+	// viewPortMiddle = top + this.$window.height() / 2;
 
 	return viewPortMiddle >= this.containerOffset.top && this.containerOffset.top + this.containerHeight > viewPortMiddle;
 };
-Section.prototype.scrollIntoView = function()
-{
+
+Section.prototype.scrollIntoView = function() {
+	this.updateDimensions();
 	Anchor.scrollTo(this.containerScroll);
 };

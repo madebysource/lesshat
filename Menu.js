@@ -3,8 +3,7 @@
 * @author: Tomas Ruzicka aka Zuse
 */
 
-var Menu = function(opt)
-{
+var Menu = function(opt) {
 	this.$window = $(window);
 	this.$menu = null;
 	this.active = null;
@@ -22,16 +21,15 @@ var Menu = function(opt)
 
 	this.init();
 };
+
 Menu.FIXED_TRESHOLD = $('header').outerHeight();
-Menu.prototype.init = function()
-{
+
+Menu.prototype.init = function() {
 	var self = this;
-	this.$window.bind(Section.EVENT_VIEW, function(e, id)
-	{
+	this.$window.bind(Section.EVENT_VIEW, function(e, id) {
 		self.setActive(id);
 	});
-	this.$window.bind(Section.EVENT_EXIT, function(e, id)
-	{
+	this.$window.bind(Section.EVENT_EXIT, function(e, id) {
 		self.setInactive(id);
 	});
 	this.$menu.on('click touchstart', 'a', function(e){
@@ -39,6 +37,8 @@ Menu.prototype.init = function()
 		// (?:intro|problem|solution|demo|use_cases|team)
 		Anchor.handleClick.apply(this, arguments);
 	});
+
+	// Menu fixation
 	this.$window.bind('scroll', function (e) {
 		var top = self.$window.scrollTop();
 		
@@ -49,14 +49,14 @@ Menu.prototype.init = function()
 		Menu.FIXED_TRESHOLD = $('header').outerHeight();
 	});
 };
-Menu.prototype.setInactive = function(id)
-{
+
+Menu.prototype.setInactive = function(id) {
 	this.active = null;
 	this.$menu.find(id ? 'a[href="#' + id + '"]' : 'a.active')
 		.removeClass('active');
 };
-Menu.prototype.setActive = function(id)
-{
+
+Menu.prototype.setActive = function(id) {
 	if ( this.active === id )
 		return;
 	
