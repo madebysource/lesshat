@@ -65,4 +65,24 @@ Menu.prototype.setActive = function(id) {
 		.addClass('active')
 		.siblings()
 			.removeClass('active');
+
+	this.moveIntoView(id);
+};
+
+Menu.prototype.moveIntoView = function(id) {
+	var $menu = this.$menu,
+		$item = this.$menu.find('a[href="#' + id + '"]').parent();
+	var offset = $item.offset();
+	var top = $window.scrollTop();
+	var animate = function(y) {
+		$menu
+			.stop() // cancel pending
+			.animate({'scrollTop': $menu.scrollTop() + y}, 500);
+	};
+	if (offset.top < top) {
+		animate(- top + offset.top);
+	}
+	else if (offset.top + $item.height() > top + $window.height()) {
+		animate(offset.top + $item.height() - top - $window.height());
+	}
 };
