@@ -131,7 +131,7 @@ Subscription =
 			Subscription.mail.attr('disabled', true);
 			$('#submit').attr('disabled', true);
 			$('#email').attr('value','');
-			$('#email').attr('placeholder','Thanks for subscribing');
+			$('#email').attr('placeholder','Thanks for subscribing!');
 		}
 		else{
 			$('#email').attr('value','');
