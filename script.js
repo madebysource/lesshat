@@ -244,21 +244,27 @@ $(document).ready(function()
 	var $close = $popup.find('#close');
 
 	$('header a.download').bind('click touchstart', function(e) {
+		$popup.removeClass('disable');
 		$popup.addClass('active');
 	});
 
 	$close.bind('click touchstart', function(e) {
 		$popup.removeClass('active');
+		$popup.addClass('disable');
 	});
 
 	$popup.on('click touchstart', function(e) {
-		if ($(e.srcElement).attr('id') === 'popup')
+		if ($(e.srcElement).attr('id') === 'popup'){
 			$popup.toggleClass('active');
+			$popup.toggleClass('disable');
+		}
 	});
 
 	$window.bind('keydown', function(e) {
-		if (e.keyCode === 27)
+		if (e.keyCode === 27){
 			$popup.removeClass('active');
+			$popup.addClass('disable');
+		}
 	});
 });
 

@@ -502,14 +502,69 @@ section{
 #popup{
 	position: fixed;
 	top: 0;left: 0;right: 0; bottom: 0;
-	z-index: 100;
+	z-index: -100;
 	background: rgba(0, 0, 0, .4);
 	overflow-y: auto;
 	padding: 40px 20px;
-	display: none;
+	opacity: 0;
 	&.active{
-		display: block;
+		.animation(fadein 0.3s ease-in both);
 	}
+	&.disable{
+		.animation(fadeout 0.3s ease-in both);
+	}
+	@-webkit-keyframes fadein {
+		0% {opacity: 0; z-index: -100;}
+		1% {z-index: 100;}
+		100% {opacity: 1; z-index: 100;}
+	}
+	@-moz-keyframes fadein {
+		0% {opacity: 0; z-index: -100;}
+		1% {z-index: 100;}
+		100% {opacity: 1; z-index: 100;}
+	}
+	@-ms-keyframes fadein {
+		0% {opacity: 0; z-index: -100;}
+		1% {z-index: 100;}
+		100% {opacity: 1; z-index: 100;}
+	}
+	@-o-keyframes fadein {
+		0% {opacity: 0; z-index: -100;}
+		1% {z-index: 100;}
+		100% {opacity: 1; z-index: 100;}
+	}
+	@keyframes fadein {
+		0% {opacity: 0; z-index: -100;}
+		1% {z-index: 100;}
+		100% {opacity: 1; z-index: 100;}
+	}
+
+	@-webkit-keyframes fadeout {
+		0% {opacity: 1; z-index: 100;}
+		99% {z-index: 100;}
+		100% {opacity: 0;z-index: -100;}
+	}
+	@-moz-keyframes fadeout {
+		0% {opacity: 1; z-index: 100;}
+		99% {z-index: 100;}
+		100% {opacity: 0;z-index: -100;}
+	}
+	@-ms-keyframes fadeout {
+		0% {opacity: 1; z-index: 100;}
+		99% {z-index: 100;}
+		100% {opacity: 0;z-index: -100;}
+	}
+	@-o-keyframes fadeout {
+		0% {opacity: 1; z-index: 100;}
+		99% {z-index: 100;}
+		100% {opacity: 0;z-index: -100;}
+	}
+	@keyframes fadeout {
+		0% {opacity: 1; z-index: 100;}
+		99% {z-index: 100;}
+		100% {opacity: 0;z-index: -100;}
+	}
+
 	#dialog{
 		position: relative;
 		max-width: 740px;
