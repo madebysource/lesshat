@@ -20,7 +20,7 @@ var docs = {
 			showInMenu: true,
 			doc: '<p>The core feature is unlimited number of CSS properties. Because LESS language is limited in this way (see <a href="http://stackoverflow.com/questions/11419741/less-css-mixins-with-variable-number-of-arguments">Stack Overflow</a>), we are wrapping the arguments into a <strong>~"..."</code></strong> block, so that we can push them as a single parameter, and parse it back inside the mixin.</p>' +
 				'<p>Because of this, every mixin needs to parse it\'s arguments, and since LESS doesn\'t allow to add globally available functions, there is a parser inside each mixin. Not a best practice, but necessary. The good thing is that you can just include the mixin library with:</p>' +
-			'<code><strong>@import "lesshat";</strong></code>' +
+			'<code><strong>@import "lesshat"; /* OR */ @import "lesshat.less";</strong></code>' +
 			'<p>and enjoy coding websites again.</p>'
 		},
 
