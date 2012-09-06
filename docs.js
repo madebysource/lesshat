@@ -57,7 +57,7 @@ var docs = {
 		{
 			name: 'Drawbacks',
 			showInMenu: true,
-			doc: '<p>Error reporting in LESS <a href="http://f.cl.ly/items/1M302K2y09173E3t3V2J/Screen%20Shot%202012-09-04%20at%209.32.33%20PM.png" target="_blank">sucks</a>, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
+			doc: '<p>Error reporting in LESS <a href="less-error.png" target="_blank">sucks</a>, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
 		},
 
 		{
