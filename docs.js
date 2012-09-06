@@ -31,6 +31,8 @@ var docs = {
 				'<p>Hey, start with official website <a href="http://lesscss.org" target="_blank">lesscss.org</a> and learn why it rocks so hard.</p>'+
 				'<p class="question">What is a good practice to using LESS?</p>'+
 				'<p>We don&apos;t recommended to use LESS directly in your client-side code, because it has to be compiled every time a page is viewed, but for development it&apos;s okay. You can use <a href="http://lesscss.org/#-server-side-usage">server-side</a> compiling via Node.js or some of desktop apps for example <a href="http://incident57.com/less/">LESS.app - free</a>, <a href="http://incident57.com/codekit/">Codekit - paid</a> or <a href="http://livereload.com/">LiveReload - paid</a>.</p>'+
+				'<p class="question">How can I use LESSHat library?</p>'+
+				'<p>Download the library, paste it into your *.less file or import it <code class="inline-code">@import "lesshat";</code>, read the documentation, enjoy your life. :)</p>'+
 				'<p class="question">How is LESSHat licensed?</p>'+
 				'<p>LESSHat is available under the MIT and BSD licenses. You are free to use LESSHat without restriction for both open-source and closed-source applications.</p>'+
 				'<p class="question">Hey LESSHat is uber cool. It really made my day. Thanks!</p>'+
