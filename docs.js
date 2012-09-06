@@ -34,7 +34,7 @@ var docs = {
 				'<p class="question">How is LESSHat licensed?</p>'+
 				'<p>LESSHat is available under the MIT and BSD licenses. You are free to use LESSHat without restriction for both open-source and closed-source applications.</p>'+
 				'<p class="question">Hey LESSHat is uber cool. It really made my day. Thanks!</p>'+
-				'<p>That&apos;s nice. We appreciate it. :) If you would like to support us you can <a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @csshat. %23lesshat"><strong>tweet</strong></a> about us or give us some small Flattr donation (Flattr button is the last item in the left column).</p>'+
+				'<p>That&apos;s nice. We appreciate it. :) If you would like to support us you can <a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @CSSHat. %23css %23less %23mixins"><strong>tweet</strong></a> about us or give us some small Flattr donation (Flattr button is above in header section).</p>'+
 				'<p class="question">I find a bug and I would like to report it. Where can I do that?</p>'+
 				'<p>The best way to report a bug is using the Github <a href="https://github.com/CSSHat/LESSHat/issues" target="_blank">issues</a>.</p>'
 		},
@@ -56,7 +56,7 @@ var docs = {
 		{
 			name: 'Drawbacks',
 			showInMenu: true,
-			doc: '<p>Error reporting in LESS <a href="http://f.cl.ly/items/1M302K2y09173E3t3V2J/Screen%20Shot%202012-09-04%20at%209.32.33%20PM.png" target="_blank">sucks</a>, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
+			doc: '<p>Error reporting in LESS <a href="less-error.png" target="_blank">sucks</a>, sorry about that. If you like to know what went wrong when you mistype, use SASS (which <a href="http://csshat.com">CSS Hat</a> does too :)).</p>'
 		},
 
 		{
