@@ -1,20 +1,19 @@
 var docs = {
 	properties: [
-		// TODO: fix w3schools / w3c mishmash
-		// {
-		// 	name: 'Configuration',
-		// 	showInMenu: true,
-		// 	doc: '<p>Turn on/off prefixes for individual browsers. Useful when doing internal project, or mobile app that should only work with webkit.</p>' +
-		// 		'<p>Config is global for all mixins (see the top of the file) and you can override specific mixins manually (at the beginning of every mixin).</p>',
-		// 	code: '@w3schools: true; // Unprefixed W3C syntax \n'
-		// 		+ '@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android \n'
-		// 		+ '@moz: true; //  Firefox 4+ \n'
-		// 		+ '@opera: true; // Opera 10.5+ \n'
-		// 		+ '@ms: true;  // IE 10+ \n'
-		// 		+ '@oldWebkit: true; // iOS4, Safari 4, Chrome < 6.',
-		// 	noCssTransformation: true,
-		// 	parts: []
-		// },
+		 {
+		 	name: 'Configuration',
+		 	showInMenu: true,
+		 	doc: '<p>Turn on/off prefixes for individual browsers. Useful when doing internal project, or mobile app that should only work with webkit.</p>' +
+		 		'<p>Config is global for all mixins (see the top of the file) and you can override specific mixins manually (at the beginning of every mixin).</p>',
+		 	code: '@w3c: true; // Unprefixed W3C syntax \n'
+		 		+ '@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android \n'
+		 		+ '@moz: true; //  Firefox 4+ \n'
+		 		+ '@opera: true; // Opera 10.5+ \n'
+		 		+ '@ms: true;  // IE 10+ \n'
+		 		+ '@oldWebkit: true; // iOS4, Safari 4, Chrome < 6.',
+		 	noCssTransformation: true,
+		 	parts: []
+		 },
 
 		{
 			name: 'Design considerations',
@@ -35,7 +34,7 @@ var docs = {
 				'<p class="question">How is LESSHat licensed?</p>'+
 				'<p>LESSHat is available under the MIT and BSD licenses. You are free to use LESSHat without restriction for both open-source and closed-source applications.</p>'+
 				'<p class="question">Hey LESSHat is uber cool. It really made my day. Thanks!</p>'+
-				'<p>That&apos;s nice. We appreciate it. :) If you would like to support us you can <a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @csshat. %23lesshat"><strong>tweet</strong></a> about us or give us some small Flattr donation (Flattr button is above in header section).</p>'+
+				'<p>That&apos;s nice. We appreciate it. :) If you would like to support us you can <a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @CSSHat. %23css %23less %23mixins"><strong>tweet</strong></a> about us or give us some small Flattr donation (Flattr button is above in header section).</p>'+
 				'<p class="question">I find a bug and I would like to report it. Where can I do that?</p>'+
 				'<p>The best way to report a bug is using the Github <a href="https://github.com/CSSHat/LESSHat/issues" target="_blank">issues</a>.</p>'
 		},
@@ -79,6 +78,7 @@ var docs = {
 			doc: '', 
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_animation.asp', 
 			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/animation', 
+			w3c: 'http://www.w3.org/TR/css3-animations/',
 			examples: 'https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_animations?redirectlocale=en-US&amp;redirectslug=CSS%2FCSS_animations',
 			code: '.example-animation {\n'
 				+ '\t.animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");\n'
@@ -186,6 +186,7 @@ var docs = {
 			parameter: ['(appearance);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_appearance.asp',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/-moz-appearance',
 			code: '.example-appearance {\n'
 				+ '\t.appearance(button);\n'
 				+ '}\n',
@@ -197,6 +198,8 @@ var docs = {
 			parameter: ['(visible|hidden);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/backface-visibility',
+			w3c: 'http://www.w3.org/TR/css3-transforms/#backface-visibility-property',
 			code: '.example-backface-visibility {\n'
 				+ '\t.backface-visibility(hidden);\n'
 				+ '}\n',
@@ -208,6 +211,8 @@ var docs = {
 			parameter: ['(border-box|padding-box|content-box);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_background-clip.asp',
+			w3c: 'http://www.w3.org/TR/css3-background/#the-background-clip',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/background-clip',
 			code: '.example-background-clip {\n'
 				+ '\t.background-clip(padding-box);\n'
 				+ '}\n',
@@ -219,6 +224,8 @@ var docs = {
 			parameter: ['(border-box|padding-box|content-box);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_background-origin.asp">w3schools</a></p>',
+			w3c: 'http://www.w3.org/TR/css3-background/#the-background-origin',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/background-origin',
 			code: '.example-background-origin {\n'
 				+ '\t.background-origin(content-box);\n'
 				+ '}\n',
@@ -235,6 +242,8 @@ var docs = {
 			parameter: '(size) or (~"size-1 [, size-2, ..., size-n]");',
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_background-size.asp',
+			w3c: 'http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/background-size',
 			code: '.example-background-size {\n'
 				+ '\t.background-size(cover);\n'
 				+ '}\n'
@@ -250,6 +259,8 @@ var docs = {
 			parameter: ['(radius);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_border-radius.asp',
+			w3c: 'http://www.w3.org/TR/css3-background/#the-border-radius',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/border-radius',
 			code: '.example-border-radius {\n'
 				+ '\t.border-radius(10px);\n'
 				+ '}\n'
@@ -307,6 +318,8 @@ var docs = {
 			],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_border-image.asp',
+			w3c: 'http://www.w3.org/TR/css3-background/#the-border-image',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/border-image',
 			code: '.example-border-image {\n'
 				+ '\t.border-image(url(border.png) 30 30 round);\n'
 				+ '}\n',
@@ -318,6 +331,8 @@ var docs = {
 			parameter: '(~"shadow-1[, shadow-2, ..., shadow-n]");',
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_box-shadow.asp',
+			w3c: 'http://www.w3.org/TR/css3-background/#the-box-shadow',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/box-shadow',
 			code: '.example-box-shadow {\n'
 				+ '\t.box-shadow(~"0 1px 10px #000, inset 0 -2px 5px red");\n'
 				+ '}\n',
@@ -329,6 +344,8 @@ var docs = {
 			parameter: ['(content-box|border-box|inherit);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_box-sizing.asp',
+			w3c: 'http://www.w3.org/TR/css3-ui/#box-sizing0',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/box-sizing',
 			code: '.example-box-sizing {\n'
 				+ '\t.box-sizing(border-box);\n'
 				+ '}\n',
@@ -340,6 +357,8 @@ var docs = {
 			parameter: ['(column-width column-count);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_columns.asp',
+			w3c: 'http://www.w3.org/TR/css3-multicol/#columns',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/columns',
 			code: '.example-columns {\n'
 				+ '\t.columns(100px 3);\n'
 				+ '}\n'
@@ -392,6 +411,8 @@ var docs = {
 			parameter: ['(@fontname, @fontfile);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp',
+			w3c: 'http://www.w3.org/TR/2012/WD-css3-fonts-20120823/#font-face-rule',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/@font-face',
 			code: '.example-font-face {\n'
 				+ '\t.font-face(ZendaRegular, zenda-webfont);\n'
 				+ '}\n',
@@ -402,8 +423,9 @@ var docs = {
 			name: '.gradient',
 			parameter: '(~"image-1[, image-2, ..., image-n]");',
 			badge: 'top',
-			doc: '<p>Takes multiple linear and radial gradients, generates CSS for all modern browsers including older webkit syntax (hello, iOS4!) and even <strong>SVG gradient</strong> fallback for IE9.</p>' +
-				'<p>MDN docs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">linear gradient</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">radial gradient</a></p>',
+			doc: '<p><strong>USE W3C syntax.</strong> Takes multiple linear and radial gradients, generates CSS for all modern browsers including older webkit syntax (hello, iOS4!) and even <strong>SVG gradient</strong> fallback for IE9.</p>' +
+				'<p>MDN docs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">linear gradient</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">radial gradient</a></p>' +
+				'<p>Great tool for generating gradients <a href="http://www.colorzilla.com/gradient-editor/">Ultimate CSS Gradient Generator</a></p>',
 			code: '.example-gradient {\n'
 				+ '\t.gradient(~"linear-gradient(90deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)");\n'
 				+ '}\n'
@@ -421,6 +443,8 @@ var docs = {
 			parameter: ['(value|inherit);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_opacity.asp',
+			w3c: 'http://www.w3.org/wiki/CSS/Properties/opacity',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/opacity',
 			code: '.example-opacity {\n'
 				+ '\t.opacity(0.5);\n'
 				+ '}\n',
@@ -432,6 +456,8 @@ var docs = {
 			parameter: ['(number|none);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_perspective.asp',
+			w3c: 'http://www.w3.org/TR/css3-transforms/#perspective-property',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/perspective',
 			code: '.example-perspective {\n'
 				+ '\t.perspective(350px);\n'
 				+ '}\n'
@@ -452,7 +478,7 @@ var docs = {
 		{
 			name: '.size',
 			parameter: ['(size-1 [, size-2]);'],
-			doc: '<p>If you fill only first parameter, second parameter will be the same.</p>',
+			doc: '<p>Special mixin for dimensions. If you fill only first parameter, second parameter will be the same.</p>',
 			code: '.example-size {\n'
 				+ '\t.size(200px); /* render square */\n'
 				+ '}\n'
@@ -467,6 +493,8 @@ var docs = {
 			parameter: ['(none|transform-functions);'],
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_transform.asp',
+			w3c: 'http://www.w3.org/TR/css3-transforms/#transform-property',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/transform',
 			code: '.example-transform {\n'
 				+ '\t.transform(~"scale(.5) translate(10px, 20px)");\n'
 				+ '}\n'
@@ -683,6 +711,8 @@ var docs = {
 			 */
 			doc: '',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_transition.asp',
+			w3c: 'http://www.w3.org/TR/css3-transitions/',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/transition',
 			code: '.example-transition {\n'
 				+ '\t.transition(color 1s ease-in-out);\n'
 				+ '}\n'
