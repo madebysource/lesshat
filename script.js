@@ -250,6 +250,16 @@ $(document).ready(function()
 	$close.bind('click touchstart', function(e) {
 		$popup.removeClass('active');
 	});
+
+	$popup.on('click touchstart', function(e) {
+		if ($(e.srcElement).attr('id') === 'popup')
+			$popup.toggleClass('active');
+	});
+
+	$window.bind('keydown', function(e) {
+		if (e.keyCode === 27)
+			$popup.removeClass('active');
+	});
 });
 
 $(document).load(function()
