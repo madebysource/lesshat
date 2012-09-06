@@ -34,14 +34,17 @@
 		<p class="description">Kick-ass universal mixin library from makers of&nbsp;<a href="http://csshat.com">CSS&nbsp;Hat</a>.</p>
 		<a href="https://github.com/CSSHat/LESSHat/zipball/master" class="download">Download LESS&nbsp;Hat&nbsp;1.0</a>
 		<p class="twitter"><a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @csshat. %23lesshat"><span>Take cover! It's&nbsp;supersonic!</span></a></p>
-		<a href="http://flattr.com/thing/864000/LESS-Hat-A-supersonic-bunch-of-smart-LESS-mixins-" class="flattr" target="_blank">
-		<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 	</header>
 	<section>
 		<div id="menu">
 			<ul id="menu-list">
 				<li><a href="#introduction">Introduction</a></li>
 
+				
+				<li >
+					<a href="#configuration" >Configuration</a>
+					
+				</li>
 				
 				<li >
 					<a href="#design-considerations" >Design considerations</a>
@@ -268,6 +271,8 @@
 				</li>
 				
 
+				<a href="http://flattr.com/thing/864000/LESS-Hat-A-supersonic-bunch-of-smart-LESS-mixins-" class="flattr" target="_blank">
+				<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 			</ul>
 		</div>
 		<div id="main">
@@ -357,6 +362,33 @@
 			
 				
 					
+				<article id="configuration">
+					<h2>Configuration
+						<span class="mixin-sample"></span>
+					</h2>
+					
+					<div class="detail">
+						<p>Turn on/off prefixes for individual browsers. Useful when doing internal project, or mobile app that should only work with webkit.</p><p>Config is global for all mixins (see the top of the file) and you can override specific mixins manually (at the beginning of every mixin).</p>
+					</div>
+					
+					
+					
+					
+					<div class="code clearfix ">
+						<textarea cols="30" rows="10" class="less">@w3c: true; // Unprefixed W3C syntax 
+@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android 
+@moz: true; //  Firefox 4+ 
+@opera: true; // Opera 10.5+ 
+@ms: true;  // IE 10+ 
+@oldWebkit: true; // iOS4, Safari 4, Chrome &lt; 6.</textarea>
+					</div>
+					
+				</article>
+				
+				
+			
+				
+					
 				<article id="design-considerations">
 					<h2>Design considerations
 						<span class="mixin-sample"></span>
@@ -381,7 +413,7 @@
 					</h2>
 					
 					<div class="detail">
-						<p class="question">What is LESS?</p><p>Hey, start with official website <a href="http://lesscss.org" target="_blank">lesscss.org</a> and learn why it rocks so hard.</p><p class="question">What is a good practice to using LESS?</p><p>We don&apos;t recommended to use LESS directly in your client-side code, because it has to be compiled every time a page is viewed, but for development it&apos;s okay. You can use <a href="http://lesscss.org/#-server-side-usage">server-side</a> compiling via Node.js or some of desktop apps for example <a href="http://incident57.com/less/">LESS.app - free</a>, <a href="http://incident57.com/codekit/">Codekit - paid</a> or <a href="http://livereload.com/">LiveReload - paid</a>.</p><p class="question">How is LESSHat licensed?</p><p>LESSHat is available under the MIT and BSD licenses. You are free to use LESSHat without restriction for both open-source and closed-source applications.</p><p class="question">Hey LESSHat is uber cool. It really made my day. Thanks!</p><p>That&apos;s nice. We appreciate it. :) If you would like to support us you can <a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @csshat. %23lesshat"><strong>tweet</strong></a> about us or give us some small Flattr donation (Flattr button is above in header section).</p><p class="question">I find a bug and I would like to report it. Where can I do that?</p><p>The best way to report a bug is using the Github <a href="https://github.com/CSSHat/LESSHat/issues" target="_blank">issues</a>.</p>
+						<p class="question">What is LESS?</p><p>Hey, start with official website <a href="http://lesscss.org" target="_blank">lesscss.org</a> and learn why it rocks so hard.</p><p class="question">What is a good practice to using LESS?</p><p>We don&apos;t recommended to use LESS directly in your client-side code, because it has to be compiled every time a page is viewed, but for development it&apos;s okay. You can use <a href="http://lesscss.org/#-server-side-usage">server-side</a> compiling via Node.js or some of desktop apps for example <a href="http://incident57.com/less/">LESS.app - free</a>, <a href="http://incident57.com/codekit/">Codekit - paid</a> or <a href="http://livereload.com/">LiveReload - paid</a>.</p><p class="question">How is LESSHat licensed?</p><p>LESSHat is available under the MIT and BSD licenses. You are free to use LESSHat without restriction for both open-source and closed-source applications.</p><p class="question">Hey LESSHat is uber cool. It really made my day. Thanks!</p><p>That&apos;s nice. We appreciate it. :) If you would like to support us you can <a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @csshat. %23lesshat"><strong>tweet</strong></a> about us or give us some small Flattr donation (Flattr button is the last item in the left column).</p><p class="question">I find a bug and I would like to report it. Where can I do that?</p><p>The best way to report a bug is using the Github <a href="https://github.com/CSSHat/LESSHat/issues" target="_blank">issues</a>.</p>
 					</div>
 					
 					
@@ -448,8 +480,8 @@
 					
 					<div class="links">
 						<span class="specification">Animation on:</span>
-						
-						<a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN</a>
+						<a href="http://www.w3.org/TR/css3-animations/">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/animation">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">w3schools</a>
 					</div>
 					
@@ -512,7 +544,7 @@
 					<div class="links">
 						<span class="specification">Appearance on:</span>
 						
-						
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/-moz-appearance">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp">w3schools</a>
 					</div>
 					
@@ -539,8 +571,8 @@
 					
 					<div class="links">
 						<span class="specification">Backface-visibility on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-transforms/#backface-visibility-property">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/backface-visibility">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">w3schools</a>
 					</div>
 					
@@ -567,8 +599,8 @@
 					
 					<div class="links">
 						<span class="specification">Background-clip on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-background/#the-background-clip">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/background-clip">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_background-clip.asp">w3schools</a>
 					</div>
 					
@@ -595,8 +627,8 @@
 					
 					<div class="links">
 						<span class="specification">Background-origin on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-background/#the-background-origin">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/background-origin">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_background-origin.asp&quot;&gt;w3schools&lt;/a&gt;&lt;/p&gt;">w3schools</a>
 					</div>
 					
@@ -623,8 +655,8 @@
 					
 					<div class="links">
 						<span class="specification">Background-size on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/background-size">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">w3schools</a>
 					</div>
 					
@@ -655,8 +687,8 @@
 					
 					<div class="links">
 						<span class="specification">Border-radius on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-background/#the-border-radius">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/border-radius">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp">w3schools</a>
 					</div>
 					
@@ -699,8 +731,8 @@
 					
 					<div class="links">
 						<span class="specification">Border-image on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-background/#the-border-image">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/border-image">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_border-image.asp">w3schools</a>
 					</div>
 					
@@ -727,8 +759,8 @@
 					
 					<div class="links">
 						<span class="specification">Box-shadow on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-background/#the-box-shadow">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/box-shadow">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_box-shadow.asp">w3schools</a>
 					</div>
 					
@@ -755,8 +787,8 @@
 					
 					<div class="links">
 						<span class="specification">Box-sizing on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-ui/#box-sizing0">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/box-sizing">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_box-sizing.asp">w3schools</a>
 					</div>
 					
@@ -783,8 +815,8 @@
 					
 					<div class="links">
 						<span class="specification">Columns on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-multicol/#columns">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/columns">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_columns.asp">w3schools</a>
 					</div>
 					
@@ -823,8 +855,8 @@
 					
 					<div class="links">
 						<span class="specification">Font-face on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/2012/WD-css3-fonts-20120823/#font-face-rule">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/@font-face">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">w3schools</a>
 					</div>
 					
@@ -849,7 +881,7 @@
 					</h2>
 					
 					<div class="detail">
-						<p>Takes multiple linear and radial gradients, generates CSS for all modern browsers including older webkit syntax (hello, iOS4!) and even <strong>SVG gradient</strong> fallback for IE9.</p><p>MDN docs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">linear gradient</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">radial gradient</a></p>
+						<p><strong>USE W3C syntax.</strong> Takes multiple linear and radial gradients, generates CSS for all modern browsers including older webkit syntax (hello, iOS4!) and even <strong>SVG gradient</strong> fallback for IE9.</p><p>MDN docs: <a href="https://developer.mozilla.org/en-US/docs/CSS/linear-gradient?redirectlocale=en-US&redirectslug=CSS%2F-moz-linear-gradient">linear gradient</a>, <a href="https://developer.mozilla.org/en-US/docs/CSS/radial-gradient">radial gradient</a></p><p>Great tool for generating gradients <a href="http://www.colorzilla.com/gradient-editor/">Ultimate CSS Gradient Generator</a></p>
 					</div>
 					
 					
@@ -882,8 +914,8 @@
 					
 					<div class="links">
 						<span class="specification">Opacity on:</span>
-						
-						
+						<a href="http://www.w3.org/wiki/CSS/Properties/opacity">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/opacity">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">w3schools</a>
 					</div>
 					
@@ -910,8 +942,8 @@
 					
 					<div class="links">
 						<span class="specification">Perspective on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-transforms/#perspective-property">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/perspective">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_perspective.asp">w3schools</a>
 					</div>
 					
@@ -939,7 +971,7 @@
 					</h2>
 					
 					<div class="detail">
-						<p>If you fill only first parameter, second parameter will be the same.</p>
+						<p>Special mixin for dimensions. If you fill only first parameter, second parameter will be the same.</p>
 					</div>
 					
 					
@@ -969,8 +1001,8 @@
 					
 					<div class="links">
 						<span class="specification">Transform on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-transforms/#transform-property">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/transform">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_transform.asp">w3schools</a>
 					</div>
 					
@@ -1057,8 +1089,8 @@
 					
 					<div class="links">
 						<span class="specification">Transition on:</span>
-						
-						
+						<a href="http://www.w3.org/TR/css3-transitions/">W3C</a>, 
+						<a href="https://developer.mozilla.org/en-US/docs/CSS/transition">MDN</a>, 
 						<a href="http://www.w3schools.com/cssref/css3_pr_transition.asp">w3schools</a>
 					</div>
 					

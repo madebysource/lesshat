@@ -104,7 +104,7 @@ body{
   width: 164px;
   height: 135px;
   display: block;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   background: url(/fork.png) no-repeat 0 0;
@@ -132,10 +132,6 @@ header{
 		font-size: 18px;
 		color: #a79db9;
 		padding-top:10px;
-	}
-	.flattr{
-		display:inline-block;
-		margin-bottom:5px;
 	}
 	.download,.download:visited{
 		position: relative;
@@ -212,6 +208,12 @@ section{
 	}
 	&:after {
     clear:both;
+	}
+	.flattr{
+		display:inline-block;
+		position: relative;
+		top: -20px;
+		left:15px;
 	}
 	#menu{
 		background: #fff;
