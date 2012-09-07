@@ -30,7 +30,7 @@
 //    .columns
     //    .column-count
     //    .column-gap
-    //    .column-rule 
+    //    .column-rule
     //    .column-width
 //    .font-face
 //    .gradient
@@ -66,13 +66,13 @@
     //    .transition-delay
 
 
-//  @GlobalConfig 
+//  @GlobalConfig
 
   // Config supported browsers for your project
 
     @w3c: true; // Unprefixed W3C syntax
     @webkit: true; // Chrome 7+, Safari 5+, iOS5, Android
-    @moz: true; //  Firefox 4+  
+    @moz: true; //  Firefox 4+
     @opera: true; // Opera 10.5+
     @ms: true;  // IE 10+
     @oldWebkit: true; // iOS4, Safari 4, Chrome < 6. Old webkit gradient syntax
@@ -94,11 +94,11 @@
 
     @w3cLocal: true; // Unprefixed W3C syntax
     @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-    @mozLocal: true; //  Firefox 4+  
+    @mozLocal: true; //  Firefox 4+
     @operaLocal: true; // Opera 10.5+
     @msLocal: true;  // IE 10+
 
-    .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+    .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
       .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation: @arguments;}
       .inception (@signal, @arguments) when (@signal = 2) { -moz-animation: @arguments;}
       .inception (@signal, @arguments) when (@signal = 3) { -o-animation: @arguments;}
@@ -110,7 +110,7 @@
     .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -131,11 +131,11 @@
 
     @w3cLocal: true; // Unprefixed W3C syntax
     @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-    @mozLocal: true; //  Firefox 4+  
+    @mozLocal: true; //  Firefox 4+
     @operaLocal: true; // Opera 10.5+
     @msLocal: true;  // IE 10+
 
-    .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+    .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
       .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-delay: @arguments;}
       .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-delay: @arguments;}
       .inception (@signal, @arguments) when (@signal = 3) { -o-animation-delay: @arguments;}
@@ -147,7 +147,7 @@
     .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -169,11 +169,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-direction: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-direction: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-animation-direction: @arguments;}
@@ -185,7 +185,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -207,11 +207,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-duration: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-duration: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-animation-duration: @arguments;}
@@ -223,7 +223,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -244,11 +244,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-timing-function: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-timing-function: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-animation-timing-function: @arguments;}
@@ -260,7 +260,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -281,11 +281,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-iteration-count: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-iteration-count: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-animation-iteration-count: @arguments;}
@@ -297,7 +297,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -318,11 +318,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-name: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-name: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-animation-name: @arguments;}
@@ -334,7 +334,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -355,11 +355,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-animation-play-state: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-animation-play-state: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-animation-play-state: @arguments;}
@@ -371,14 +371,14 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
       // --
       .result(@arguments, @msSignal, @ms, @msLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);   
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
     }
 
       //  element{  .animation-play-state(paused);  }
@@ -392,9 +392,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @argument) when (@signal = 1) { -webkit-appearance: @argument;}
         .inception (@signal, @argument) when (@signal = 2) { -moz-appearance: @argument;}
         .inception (@signal, @argument) when (@signal = 5) { appearance: @argument;}
@@ -404,10 +404,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .appearance(button);  }
@@ -421,9 +421,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @argument) when (@signal = 1) { -webkit-backface-visibility: @argument;}
         .inception (@signal, @argument) when (@signal = 2) { -moz-backface-visibility: @argument;}
         .inception (@signal, @argument) when (@signal = 5) { backface-visibility: @argument;}
@@ -433,10 +433,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .backface-visibility(hidden);  }
@@ -450,9 +450,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-background-clip: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-background-clip: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { background-clip: @arguments;}
@@ -462,10 +462,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .background-clip(padding-box); }
@@ -479,9 +479,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-background-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-background-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { background-origin: @arguments;}
@@ -491,10 +491,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .background-origin(content-box); }
@@ -508,9 +508,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-background-size: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-background-size: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { background-size: @arguments;}
@@ -520,10 +520,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .background-size(~"auto, 100%"); }
@@ -537,9 +537,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-radius: @arguments; -webkit-background-clip: padding-box;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius: @arguments; -moz-background-clip: padding;}
         .inception (@signal, @arguments) when (@signal = 5) { border-radius: @arguments; background-clip: padding-box; }
@@ -549,10 +549,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal); 
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .border-radius(10px); //  all corner rounded }
@@ -568,9 +568,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-top-left-radius: @arguments; -webkit-background-clip: padding-box;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-topleft: @arguments; -moz-background-clip: padding;}
         .inception (@signal, @arguments) when (@signal = 5) { border-top-left-radius: @arguments; background-clip: padding-box; }
@@ -580,10 +580,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal); 
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .border-top-left-radius(10px); }
@@ -597,9 +597,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-top-right-radius: @arguments; -webkit-background-clip: padding-box;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-topright: @arguments; -moz-background-clip: padding;}
         .inception (@signal, @arguments) when (@signal = 5) { border-top-right-radius: @arguments; background-clip: padding-box; }
@@ -609,10 +609,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal); 
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .border-top-right-radius(10px);  }
@@ -626,9 +626,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-bottom-left-radius: @arguments; -webkit-background-clip: padding-box;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-bottomleft: @arguments; -moz-background-clip: padding;}
         .inception (@signal, @arguments) when (@signal = 5) { border-bottom-left-radius: @arguments; background-clip: padding-box; }
@@ -638,10 +638,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal); 
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .border-bottom-left-radius(10px);  }
@@ -655,9 +655,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-bottom-right-radius: @arguments; -webkit-background-clip: padding-box;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius-bottomright: @arguments; -moz-background-clip: padding;}
         .inception (@signal, @arguments) when (@signal = 5) { border-bottom-right-radius: @arguments; background-clip: padding-box; }
@@ -667,10 +667,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal); 
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .border-bottom-right-radius(10px); }
@@ -684,10 +684,10 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-image: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-border-image: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-border-image: @arguments;}
@@ -698,12 +698,12 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal); 
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .border-image(url(border.png) 30 30 round);  }
@@ -717,9 +717,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-box-shadow: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-box-shadow: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { box-shadow: @arguments;}
@@ -729,10 +729,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .box-shadow(~"0 1px 10px #000, inset 0 -2px 5px red"); }
@@ -746,9 +746,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-box-sizing: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-box-sizing: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { box-sizing: @arguments;}
@@ -758,10 +758,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .box-sizing(border-box); }
@@ -775,9 +775,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-columns: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-columns: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { columns: @arguments;}
@@ -787,10 +787,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .columns(100px 3);  }
@@ -804,9 +804,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-count: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-column-count: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { column-count: @arguments;}
@@ -816,10 +816,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .column-count(3);  }
@@ -833,9 +833,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-gap: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-column-gap: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { column-gap: @arguments;}
@@ -845,10 +845,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .column-gap(40px); }
@@ -862,9 +862,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-rule: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-column-rule: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { column-rule: @arguments;}
@@ -874,10 +874,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .column-rule(3px outset #ff00ff);  }
@@ -891,9 +891,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-column-width: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-column-width: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { column-width: @arguments;}
@@ -903,10 +903,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .column-width(100px);  }
@@ -931,18 +931,18 @@
 
 //  .gradient
 
-  .gradient(@arguments:none){  
+  .gradient(@arguments:none){
 
       //  Local config for disabling properties
 
       @svg: true; //  SVG gradient for IE9
-      @mozLocal: true; //  Firefox 4+ 
+      @mozLocal: true; //  Firefox 4+
       @oldWebkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
       @operaLocal: true; // Opera 10.5+
       @w3cLocal: true; // Unprefixed W3C syntax
 
-      
+
       @gradientSVG: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E;a="@{arguments}",g=null,f=!0,i=a.split(/,(?=\s*(?:linear|radial))/g),j=i.length,E=/top/,x=/right/,c=/bottom/,q=/left/,D=/to\s*top/,C=/to\s*right/,A=/to\s*bottom/,B=/to\s*left/,d=/45deg/,e=/-45deg/,b=/\d*deg/,n=0;while(n<j){/linear/.test(i[n])&&(i[n]=i[n].replace(/linear-gradient\s*\(/,'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">'),E.test(i[n])&&!D.test(i[n])||A.test(i[n])||/180deg/.test(i[n])?(y=null,A.test(i[n])?y=A:/180deg/.test(i[n])?y=/180deg/:y=E,i[n]=i[n].replace(y,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">')):x.test(i[n])&&!C.test(i[n])||B.test(i[n])||/270deg/.test(i[n])?(y=null,B.test(i[n])?y=B:/270deg/.test(i[n])?y=/270deg/:i=x,i[n]=i[n].replace(y,'<linearGradient id=grad-ucgg-generated gradientUnits="userSpaceOnUse" x1="100%" y1="0%" x2="0%" y2="0%">')):c.test(i[n])&&!A.test(i[n])||D.test(i[n])||/\(\s*0deg/.test(i[n])?(y=null,D.test(i[n])?y=D:/0deg/.test(i[n])?y=/0deg/:y=c,i[n]=i[n].replace(y,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="0%" y2="0%">')):q.test(i[n])&&!B.test(i[n])||C.test(i[n])||/90deg/.test(i[n])?(y=null,C.test(i[n])?y=C:/90deg/.test(i[n])?y=/90deg/:y=q,i[n]=i[n].replace(y,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">')):d.test(i[n])&&!e.test(i[n])?i[n]=i[n].replace(d,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="100%" y2="0%">'):e.test(i[n])?i[n]=i[n].replace(e,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="100%">'):f=!1),i[n]=i[n].slice(0,-1);try{btoa(""),g=!0}catch(F){g=!1}g?i[n]="url(data:image/svg+xml;base64--"+i[n]+'</linearGradient><rect x="0" y="0" width="1" height="1" fill="url(***)" /></svg>)':i[n]="url('data:image/svg+xml;utf8--"+i[n]+'</linearGradient><rect x="0" y="0" width="1" height="1" fill="url(***)" /></svg>\')',z=i.join("@@@"),v=z.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,l=z.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,w=[],m=[],o=0;while(o<v.length)w[o]=v[o].replace(/,/g,"--"),o++;t=0;while(t<l.length)m[t]=l[t].replace(/,/g,"--"),t++;p=0;while(p<v.length)z=z.replace(v[p],w[p]),p++;u=0;while(u<l.length)z=z.replace(l[u],m[u]),u++;h=z.split(","),r=0;while(r<h.length){h[r]=h[r].replace(/(#\w{3,6})\s*(\d*%*)/g,'<stop offset="$2" stop-color="$1" stop-opacity="1"/>').replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,'<stop offset="$3" stop-color="$1" stop-opacity="$2"/>').replace(/rgba/g,"rgb").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,'<stop offset="$3" stop-color="$1" stop-opacity="$2"/>').replace(/hsla/g,"hsl").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g,'<stop offset="$2" stop-color="$1" stop-opacity="1"/>').replace(/\*\*\*/,"#grad-ucgg-generated");try{"".trim(),g=!0}catch(F){g=!1}g&&(h[r]=h[r].trim()),r++}h=h.toString().replace(/,/g,"").replace(/--/g,",").replace(/(rgb?\(\d+,\s*\d+,\s*\d+),\s*(?:0|1|\.\d+|0\.\d+)\)/g,"$1)").replace(/(hsl?\(\d+,\s*\d+%,\s*\d+%),\s*(?:0|1|\.\d+|0\.\d+)\)/g,"$1)"),n++}/radial/.test(h)&&(/((ellipse).*(center)|(circle).*(center))/g.test(h)?h=h.replace(/<\/linearGradient>/g,"</radialGradient>").replace(/radial-gradient[^<]+/g,'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><radialGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="75%">').replace(/<rect x=\S+\d\S+ y=\S+\d\S+ width=\S+\d\S+ height=\S+\d\S+ fill=\S+\w\S+ \/>/g,'<rect x="-50" y="-50" width="101" height="101" fill="url(#grad-ucgg-generated)" />'):h=!1),k=null,h=h.split("@@@"),s=0;try{btoa(""),g=!0}catch(F){g=!1}if(g){s;while(s<h.length)k=btoa(h[s].match(/<\?xml.*<\/svg>/)),h[s]=h[s].replace(/\s*(<\?xml.*<\/svg>)/,k),s++}else h=h.toString().replace("@@@",",");return f?h:h=!1,h?h.toString():h})()`;
       @gradientMoz: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-moz-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d}())`;
       @gradientOldWebkit: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C;a="@{arguments}",g=null,f=!0,i=a.split(/,(?=\s*(?:linear|radial))/g),j=i.length,C=/top/,v=/right/,c=/bottom/,p=/left/,B=/to\s*top/,A=/to\s*right/,y=/to\s*bottom/,z=/to\s*left/,d=/45deg/,e=/-45deg/,b=/\d*deg/,m=0;while(m<j){/linear/.test(i[m])&&(i[m]=i[m].replace(/linear-gradient\s*\(/,"-webkit-gradient(linear, "),C.test(i[m])&&!B.test(i[m])||y.test(i[m])||/180deg/.test(i[m])?(w=null,y.test(i[m])?w=y:/180deg/.test(i[m])?w=/180deg/:w=C,i[m]=i[m].replace(w,"left top, left bottom")):v.test(i[m])&&!A.test(i[m])||z.test(i[m])||/270deg/.test(i[m])?(w=null,z.test(i[m])?w=z:/270deg/.test(i[m])?w=/270deg/:i=v,i[m]=i[m].replace(w,"right top, left top")):c.test(i[m])&&!y.test(i[m])||B.test(i[m])||/\(\s*0deg/.test(i[m])?(w=null,B.test(i[m])?w=B:/0deg/.test(i[m])?w=/0deg/:w=c,i[m]=i[m].replace(w,"left bottom, left top")):p.test(i[m])&&!z.test(i[m])||A.test(i[m])||/90deg/.test(i[m])?(w=null,A.test(i[m])?w=A:/90deg/.test(i[m])?w=/90deg/:w=p,i[m]=i[m].replace(w,"left top, right top")):d.test(i[m])&&!e.test(i[m])?i[m]=i[m].replace(d,"left bottom, right top"):e.test(i[m])?i[m]=i[m].replace(e,"left top, right bottom"):f=!1),x=i.toString(),t=x.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,k=x.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,u=[],l=[],n=0;while(n<t.length)u[n]=t[n].replace(/,/g,"--"),n++;r=0;while(r<k.length)l[r]=k[r].replace(/,/g,"--"),r++;o=0;while(o<t.length)x=x.replace(t[o],u[o]),o++;s=0;while(s<k.length)x=x.replace(k[s],l[s]),s++;h=x.split(","),q=0;while(q<h.length){h[q]=h[q].replace(/(#\w{3,6})\s*(\d*%*)/g,"color-stop($2,$1)").replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,"color-stop($2,$1)").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(?:0|1|\.\d+|0\.\d+)\))\s*(\d*%)*/g,"color-stop($2,$1)").replace(/--/g,",").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g,"color-stop($2,$1)");try{"".trim(),g=!0}catch(D){g=!1}g&&(h[q]=h[q].trim()),q++}m++}return/radial/.test(h)&&(/((ellipse).*(center)|(circle).*(center))/g.test(h)&&/color-stop\(\s*\d*%/g.test(h)?h=h.join(",").replace(/radial-gradient\(.*?color/g,"-webkit-gradient(radial, center center, 0px, center center, 100%, color"):h=!1),f?h:h=!1,h?h.toString():h}())`;
@@ -959,14 +959,14 @@
       .result(@gradientSVG, @svg, @svg, @gradientSVG);
       // --  this comment must be here because of LESS bug
       .result(@gradientMoz, @moz, @mozLocal);
-      // -- 
+      // --
       .result(@gradientOldWebkit, @oldWebkit, @oldWebkitLocal, @gradientOldWebkit);
       // --
       .result(@gradientWebkit, @webkit, @webkitLocal);
       // --
       .result(@gradientOpera, @opera, @operaLocal);
       // --
-      .result(@gradientW3C, @w3c, @w3cLocal); 
+      .result(@gradientW3C, @w3c, @w3cLocal);
 
 }
 
@@ -981,9 +981,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-opacity: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-opacity: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { opacity: @arguments;}
@@ -993,10 +993,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .opacity(.5); }
@@ -1010,9 +1010,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-perspective: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-perspective: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { perspective: @arguments;}
@@ -1022,10 +1022,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .perspective(350px);  }
@@ -1039,9 +1039,9 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-perspective-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-perspective-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 5) { perspective-origin: @arguments;}
@@ -1051,10 +1051,10 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
-      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);  
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
     //  element{  .perspective-origin(top left); }
@@ -1084,11 +1084,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: @arguments;}
@@ -1100,7 +1100,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1121,11 +1121,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform-origin: @arguments;}
@@ -1137,7 +1137,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1158,10 +1158,10 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
         .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
@@ -1172,7 +1172,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @msSignal, @ms, @msLocal);
@@ -1191,11 +1191,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translate(@x, @y);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translate(@x, @y);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translate(@x, @y);}
@@ -1207,7 +1207,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1229,11 +1229,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translate3d(@x, @y, @z);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translate3d(@x, @y, @z);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translate3d(@x, @y, @z);}
@@ -1245,7 +1245,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1266,11 +1266,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateX(@x);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateX(@x);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateX(@x);}
@@ -1282,7 +1282,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1303,11 +1303,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateY(@x);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateY(@x);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateY(@x);}
@@ -1319,7 +1319,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1340,11 +1340,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateZ(@x);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateZ(@x);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateZ(@x);}
@@ -1356,7 +1356,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1377,11 +1377,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scale(@x);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scale(@x);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scale(@x);}
@@ -1393,7 +1393,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1409,11 +1409,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scale(@x, @y);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scale(@x, @y);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scale(@x, @y);}
@@ -1425,7 +1425,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1437,7 +1437,7 @@
 
       //  element{  .scale(2);  }
       //  element{  .scale(2, 1); }
-      
+
 
 //  .scale3d
 
@@ -1447,11 +1447,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scale3d(@x, @y, @z);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scale3d(@x, @y, @z);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scale3d(@x, @y, @z);}
@@ -1463,7 +1463,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1471,7 +1471,7 @@
       .result(@arguments, @msSignal, @ms, @msLocal);
       // --
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
-  }  
+  }
 
       //  element{  .scale3d(1, 2, 1);  }
 
@@ -1484,11 +1484,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleX(@x);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleX(@x);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleX(@x);}
@@ -1500,7 +1500,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1508,7 +1508,7 @@
       .result(@arguments, @msSignal, @ms, @msLocal);
       // --
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
-  }  
+  }
 
       //  element{  .scaleX(1.5); }
 
@@ -1521,11 +1521,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleX(@x);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleX(@x);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleX(@x);}
@@ -1537,7 +1537,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1545,7 +1545,7 @@
       .result(@arguments, @msSignal, @ms, @msLocal);
       // --
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
-  }  
+  }
 
       //  element{  .scaleX(1.5); }
 
@@ -1558,11 +1558,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleZ(@x);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleZ(@x);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleZ(@x);}
@@ -1574,7 +1574,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1582,7 +1582,7 @@
       .result(@arguments, @msSignal, @ms, @msLocal);
       // --
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
-  }  
+  }
 
       //  element{  .scaleZ(2.7); }
 
@@ -1595,11 +1595,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotate(@angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotate(@angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotate(@angle);}
@@ -1611,7 +1611,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1632,11 +1632,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotate3d(@x, @y, @z, @angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotate3d(@x, @y, @z, @angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotate3d(@x, @y, @z, @angle);}
@@ -1648,7 +1648,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1669,11 +1669,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateX(@angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateX(@angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateX(@angle);}
@@ -1685,7 +1685,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1706,11 +1706,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateY(@angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateY(@angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateY(@angle);}
@@ -1722,7 +1722,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1743,11 +1743,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: rotateZ(@angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: rotateZ(@angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: rotateZ(@angle);}
@@ -1759,7 +1759,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1780,11 +1780,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skew(@angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skew(@angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skew(@angle);}
@@ -1796,7 +1796,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1817,11 +1817,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skewX(@angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skewX(@angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skewX(@angle);}
@@ -1833,7 +1833,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1854,11 +1854,11 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: skewY(@angle);}
         .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: skewY(@angle);}
         .inception (@signal, @arguments) when (@signal = 3) { -o-transform: skewY(@angle);}
@@ -1870,7 +1870,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1891,13 +1891,13 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition: @arguments; }
         .inception (@signal, @arguments) when (@signal = 3) { -o-transition: @arguments; }
         .inception (@signal, @arguments) when (@signal = 5) { transition: @arguments; }
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
@@ -1906,7 +1906,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1925,13 +1925,13 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-property: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-property: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-property: @arguments; }
         .inception (@signal, @arguments) when (@signal = 3) { -o-transition-property: @arguments; }
         .inception (@signal, @arguments) when (@signal = 5) { transition-property: @arguments; }
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
@@ -1940,7 +1940,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1959,13 +1959,13 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-duration: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-duration: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-duration: @arguments; }
         .inception (@signal, @arguments) when (@signal = 3) { -o-transition-duration: @arguments; }
         .inception (@signal, @arguments) when (@signal = 5) { transition-duration: @arguments; }
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
@@ -1974,7 +1974,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -1993,13 +1993,13 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-timing-function: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-timing-function: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-timing-function: @arguments; }
         .inception (@signal, @arguments) when (@signal = 3) { -o-transition-timing-function: @arguments; }
         .inception (@signal, @arguments) when (@signal = 5) { transition-timing-function: @arguments; }
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
@@ -2008,7 +2008,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
@@ -2027,13 +2027,13 @@
 
       @w3cLocal: true; // Unprefixed W3C syntax
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
-      @mozLocal: true; //  Firefox 4+  
+      @mozLocal: true; //  Firefox 4+
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
-      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { 
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-delay: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-delay: @arguments; } 
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-delay: @arguments; }
         .inception (@signal, @arguments) when (@signal = 3) { -o-transition-delay: @arguments; }
         .inception (@signal, @arguments) when (@signal = 5) { transition-delay: @arguments; }
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
@@ -2042,7 +2042,7 @@
       .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
 
       .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
-      // --  this comment must be here because of LESS bug 
+      // --  this comment must be here because of LESS bug
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
