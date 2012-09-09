@@ -33,8 +33,6 @@ Menu.prototype.init = function() {
 		self.setInactive(id);
 	});
 	this.$menu.on('click touchstart', 'a', function(e){
-		console.log($(this).attr('href'));
-		// (?:intro|problem|solution|demo|use_cases|team)
 		Anchor.handleClick.apply(this, arguments);
 	});
 
