@@ -1294,7 +1294,7 @@
 
 //  .translateY
 
-  .translateY(@x:0){
+  .translateY(@y:0){
 
       //  Local config for disabling properties
 
@@ -1305,11 +1305,11 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateY(@x);}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateY(@x);}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateY(@x);}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateY(@x);}
-        .inception (@signal, @arguments) when (@signal = 5) { transform: translateY(@x);}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateY(@y);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateY(@y);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateY(@y);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateY(@y);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: translateY(@y);}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
@@ -1342,11 +1342,11 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 5) { transform: translateZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: translateZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: translateZ(@z);}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
@@ -1512,7 +1512,7 @@
 
 //  .scaleY
 
-    .scaleY(@x:1){
+    .scaleY(@y:1){
 
       //  Local config for disabling properties
 
@@ -1523,11 +1523,11 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleX(@x);}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleX(@x);}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleX(@x);}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleX(@x);}
-        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleX(@x);}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleX(@y);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleX(@y);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleX(@y);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleX(@y);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleX(@y);}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
@@ -1560,11 +1560,11 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleZ(@x);}
-        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleZ(@x);}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleZ(@z);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleZ(@z);}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
