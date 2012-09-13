@@ -45,7 +45,7 @@ var docs = {
 			name: 'Roadmap',
 			showInMenu: true,
 			doc: '<ul><li>.keyframes mixin for css animation - see proposed syntax below</li>' +
-				  '<li>Prefix free for .transition mixin</li>' +
+				  '<li><del>Prefix free for .transition mixin</del> <b>DONE</b></li>' +
 				  '<li>Do you have any idea? Leave us a feedback in comment section below or on twitter <a href="http://twitter.com/CSSHat">@CSSHat</a> with hashtag #LESSHat.</li></ul>',
 			code: '.keyframes(animationName\n'
 				+ '\t~"0%,50% background: blue; transform: scale(.5);"\n'
@@ -706,20 +706,20 @@ var docs = {
 
 		{
 			name: '.transition',
-			parameter: '(transition) or (~"transition-1 [, transition-2, ..., transition-n]");',
+			parameter: '(~"transition-1 [, transition-2, ..., transition-n]");',
 			/*
 			 parameter: [ '(transition);',
 			 '(~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);'],
 			 */
-			doc: '',
+			doc: 'Prefix free feature. Use W3C syntax for everything.',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_transition.asp',
 			w3c: 'http://www.w3.org/TR/css3-transitions/',
 			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/transition',
 			code: '.example-transition {\n'
-				+ '\t.transition(color 1s ease-in-out);\n'
+				+ '\t.transition(~"transform 1s ease-in-out");\n'
 				+ '}\n'
 				+ '.example-multiple-transition {\n'
-				+ '\t .transition(~&quot;color 1s ease-in-out, width .5s 1s ease-in&quot;); \n'
+				+ '\t .transition(~&quot;box-shadow 1s ease-in-out, width .5s 1s ease-in&quot;); \n'
 				+ '}\n'
 				+ '.example-transition-property {\n'
 				+ '\t.transition-property(width);\n'

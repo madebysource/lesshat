@@ -443,7 +443,7 @@
 					</h2>
 					
 					<div class="detail">
-						<ul><li>.keyframes mixin for css animation - see proposed syntax below</li><li>Prefix free for .transition mixin</li><li>Do you have any idea? Leave us a feedback in comment section below or on twitter <a href="http://twitter.com/CSSHat">@CSSHat</a> with hashtag #LESSHat.</li></ul>
+						<ul><li>.keyframes mixin for css animation - see proposed syntax below</li><li><del>Prefix free for .transition mixin</del> <b>DONE</b></li><li>Do you have any idea? Leave us a feedback in comment section below or on twitter <a href="http://twitter.com/CSSHat">@CSSHat</a> with hashtag #LESSHat.</li></ul>
 					</div>
 					
 					
@@ -1095,8 +1095,12 @@
 					
 				<article id="transition">
 					<h2>.transition
-						<span class="mixin-sample">(transition) or (~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);</span>
+						<span class="mixin-sample">(~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);</span>
 					</h2>
+					
+					<div class="detail">
+						Prefix free feature. Use W3C syntax for everything.
+					</div>
 					
 					
 					<div class="links">
@@ -1110,10 +1114,10 @@
 					
 					<div class="code clearfix auto-convert-less">
 						<textarea cols="30" rows="10" class="less">.example-transition {
-	.transition(color 1s ease-in-out);
+	.transition(~&quot;transform 1s ease-in-out&quot;);
 }
 .example-multiple-transition {
-	 .transition(~&quot;color 1s ease-in-out, width .5s 1s ease-in&quot;); 
+	 .transition(~&quot;box-shadow 1s ease-in-out, width .5s 1s ease-in&quot;); 
 }
 .example-transition-property {
 	.transition-property(width);
