@@ -1892,11 +1892,18 @@
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
+      @transitionWebkit: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-webkit-"+c[h]))}return e.join(",")}())`;
+      @transitionMoz: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-moz-"+c[h]))}return e.join(",")}())`;
+      @transitionOpera: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-o-"+c[h]))}return e.join(",")}())`;
+      @transitionMs: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-ms-"+c[h]))}return e.join(",")}())`;
+      @transitionW3C: ~`(function(){var a,b,c;a="@{arguments}".split(","),c=!1,b=a.length;for(var d=0;d<b;d++){try{"".trim(),c=!0}catch(e){c=!1}a[d]=c?a[d].trim():a[d]}return a.join(",")}())`;
+
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transition: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 5) { transition: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition: @transitionWebkit; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition: @transitionMoz; }
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transition: @transitionOpera; }
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transition: @transitionMs; }
+        .inception (@signal, @arguments) when (@signal = 5) { transition: @transitionW3C; }
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
@@ -1908,10 +1915,12 @@
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
       // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
 
-    //  element{  .transition(color 1s ease-in-out);  }
+    //  element{  .transition(~"transform 1s ease-in-out, border-radius 2s 1s linear");  }
 
 
 //  .transition-property
@@ -1926,11 +1935,18 @@
       @operaLocal: true; // Opera 10.5+
       @msLocal: true;  // IE 10+
 
+      @transitionWebkit: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-webkit-"+c[h]))}return e.join(",")}())`;
+      @transitionMoz: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["background-size","border-","box-shadow","column","transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-moz-"+c[h]))}return e.join(",")}())`;
+      @transitionOpera: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-o-"+c[h]))}return e.join(",")}())`;
+      @transitionMs: ~`(function(){var a,b,c,d,e,f,g;a="@{arguments}".split(","),c=["transform"],d=c.length,e=a,f=!1,b=a.length;for(var h=0;h<d;h++)for(var i=0;i<b;i++){g=new RegExp(c[h],"g");try{"".trim(),f=!0}catch(j){f=!1}a[i]=f?a[i].trim():a[i],g.test(a[i])&&(e[i]=a[i].replace(g,"-ms-"+c[h]))}return e.join(",")}())`;
+      @transitionW3C: ~`(function(){var a,b,c;a="@{arguments}".split(","),c=!1,b=a.length;for(var d=0;d<b;d++){try{"".trim(),c=!0}catch(e){c=!1}a[d]=c?a[d].trim():a[d]}return a.join(",")}())`;
+
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-property: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-property: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transition-property: @arguments; }
-        .inception (@signal, @arguments) when (@signal = 5) { transition-property: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transition-property: @transitionWebkit; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transition-property: @transitionMoz; }
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transition-property: @transitionOpera; }
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transition-property: @transitionMs; }
+        .inception (@signal, @arguments) when (@signal = 5) { transition-property: @transitionW3C; }
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
@@ -1941,6 +1957,8 @@
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
       // --
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
   }
