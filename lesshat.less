@@ -1,4 +1,4 @@
-//  LESS Hat 1.0
+//  LESS Hat 1.0.3
 //  CSSHat.com
 //  2012
 //  Petr Brzek & Jan Kuca
@@ -64,6 +64,7 @@
     //    .transition-duration
     //    .transition-timing-function
     //    .transition-delay
+//    .user-select
 
 
 //  @GlobalConfig
@@ -2066,3 +2067,32 @@
   }
 
     //  element{  .transition-delay(2s);  }
+
+
+//  .user-select
+
+  .user-select(@arguments:auto){
+
+      //  Local config for disabling properties
+
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-user-select: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-user-select: @arguments; }
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-user-select: @arguments; }
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+  }
+
+   //   element{  .user-select(text);  }
