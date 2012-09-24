@@ -181,7 +181,13 @@
 					<div class="links">
 						<span class="specification">{{nameUpperCaseFirst}} on:</span>
 						{{#if w3c}}<a href="{{w3c}}">W3C</a>, {{/if}}
-						{{#if mdn}}<a href="{{mdn}}">MDN</a>, {{/if}}
+						{{#unless w3schools}}{{/unless}}
+						{{#if mdn}}
+							{{#if w3schools}}<a href="{{mdn}}">MDN</a>, 
+								{{else}}
+									<a href="{{mdn}}">MDN</a>
+							{{/if}}
+						{{/if}}
 						{{#if w3schools}}<a href="{{w3schools}}">w3schools</a>{{/if}}
 					</div>
 					{{/if}}
