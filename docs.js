@@ -767,6 +767,17 @@ var docs = {
 					source: 'http://www.w3schools.com/cssref/css3_pr_transition-delay.asp'
 				}
 			]
+		},
+
+		{
+			name: '.user-select',
+			parameter: ['(auto|text|none);'],
+			doc: '',
+			mdn: 'https://developer.mozilla.org/en-US/docs/CSS/user-select',
+			code: '.example-user-select {\n'
+				+ '\t.user-select(text);\n'
+				+ '}\n',
+			parts: []
 		}
 	]
 };
