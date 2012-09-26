@@ -39,7 +39,7 @@
 	<header>
 		<h1><strong>LESS&nbsp;Hat.</strong> A&nbsp;supersonic bunch of&nbsp;smart LESS&nbsp;mixins.</h1>
 		<p class="description">Kick-ass universal mixin library from makers of&nbsp;<a href="http://csshat.com">CSS&nbsp;Hat</a>.</p>
-		<a href="https://github.com/CSSHat/LESSHat/zipball/master" class="download">Download LESS&nbsp;Hat&nbsp;1.0</a>
+		<a href="https://github.com/CSSHat/LESSHat/zipball/master" class="download">Download LESS&nbsp;Hat&nbsp;1.0.3</a>
 		<p class="twitter"><a target="_blank" href="http://twitter.com/?status=LESS Hat. An uber cool bunch of smart LESS mixins. Made by @CSSHat. %23css %23less %23mixins http://lesshat.com"><span>Take cover! It's&nbsp;supersonic!</span></a></p>
 	</header>
 	<section>
@@ -181,7 +181,13 @@
 					<div class="links">
 						<span class="specification">{{nameUpperCaseFirst}} on:</span>
 						{{#if w3c}}<a href="{{w3c}}">W3C</a>, {{/if}}
-						{{#if mdn}}<a href="{{mdn}}">MDN</a>, {{/if}}
+						{{#unless w3schools}}{{/unless}}
+						{{#if mdn}}
+							{{#if w3schools}}<a href="{{mdn}}">MDN</a>, 
+								{{else}}
+									<a href="{{mdn}}">MDN</a>
+							{{/if}}
+						{{/if}}
 						{{#if w3schools}}<a href="{{w3schools}}">w3schools</a>{{/if}}
 					</div>
 					{{/if}}
