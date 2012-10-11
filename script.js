@@ -195,20 +195,9 @@ $(document).ready(function()
 
 			try {
 				if ($textarea.parent(':first').hasClass('auto-convert-less')) {
-					var $targetArea = $('<textarea></textarea>');
-					$textarea.after($targetArea);
-					$targetArea.addClass('cm-target');
-					var targetArea = $targetArea.get(0);
-
 					var syntax;
 					var check = debounce(errCheck, 1200);
 
-					if (targetArea) {
-						syntax = CodeMirror.fromTextArea(targetArea, {
-							'tabSize': 2,
-							'readOnly': 'nocursor'
-						});
-					}
 					editor = CodeMirror.fromTextArea(textarea, {
 						'onChange': throttle(function(e) {
 							refresh(
@@ -223,7 +212,8 @@ $(document).ready(function()
 								}
 							);
 						}, 100),
-						'tabSize': 2
+						'tabSize': 2,
+						'readOnly': true
 					});
 					refresh(mixins + '\n' + editor.getValue(), syntax);
 				} else {
