@@ -234,6 +234,7 @@ $(document).ready(function()
 	var $close = $popup.find('#close');
 
 	$('header a.download').bind('click touchstart', function(e) {
+		if (_gaq) _gaq.push(['_trackEvent','Files','Download','zipball']);
 		$popup.removeClass('disable');
 		$popup.addClass('active');
 	});
