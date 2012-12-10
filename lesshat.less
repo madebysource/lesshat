@@ -1,4 +1,4 @@
-//  LESS Hat 1.1.0
+//  LESS Hat 1.1.1
 //  LESSHat.com
 //  From creators of CSSHat.com
 //  2012
@@ -814,7 +814,7 @@
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
       @mozLocal: true; //  Firefox 4+
 
-      @processing: ~`(function(){ var arg = "@{arguments}".replace("[","").replace("]","") || "none"; if( !/^#?\w*%?([ X])/.test(arg) ) { arg = arg.replace(/,/g,"") } return arg; })()`;
+      @processing: ~`(function(){ var arg = "@{arguments}".replace("[","").replace("]","") || "none"; if( !/^#?\w*%?([ X])/.test(arg) ) { arg = arg.replace(/,(?=[^()]*\))/g,'--').replace(/,/g,"").replace(/--/g,','); } return arg; })()`;
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
         .inception (@signal, @arguments) when (@signal = 1) { -webkit-box-shadow: @processing;}
@@ -830,9 +830,11 @@
       .result(@arguments, @mozSignal, @moz, @mozLocal);
       // --
       .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+
+      color: @arguments;
   }
 
-    //  element{ .box-shadow(0 1px 10px #000, inset 0 -2px 5px #fff); }
+   //   element{ .box-shadow(0 1px 10px rgba(20,20,20,0.5), 0 1px 10px rgba(20,20,20,0.5)); }
 
 
 //  .box-sizing
