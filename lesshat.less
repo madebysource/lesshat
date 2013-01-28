@@ -1217,10 +1217,10 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
-        .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-style: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-style: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-style: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 5) { transform-style: @arguments;}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
