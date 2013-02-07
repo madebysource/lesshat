@@ -88,32 +88,32 @@ var docs = {
 				+ '.example-animation-delay {\n'
 				+ '\t.animation-delay(2s);\n'
 				+ '\t /* OR */ \n'
-				+ '\t .animation-delay(~&quot;200ms, 2s&quot;); \n'
+				+ '\t .animation-delay(~"200ms, 2s"); \n'
 				+ '}\n'
 				+ '.example-animation-direction {\n'
 				+ '\t.animation-direction();\n'
 				+ '\t /* OR */ \n'
-				+ '\t .animation-direction(~&quot;normal, alternate&quot;); \n'
+				+ '\t .animation-direction(~"normal, alternate"); \n'
 				+ '}\n'
 				+ '.example-animation-duration {\n'
 				+ '\t.animation-duration(2s);\n'
 				+ '\t /* OR */ \n'
-				+ '\t .animation-duration(~&quot;3s, 2s&quot;); \n'
+				+ '\t .animation-duration(~"3s, 2s"); \n'
 				+ '}\n'
 				+ '.example-animation-timing-function {\n'
 				+ '\t.animation-timing-function(ease-in-out);\n'
 				+ '\t /* OR */ \n'
-				+ '\t .animation-timing-function(~&quot;ease-out, ease-in&quot;); \n'
+				+ '\t .animation-timing-function(~"ease-out, ease-in"); \n'
 				+ '}\n'
 				+ '.example-animation-iteration-count {\n'
 				+ '\t.animation-iteration-count(3);\n'
 				+ '\t /* OR */ \n'
-				+ '\t .animation-iteration-count(~&quot;2, 6&quot;); \n'
+				+ '\t .animation-iteration-count(~"2, 6"); \n'
 				+ '}\n'
 				+ '.example-animation-animation-name {\n'
 				+ '\t.animation-name(myAnimation);\n'
 				+ '\t /* OR */ \n'
-				+ '\t .animation-name(~&quot;myAnimation, myAnimation2&quot;); \n'
+				+ '\t .animation-name(~"myAnimation, myAnimation2"); \n'
 				+ '}\n'
 				+ '.example-animation-play-state {\n'
 				+ '\t.animation-play-state(paused);\n'
@@ -251,7 +251,7 @@ var docs = {
 				+ '}\n'
 				+ '\n'
 				+ '.example-background-size-2 {\n'
-				+ '\t.background-size(~&quot;100%, auto&quot;);\n'
+				+ '\t.background-size(~"100%, auto");\n'
 				+ '}\n',
 			parts: []
 		},
@@ -709,7 +709,7 @@ var docs = {
 			parameter: '(~"transition-1 [, transition-2, ..., transition-n]");',
 			/*
 			 parameter: [ '(transition);',
-			 '(~&quot;transition-1 [, transition-2, ..., transition-n]&quot;);'],
+			 '(~"transition-1 [, transition-2, ..., transition-n]");'],
 			 */
 			doc: 'Prefix free feature. Use W3C syntax for everything.',
 			w3schools: 'http://www.w3schools.com/cssref/css3_pr_transition.asp',
@@ -719,7 +719,7 @@ var docs = {
 				+ '\t.transition(~"transform 1s ease-in-out");\n'
 				+ '}\n'
 				+ '.example-multiple-transition {\n'
-				+ '\t .transition(~&quot;box-shadow 1s ease-in-out, width .5s 1s ease-in&quot;); \n'
+				+ '\t .transition(~"box-shadow 1s ease-in-out, width .5s 1s ease-in"); \n'
 				+ '}\n'
 				+ '.example-transition-property {\n'
 				+ '\t.transition-property(width);\n'
