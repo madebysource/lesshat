@@ -1011,7 +1011,7 @@
 
 //  .font-face
 
-  .font-face(@fontname, @fontfile) {
+  .font-face(@fontname, @fontfile, @fontweight:normal, @fontstyle:italic) {
 
     font-family: "@{fontname}";
     src: url("@{fontfile}-webfont.eot");
@@ -1019,8 +1019,8 @@
          url("@{fontfile}-webfont.woff") format("woff"),
          url("@{fontfile}-webfont.ttf") format("truetype"),
          url("@{fontfile}-webfont.svg#@{fontname}") format("svg");
-    font-weight: normal;
-    font-style: normal;
+    font-weight: @fontweight;
+    font-style: @fontstyle;
   }
 
     //  element{  .font-face(ZendaRegular, zenda-webfont); }
