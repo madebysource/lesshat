@@ -1011,7 +1011,7 @@
 
 //  .font-face
 
-  .font-face(@fontname, @fontfile, @fontweight:normal, @fontstyle:italic) {
+  .font-face(@fontname, @fontfile, @fontweight:normal, @fontstyle:normal) {
 
     font-family: "@{fontname}";
     src: url("@{fontfile}-webfont.eot");
@@ -1023,7 +1023,7 @@
     font-style: @fontstyle;
   }
 
-    //  element{  .font-face(ZendaRegular, zenda-webfont[, bold, italic]); }
+    //  element{  .font-face(ZendaRegular, zenda-webfont, bold, italic); }
 
 
 //  .opacity
