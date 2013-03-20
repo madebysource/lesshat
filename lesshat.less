@@ -1579,11 +1579,11 @@
       @msLocal: true;  // IE 10+
 
       .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
-        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleX(@y);}
-        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleX(@y);}
-        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleX(@y);}
-        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleX(@y);}
-        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleX(@y);}
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: scaleY(@y);}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: scaleY(@y);}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: scaleY(@y);}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: scaleY(@y);}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: scaleY(@y);}
         .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
         .inception(@signal, @arguments);
       }
