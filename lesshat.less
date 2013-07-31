@@ -533,7 +533,7 @@
 
       //  Local config for disabling properties
 
-      @svg: true; //  SVG gradient for IE9
+      @svgLocal: true; //  SVG gradient for IE9
       @mozLocal: true; //  Firefox 4+
       @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5+, Android
       @operaLocal: true; // Opera 10.5+
@@ -550,7 +550,7 @@
       .result(@arguments, @boolean, @localBoolean, @property) when (@boolean = true) and (@localBoolean = true) and (isstring(@property)) { background-image: @arguments; }
       .result(@arguments, @boolean, @localBoolean, @property) when not (@boolean = true), not (@localBoolean = true), not (isstring(@property)) { }
 
-      .result(@backgroundSVG, @svg, @svg, @backgroundSVG);
+      .result(@backgroundSVG, @svg, @svgLocal, @backgroundSVG);
       // --  this comment must be here because of LESS bug
       .result(@backgroundMoz, @moz, @mozLocal);
       // --
