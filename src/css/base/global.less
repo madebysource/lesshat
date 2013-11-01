@@ -1,0 +1,75 @@
+@selection_color: #1cc664;
+
+::-moz-selection {
+	background: @selection_color;
+	text-shadow: none;
+	color: #fff;
+}
+
+::selection {
+	background: @selection_color;
+	text-shadow: none;
+	color: #fff;
+}
+
+[hidden-form] {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: -10px;
+}
+
+p, h2, h2 span, h3, a, input {
+	.user-select (text);
+}
+a {
+	cursor: pointer;
+	* {
+		cursor: pointer;
+	}
+}
+
+*, a.button {
+	.user-select (none);
+	cursor: default;
+}
+
+html, body {
+	min-height: 100%;
+	background-color: #d6dce0;
+}
+
+html.dark, .dark body {
+	background-color: #25303b;
+}
+
+html {
+	width: 100%;
+}
+
+img {
+	pointer-events: none;
+}
+
+// omgwtfbbq
+body { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
+.modalcover {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(255, 255, 255, .74);
+	z-index: 80;
+	opacity: 0;
+	.transition (.2s);
+	pointer-events: none;
+
+	&.opened {
+		opacity: 1;
+		.transition (.3s);
+		pointer-events: all;
+	}
+}

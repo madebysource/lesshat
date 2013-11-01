@@ -1,0 +1,403 @@
+.group:before,
+.group:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.group:after {
+  clear: both;
+}
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+.group {
+  *zoom: 1;
+}
+.focusable:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.focusable,
+.focusable:active {
+  outline: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+*:not(select) {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  -webkit-font-smoothing: antialiased;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+strike {
+  text-decoration: line-through;
+}
+h1,
+h2,
+h3,
+h4,
+strong {
+  font-weight: 700;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+a::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  outline: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+input,
+button {
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+ul {
+  list-style: none;
+}
+button {
+  background: none;
+  vertical-align: middle;
+  line-height: normal;
+  cursor: pointer;
+}
+del {
+  text-decoration: none;
+}
+::-moz-selection {
+  background: #1cc664;
+  text-shadow: none;
+  color: #fff;
+}
+::selection {
+  background: #1cc664;
+  text-shadow: none;
+  color: #fff;
+}
+[hidden-form] {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+}
+p,
+h2,
+h2 span,
+h3,
+a,
+input {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+a {
+  cursor: pointer;
+}
+a * {
+  cursor: pointer;
+}
+*,
+a.button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+}
+html,
+body {
+  min-height: 100%;
+  background-color: #d6dce0;
+}
+html.dark,
+.dark body {
+  background-color: #25303b;
+}
+html {
+  width: 100%;
+}
+img {
+  pointer-events: none;
+}
+body {
+  -webkit-animation: bugfix infinite 1s;
+}
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+.modalcover {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.74);
+  z-index: 80;
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  transition: 0.2s;
+  pointer-events: none;
+}
+.modalcover.opened {
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+  pointer-events: all;
+}
+body,
+html {
+  min-height: 100%;
+}
+.container {
+  width: 978px;
+  margin: auto;
+  padding: 0 10px;
+  position: relative;
+}
+* {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+a {
+  color: #3498db;
+  position: relative;
+  border-bottom: 1px solid #3498db;
+  -webkit-transition: color 150ms ease, border 150ms ease, opacity 150ms ease;
+  -moz-transition: color 150ms ease, border 150ms ease, opacity 150ms ease;
+  -o-transition: color 150ms ease, border 150ms ease, opacity 150ms ease;
+  -ms-transition: color 150ms ease, border 150ms ease, opacity 150ms ease;
+  transition: color 150ms ease, border 150ms ease, opacity 150ms ease;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+a:hover {
+  border-bottom-color: transparent;
+}
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:active {
+  -webkit-transform: translate3d(0, 1px, 0);
+  -moz-transform: translate3d(0, 1px, 0);
+  -o-transform: translate3d(0, 1px, 0);
+  -ms-transform: translate3d(0, 1px, 0);
+  transform: translate3d(0, 1px, 0);
+}
+@-moz-document url-prefix() {
+  a:focus {
+    outline: none !important;
+  }
+}
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(8px);
+  }
+}
+@-moz-keyframes shake {
+  0%,
+  100% {
+    -moz-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -moz-transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -moz-transform: translateX(8px);
+  }
+}
+@-ms-keyframes shake {
+  0%,
+  100% {
+    -ms-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -ms-transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -ms-transform: translateX(8px);
+  }
+}
+@-o-keyframes shake {
+  0%,
+  100% {
+    -o-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -o-transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -o-transform: translateX(8px);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+@-webkit-keyframes backArrow {
+  0%,
+  25% {
+    -webkit-transform: translateX(0);
+  }
+  13% {
+    -webkit-transform: translateX(1px);
+  }
+  6%,
+  19% {
+    -webkit-transform: translateX(-3px);
+  }
+}
+@-moz-keyframes backArrow {
+  0%,
+  25% {
+    -moz-transform: translateX(0);
+  }
+  13% {
+    -moz-transform: translateX(1px);
+  }
+  6%,
+  19% {
+    -moz-transform: translateX(-3px);
+  }
+}
+@-ms-keyframes backArrow {
+  0%,
+  25% {
+    -ms-transform: translateX(0);
+  }
+  13% {
+    -ms-transform: translateX(1px);
+  }
+  6%,
+  19% {
+    -ms-transform: translateX(-3px);
+  }
+}
+@-o-keyframes backArrow {
+  0%,
+  25% {
+    -o-transform: translateX(0);
+  }
+  13% {
+    -o-transform: translateX(1px);
+  }
+  6%,
+  19% {
+    -o-transform: translateX(-3px);
+  }
+}
+@keyframes backArrow {
+  0%,
+  25% {
+    transform: translateX(0);
+  }
+  13% {
+    transform: translateX(1px);
+  }
+  6%,
+  19% {
+    transform: translateX(-3px);
+  }
+}
