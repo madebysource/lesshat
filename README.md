@@ -13,17 +13,20 @@
 **[Contribute]()**
 
 ---
-## What is LESS Hat?
+## Intro
+
+
+### Features
+* Configurable – You can turn off/on which browser... TODO
+* Unlimited number of anything, shadows, gradients, gradient swatches (in fact it's not unlimited, because you have limited computer memory)
+* All CSS3 properties
+* **Breaking changes:** use all mixins without interpolation `~''` (except **keyframes** mixin)
+
+## Get started
 LESS Hat is universal mixins library for LESS CSS...
 Prvni verze mixinu se setkala v necekanym uspechem. 
 Pracovali jsme dlouho na nove verzi, kterou jsme od zakladu prepsali, vytvorili robusni worklow pro vytvareni mixinu, ktere jsme mohlli testovat diky frameworku mocha. Zminka o workflow, gruntu...
 
-
-## Features
-* Unordered list item
-* Unordered list item
-* Unordered list item 
-* **Breaking changes:** use all mixins without interpolation `~''` (except **keyframes** mixin)
 
 ## List of mixins:
 1. **[align-content](#align-content)** `flexbox`
