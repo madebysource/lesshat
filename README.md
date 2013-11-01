@@ -115,7 +115,6 @@ Pracovali jsme dlouho na nove verzi, kterou jsme od zakladu prepsali, vytvorili 
 ***
 
 ## Learn – documentation:
-<br>
 ### <a name="align-content"></a> &#8226; align-content
 **Summary:**
 
