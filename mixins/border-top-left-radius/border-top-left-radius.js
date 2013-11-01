@@ -21,6 +21,16 @@ var borderTopLeftRadius = function borderTopLeftRadius(value) {
 };
 
 /**
+ * Syntax property for moz is non-standard
+ */
+
+borderTopLeftRadius.result = {
+  moz: {
+    property: 'border-radius-topleft',
+  }
+};
+
+/**
  * For which browsers is this mixin specified
  */
 

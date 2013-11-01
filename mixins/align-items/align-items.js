@@ -3,13 +3,13 @@
  */
 
 var alignItems = function alignItems(value) {
-  value = value || 'flex-start';
+  value = value || 'stretch';
 
   return value;
 };
 
 alignItems.olderWebkit = function olderWebkitalignItems(value) {
-  value = value || 'start';
+  value = value || 'stretch';
 
   if (value == 'flex-start') {
     value = 'start';
@@ -22,7 +22,7 @@ alignItems.olderWebkit = function olderWebkitalignItems(value) {
 };
 
 alignItems.moz = function mozalignItems(value) {
-  value = value || 'start';
+  value = value || 'stretch';
 
   if (value == 'flex-start') {
     value = 'start';
@@ -35,7 +35,7 @@ alignItems.moz = function mozalignItems(value) {
 };
 
 alignItems.ms = function msalignItems(value) {
-  value = value || 'start';
+  value = value || 'stretch';
 
   if (value == 'flex-start') {
     value = 'start';

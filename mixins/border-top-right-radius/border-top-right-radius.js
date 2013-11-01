@@ -21,6 +21,16 @@ var borderTopRightRadius = function borderTopRightRadius(value) {
 };
 
 /**
+ * Syntax property for moz is non-standard
+ */
+
+borderTopRightRadius.result = {
+  moz: {
+    property: 'border-radius-topright',
+  }
+};
+
+/**
  * For which browsers is this mixin specified
  */
 

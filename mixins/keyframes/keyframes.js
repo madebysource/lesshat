@@ -3,7 +3,10 @@
  */
 
 var keyframes = function keyframes(value) {
-  value = value;
+  value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var selector = '@keyframes ';
   var definition = value.split(',');
   value = '0; } \n' + selector + definition[0] + '{' +  definition[1];
@@ -12,60 +15,69 @@ var keyframes = function keyframes(value) {
 };
 
 keyframes.webkit = function keyframes(value) {
-  value = value;
+  value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var prefixedProperties = ['animation','background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-webkit-';
   var selector = '@-webkit-keyframes ';
+  var definition = value.split(',');
 
   prefixedProperties.forEach(function(property, index) {
     if (value.indexOf(property) !== -1) {
-      value = value.replace(new RegExp(property, 'g'), function(match) {
+      definition[1] = definition[1].replace(new RegExp(property, 'g'), function(match) {
         return prefix + match;
       })
     }
   });
 
-  var definition = value.split(',');
   value = '0; } \n' + selector + definition[0] + '{' +  definition[1];
 
   return value;
 };
 
 keyframes.moz = function keyframes(value) {
-  value = value;
+  value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var prefixedProperties = ['animation','background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-moz-';
   var selector = '@-moz-keyframes ';
+  var definition = value.split(',');
 
   prefixedProperties.forEach(function(property, index) {
     if (value.indexOf(property) !== -1) {
-      value = value.replace(new RegExp(property, 'g'), function(match) {
+      definition[1] = definition[1].replace(new RegExp(property, 'g'), function(match) {
         return prefix + match;
       })
     }
   });
 
-  var definition = value.split(',');
   value = '0; } \n' + selector + definition[0] + '{' +  definition[1];
 
   return value;
 };
 
 keyframes.opera = function keyframes(value) {
-  value = value;
+  value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var prefixedProperties = ['animation','background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-o-';
   var selector = '@-o-keyframes ';
+  var definition = value.split(',');
 
   prefixedProperties.forEach(function(property, index) {
     if (value.indexOf(property) !== -1) {
-      value = value.replace(new RegExp(property, 'g'), function(match) {
+      definition[1] = definition[1].replace(new RegExp(property, 'g'), function(match) {
         return prefix + match;
       })
     }
   });
 
-  var definition = value.split(',');
   value = '0; } \n' + selector + definition[0] + '{' +  definition[1];
 
   return value;

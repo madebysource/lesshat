@@ -3,7 +3,10 @@
  */
 
 var dropShadow = function dropShadow(value) {
-  value = value || '100%';
+  value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var numRegex = /\d/gi;
   var numWithoutValue = /(?:^|\s)(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 

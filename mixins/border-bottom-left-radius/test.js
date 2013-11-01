@@ -10,4 +10,9 @@ describe('border-bottom-left-radius', function() {
     test.borderBottomLeftRadius('20', '20px', done);
   });
 
+  it('should return numbers with px', function(done) {
+    test.resultProperty = 'border-radius-bottomleft';
+    test.borderBottomLeftRadius.moz('20', '20px', done);
+  });
+
 });

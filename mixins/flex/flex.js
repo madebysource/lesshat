@@ -3,7 +3,11 @@
  */
 
 var flex = function flex(value) {
-  value = value || 'none';
+  value = value || '0 1 auto';
+
+  if (/^[-a-zA-Z0-9]*,/.test(value)) {
+    value = value.replace(/(?:,)(?![^(]*\))/g, '');
+  }
 
   return value;
 };

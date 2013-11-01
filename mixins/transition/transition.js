@@ -66,7 +66,7 @@ transition.webkit = function transition(value) {
 
 transition.moz = function transition(value) {
   value = value || 'all 0 ease 0';
-  var prefixedProperties = ['background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
+  var prefixedProperties = ['background-size', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-moz-';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
@@ -102,7 +102,7 @@ transition.moz = function transition(value) {
 
 transition.opera = function transition(value) {
   value = value || 'all 0 ease 0';
-  var prefixedProperties = ['background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
+  var prefixedProperties = ['transform'];
   var prefix = '-o-';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;

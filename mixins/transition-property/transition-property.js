@@ -34,7 +34,7 @@ transitionProperty.webkit = function transitionProperty(value) {
 
 transitionProperty.moz = function transitionProperty(value) {
   value = value || 'all';
-  var prefixedProperties = ['background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
+  var prefixedProperties = ['background-size', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-moz-';
 
   if (/^[-a-z0-9]*,/.test(value)) {
@@ -54,7 +54,7 @@ transitionProperty.moz = function transitionProperty(value) {
 
 transitionProperty.opera = function transitionProperty(value) {
   value = value || 'all';
-  var prefixedProperties = ['background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
+  var prefixedProperties = ['transform'];
   var prefix = '-o-';
 
   if (/^[-a-z0-9]*,/.test(value)) {

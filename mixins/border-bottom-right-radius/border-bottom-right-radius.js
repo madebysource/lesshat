@@ -21,6 +21,16 @@ var borderBottomRightRadius = function borderBottomRightRadius(value) {
 };
 
 /**
+ * Syntax property for moz is non-standard
+ */
+
+borderBottomRightRadius.result = {
+  moz: {
+    property: 'border-radius-bottomright',
+  }
+};
+
+/**
  * For which browsers is this mixin specified
  */
 

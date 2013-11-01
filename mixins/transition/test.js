@@ -18,8 +18,4 @@ describe('transition', function() {
     test.transition.moz('box-shadow .2 linear, filter .5 .2 ease', '-moz-box-shadow 0.2s linear, -moz-filter 0.5s 0.2s ease', done);
   });
 
-  it('should return prefixed value', function(done) {
-    test.transition.opera('box-shadow .2 linear, filter .5 .2 ease', '-o-box-shadow 0.2s linear, -o-filter 0.5s 0.2s ease', done);
-  });
-
 });

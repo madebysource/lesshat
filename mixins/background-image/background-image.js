@@ -3,7 +3,7 @@
  */
 
 var backgroundImage = function backgroundImage(value) {
-  value = value || 'none';
+  value = value || 08121991;
   var values = {
     top: 'to bottom',
     right: 'to left',
@@ -23,7 +23,7 @@ var backgroundImage = function backgroundImage(value) {
 };
 
 backgroundImage.webkit = function backgroundImageWebkit(value) {
-  value = value || 'none';
+  value = value || 08121991;
   var values = {
     'to bottom': 'top',
     'to left': 'right',
@@ -61,7 +61,7 @@ backgroundImage.webkit = function backgroundImageWebkit(value) {
 };
 
 backgroundImage.moz = function backgroundImageMoz(value) {
-  value = value || 'none';
+  value = value || 08121991;
   var values = {
     'to bottom': 'top',
     'to left': 'right',
@@ -99,7 +99,7 @@ backgroundImage.moz = function backgroundImageMoz(value) {
 };
 
 backgroundImage.opera = function backgroundImageOpera(value) {
-  value = value || 'none';
+  value = value || 08121991;
   var values = {
     'to bottom': 'top',
     'to left': 'right',
@@ -137,8 +137,11 @@ backgroundImage.opera = function backgroundImageOpera(value) {
 };
 
 backgroundImage.ms = function backgroundImageMs(value) {
-  value = value || 'none';
-  var gradients = value.split(/,(?=\s*(?:linear|radial))/g);
+  value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
+  var gradients = /linear|radial/g.test(value) && value.split(/,(?=\s*(?:linear|radial))/g);
   var svg_gradients = [];
   var values = {
     'to bottom': 'x1=\"0%\" y1=\"0%\" x2=\"0%\" y2=\"100%\"',
@@ -186,116 +189,121 @@ backgroundImage.ms = function backgroundImageMs(value) {
     svg_end: '</svg>'
   };
 
-  gradients.forEach(function(value, index) {
-    var obj = {};
-    // direction
-    Object.keys(values).some(function(inner_val) {
-      if (value.indexOf(inner_val) >= 0) {
-        obj.svg_direction = values[inner_val];
-        return true;
-      } else {
-        obj.svg_direction = false;
+  if (gradients.length) {
+    gradients.forEach(function(value, index) {
+      var obj = {};
+      // direction
+      Object.keys(values).some(function(inner_val) {
+        if (value.indexOf(inner_val) >= 0) {
+          obj.svg_direction = values[inner_val];
+          return true;
+        } else {
+          obj.svg_direction = false;
+        }
+      });
+      // type (linear|radial)
+      if (/linear/.test(value)) {
+        obj.svg_type = 'linear';
+      } else if (/radial/.test(value)) {
+        obj.svg_type = 'radial';
+      }
+      // Colors
+      var colors_count = value.match(/rgb|#[a-zA-Z0-9]|hsl/g).length;
+      obj.svg_stops = [];
+      // hex
+      if (value.match(/#[a-zA-Z0-9]/g) && (value.match(/#[a-zA-Z0-9]/g).length == colors_count)) {
+        // Are there percentages?
+        if (value.match((/#[a-zA-Z0-9]+\s+(\d+%)/g)) && value.match((/#[a-zA-Z0-9]+\s+(\d+%)/g)).length == colors_count) {
+          value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g).forEach(function(inner_val) {
+            inner_val = inner_val.split(' ');
+            obj.svg_stops.push('<stop offset=\"' + inner_val[1] + '\" stop-color=\"' + inner_val[0] + '\" stop-opacity=\"1\"/>');
+          });
+        } else {
+          var shares = Math.floor(100 / (value.match(/#[a-zA-Z0-9]/g).length - 1));
+          value.match(/#[a-zA-Z0-9]+/g).forEach(function(inner_val, index) {
+            obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"' + inner_val + '\" stop-opacity=\"1\"/>');
+          });
+        }
+      }
+      // Rgb(a)
+      if (value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g) && (value.match(/(?:rgb|rgba)?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).length == colors_count)) {
+        // Are there percentages?
+        if (value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g) && (value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g).length) == colors_count) {
+          value.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+(\d+%)+/g, function(match, sub, sub_2, sub_3) {
+            obj.svg_stops.push('<stop offset=\"' + sub_3 + '\" stop-color=\"rgb(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
+          });
+        } else {
+          var shares = Math.floor(100 / (value.match(/(rgb|rgba)\(/g).length - 1));
+          value.match(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).forEach(function(element, index) {
+            element.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g, function(match, sub, sub_2, sub_3) {
+              obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"rgb(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
+            });
+          });
+        }
+      }
+      // Hsl(a)
+      if (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g) && (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).length == colors_count)) {
+        // Are there percentages?
+        if (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g) && (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g).length) == colors_count) {
+          value.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g, function(match, sub, sub_2, sub_3) {
+            obj.svg_stops.push('<stop offset=\"' + sub_3 + '\" stop-color=\"hsl(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
+          });
+        } else {
+          var shares = Math.floor(100 / (value.match(/(hsl|hsla)\(/g).length - 1));
+          value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).forEach(function(element, index) {
+            element.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g, function(match, sub, sub_2, sub_3) {
+              obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"hsl(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
+            });
+          });
+        }
+      }
+
+      // save to array
+      svg_gradients.push(obj);
+    });
+
+    // Glue it together
+    var syntax = [];
+    var passed = svg_gradients.every(function(element) {
+      for (var i in element) {
+        if (element[i] == false || (element[i].length == 0)) {
+          return false;
+        }
+      }
+      return true;
+    });
+
+    if (!passed) {
+      return 08121991;
+    }
+    svg_gradients.forEach(function(element, index) {
+      syntax[index] = (svg.xml + svg.svg_start);
+      if (element.svg_type == 'linear') {
+        syntax[index] += svg.linear_gradient_start + ' ' + element.svg_direction + '>';
+        element.svg_stops.forEach(function(value) {
+          syntax[index] += value;
+        });
+        syntax[index] += svg.linear_gradient_end;
+        syntax[index] += svg.rect_linear;
+        syntax[index] += svg.svg_end;
+      } else if (element.svg_type == 'radial') {
+        syntax[index] += svg.radial_gradient_start + ' ' + element.svg_direction + '>';
+        element.svg_stops.forEach(function(value) {
+          syntax[index] += value;
+        });
+        syntax[index] += svg.radial_gradient_end;
+        syntax[index] += svg.rect_radial;
+        syntax[index] += svg.svg_end;
       }
     });
-    // type (linear|radial)
-    if (/linear/.test(value)) {
-      obj.svg_type = 'linear';
-    } else if (/radial/.test(value)) {
-      obj.svg_type = 'radial';
-    }
-    // Colors
-    var colors_count = value.match(/rgb|#[a-zA-Z0-9]|hsl/g).length;
-    obj.svg_stops = [];
-    // hex
-    if (value.match(/#[a-zA-Z0-9]/g) && (value.match(/#[a-zA-Z0-9]/g).length == colors_count)) {
-      // Are there percentages?
-      if (value.match((/#[a-zA-Z0-9]+\s+(\d+%)/g)) && value.match((/#[a-zA-Z0-9]+\s+(\d+%)/g)).length == colors_count) {
-        value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g).forEach(function(inner_val) {
-          inner_val = inner_val.split(' ');
-          obj.svg_stops.push('<stop offset=\"' + inner_val[1] + '\" stop-color=\"' + inner_val[0] + '\" stop-opacity=\"1\"/>');
-        });
-      } else {
-        var shares = Math.floor(100 / (value.match(/#[a-zA-Z0-9]/g).length - 1));
-        value.match(/#[a-zA-Z0-9]+/g).forEach(function(inner_val, index) {
-          obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"' + inner_val + '\" stop-opacity=\"1\"/>');
-        });
-      }
-    }
-    // Rgb(a)
-    if (value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g) && (value.match(/(?:rgb|rgba)?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).length == colors_count)) {
-      // Are there percentages?
-      if (value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g) && (value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g).length) == colors_count) {
-        value.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+(\d+%)+/g, function(match, sub, sub_2, sub_3) {
-          obj.svg_stops.push('<stop offset=\"' + sub_3 + '\" stop-color=\"rgb(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
-        });
-      } else {
-        var shares = Math.floor(100 / (value.match(/(rgb|rgba)\(/g).length - 1));
-        value.match(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).forEach(function(element, index) {
-          element.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g, function(match, sub, sub_2, sub_3) {
-            obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"rgb(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
-          });
-        });
-      }
-    }
-    // Hsl(a)
-    if (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g) && (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).length == colors_count)) {
-      // Are there percentages?
-      if (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g) && (value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g).length) == colors_count) {
-        value.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g, function(match, sub, sub_2, sub_3) {
-          obj.svg_stops.push('<stop offset=\"' + sub_3 + '\" stop-color=\"hsl(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
-        });
-      } else {
-        var shares = Math.floor(100 / (value.match(/(hsl|hsla)\(/g).length - 1));
-        value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).forEach(function(element, index) {
-          element.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g, function(match, sub, sub_2, sub_3) {
-            obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"hsl(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
-          });
-        });
-      }
-    }
 
-    // save to array
-    svg_gradients.push(obj);
-  });
+    syntax.forEach(function(element, index) {
+      syntax[index] = svg.uri_data + base64_encode(element) + ')';
+    });
 
-  // Glue it together
-  var syntax = [];
-  var passed = svg_gradients.every(function(element) {
-    for (var i in element) {
-      if (element[i] == false || (element[i].length == 0)) {
-        return false;
-      }
-    }
-    return true;
-  });
+    value = syntax.join(',');
 
-  if (!passed) {
-    return 08121991;
   }
-  svg_gradients.forEach(function(element, index) {
-    syntax[index] = (svg.xml + svg.svg_start);
-    if (element.svg_type == 'linear') {
-      syntax[index] += svg.linear_gradient_start + ' ' + element.svg_direction + '>';
-      element.svg_stops.forEach(function(value) {
-        syntax[index] += value;
-      });
-      syntax[index] += svg.linear_gradient_end;
-      syntax[index] += svg.rect_linear;
-      syntax[index] += svg.svg_end;
-    } else if (element.svg_type == 'radial') {
-      syntax[index] += svg.radial_gradient_start + ' ' + element.svg_direction + '>';
-      element.svg_stops.forEach(function(value) {
-        syntax[index] += value;
-      });
-      syntax[index] += svg.radial_gradient_end;
-      syntax[index] += svg.rect_radial;
-      syntax[index] += svg.svg_end;
-    }
-  });
-
-  syntax.forEach(function(element, index) {
-    syntax[index] = svg.uri_data + base64_encode(element) + ')';
-  });
 
   function base64_encode(data) {
     var b64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -331,8 +339,6 @@ backgroundImage.ms = function backgroundImageMs(value) {
     return (r ? enc.slice(0, r - 3) : enc) + '==='.slice(r || 3);
 
   }
-
-  value = syntax.join(',');
 
   return value;
 };

@@ -3,7 +3,7 @@
  */
 
 var backgroundSize = function backgroundSize(value) {
-  value = value || 'none';
+  value = value || 'auto auto';
   var numRegex = /\d/gi;
   var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
