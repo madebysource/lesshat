@@ -131,16 +131,16 @@ Default value: stretch
 
 **Example:**
 
-  div {
-   .align-content(flex-start);
-  }
-  
-  // Result
-  div {
-   -webkit-align-content: flex-start;
-   -ms-flex-line-pack: start;
-   align-content: flex-start;
-  } 
+    div {
+     .align-content(flex-start);
+    }
+    
+    // Result
+    div {
+     -webkit-align-content: flex-start;
+     -ms-flex-line-pack: start;
+     align-content: flex-start;
+    } 
 
 ### <a name="align-items"></a> &#8226; align-items
 **Summary:**
@@ -153,22 +153,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
 
 Default value: stretch
 
-  .align-items(flex-start | flex-end | center | baseline | stretch)
+    .align-items(flex-start | flex-end | center | baseline | stretch)
 
 **Example:**
 
-  div {
-   .align-items(flex-start);
-  }
-  
-  // Result
-  div {
-   -webkit-box-align: flex-start;
-   -moz-box-align: start;
-   -webkit-align-items: start;
-   -ms-flex-align: flex-start;
-   align-items: flex-start;
-  }
+    div {
+     .align-items(flex-start);
+    }
+    
+    // Result
+    div {
+     -webkit-box-align: flex-start;
+     -moz-box-align: start;
+     -webkit-align-items: start;
+     -ms-flex-align: flex-start;
+     align-items: flex-start;
+    }
   
 ### <a name="align-self"></a> &#8226; align-self
 **Summary:**
@@ -181,20 +181,20 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)*
 
 Default value: auto
 
-  .align-self(auto | flex-start | flex-end | center | baseline | stretch)
+    .align-self(auto | flex-start | flex-end | center | baseline | stretch)
 
 **Example:**
 
-  div {
-   .align-self(flex-start);
-  }
-  
-  // Result
-  div {
-   -webkit-align-self: flex-start;
-   -ms-align-self: start;
-   align-self: flex-start;
-  }
+    div {
+     .align-self(flex-start);
+    }
+    
+    // Result
+    div {
+     -webkit-align-self: flex-start;
+     -ms-align-self: start;
+     align-self: flex-start;
+    }
 
 ### <a name="animation"></a> &#8226; animation
 **Summary:**
@@ -207,21 +207,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: none
 
-  .animation(animation-name | animation-duration | animation-timing-function | animation-delay | animation-iteration-count | animation-direction | animation-fill-mode , […]*)
+    .animation(animation-name | animation-duration | animation-timing-function | animation-delay | animation-iteration-count | animation-direction | animation-fill-mode , […]*)
 
 **Example:**
 
-  div {
-   .animation(nameAnimation 2s linear alternate);
-  }
-  
-  // Result
-  div {
-   -webkit-animation: nameAnimation 2s linear alternate;
-   -moz-animation: nameAnimation 2s linear alternate;
-   -opera-animation: nameAnimation 2s linear alternate;
-   animation: nameAnimation 2s linear alternate;
-  }
+    div {
+     .animation(nameAnimation 2s linear alternate);
+    }
+    
+    // Result
+    div {
+     -webkit-animation: nameAnimation 2s linear alternate;
+     -moz-animation: nameAnimation 2s linear alternate;
+     -opera-animation: nameAnimation 2s linear alternate;
+     animation: nameAnimation 2s linear alternate;
+    }
 
 ### <a name="animation-delay"></a> &#8226; animation-delay
 **Summary:**
@@ -234,7 +234,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: 0
 
-  .animation-delay(<time>, …)
+    .animation-delay(<time>, …)
   
 **Tips and tricks:**
 
@@ -248,17 +248,17 @@ If you omit units after time argument, `animation-delay` is trying to be smart a
 
 **Example:**
 
-  div {
-   .animation-delay(2, 200);
-  }
-  
-  // Result
-  div {
-   -webkit-animation-delay: 2s, 200ms;
-   -moz-animation-delay: 2s, 200ms;
-   -opera-animation-delay: 2s, 200ms;
-   animation-delay: 2s, 200ms;
-  }
+    div {
+     .animation-delay(2, 200);
+    }
+    
+    // Result
+    div {
+     -webkit-animation-delay: 2s, 200ms;
+     -moz-animation-delay: 2s, 200ms;
+     -opera-animation-delay: 2s, 200ms;
+     animation-delay: 2s, 200ms;
+    }
 
 ### <a name="animation-direction"></a> &#8226; animation-direction
 **Summary:**
@@ -271,21 +271,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: normal
 
-  .animation-direction(<single-animation-direction>, …)
+    .animation-direction(<single-animation-direction>, …)
   
 **Example:**
 
-  div {
-   .animation-direction(reverse, alternate);
-  }
-  
-  // Result
-  div {
-   -webkit-animation-direction: reverse, alternate;
-   -moz-animation-direction: reverse, alternate;
-   -opera-animation-direction: reverse, alternate;
-   animation-direction: reverse, alternate;
-  }
+    div {
+     .animation-direction(reverse, alternate);
+    }
+    
+    // Result
+    div {
+     -webkit-animation-direction: reverse, alternate;
+     -moz-animation-direction: reverse, alternate;
+     -opera-animation-direction: reverse, alternate;
+     animation-direction: reverse, alternate;
+    }
 
 ### <a name="animation-duration"></a> &#8226; animation-duration
 **Summary:**
@@ -298,7 +298,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: 0
 
-  .animation-duration(<time>, …)
+    .animation-duration(<time>, …)
   
 **Tips and tricks:**
 
@@ -312,17 +312,17 @@ If you omit units after time argument, `animation-duration` is trying to be smar
   
 **Example:**
 
-  div {
-   .animation-duration(2000);
-  }
-  
-  // Result
-  div {
-   -webkit-animation-duration: 2000ms;
-   -moz-animation-duration: 2000ms;
-   -opera-animation-duration: 2000ms;
-   animation-duration: 2000ms;
-  }
+    div {
+     .animation-duration(2000);
+    }
+    
+    // Result
+    div {
+     -webkit-animation-duration: 2000ms;
+     -moz-animation-duration: 2000ms;
+     -opera-animation-duration: 2000ms;
+     animation-duration: 2000ms;
+    }
   
 ### <a name="animation-fill-mode"></a> &#8226; animation-fill-mode
 **Summary:**
@@ -335,21 +335,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: none
 
-  .animation-fill-mode(<single-animation-fill-mode>, …)
+    .animation-fill-mode(<single-animation-fill-mode>, …)
   
 **Example:**
 
-  div {
-   .animation-fill-mode(forwards);
-  }
-  
-  // Result
-  div {
-   -webkit-animation-fill-mode: forwards;
-   -moz-animation-fill-mode: forwards;
-   -opera-animation-fill-mode: forwards;
-   animation-fill-mode: forwards;
-  }
+    div {
+     .animation-fill-mode(forwards);
+    }
+    
+    // Result
+    div {
+     -webkit-animation-fill-mode: forwards;
+     -moz-animation-fill-mode: forwards;
+     -opera-animation-fill-mode: forwards;
+     animation-fill-mode: forwards;
+    }
 
 ### <a name="animation-iteration-count"></a> &#8226; animation-iteration-count
 **Summary:**
@@ -362,21 +362,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: 1
 
-  .animation-iteration-count(<single-animation-iteration-count>, …)
+    .animation-iteration-count(<single-animation-iteration-count>, …)
   
 **Example:**
 
-  div {
-   .animation-iteration-count(3);
-  }
-  
-  // Result
-  div {
-   -webkit-animation-iteration-count: 3;
-   -moz-animation-iteration-count: 3;
-   -opera-animation-iteration-count: 3;
-   animation-iteration-count: 3;
-  } 
+    div {
+     .animation-iteration-count(3);
+    }
+    
+    // Result
+    div {
+     -webkit-animation-iteration-count: 3;
+     -moz-animation-iteration-count: 3;
+     -opera-animation-iteration-count: 3;
+     animation-iteration-count: 3;
+    } 
 
 ### <a name="animation-name"></a> &#8226; animation-name
 **Summary:**
@@ -389,21 +389,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: none
 
-  .animation-name(<single-animation-name>, …)
+    .animation-name(<single-animation-name>, …)
   
 **Example:**
 
-  div {
-   .animation-name(animation-1, animation-2);
-  }
-  
-  // Result
-  div {
-   -webkit-animation-name: animation-1, animation-2;
-   -moz-animation-name: animation-1, animation-2;
-   -opera-animation-name: animation-1, animation-2;
-   animation-name: animation-1, animation-2;
-  } 
+    div {
+     .animation-name(animation-1, animation-2);
+    }
+    
+    // Result
+    div {
+     -webkit-animation-name: animation-1, animation-2;
+     -moz-animation-name: animation-1, animation-2;
+     -opera-animation-name: animation-1, animation-2;
+     animation-name: animation-1, animation-2;
+    } 
 
 ### <a name="animation-play-state"></a> &#8226; animation-play-state
 **Summary:**
@@ -416,21 +416,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: running
 
-  .animation-play-state(<single-animation-play-state>, …)
+    .animation-play-state(<single-animation-play-state>, …)
   
 **Example:**
 
-  div {
-   .animation-play-state(paused);
-  }
-  
-  // Result
-  div {
-   -webkit-animation-play-state: paused;
-   -moz-animation-play-state: paused;
-   -opera-animation-play-state: paused;
-   animation-play-state: paused;
-  } 
+    div {
+     .animation-play-state(paused);
+    }
+    
+    // Result
+    div {
+     -webkit-animation-play-state: paused;
+     -moz-animation-play-state: paused;
+     -opera-animation-play-state: paused;
+     animation-play-state: paused;
+    } 
 
 ### <a name="animation-timing-function"></a> &#8226; animation-timing-function
 **Summary:**
@@ -443,21 +443,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/anima
 
 Default value: ease
 
-  .animation-timing-function(<single-animation-timing-function>, …)
+    .animation-timing-function(<single-animation-timing-function>, …)
   
 **Example:**
 
-  div {
-   .animation-timing-function(cubic-bezier(0.1, 0.7, 1.0, 0.1));
-  }
-  
-  // Result
-  div {
-   -webkit-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-   -moz-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-   -opera-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-   animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-  } 
+    div {
+     .animation-timing-function(cubic-bezier(0.1, 0.7, 1.0, 0.1));
+    }
+    
+    // Result
+    div {
+     -webkit-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+     -moz-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+     -opera-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+     animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    } 
 
 ### <a name="appearance"></a> &#8226; appearance
 **Summary:**
@@ -470,20 +470,20 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/appea
 
 Default value: none
 
-  .appearance(<appearance>)
+    .appearance(<appearance>)
   
 **Example:**
 
-  div {
-   .appearance();
-  }
-  
-  // Result
-  div {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-  } 
+    div {
+     .appearance();
+    }
+    
+    // Result
+    div {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+    } 
 
 ### <a name="backface-visibility"></a> &#8226; backface-visibility
 **Summary:**
@@ -496,22 +496,22 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/backf
 
 Default value: none
 
-  .backface-visibility(visible | hidden )
+    .backface-visibility(visible | hidden )
   
 **Example:**
 
-  div {
-   .backface-visibility(hidden);
-  }
-  
-  // Result
-  div {
-   -webkit-backface-visibility: none;
-   -moz-backface-visibility: none;
-   -o-backface-visibility: none;
-   -ms-backface-visibility: none;
-   backface-visibility: none;
-  } 
+    div {
+     .backface-visibility(hidden);
+    }
+    
+    // Result
+    div {
+     -webkit-backface-visibility: none;
+     -moz-backface-visibility: none;
+     -o-backface-visibility: none;
+     -ms-backface-visibility: none;
+     backface-visibility: none;
+    } 
 
 ### <a name="background-clip"></a> &#8226; background-clip
 **Summary:**
@@ -524,20 +524,20 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/backg
 
 Default value: border-box
 
-  .background-clip(<box>)
+    .background-clip(<box>)
   
 **Example:**
 
-  div {
-   .background-clip(padding-box);
-  }
-  
-  // Result
-  div {
-   -webkit-background-clip: padding-box;
-   -moz-background-clip: padding-box;
-   background-clip: padding-box;
-  } 
+    div {
+     .background-clip(padding-box);
+    }
+    
+    // Result
+    div {
+     -webkit-background-clip: padding-box;
+     -moz-background-clip: padding-box;
+     background-clip: padding-box;
+    } 
 
 ### <a name="background-image"></a> &#8226; background-image
 **Summary:**
@@ -550,7 +550,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/functions/linear
 
 Default value: none
 
-  .background-image(<gradient>, ...)
+    .background-image(<gradient>, ...)
 
 **Tips and tricks:**
 
@@ -563,18 +563,18 @@ Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
   
 **Example:**
 
-  div {
-   .background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%));
-  }
-  
-  // Result
-  div {
-   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmYjgzZmEiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U5M2NlYyIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
-   background-image: -webkit-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
-   background-image: -moz-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
-   background-image: -o-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
-   background-image: linear-gradient(to bottom, #fb83fa 0%, #e93cec 100%);
-  }
+    div {
+     .background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%));
+    }
+    
+    // Result
+    div {
+     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmYjgzZmEiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U5M2NlYyIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
+     background-image: -webkit-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
+     background-image: -moz-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
+     background-image: -o-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
+     background-image: linear-gradient(to bottom, #fb83fa 0%, #e93cec 100%);
+    }
 
 ### <a name="background-origin"></a> &#8226; background-origin
 **Summary:**
@@ -587,20 +587,20 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/backg
 
 Default value: padding-box
 
-  .background-origin(<box>)
+    .background-origin(<box>)
   
 **Example:**
 
-  div {
-   .background-origin(content-box);
-  }
-  
-  // Result
-  div {
-   -webkit-background-origin: content-box;
-   -moz-background-origin: content-box;
-   background-origin: content-box;
-  } 
+      div {
+       .background-origin(content-box);
+      }
+      
+      // Result
+      div {
+       -webkit-background-origin: content-box;
+       -moz-background-origin: content-box;
+       background-origin: content-box;
+      } 
 
 ### <a name="background-size"></a> &#8226; background-size
 **Summary:**
@@ -613,7 +613,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/backg
 
 Default value: auto auto
 
-  .background-size(<bg-size>, ...)
+    .background-size(<bg-size>, ...)
 
 **Tips and tricks:**
 
@@ -621,16 +621,16 @@ If you omit units, `background-size` adds `px` automatically.
   
 **Example:**
 
-  div {
-   .background-size(cover, 100%);
-  }
-  
-  // Result
-  div {
-   -webkit-background-size: cover, 100%;
-   -moz-background-size: cover, 100%;
-   background-size: cover, 100%;
-  } 
+    div {
+     .background-size(cover, 100%);
+    }
+    
+    // Result
+    div {
+     -webkit-background-size: cover, 100%;
+     -moz-background-size: cover, 100%;
+     background-size: cover, 100%;
+    } 
 
 ### <a name="blur"></a> &#8226; blur (shorthand for filter property)
 **Summary:**
@@ -643,7 +643,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur(
 
 Default value: 0
 
-  .blur(length)
+    .blur(length)
 
 **Tips and tricks:**
 
@@ -651,17 +651,17 @@ If you omit units, `blur` adds `px` automatically.
   
 **Example:**
 
-  div {
-   .blur(5px);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: blur(5px);
-   -moz-filter: blur(5px);
-   -ms-filter: blur(5px);
-   filter: blur(5px);
-  } 
+    div {
+     .blur(5px);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: blur(5px);
+     -moz-filter: blur(5px);
+     -ms-filter: blur(5px);
+     filter: blur(5px);
+    } 
 
 ### <a name="border-bottom-left-radius"></a> &#8226; border-bottom-left-radius
 **Summary:**
@@ -674,7 +674,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/borde
 
 Default value: 0
 
-  .border-bottom-left-radius(length | percentage)
+    .border-bottom-left-radius(length | percentage)
 
 **Tips and tricks:**
 
@@ -684,16 +684,16 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
   
 **Example:**
 
-  div {
-   .border-bottom-left-radius(10px);
-  }
-  
-  // Result
-  div {
-   -webkit-border-bottom-left-radius: 10px;
-   -moz-border-radius-bottomleft: 10px;
-   border-bottom-left-radius: 10px;
-  }   
+    div {
+     .border-bottom-left-radius(10px);
+    }
+    
+    // Result
+    div {
+     -webkit-border-bottom-left-radius: 10px;
+     -moz-border-radius-bottomleft: 10px;
+     border-bottom-left-radius: 10px;
+    }   
 
 ### <a name="border-bottom-right-radius"></a> &#8226; border-bottom-right-radius
 **Summary:**
@@ -706,7 +706,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/borde
 
 Default value: 0
 
-  .border-bottom-right-radius(length | percentage)
+    .border-bottom-right-radius(length | percentage)
 
 **Tips and tricks:**
 
@@ -716,16 +716,16 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
   
 **Example:**
 
-  div {
-   .border-bottom-right-radius(10px);
-  }
-  
-  // Result
-  div {
-   -webkit-border-bottom-right-radius: 10px;
-   -moz-border-radius-bottomright: 10px;
-   border-bottom-right-radius: 10px;
-  }   
+      div {
+       .border-bottom-right-radius(10px);
+      }
+      
+      // Result
+      div {
+       -webkit-border-bottom-right-radius: 10px;
+       -moz-border-radius-bottomright: 10px;
+       border-bottom-right-radius: 10px;
+      }   
 
 ### <a name="border-image"></a> &#8226; border-image
 **Summary:**
@@ -738,7 +738,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/borde
 
 Default value: based on individual properties
 
-  .border-image(border-image-source border-image-slice border-image-width border-image-outset border-image-repeat)
+    .border-image(border-image-source border-image-slice border-image-width border-image-outset border-image-repeat)
 
 **Tips and tricks:**
 
@@ -747,17 +747,17 @@ Default value: based on individual properties
 
 **Example:**
 
-  div {
-   .border-image(url(border.png) 61 45 62 54 repeat);
-  }
-  
-  // Result
-  div {
-   -webkit-border-image: url(border.png) 61 45 62 54 repeat;
-   -moz-border-image: url(border.png) 61 45 62 54 repeat;
-   -opera-border-image: url(border.png) 61 45 62 54 repeat;
-   border-image: url(border.png) 61 45 62 54 repeat;
-  } 
+    div {
+     .border-image(url(border.png) 61 45 62 54 repeat);
+    }
+    
+    // Result
+    div {
+     -webkit-border-image: url(border.png) 61 45 62 54 repeat;
+     -moz-border-image: url(border.png) 61 45 62 54 repeat;
+     -opera-border-image: url(border.png) 61 45 62 54 repeat;
+     border-image: url(border.png) 61 45 62 54 repeat;
+    } 
 
 ### <a name="border-radius"></a> &#8226; border-radius
 **Summary:**
@@ -770,7 +770,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/borde
 
 Default value: 0
 
-  .border-radius(length | percentage | length / length | percentage / percentage)
+    .border-radius(length | percentage | length / length | percentage / percentage)
 
 **Tips and tricks:**
 
@@ -780,16 +780,16 @@ Default value: 0
 
 **Example:**
 
-  div {
-   .border-radius(5px);
-  }
-  
-  // Result
-  div {
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
-  } 
+    div {
+     .border-radius(5px);
+    }
+    
+    // Result
+    div {
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+    } 
 
 ### <a name="border-top-left-radius"></a> &#8226; border-top-left-radius
 **Summary:**
@@ -802,7 +802,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/borde
 
 Default value: 0
 
-  .border-top-left-radius(length | percentage)
+    .border-top-left-radius(length | percentage)
 
 **Tips and tricks:**
 
@@ -812,16 +812,16 @@ Default value: 0
 
 **Example:**
 
-  div {
-   .border-top-left-radius(5px);
-  }
-  
-  // Result
-  div {
-   -webkit-border-top-left-radius: 5px;
-   -moz-border-top-left-radius: 5px;
-   border-top-left-radius: 5px;
-  } 
+    div {
+     .border-top-left-radius(5px);
+    }
+    
+    // Result
+    div {
+     -webkit-border-top-left-radius: 5px;
+     -moz-border-top-left-radius: 5px;
+     border-top-left-radius: 5px;
+    } 
 
 ### <a name="border-top-right-radius"></a> &#8226; border-top-right-radius
 **Summary:**
@@ -834,7 +834,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/borde
 
 Default value: 0
 
-  .border-top-right-radius(length | percentage)
+    .border-top-right-radius(length | percentage)
 
 **Tips and tricks:**
 
@@ -844,16 +844,16 @@ Default value: 0
 
 **Example:**
 
-  div {
-   .border-top-right-radius(5px);
-  }
-  
-  // Result
-  div {
-   -webkit-border-top-right-radius: 5px;
-   -moz-border-top-right-radius: 5px;
-   border-top-right-radius: 5px;
-  } 
+    div {
+     .border-top-right-radius(5px);
+    }
+    
+    // Result
+    div {
+     -webkit-border-top-right-radius: 5px;
+     -moz-border-top-right-radius: 5px;
+     border-top-right-radius: 5px;
+    } 
 
 ### <a name="box-shadow"></a> &#8226; box-shadow
 **Summary:**
@@ -866,7 +866,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/box-s
 
 Default value: none
 
-  .box-shadow(offset-x offset-y blur-radius color, offset-x offset-y blur-radius color)
+    .box-shadow(offset-x offset-y blur-radius color, offset-x offset-y blur-radius color)
 
 **Tips and tricks:**
 
@@ -874,16 +874,16 @@ Default value: none
 
 **Example:**
 
-  div {
-   .box-shadow(0 1px 10px rgba(20,20,20,0.5));
-  }
-  
-  // Result
-  div {
-   -webkit-box-shadow: 0 1px 10px rgba(20,20,20,0.5);
-   -moz-box-shadow: 0 1px 10px rgba(20,20,20,0.5);
-   box-shadow: 0 1px 10px rgba(20,20,20,0.5);
-  } 
+    div {
+     .box-shadow(0 1px 10px rgba(20,20,20,0.5));
+    }
+    
+    // Result
+    div {
+     -webkit-box-shadow: 0 1px 10px rgba(20,20,20,0.5);
+     -moz-box-shadow: 0 1px 10px rgba(20,20,20,0.5);
+     box-shadow: 0 1px 10px rgba(20,20,20,0.5);
+    } 
 
 ### <a name="box-sizing"></a> &#8226; box-sizing
 **Summary:**
@@ -896,20 +896,20 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/box-s
 
 Default value: content-box
 
-  .box-sizing(content-box | padding-box | border-box)
+    .box-sizing(content-box | padding-box | border-box)
 
 **Example:**
 
-  div {
-   .box-sizing(padding-box);
-  }
-  
-  // Result
-  div {
-   -webkit-box-sizing: padding-box;
-   -moz-box-sizing: padding-box;
-   box-sizing: padding-box;
-  }
+    div {
+     .box-sizing(padding-box);
+    }
+    
+    // Result
+    div {
+     -webkit-box-sizing: padding-box;
+     -moz-box-sizing: padding-box;
+     box-sizing: padding-box;
+    }
 
 ### <a name="brightness"></a> &#8226; brightness (shorthand for filter property)
 **Summary:**
@@ -922,21 +922,21 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#brigh
 
 Default value: 0
 
-  .brightness(amount)
+    .brightness(amount)
   
 **Example:**
 
-  div {
-   .brightness(0.5);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: brightness(0.5);
-   -moz-filter: brightness(0.5);
-   -ms-filter: brightness(0.5);
-   filter: brightness(0.5);
-  } 
+    div {
+     .brightness(0.5);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: brightness(0.5);
+     -moz-filter: brightness(0.5);
+     -ms-filter: brightness(0.5);
+     filter: brightness(0.5);
+    } 
 
 ### <a name="column-count"></a> &#8226; column-count
 **Summary:**
@@ -949,20 +949,20 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/colum
 
 Default value: auto
 
-  .column-count(<number> | auto)
+    .column-count(<number> | auto)
   
 **Example:**
 
-  div {
-   .column-count(3);
-  }
-  
-  // Result
-  div {
-   -webkit-column-count: 0.5;
-   -moz-column-count: 0.5;
-   column-count: 0.5;
-  }   
+    div {
+     .column-count(3);
+    }
+    
+    // Result
+    div {
+     -webkit-column-count: 0.5;
+     -moz-column-count: 0.5;
+     column-count: 0.5;
+    }   
 
 ### <a name="column-gap"></a> &#8226; column-gap
 **Summary:**
@@ -975,7 +975,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/colum
 
 Default value: normal
 
-  .column-gap(<length> | normal)
+    .column-gap(<length> | normal)
 
 **Tips and tricks:**
 
@@ -983,16 +983,16 @@ Default value: normal
   
 **Example:**
 
-  div {
-   .column-gap(30);
-  }
-  
-  // Result
-  div {
-   -webkit-column-gap: 30px;
-   -moz-column-gap: 30px;
-   column-gap: 30px;
-  }   
+    div {
+     .column-gap(30);
+    }
+    
+    // Result
+    div {
+     -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+     column-gap: 30px;
+    }   
 
 ### <a name="column-rule"></a> &#8226; column-rule
 **Summary:**
@@ -1005,7 +1005,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/colum
 
 Default value: medium none black
 
-  .column-rule(<column-rule-width> | <column-rule-style> | <column-rule-color>)
+    .column-rule(<column-rule-width> | <column-rule-style> | <column-rule-color>)
 
 **Tips and tricks:**
 
@@ -1013,16 +1013,16 @@ Default value: medium none black
   
 **Example:**
 
-  div {
-   .column-rule(5 outset #ff00ff);
-  }
-  
-  // Result
-  div {
-   -webkit-column-rule: 5px outset #ff00ff;
-   -moz-column-rule: 5px outset #ff00ff;
-   column-rule: 5px outset #ff00ff;
-  } 
+    div {
+     .column-rule(5 outset #ff00ff);
+    }
+    
+    // Result
+    div {
+     -webkit-column-rule: 5px outset #ff00ff;
+     -moz-column-rule: 5px outset #ff00ff;
+     column-rule: 5px outset #ff00ff;
+    } 
 
 ### <a name="column-width"></a> &#8226; column-width
 **Summary:**
@@ -1035,7 +1035,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/colum
 
 Default value: auto
 
-  .column-width(<length> | auto)
+    .column-width(<length> | auto)
 
 **Tips and tricks:**
 
@@ -1043,16 +1043,16 @@ Default value: auto
   
 **Example:**
 
-  div {
-   .column-width(100px);
-  }
-  
-  // Result
-  div {
-   -webkit-column-width: 100px;
-   -moz-column-width: 100px;
-   column-width: 100px;
-  }  
+    div {
+     .column-width(100px);
+    }
+    
+    // Result
+    div {
+     -webkit-column-width: 100px;
+     -moz-column-width: 100px;
+     column-width: 100px;
+    }  
 
 ### <a name="columns"></a> &#8226; columns
 **Summary:**
@@ -1065,7 +1065,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/colum
 
 Default value: auto
 
-  .columns(<column-width> | <column-count>)
+    .columns(<column-width> | <column-count>)
 
 **Tips and tricks:**
 
@@ -1073,16 +1073,16 @@ Default value: auto
   
 **Example:**
 
-  div {
-   .columns(100 3);
-  }
-  
-  // Result
-  div {
-   -webkit-columns: 100px 3;
-   -moz-columns: 100px 3;
-   columns: 100px 3;
-  } 
+    div {
+     .columns(100 3);
+    }
+    
+    // Result
+    div {
+     -webkit-columns: 100px 3;
+     -moz-columns: 100px 3;
+     columns: 100px 3;
+    } 
 
 ### <a name="contrast"></a> &#8226; contrast
 **Summary:**
@@ -1095,7 +1095,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#contr
 
 Default value: 100%
 
-  .contrast(<amount>)
+    .contrast(<amount>)
 
 **Tips and tricks:**
 
@@ -1103,17 +1103,17 @@ Default value: 100%
   
 **Example:**
 
-  div {
-   .contrast(200);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: contrast(200%);
-   -moz-filter: contrast(200%);
-   -ms-filter: contrast(200%);
-   filter: contrast(200%);
-  } 
+    div {
+     .contrast(200);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: contrast(200%);
+     -moz-filter: contrast(200%);
+     -ms-filter: contrast(200%);
+     filter: contrast(200%);
+    } 
 
 ### <a name="display"></a> &#8226; display
 **Summary:**
@@ -1124,21 +1124,21 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 **Syntax:**
 
-  .display(<flex> | <inline-flex>)
+    .display(<flex> | <inline-flex>)
   
 **Example:**
 
-  div {
-   .display(flex);
-  }
-  
-  // Result
-  div {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: -webkit-flex;
-   display: -moz-box;
-  } 
+    div {
+     .display(flex);
+    }
+    
+    // Result
+    div {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: -moz-box;
+    } 
 
 ### <a name="drop-shadow"></a> &#8226; drop-shadow
 **Summary:**
@@ -1149,7 +1149,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-
 
 **Syntax:**
 
-  .drop-shadow(<offset-x> <offset-y> [<blur-radius> | <spread-radius> | <color>])
+    .drop-shadow(<offset-x> <offset-y> [<blur-radius> | <spread-radius> | <color>])
 
 **Tips and tricks:**
 
@@ -1157,17 +1157,17 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-
   
 **Example:**
 
-  div {
-   .drop-shadow(16 16 10 black);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: drop-shadow(16px 16px 10px #000000);
-   -moz-filter: drop-shadow(16px 16px 10px #000000);
-   -ms-filter: drop-shadow(16px 16px 10px #000000);
-   filter: drop-shadow(16px 16px 10px #000000);
-  } 
+    div {
+     .drop-shadow(16 16 10 black);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: drop-shadow(16px 16px 10px #000000);
+     -moz-filter: drop-shadow(16px 16px 10px #000000);
+     -ms-filter: drop-shadow(16px 16px 10px #000000);
+     filter: drop-shadow(16px 16px 10px #000000);
+    } 
 
 ### <a name="filter"></a> &#8226; filter
 **Summary:**
@@ -1180,21 +1180,21 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)**
 
 Default value: none
 
-  .filter(<filter-function>*)
+    .filter(<filter-function>*)
   
 **Example:**
 
-  div {
-   .filter(grayscale(0.5) blur(10px));
-  }
-  
-  // Result
-  div {
-   -webkit-filter: grayscale(0.5) blur(10px);
-   -moz-filter: grayscale(0.5) blur(10px);
-   -ms-filter: grayscale(0.5) blur(10px);
-   filter: grayscale(0.5) blur(10px);
-  }
+    div {
+     .filter(grayscale(0.5) blur(10px));
+    }
+    
+    // Result
+    div {
+     -webkit-filter: grayscale(0.5) blur(10px);
+     -moz-filter: grayscale(0.5) blur(10px);
+     -ms-filter: grayscale(0.5) blur(10px);
+     filter: grayscale(0.5) blur(10px);
+    }
 
 ### <a name="flex"></a> &#8226; flex
 **Summary:**
@@ -1207,22 +1207,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)**, **[
 
 Default value: 0 1 auto
 
-  .flex(none | [ <flex-grow> <flex-shrink> | <flex-basis> ])
+    .flex(none | [ <flex-grow> <flex-shrink> | <flex-basis> ])
   
 **Example:**
 
-  div {
-   .flex(1 3 100px);
-  }
-  
-  // Result
-  div {
-   -webkit-box-flex: 1;
-   -moz-box-flex: 1;
-   -webkit-flex: 1 3 100px;
-   -ms-flex: 1 3 100px;
-   flex: 1 3 100px;
-  }
+    div {
+     .flex(1 3 100px);
+    }
+    
+    // Result
+    div {
+     -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+     -webkit-flex: 1 3 100px;
+     -ms-flex: 1 3 100px;
+     flex: 1 3 100px;
+    }
 
 ### <a name="flex-basis"></a> &#8226; flex-basis
 **Summary:**
@@ -1235,7 +1235,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)*
 
 Default value: auto
 
-  .flex-basis(<width>)
+    .flex-basis(<width>)
 
 **Tips and tricks:**
 
@@ -1243,15 +1243,15 @@ Default value: auto
   
 **Example:**
 
-  div {
-   .flex-basis(100);
-  }
-  
-  // Result
-  div {
-   -webkit-flex-basis: 100;
-   flex-basis: 100px;
-  }
+    div {
+     .flex-basis(100);
+    }
+    
+    // Result
+    div {
+     -webkit-flex-basis: 100;
+     flex-basis: 100px;
+    }
 
 ### <a name="flex-direction"></a> &#8226; flex-direction
 **Summary:**
@@ -1264,24 +1264,24 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-directi
 
 Default value: row
 
-  .flex-direction(row | row-reverse | column | column-reverse) 
+    .flex-direction(row | row-reverse | column | column-reverse) 
   
 **Example:**
 
-  div {
-   .flex-direction(row);
-  }
-  
-  // Result
-  div {
-   -webkit-box-direction: normal;
-   -moz-box-direction: normal;
-   -webkit-box-orient: horizontal;
-   -moz-box-orient: horizontal;
-   -webkit-flex-direction: row;
-   -ms-flex-direction: row;
-   flex-direction: row;
-  }
+    div {
+     .flex-direction(row);
+    }
+    
+    // Result
+    div {
+     -webkit-box-direction: normal;
+     -moz-box-direction: normal;
+     -webkit-box-orient: horizontal;
+     -moz-box-orient: horizontal;
+     -webkit-flex-direction: row;
+     -ms-flex-direction: row;
+     flex-direction: row;
+    }
 
 ### <a name="flex-grow"></a> &#8226; flex-grow
 **Summary:**
@@ -1294,19 +1294,19 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow)**
 
 Default value: 0
 
-  .flex-grow(<number>) 
+    .flex-grow(<number>) 
   
 **Example:**
 
-  div {
-   .flex-grow(2);
-  }
-  
-  // Result
-  div {
-   -webkit-flex-grow: 2;
-   flex-grow: 2;
-  }
+    div {
+     .flex-grow(2);
+    }
+    
+    // Result
+    div {
+     -webkit-flex-grow: 2;
+     flex-grow: 2;
+    }
 
 ### <a name="flex-shrink"></a> &#8226; flex-shrink
 **Summary:**
@@ -1319,19 +1319,19 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink)
 
 Default value: 1
 
-  .flex-shrink(<number>) 
+    .flex-shrink(<number>) 
   
 **Example:**
 
-  div {
-   .flex-shrink(2);
-  }
-  
-  // Result
-  div {
-   -webkit-flex-shrink: 2;
-   flex-shrink: 2;
-  }
+    div {
+     .flex-shrink(2);
+    }
+    
+    // Result
+    div {
+     -webkit-flex-shrink: 2;
+     flex-shrink: 2;
+    }
 
 ### <a name="flex-wrap"></a> &#8226; flex-wrap
 **Summary:**
@@ -1344,20 +1344,20 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap)**
 
 Default value: nowrap
 
-  .flex-wrap(nowrap | wrap | wrap-reverse) 
+    .flex-wrap(nowrap | wrap | wrap-reverse) 
   
 **Example:**
 
-  div {
-   .flex-wrap(wrap-reverse);
-  }
-  
-  // Result
-  div {
-   -webkit-flex-wrap: 2;
-   -ms-flex-wrap: 2;
-   flex-wrap: 2;
-  }
+    div {
+     .flex-wrap(wrap-reverse);
+    }
+    
+    // Result
+    div {
+     -webkit-flex-wrap: 2;
+     -ms-flex-wrap: 2;
+     flex-wrap: 2;
+    }
 
 ### <a name="font-face"></a> &#8226; font-face
 **Summary:**
@@ -1368,22 +1368,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)*
 
 **Syntax:**
 
-  .font-face(@fontname, @fontfile, @fontweight:normal, @fontstyle:normal) 
+    .font-face(@fontname, @fontfile, @fontweight:normal, @fontstyle:normal) 
   
 **Example:**
 
-  div {
-   .font-face(Hipster, ~'../fonts/hipster', bold, italic);
-  }
-  
-  // Result
-  div {
-   font-family: "Hipster";
-   src: url("../fonts/hipster.eot");
-   src: url("../fonts/hipster.eot?#iefix") format("embedded-opentype"), url("../fonts/hipster.woff") format("woff"), url("../fonts/hipster.ttf") format("truetype"), url("../fonts/hipster.svg#Hipster") format("svg");
-   font-weight: bold;
-   font-style: italic;
-  }
+    div {
+     .font-face(Hipster, ~'../fonts/hipster', bold, italic);
+    }
+    
+    // Result
+    div {
+     font-family: "Hipster";
+     src: url("../fonts/hipster.eot");
+     src: url("../fonts/hipster.eot?#iefix") format("embedded-opentype"), url("../fonts/hipster.woff") format("woff"), url("../fonts/hipster.ttf") format("truetype"), url("../fonts/hipster.svg#Hipster") format("svg");
+     font-weight: bold;
+     font-style: italic;
+    }
 
 ### <a name="grayscale"></a> &#8226; grayscale
 **Summary:**
@@ -1396,7 +1396,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#grays
 
 Default value: 0
 
-  .grayscale(<percentage>) 
+    .grayscale(<percentage>) 
 
 **Tips and tricks:**
 
@@ -1404,17 +1404,17 @@ Default value: 0
   
 **Example:**
 
-  div {
-   .grayscale(50);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: grayscale(50%);
-   -moz-filter: grayscale(50%);
-   -ms-filter: grayscale(50%);
-   filter: grayscale(50%);
-  }
+    div {
+     .grayscale(50);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: grayscale(50%);
+     -moz-filter: grayscale(50%);
+     -ms-filter: grayscale(50%);
+     filter: grayscale(50%);
+    }
 
 ### <a name="hue-rotate"></a> &#8226; hue-rotate
 **Summary:**
@@ -1427,7 +1427,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#hue-r
 
 Default value: 0
 
-  .hue-rotate(<percentage>) 
+    .hue-rotate(<percentage>) 
 
 **Tips and tricks:**
 
@@ -1435,17 +1435,17 @@ Default value: 0
   
 **Example:**
 
-  div {
-   .hue-rotate(50);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: hue-rotate(50deg);
-   -moz-filter: hue-rotate(50deg);
-   -ms-filter: hue-rotate(50deg);
-   filter: hue-rotate(50deg);
-  }
+    div {
+     .hue-rotate(50);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: hue-rotate(50deg);
+     -moz-filter: hue-rotate(50deg);
+     -ms-filter: hue-rotate(50deg);
+     filter: hue-rotate(50deg);
+    }
 
 ### <a name="invert"></a> &#8226; invert
 **Summary:**
@@ -1458,7 +1458,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#inver
 
 Default value: 0
 
-  .invert(<percentage>) 
+    .invert(<percentage>) 
 
 **Tips and tricks:**
 
@@ -1466,17 +1466,17 @@ Default value: 0
   
 **Example:**
 
-  div {
-   .invert(100);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: invert(100%);
-   -moz-filter: invert(100%);
-   -ms-filter: invert(100%);
-   filter: invert(100%);
-  }
+    div {
+     .invert(100);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: invert(100%);
+     -moz-filter: invert(100%);
+     -ms-filter: invert(100%);
+     filter: invert(100%);
+    }
 
 ### <a name="justify-content"></a> &#8226; justify-content
 **Summary:**
@@ -1489,22 +1489,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-cont
 
 Default value: flex-start
 
-  .justify-content(flex-start | flex-end | center | space-between | space-around) 
+    .justify-content(flex-start | flex-end | center | space-between | space-around) 
   
 **Example:**
 
-  div {
-   .justify-content(flex-start);
-  }
-  
-  // Result
-  div {
-   -webkit-box-pack: flex-start;
-   -moz-box-pack: start;
-   -webkit-justify-content: start;
-   -ms-flex-pack: flex-start;
-   justify-content: flex-start;
-  }
+    div {
+     .justify-content(flex-start);
+    }
+    
+    // Result
+    div {
+     -webkit-box-pack: flex-start;
+     -moz-box-pack: start;
+     -webkit-justify-content: start;
+     -ms-flex-pack: flex-start;
+     justify-content: flex-start;
+    }
 
 ### <a name="keyframes"></a> &#8226; keyframes
 **Summary:**
@@ -1514,12 +1514,12 @@ The @keyframes CSS at-rule lets authors control the intermediate steps in a CSS 
 LESS CSS isn't great for complicated mixin like this one, so it is little bit tricky.
 LESS CSS compiler doesn't allow to have properties in the root. It's better to understand the problem on the example.
 
-  // There is no selector
-  color: red;
-
-  SyntaxError: properties must be inside selector blocks, they cannot be in the root. 
-
-  div { color: red; } // This is correct
+    // There is no selector
+    color: red;
+  
+    SyntaxError: properties must be inside selector blocks, they cannot be in the root. 
+  
+    div { color: red; } // This is correct
 
 Therefore LESS Hat generates **placeholder** selector `lesshat-selector { pb: 0; }` with unknown property, which browsers ignore and after that, there is actually keyframes syntax.  
   
@@ -1531,7 +1531,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
 
 **Syntax:**
 
-  .keyframes(~'<keyframes-name>, <keyframes-definition>') 
+    .keyframes(~'<keyframes-name>, <keyframes-definition>') 
 
 **Tips and tricks:**
 
@@ -1539,28 +1539,28 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
   
 **Example:**
 
-  div {
-   .keyframes(~'animationName, 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red }');
-  }
-  
-  // Result
-  div {
-   lesshat-selector { pb: 0; } 
-   @-webkit-keyframes animationName{ 0%{ -webkit-transform: scale(1.5); color: blue; } 100%{ -webkit-transform: scale(2); color: red };
-   }
-   lesshat-selector {
-     pb: 0; } 
-   @-moz-keyframes animationName{ 0%{ -moz-transform: scale(1.5); color: blue; } 100%{ -moz-transform: scale(2); color: red };
-   }
-   lesshat-selector {
-     pb: 0; } 
-   @-o-keyframes animationName{ 0%{ -o-transform: scale(1.5); color: blue; } 100%{ -o-transform: scale(2); color: red };
-   }
-   lesshat-selector {
-     pb: 0; } 
-   @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };
-   } 
-  }
+    div {
+     .keyframes(~'animationName, 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red }');
+    }
+    
+    // Result
+    div {
+     lesshat-selector { pb: 0; } 
+     @-webkit-keyframes animationName{ 0%{ -webkit-transform: scale(1.5); color: blue; } 100%{ -webkit-transform: scale(2); color: red };
+     }
+     lesshat-selector {
+       pb: 0; } 
+     @-moz-keyframes animationName{ 0%{ -moz-transform: scale(1.5); color: blue; } 100%{ -moz-transform: scale(2); color: red };
+     }
+     lesshat-selector {
+       pb: 0; } 
+     @-o-keyframes animationName{ 0%{ -o-transform: scale(1.5); color: blue; } 100%{ -o-transform: scale(2); color: red };
+     }
+     lesshat-selector {
+       pb: 0; } 
+     @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };
+     } 
+    }
 
 ### <a name="opacity"></a> &#8226; opacity
 **Summary:**
@@ -1575,7 +1575,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)**
 
 Default value: 1
 
-  .opacity(<number>) 
+    .opacity(<number>) 
 
 **Tips and tricks:**
 
@@ -1583,18 +1583,18 @@ Default value: 1
   
 **Example:**
 
-  div {
-   .opacity(.5);
-  }
-  
-  // Result
-  div {
-   -webkit-box-pack: flex-start;
-   -moz-box-pack: start;
-   -webkit-opacity: start;
-   -ms-flex-pack: flex-start;
-   opacity: flex-start;
-  }
+    div {
+     .opacity(.5);
+    }
+    
+    // Result
+    div {
+     -webkit-box-pack: flex-start;
+     -moz-box-pack: start;
+     -webkit-opacity: start;
+     -ms-flex-pack: flex-start;
+     opacity: flex-start;
+    }
 
 ### <a name="order"></a> &#8226; order
 **Summary:**
@@ -1607,22 +1607,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)**, **
 
 Default value: 0
 
-  .order(<integer>) 
+    .order(<integer>) 
   
 **Example:**
 
-  div {
-   .order(1);
-  }
-  
-  // Result
-  div {
-   -webkit-box-ordinal-group: 1;
-   -moz-box-ordinal-group: 1;
-   -ms-flex-order: 1;
-   -webkit-order: 1;
-   order: 1;
-  }
+    div {
+     .order(1);
+    }
+    
+    // Result
+    div {
+     -webkit-box-ordinal-group: 1;
+     -moz-box-ordinal-group: 1;
+     -ms-flex-order: 1;
+     -webkit-order: 1;
+     order: 1;
+    }
 
 ### <a name="perspective"></a> &#8226; perspective
 **Summary:**
@@ -1635,7 +1635,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)
 
 Default value: none
 
-  .perspective(none | <length>)
+    .perspective(none | <length>)
 
 **Tips and tricks:**
 
@@ -1643,16 +1643,16 @@ Default value: none
   
 **Example:**
 
-  div {
-   .perspective(1000);
-  }
-  
-  // Result
-  div {
-   -moz-perspective: 1000px;
-   -webkit-perspective: 1000px;
-   perspective: 1000px;
-  }
+    div {
+     .perspective(1000);
+    }
+    
+    // Result
+    div {
+     -moz-perspective: 1000px;
+     -webkit-perspective: 1000px;
+     perspective: 1000px;
+    }
 
 ### <a name="perspective-origin"></a> &#8226; perspective-origin
 **Summary:**
@@ -1665,7 +1665,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-
 
 Default value: 50% 50%
 
-  .perspective-origin(<percentage> | <length> | constants | inherit)
+    .perspective-origin(<percentage> | <length> | constants | inherit)
 
 **Tips and tricks:**
 
@@ -1673,16 +1673,16 @@ Default value: 50% 50%
   
 **Example:**
 
-  div {
-   .perspective-origin(top left);
-  }
-  
-  // Result
-  div {
-   -moz-perspective-origin: top left;
-   -webkit-perspective-origin: top left;
-   perspective-origin: top left;
-  }
+    div {
+     .perspective-origin(top left);
+    }
+    
+    // Result
+    div {
+     -moz-perspective-origin: top left;
+     -webkit-perspective-origin: top left;
+     perspective-origin: top left;
+    }
 
 ### <a name="placeholder"></a> &#8226; placeholder
 **Summary:**
@@ -1694,29 +1694,29 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/style-placeholder-t
 
 **Syntax:**
 
-  .placeholder(<color>, [<element>])
+    .placeholder(<color>, [<element>])
   
 **Example:**
 
-  div {
-   .placeholder(#666666);
-  }
-  
-  // Result
-  div {
-   ::-webkit-input-placeholder {
-     color: #666666;
-   }
-   :-moz-placeholder {
-     color: #666666;
-   }
-   ::-moz-placeholder {
-     color: #666666;
-   }
-   :-ms-input-placeholder {
-     color: #666666;
-   }
-  }
+    div {
+     .placeholder(#666666);
+    }
+    
+    // Result
+    div {
+     ::-webkit-input-placeholder {
+       color: #666666;
+     }
+     :-moz-placeholder {
+       color: #666666;
+     }
+     ::-moz-placeholder {
+       color: #666666;
+     }
+     :-ms-input-placeholder {
+       color: #666666;
+     }
+    }
 
 ### <a name="rotate"></a> &#8226; rotate
 **Summary:**
@@ -1729,7 +1729,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#ro
 
 Default value: 0
 
-  .rotate(<angle>)
+    .rotate(<angle>)
 
 **Tips and tricks:**
 
@@ -1737,18 +1737,18 @@ Default value: 0
   
 **Example:**
 
-  div {
-   .rotate(45);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: rotate(45deg);
-   -moz-transform: rotate(45deg);
-   -opera-transform: rotate(45deg);
-   -ms-transform: rotate(45deg);
-   transform: rotate(45deg);
-  }
+    div {
+     .rotate(45);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -opera-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
+    }
 
 ### <a name="rotate3d"></a> &#8226; rotate3d
 **Summary:**
@@ -1761,7 +1761,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-fu
 
 Default value: 0, 0, 0, 0
 
-  .rotate3d(<number>, <number>, <number>, <angle>)
+    .rotate3d(<number>, <number>, <number>, <angle>)
 
 **Tips and tricks:**
 
@@ -1769,18 +1769,18 @@ Default value: 0, 0, 0, 0
   
 **Example:**
 
-  div {
-   .rotate3d(1, 0, 0, 50);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: rotate3d(1, 0, 0, 50deg);
-   -moz-transform: rotate3d(1, 0, 0, 50deg);
-   -opera-transform: rotate3d(1, 0, 0, 50deg);
-   -ms-transform: rotate3d(1, 0, 0, 50deg);
-   transform: rotate3d(1, 0, 0, 50deg);
-  }
+    div {
+     .rotate3d(1, 0, 0, 50);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotate3d(1, 0, 0, 50deg);
+     -moz-transform: rotate3d(1, 0, 0, 50deg);
+     -opera-transform: rotate3d(1, 0, 0, 50deg);
+     -ms-transform: rotate3d(1, 0, 0, 50deg);
+     transform: rotate3d(1, 0, 0, 50deg);
+    }
 
 ### <a name="rotateX"></a> &#8226; rotateX
 **Summary:**
@@ -1793,7 +1793,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#ro
 
 Default value: 0
 
-  .rotateX(<angle>)
+    .rotateX(<angle>)
 
 **Tips and tricks:**
 
@@ -1801,18 +1801,18 @@ Default value: 0
   
 **Example:**
 
-  div {
-   .rotateX(45);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: rotateX(45deg);
-   -moz-transform: rotateX(45deg);
-   -opera-transform: rotateX(45deg);
-   -ms-transform: rotateX(45deg);
-   transform: rotateX(45deg);
-  }
+    div {
+     .rotateX(45);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotateX(45deg);
+     -moz-transform: rotateX(45deg);
+     -opera-transform: rotateX(45deg);
+     -ms-transform: rotateX(45deg);
+     transform: rotateX(45deg);
+    }
 
 ### <a name="rotateY"></a> &#8226; rotateY
 **Summary:**
@@ -1825,7 +1825,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#ro
 
 Default value: 0
 
-  .rotateY(<angle>)
+    .rotateY(<angle>)
 
 **Tips and tricks:**
 
@@ -1833,18 +1833,18 @@ Default value: 0
   
 **Example:**
 
-  div {
-   .rotateY(45);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: rotateY(45deg);
-   -moz-transform: rotateY(45deg);
-   -opera-transform: rotateY(45deg);
-   -ms-transform: rotateY(45deg);
-   transform: rotateY(45deg);
-  }
+    div {
+     .rotateY(45);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotateY(45deg);
+     -moz-transform: rotateY(45deg);
+     -opera-transform: rotateY(45deg);
+     -ms-transform: rotateY(45deg);
+     transform: rotateY(45deg);
+    }
 
 ### <a name="rotateZ"></a> &#8226; rotateZ
 **Summary:**
@@ -1857,7 +1857,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#ro
 
 Default value: 0
 
-  .rotateZ(<angle>)
+    .rotateZ(<angle>)
 
 **Tips and tricks:**
 
@@ -1865,18 +1865,18 @@ Default value: 0
   
 **Example:**
 
-  div {
-   .rotateZ(45);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: rotateZ(45deg);
-   -moz-transform: rotateZ(45deg);
-   -opera-transform: rotateZ(45deg);
-   -ms-transform: rotateZ(45deg);
-   transform: rotateZ(45deg);
-  }
+    div {
+     .rotateZ(45);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotateZ(45deg);
+     -moz-transform: rotateZ(45deg);
+     -opera-transform: rotateZ(45deg);
+     -ms-transform: rotateZ(45deg);
+     transform: rotateZ(45deg);
+    }
 
   ### <a name="saturate"></a> &#8226; saturate
   **Summary:**
@@ -1893,7 +1893,7 @@ Default value: 0
 
   **Tips and tricks:**
 
-    If you omit units, `saturate` adds `%` automatically.  
+  If you omit units, `saturate` adds `%` automatically.  
     
   **Example:**
 
@@ -1920,22 +1920,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sc
 
 Default value: 1
 
-  .scale(<sx>[, <sy>]) 
+    .scale(<sx>[, <sy>]) 
   
 **Example:**
 
-  div {
-   .scale(2);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: scale(2);
-   -moz-transform: scale(2);
-   -opera-transform: scale(2);
-   -ms-transform: scale(2);
-   transform: scale(2);
-  }
+    div {
+     .scale(2);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scale(2);
+     -moz-transform: scale(2);
+     -opera-transform: scale(2);
+     -ms-transform: scale(2);
+     transform: scale(2);
+    }
 
 ### <a name="scale3d"></a> &#8226; scale3d
 **Summary:**
@@ -1948,22 +1948,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-fu
 
 Default value: 1, 1, 1
 
-  .scale3d(<sx>, <sy>, <sz>) 
+    .scale3d(<sx>, <sy>, <sz>) 
   
 **Example:**
 
-  div {
-   .scale3d(1.5, .2, 3);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: scale3d(1.5, 0.2, 3);
-   -moz-transform: scale3d(1.5, 0.2, 3);
-   -opera-transform: scale3d(1.5, 0.2, 3);
-   -ms-transform: scale3d(1.5, 0.2, 3);
-   transform: scale3d(1.5, 0.2, 3);
-  }
+    div {
+     .scale3d(1.5, .2, 3);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scale3d(1.5, 0.2, 3);
+     -moz-transform: scale3d(1.5, 0.2, 3);
+     -opera-transform: scale3d(1.5, 0.2, 3);
+     -ms-transform: scale3d(1.5, 0.2, 3);
+     transform: scale3d(1.5, 0.2, 3);
+    }
 
 ### <a name="scaleX"></a> &#8226; scaleX
 **Summary:**
@@ -1976,22 +1976,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sc
 
 Default value: 1
 
-  .scaleX(<sx>) 
+    .scaleX(<sx>) 
   
 **Example:**
 
-  div {
-   .scaleX(1.5);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: scaleX(1.5);
-   -moz-transform: scaleX(1.5);
-   -opera-transform: scaleX(1.5);
-   -ms-transform: scaleX(1.5);
-   transform: scaleX(1.5);
-  }
+    div {
+     .scaleX(1.5);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scaleX(1.5);
+     -moz-transform: scaleX(1.5);
+     -opera-transform: scaleX(1.5);
+     -ms-transform: scaleX(1.5);
+     transform: scaleX(1.5);
+    }
 
 ### <a name="scaleY"></a> &#8226; scaleY
 **Summary:**
@@ -2004,22 +2004,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sc
 
 Default value: 1
 
-  .scaleY(<sy>) 
+    .scaleY(<sy>) 
   
 **Example:**
 
-  div {
-   .scaleY(1.5);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: scaleY(1.5);
-   -moz-transform: scaleY(1.5);
-   -opera-transform: scaleY(1.5);
-   -ms-transform: scaleY(1.5);
-   transform: scaleY(1.5);
-  }
+    div {
+     .scaleY(1.5);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scaleY(1.5);
+     -moz-transform: scaleY(1.5);
+     -opera-transform: scaleY(1.5);
+     -ms-transform: scaleY(1.5);
+     transform: scaleY(1.5);
+    }
 
 ### <a name="scaleZ"></a> &#8226; scaleZ
 **Summary:**
@@ -2032,22 +2032,22 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-fu
 
 Default value: 1
 
-  .scaleZ(<sz>) 
+    .scaleZ(<sz>) 
   
 **Example:**
 
-  div {
-   .scaleZ(1.5);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: scaleZ(1.5);
-   -moz-transform: scaleZ(1.5);
-   -opera-transform: scaleZ(1.5);
-   -ms-transform: scaleZ(1.5);
-   transform: scaleZ(1.5);
-  }
+    div {
+     .scaleZ(1.5);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scaleZ(1.5);
+     -moz-transform: scaleZ(1.5);
+     -opera-transform: scaleZ(1.5);
+     -ms-transform: scaleZ(1.5);
+     transform: scaleZ(1.5);
+    }
 
 ### <a name="selection"></a> &#8226; selection
 **Summary:**
@@ -2058,23 +2058,23 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
 
 **Syntax:**
 
-  .selection([<color>, <bg>, <element>, <shadow>]) 
+    .selection([<color>, <bg>, <element>, <shadow>]) 
   
 **Example:**
 
-  div {
-   .selection(#CA3636);
-  }
-  
-  // Result
-  div {
-   ::selection {
-     color: #CA3636;
-   }
-   ::-moz-selection {
-     color: #CA3636;
-   }
-  }
+    div {
+     .selection(#CA3636);
+    }
+    
+    // Result
+    div {
+     ::selection {
+       color: #CA3636;
+     }
+     ::-moz-selection {
+       color: #CA3636;
+     }
+    }
 
 ### <a name="sepia"></a> &#8226; sepia
 **Summary:**
@@ -2085,7 +2085,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia
 
 **Syntax:**
 
-  .sepia(<percentage>) 
+    .sepia(<percentage>) 
 
 **Tips and tricks:**
 
@@ -2093,16 +2093,16 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia
   
 **Example:**
 
-  div {
-   .sepia(50);
-  }
-  
-  // Result
-  div {
-   -webkit-filter: sepia(50%);
-   -moz-filter: sepia(50%);
-   filter: sepia(50%);
-  }
+    div {
+     .sepia(50);
+    }
+    
+    // Result
+    div {
+     -webkit-filter: sepia(50%);
+     -moz-filter: sepia(50%);
+     filter: sepia(50%);
+    }
 
 ### <a name="size"></a> &#8226; size
 **Summary:**
@@ -2111,7 +2111,7 @@ This is helper mixin for fast dimensions setup.
 
 **Syntax:**
 
-  .size(<width>, [<height>]) 
+    .size(<width>, [<height>]) 
 
 **Tips and tricks:**
 
@@ -2120,15 +2120,15 @@ This is helper mixin for fast dimensions setup.
   
 **Example:**
 
-  div {
-   .size(50);
-  }
-  
-  // Result
-  div {
-   width: 50px;
-   height: 50px;
-  }
+    div {
+     .size(50);
+    }
+    
+    // Result
+    div {
+     width: 50px;
+     height: 50px;
+    }
 
 ### <a name="skew"></a> &#8226; skew
 **Summary:**
@@ -2141,7 +2141,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
   
   Default value: 0
 
-  .skew(<ax>[, <ay>]) 
+    .skew(<ax>[, <ay>]) 
 
 **Tips and tricks:**
 
@@ -2149,18 +2149,18 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
   
 **Example:**
 
-  div {
-   .skew(20, 30);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: skew(20deg, 30deg);
-   -moz-transform: skew(20deg, 30deg);
-   -opera-transform: skew(20deg, 30deg);
-   -ms-transform: skew(20deg, 30deg);
-   transform: skew(20deg, 30deg);
-  }
+    div {
+     .skew(20, 30);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: skew(20deg, 30deg);
+     -moz-transform: skew(20deg, 30deg);
+     -opera-transform: skew(20deg, 30deg);
+     -ms-transform: skew(20deg, 30deg);
+     transform: skew(20deg, 30deg);
+    }
 
 ### <a name="skewX"></a> &#8226; skewX
 **Summary:**
@@ -2173,7 +2173,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
   
   Default value: 0
 
-  .skewX(<angle>) 
+    .skewX(<angle>) 
 
 **Tips and tricks:**
 
@@ -2181,18 +2181,18 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
   
 **Example:**
 
-  div {
-   .skewX(20);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: skewX(20deg);
-   -moz-transform: skewX(20deg);
-   -opera-transform: skewX(20deg);
-   -ms-transform: skewX(20deg);
-   transform: skewX(20deg);
-  }
+    div {
+     .skewX(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: skewX(20deg);
+     -moz-transform: skewX(20deg);
+     -opera-transform: skewX(20deg);
+     -ms-transform: skewX(20deg);
+     transform: skewX(20deg);
+    }
 
 ### <a name="skewY"></a> &#8226; skewY
 **Summary:**
@@ -2205,7 +2205,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
   
   Default value: 0
 
-  .skewY(<angle>) 
+    .skewY(<angle>) 
 
 **Tips and tricks:**
 
@@ -2213,18 +2213,18 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
   
 **Example:**
 
-  div {
-   .skewY(20);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: skewY(20deg);
-   -moz-transform: skewY(20deg);
-   -opera-transform: skewY(20deg);
-   -ms-transform: skewY(20deg);
-   transform: skewY(20deg);
-  }
+    div {
+     .skewY(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: skewY(20deg);
+     -moz-transform: skewY(20deg);
+     -opera-transform: skewY(20deg);
+     -ms-transform: skewY(20deg);
+     transform: skewY(20deg);
+    }
 
 ### <a name="transform"></a> &#8226; transform
 **Summary:**
@@ -2237,7 +2237,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: none
 
-  .transform(none | <transform-function>+) 
+    .transform(none | <transform-function>+) 
 
 **Tips and tricks:**
 
@@ -2250,18 +2250,18 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
 **Example:**
 
-  div {
-   .transform(scale(.5) translate(10, 20));
-  }
-  
-  // Result
-  div {
-   -webkit-transform: scale(.5) translate(10, 20);
-   -moz-transform: scale(.5) translate(10, 20);
-   -opera-transform: scale(.5) translate(10, 20);
-   -ms-transform: scale(.5) translate(10, 20);
-   transform: scale(.5) translate(10, 20);
-  }
+    div {
+     .transform(scale(.5) translate(10, 20));
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scale(.5) translate(10, 20);
+     -moz-transform: scale(.5) translate(10, 20);
+     -opera-transform: scale(.5) translate(10, 20);
+     -ms-transform: scale(.5) translate(10, 20);
+     transform: scale(.5) translate(10, 20);
+    }
 
 ### <a name="transform-origin"></a> &#8226; transform-origin
 **Summary:**
@@ -2274,7 +2274,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: 50% 50% 0
 
-  .transform-origin(<percentage> | <length> | <named-position>) 
+    .transform-origin(<percentage> | <length> | <named-position>) 
 
 **Tips and tricks:**
 
@@ -2282,18 +2282,18 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
 **Example:**
 
-  div {
-   .transform-origin(50 50);
-  }
-  
-  // Result
-  div {
-   -webkit-transform-origin: 50% 50%;
-   -moz-transform-origin: 50% 50%;
-   -opera-transform-origin: 50% 50%;
-   -ms-transform-origin: 50% 50%;
-   transform-origin: 50% 50%;
-  }
+    div {
+     .transform-origin(50 50);
+    }
+    
+    // Result
+    div {
+     -webkit-transform-origin: 50% 50%;
+     -moz-transform-origin: 50% 50%;
+     -opera-transform-origin: 50% 50%;
+     -ms-transform-origin: 50% 50%;
+     transform-origin: 50% 50%;
+    }
 
 ### <a name="transform-style"></a> &#8226; transform-style
 **Summary:**
@@ -2306,22 +2306,22 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: flat
 
-  .transform-style(flat | preserve-3d) 
+    .transform-style(flat | preserve-3d) 
   
 **Example:**
 
-  div {
-   .transform-style(preserve-3d);
-  }
-  
-  // Result
-  div {
-   -webkit-transform-style: preserve-3d;
-   -moz-transform-style: preserve-3d;
-   -opera-transform-style: preserve-3d;
-   -ms-transform-style: preserve-3d;
-   transform-style: preserve-3d;
-  }
+    div {
+     .transform-style(preserve-3d);
+    }
+    
+    // Result
+    div {
+     -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+     -opera-transform-style: preserve-3d;
+     -ms-transform-style: preserve-3d;
+     transform-style: preserve-3d;
+    }
 
 ### <a name="transition"></a> &#8226; transition
 **Summary:**
@@ -2334,7 +2334,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: all 0 ease 0
 
-  .transition([ none | <single-transition-property> ] | <time> | <timing-function> | <time>)
+    .transition([ none | <single-transition-property> ] | <time> | <timing-function> | <time>)
 
 **Tips and tricks:**
 
@@ -2350,17 +2350,17 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 **Example:**
 
-  div {
-   .transition(box-shadow 0.2s linear, color .4s .2s ease);
-  }
-  
-  // Result
-  div {
-   -webkit-transition: -webkit-box-shadow 0.2s linear, color 0.4s 0.2s ease;
-   -moz-transition: -moz-box-shadow 0.2s linear, color 0.4s 0.2s ease;
-   -o-transition: box-shadow 0.2s linear, color 0.4s 0.2s ease;
-   transition: box-shadow 0.2s linear, color 0.4s 0.2s ease;
-  }
+    div {
+     .transition(box-shadow 0.2s linear, color .4s .2s ease);
+    }
+    
+    // Result
+    div {
+     -webkit-transition: -webkit-box-shadow 0.2s linear, color 0.4s 0.2s ease;
+     -moz-transition: -moz-box-shadow 0.2s linear, color 0.4s 0.2s ease;
+     -o-transition: box-shadow 0.2s linear, color 0.4s 0.2s ease;
+     transition: box-shadow 0.2s linear, color 0.4s 0.2s ease;
+    }
 
 ### <a name="transition-delay"></a> &#8226; transition-delay
 **Summary:**
@@ -2373,7 +2373,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: 0
 
-  .transition-delay(<time>)
+    .transition-delay(<time>)
 
 **Tips and tricks:**
 
@@ -2387,17 +2387,17 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 **Example:**
 
-  div {
-   .transition-delay(200);
-  }
-  
-  // Result
-  div {
-   -webkit-transition-delay: 200ms;
-   -moz-transition-delay: 200ms;
-   -o-transition-delay: 200ms;
-   transition-delay: 200ms;
-  }
+    div {
+     .transition-delay(200);
+    }
+    
+    // Result
+    div {
+     -webkit-transition-delay: 200ms;
+     -moz-transition-delay: 200ms;
+     -o-transition-delay: 200ms;
+     transition-delay: 200ms;
+    }
 
 ### <a name="transition-duration"></a> &#8226; transition-duration
 **Summary:**
@@ -2410,7 +2410,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: 0
 
-  .transition-duration(<time>)
+    .transition-duration(<time>)
 
 **Tips and tricks:**
 
@@ -2424,17 +2424,17 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 **Example:**
 
-  div {
-   .transition-duration(6);
-  }
-  
-  // Result
-  div {
-   -webkit-transition-duration: 6s;
-   -moz-transition-duration: 6s;
-   -o-transition-duration: 6s;
-   transition-duration: 6s;
-  }
+    div {
+     .transition-duration(6);
+    }
+    
+    // Result
+    div {
+     -webkit-transition-duration: 6s;
+     -moz-transition-duration: 6s;
+     -o-transition-duration: 6s;
+     transition-duration: 6s;
+    }
 
 ### <a name="transition-property"></a> &#8226; transition-property
 **Summary:**
@@ -2447,7 +2447,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: all
 
-  .transition-property(<propertyname> | all | none)
+    .transition-property(<propertyname> | all | none)
 
 **Tips and tricks:**
 
@@ -2455,17 +2455,17 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 **Example:**
 
-  div {
-   .transition-property(box-shadow);
-  }
-  
-  // Result
-  div {
-   -webkit-transition-property: -webkit-box-shadow;
-   -moz-transition-property: -moz-box-shadow;
-   -o-transition-property: box-shadow;
-   transition-property: box-shadow;
-  }
+    div {
+     .transition-property(box-shadow);
+    }
+    
+    // Result
+    div {
+     -webkit-transition-property: -webkit-box-shadow;
+     -moz-transition-property: -moz-box-shadow;
+     -o-transition-property: box-shadow;
+     transition-property: box-shadow;
+    }
 
 ### <a name="transition-timing-function"></a> &#8226; transition-timing-function
 **Summary:**
@@ -2478,21 +2478,21 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
   
   Default value: ease
 
-  .transition-timing-function(<timing-function>, ...)
+    .transition-timing-function(<timing-function>, ...)
 
 **Example:**
 
-  div {
-   .transition-timing-function(cubic-bezier(0,0,1,1), ease);
-  }
-  
-  // Result
-  div {
-   -webkit-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
-   -moz-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
-   -o-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
-   transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
-  }
+    div {
+     .transition-timing-function(cubic-bezier(0,0,1,1), ease);
+    }
+    
+    // Result
+    div {
+     -webkit-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
+     -moz-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
+     -o-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
+     transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
+    }
 
 ### <a name="translate"></a> &#8226; translate
 **Summary:**
@@ -2505,7 +2505,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
   
   Default value: 0
 
-  .translate(<tx>[, <ty>])
+    .translate(<tx>[, <ty>])
 
 **Tips and tricks:**
 
@@ -2513,17 +2513,17 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
 
 **Example:**
 
-  div {
-   .translate(200);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: translate(200px);
-   -moz-transform: translate(200px);
-   -o-transform: translate(200px);
-   transform: translate(200px);
-  }
+    div {
+     .translate(200);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translate(200px);
+     -moz-transform: translate(200px);
+     -o-transform: translate(200px);
+     transform: translate(200px);
+    }
 
 ### <a name="translate3d"></a> &#8226; translate3d
 **Summary:**
@@ -2536,7 +2536,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-fu
   
   Default value: 0
 
-  .translate3d(<tx>, <ty>, <tz>)
+    .translate3d(<tx>, <ty>, <tz>)
 
 **Tips and tricks:**
 
@@ -2544,17 +2544,17 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-fu
 
 **Example:**
 
-  div {
-   .translate3d(20, 30, 10);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: translate3d(20px, 30px, 10px);
-   -moz-transform: translate3d(20px, 30px, 10px);
-   -o-transform: translate3d(20px, 30px, 10px);
-   transform: translate3d(20px, 30px, 10px);
-  }
+    div {
+     .translate3d(20, 30, 10);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translate3d(20px, 30px, 10px);
+     -moz-transform: translate3d(20px, 30px, 10px);
+     -o-transform: translate3d(20px, 30px, 10px);
+     transform: translate3d(20px, 30px, 10px);
+    }
 
 ### <a name="translateX"></a> &#8226; translateX
 **Summary:**
@@ -2567,7 +2567,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
   
   Default value: 0
 
-  .translateX(<tx>)
+    .translateX(<tx>)
 
 **Tips and tricks:**
 
@@ -2575,17 +2575,17 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
 
 **Example:**
 
-  div {
-   .translateX(20);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: translateX(20px);
-   -moz-transform: translateX(20px);
-   -o-transform: translateX(20px);
-   transform: translateX(20px);
-  }
+    div {
+     .translateX(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translateX(20px);
+     -moz-transform: translateX(20px);
+     -o-transform: translateX(20px);
+     transform: translateX(20px);
+    }
 
 ### <a name="translateY"></a> &#8226; translateY
 **Summary:**
@@ -2598,7 +2598,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
   
   Default value: 0
 
-  .translateY(<ty>)
+    .translateY(<ty>)
 
 **Tips and tricks:**
 
@@ -2606,17 +2606,17 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
 
 **Example:**
 
-  div {
-   .translateY(20);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: translateY(20px);
-   -moz-transform: translateY(20px);
-   -o-transform: translateY(20px);
-   transform: translateY(20px);
-  }
+    div {
+     .translateY(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translateY(20px);
+     -moz-transform: translateY(20px);
+     -o-transform: translateY(20px);
+     transform: translateY(20px);
+    }
 
 ### <a name="translateZ"></a> &#8226; translateZ
 **Summary:**
@@ -2629,7 +2629,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
   
   Default value: 0
 
-  .translateZ(<ty>)
+    .translateZ(<ty>)
 
 **Tips and tricks:**
 
@@ -2637,17 +2637,17 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
 
 **Example:**
 
-  div {
-   .translateZ(20);
-  }
-  
-  // Result
-  div {
-   -webkit-transform: translateZ(20px);
-   -moz-transform: translateZ(20px);
-   -o-transform: translateZ(20px);
-   transform: translateZ(20px);
-  }
+    div {
+     .translateZ(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translateZ(20px);
+     -moz-transform: translateZ(20px);
+     -o-transform: translateZ(20px);
+     transform: translateZ(20px);
+    }
 
 ### <a name="user-select"></a> &#8226; user-select
 **Summary:**
@@ -2660,18 +2660,18 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)
   
   Default value: auto
 
-  .user-select(none | text | all | element)
+    .user-select(none | text | all | element)
 
 **Example:**
 
-  div {
-   .user-select(none);
-  }
-  
-  // Result
-  div {
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   user-select: none;
-  }
+    div {
+     .user-select(none);
+    }
+    
+    // Result
+    div {
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+    }
