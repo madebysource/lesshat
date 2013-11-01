@@ -13,6 +13,10 @@
       "url": "www.jankuca.com"
     }
   ],
+  "keywords": [
+      "less",
+      "mixins"
+    ],
   "repository": {
     "type": "git",
     "url": "https://github.com/csshat/lesshat/"
