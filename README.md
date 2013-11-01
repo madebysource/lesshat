@@ -554,10 +554,10 @@ Default value: none
 
 **Tips and tricks:**
 
-The `background-image` mixin is the most robust mixin of all.   
-It generates `SVG` for Internet Explorer 9, old webkit, moz and opera syntax.
-Always use W3C syntax for mixin. It can recalculates angle for older syntax, transform `to top` to `bottom` syntax and it can omit SVG syntax if it is impossible to express SVG e.g. when you call mixin with 55deg.
-If you call mixin without arguments, LESS Hat does not generate anything.
+The `background-image` mixin is the most robust mixin of all.     
+It generates `SVG` for Internet Explorer 9, old webkit, moz and opera syntax.  
+Always use W3C syntax for mixin. It can recalculates angle for older syntax, transform `to top` to `bottom` syntax and it can omit SVG syntax if it is impossible to express SVG e.g. when you call mixin with 55deg.  
+If you call mixin without arguments, LESS Hat does not generate anything.  
 Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
 
   
