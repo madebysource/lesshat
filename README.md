@@ -135,7 +135,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-conten
 
 Default value: stretch
 
-  	.align-content(flex-start | flex-end | center | space-between | space-around | stretch)
+    .align-content(flex-start | flex-end | center | space-between | space-around | stretch)
 
 **Example:**
 
@@ -149,6 +149,7 @@ Default value: stretch
      -ms-flex-line-pack: start;
      align-content: flex-start;
     } 
+
 
 ### <a name="align-items"></a> &#8226; align-items
 **Summary:**
@@ -178,6 +179,7 @@ Default value: stretch
      align-items: flex-start;
     }
   
+
 ### <a name="align-self"></a> &#8226; align-self
 **Summary:**
 
@@ -203,6 +205,7 @@ Default value: auto
      -ms-align-self: start;
      align-self: flex-start;
     }
+
 
 ### <a name="animation"></a> &#8226; animation
 **Summary:**
@@ -230,6 +233,7 @@ Default value: none
      -opera-animation: nameAnimation 2s linear alternate;
      animation: nameAnimation 2s linear alternate;
     }
+
 
 ### <a name="animation-delay"></a> &#8226; animation-delay
 **Summary:**
@@ -268,6 +272,7 @@ If you omit units after time argument, `animation-delay` is trying to be smart a
      animation-delay: 2s, 200ms;
     }
 
+
 ### <a name="animation-direction"></a> &#8226; animation-direction
 **Summary:**
 
@@ -294,6 +299,7 @@ Default value: normal
      -opera-animation-direction: reverse, alternate;
      animation-direction: reverse, alternate;
     }
+
 
 ### <a name="animation-duration"></a> &#8226; animation-duration
 **Summary:**
@@ -332,6 +338,7 @@ If you omit units after time argument, `animation-duration` is trying to be smar
      animation-duration: 2000ms;
     }
   
+
 ### <a name="animation-fill-mode"></a> &#8226; animation-fill-mode
 **Summary:**
 
@@ -358,6 +365,7 @@ Default value: none
      -opera-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
     }
+
 
 ### <a name="animation-iteration-count"></a> &#8226; animation-iteration-count
 **Summary:**
@@ -386,6 +394,7 @@ Default value: 1
      animation-iteration-count: 3;
     } 
 
+
 ### <a name="animation-name"></a> &#8226; animation-name
 **Summary:**
 
@@ -412,6 +421,7 @@ Default value: none
      -opera-animation-name: animation-1, animation-2;
      animation-name: animation-1, animation-2;
     } 
+
 
 ### <a name="animation-play-state"></a> &#8226; animation-play-state
 **Summary:**
@@ -440,6 +450,7 @@ Default value: running
      animation-play-state: paused;
     } 
 
+
 ### <a name="animation-timing-function"></a> &#8226; animation-timing-function
 **Summary:**
 
@@ -467,6 +478,7 @@ Default value: ease
      animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
     } 
 
+
 ### <a name="appearance"></a> &#8226; appearance
 **Summary:**
 
@@ -492,6 +504,7 @@ Default value: none
      -moz-appearance: none;
      appearance: none;
     } 
+
 
 ### <a name="backface-visibility"></a> &#8226; backface-visibility
 **Summary:**
@@ -521,6 +534,7 @@ Default value: none
      backface-visibility: none;
     } 
 
+
 ### <a name="background-clip"></a> &#8226; background-clip
 **Summary:**
 
@@ -546,6 +560,7 @@ Default value: border-box
      -moz-background-clip: padding-box;
      background-clip: padding-box;
     } 
+
 
 ### <a name="background-image"></a> &#8226; background-image
 **Summary:**
@@ -584,6 +599,7 @@ Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
      background-image: linear-gradient(to bottom, #fb83fa 0%, #e93cec 100%);
     }
 
+
 ### <a name="background-origin"></a> &#8226; background-origin
 **Summary:**
 
@@ -609,6 +625,7 @@ Default value: padding-box
        -moz-background-origin: content-box;
        background-origin: content-box;
       } 
+
 
 ### <a name="background-size"></a> &#8226; background-size
 **Summary:**
@@ -640,6 +657,7 @@ If you omit units, `background-size` adds `px` automatically.
      background-size: cover, 100%;
     } 
 
+
 ### <a name="blur"></a> &#8226; blur (shorthand for filter property)
 **Summary:**
 
@@ -670,6 +688,7 @@ If you omit units, `blur` adds `px` automatically.
      -ms-filter: blur(5px);
      filter: blur(5px);
     } 
+
 
 ### <a name="border-bottom-left-radius"></a> &#8226; border-bottom-left-radius
 **Summary:**
@@ -703,6 +722,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
      border-bottom-left-radius: 10px;
     }   
 
+
 ### <a name="border-bottom-right-radius"></a> &#8226; border-bottom-right-radius
 **Summary:**
 
@@ -734,6 +754,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
        -moz-border-radius-bottomright: 10px;
        border-bottom-right-radius: 10px;
       }   
+
 
 ### <a name="border-image"></a> &#8226; border-image
 **Summary:**
@@ -767,6 +788,7 @@ Default value: based on individual properties
      border-image: url(border.png) 61 45 62 54 repeat;
     } 
 
+
 ### <a name="border-radius"></a> &#8226; border-radius
 **Summary:**
 
@@ -798,6 +820,7 @@ Default value: 0
      -moz-border-radius: 5px;
      border-radius: 5px;
     } 
+
 
 ### <a name="border-top-left-radius"></a> &#8226; border-top-left-radius
 **Summary:**
@@ -831,6 +854,7 @@ Default value: 0
      border-top-left-radius: 5px;
     } 
 
+
 ### <a name="border-top-right-radius"></a> &#8226; border-top-right-radius
 **Summary:**
 
@@ -863,6 +887,7 @@ Default value: 0
      border-top-right-radius: 5px;
     } 
 
+
 ### <a name="box-shadow"></a> &#8226; box-shadow
 **Summary:**
 
@@ -893,6 +918,7 @@ Default value: none
      box-shadow: 0 1px 10px rgba(20,20,20,0.5);
     } 
 
+
 ### <a name="box-sizing"></a> &#8226; box-sizing
 **Summary:**
 
@@ -918,6 +944,7 @@ Default value: content-box
      -moz-box-sizing: padding-box;
      box-sizing: padding-box;
     }
+
 
 ### <a name="brightness"></a> &#8226; brightness (shorthand for filter property)
 **Summary:**
@@ -946,6 +973,7 @@ Default value: 0
      filter: brightness(0.5);
     } 
 
+
 ### <a name="column-count"></a> &#8226; column-count
 **Summary:**
 
@@ -971,6 +999,7 @@ Default value: auto
      -moz-column-count: 0.5;
      column-count: 0.5;
     }   
+
 
 ### <a name="column-gap"></a> &#8226; column-gap
 **Summary:**
@@ -1002,6 +1031,7 @@ Default value: normal
      column-gap: 30px;
     }   
 
+
 ### <a name="column-rule"></a> &#8226; column-rule
 **Summary:**
 
@@ -1031,6 +1061,7 @@ Default value: medium none black
      -moz-column-rule: 5px outset #ff00ff;
      column-rule: 5px outset #ff00ff;
     } 
+
 
 ### <a name="column-width"></a> &#8226; column-width
 **Summary:**
@@ -1062,6 +1093,7 @@ Default value: auto
      column-width: 100px;
     }  
 
+
 ### <a name="columns"></a> &#8226; columns
 **Summary:**
 
@@ -1091,6 +1123,7 @@ Default value: auto
      -moz-columns: 100px 3;
      columns: 100px 3;
     } 
+
 
 ### <a name="contrast"></a> &#8226; contrast
 **Summary:**
@@ -1123,6 +1156,7 @@ Default value: 100%
      filter: contrast(200%);
     } 
 
+
 ### <a name="display"></a> &#8226; display
 **Summary:**
 
@@ -1147,6 +1181,7 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/a-guide-to-flexbox/
      display: -webkit-flex;
      display: -moz-box;
     } 
+
 
 ### <a name="drop-shadow"></a> &#8226; drop-shadow
 **Summary:**
@@ -1177,6 +1212,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-
      filter: drop-shadow(16px 16px 10px #000000);
     } 
 
+
 ### <a name="filter"></a> &#8226; filter
 **Summary:**
 
@@ -1203,6 +1239,7 @@ Default value: none
      -ms-filter: grayscale(0.5) blur(10px);
      filter: grayscale(0.5) blur(10px);
     }
+
 
 ### <a name="flex"></a> &#8226; flex
 **Summary:**
@@ -1232,6 +1269,7 @@ Default value: 0 1 auto
      flex: 1 3 100px;
     }
 
+
 ### <a name="flex-basis"></a> &#8226; flex-basis
 **Summary:**
 
@@ -1260,6 +1298,7 @@ Default value: auto
      -webkit-flex-basis: 100;
      flex-basis: 100px;
     }
+
 
 ### <a name="flex-direction"></a> &#8226; flex-direction
 **Summary:**
@@ -1291,6 +1330,7 @@ Default value: row
      flex-direction: row;
     }
 
+
 ### <a name="flex-grow"></a> &#8226; flex-grow
 **Summary:**
 
@@ -1316,6 +1356,7 @@ Default value: 0
      flex-grow: 2;
     }
 
+
 ### <a name="flex-shrink"></a> &#8226; flex-shrink
 **Summary:**
 
@@ -1340,6 +1381,7 @@ Default value: 1
      -webkit-flex-shrink: 2;
      flex-shrink: 2;
     }
+
 
 ### <a name="flex-wrap"></a> &#8226; flex-wrap
 **Summary:**
@@ -1367,6 +1409,7 @@ Default value: nowrap
      flex-wrap: 2;
     }
 
+
 ### <a name="font-face"></a> &#8226; font-face
 **Summary:**
 
@@ -1392,6 +1435,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)*
      font-weight: bold;
      font-style: italic;
     }
+
 
 ### <a name="grayscale"></a> &#8226; grayscale
 **Summary:**
@@ -1424,6 +1468,7 @@ Default value: 0
      filter: grayscale(50%);
     }
 
+
 ### <a name="hue-rotate"></a> &#8226; hue-rotate
 **Summary:**
 
@@ -1454,6 +1499,7 @@ Default value: 0
      -ms-filter: hue-rotate(50deg);
      filter: hue-rotate(50deg);
     }
+
 
 ### <a name="invert"></a> &#8226; invert
 **Summary:**
@@ -1486,6 +1532,7 @@ Default value: 0
      filter: invert(100%);
     }
 
+
 ### <a name="justify-content"></a> &#8226; justify-content
 **Summary:**
 
@@ -1513,6 +1560,7 @@ Default value: flex-start
      -ms-flex-pack: flex-start;
      justify-content: flex-start;
     }
+
 
 ### <a name="keyframes"></a> &#8226; keyframes
 **Summary:**
@@ -1570,6 +1618,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
      } 
     }
 
+
 ### <a name="opacity"></a> &#8226; opacity
 **Summary:**
 
@@ -1604,6 +1653,7 @@ Default value: 1
      opacity: flex-start;
     }
 
+
 ### <a name="order"></a> &#8226; order
 **Summary:**
 
@@ -1631,6 +1681,7 @@ Default value: 0
      -webkit-order: 1;
      order: 1;
     }
+
 
 ### <a name="perspective"></a> &#8226; perspective
 **Summary:**
@@ -1662,6 +1713,7 @@ Default value: none
      perspective: 1000px;
     }
 
+
 ### <a name="perspective-origin"></a> &#8226; perspective-origin
 **Summary:**
 
@@ -1691,6 +1743,7 @@ Default value: 50% 50%
      -webkit-perspective-origin: top left;
      perspective-origin: top left;
     }
+
 
 ### <a name="placeholder"></a> &#8226; placeholder
 **Summary:**
@@ -1726,133 +1779,6 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/style-placeholder-t
      }
     }
 
-### <a name="rotate"></a> &#8226; rotate
-**Summary:**
-
-Rotates the element clockwise around its origin by the specified angle. 
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotate)**
-
-**Syntax:**
-
-Default value: 0
-
-    .rotate(<angle>)
-
-**Tips and tricks:**
-
-  If you omit units, `rotate` adds `deg` automatically.  
-  
-**Example:**
-
-    div {
-     .rotate(45);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: rotate(45deg);
-     -moz-transform: rotate(45deg);
-     -opera-transform: rotate(45deg);
-     -ms-transform: rotate(45deg);
-     transform: rotate(45deg);
-    }
-
-### <a name="rotate3d"></a> &#8226; rotate3d
-**Summary:**
-
-The rotate3d()CSS function defines a transformation that moves the element around a fixed axe without deforming it.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#rotate3d())**
-
-**Syntax:**
-
-Default value: 0, 0, 0, 0
-
-    .rotate3d(<number>, <number>, <number>, <angle>)
-
-**Tips and tricks:**
-
-  If you omit angle unit, `rotate3d` adds `deg` automatically.  
-  
-**Example:**
-
-    div {
-     .rotate3d(1, 0, 0, 50);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: rotate3d(1, 0, 0, 50deg);
-     -moz-transform: rotate3d(1, 0, 0, 50deg);
-     -opera-transform: rotate3d(1, 0, 0, 50deg);
-     -ms-transform: rotate3d(1, 0, 0, 50deg);
-     transform: rotate3d(1, 0, 0, 50deg);
-    }
-
-### <a name="rotateX"></a> &#8226; rotateX
-**Summary:**
-
-The rotateX() CSS function defines a transformation that moves the element around the abscissa without deforming it.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotateX)**
-
-**Syntax:**
-
-Default value: 0
-
-    .rotateX(<angle>)
-
-**Tips and tricks:**
-
-  If you omit units, `rotateX` adds `deg` automatically.  
-  
-**Example:**
-
-    div {
-     .rotateX(45);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: rotateX(45deg);
-     -moz-transform: rotateX(45deg);
-     -opera-transform: rotateX(45deg);
-     -ms-transform: rotateX(45deg);
-     transform: rotateX(45deg);
-    }
-
-### <a name="rotateY"></a> &#8226; rotateY
-**Summary:**
-
-The rotateY() CSS function defines a transformation that moves the element around the ordinate without deforming it.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotateY)**
-
-**Syntax:**
-
-Default value: 0
-
-    .rotateY(<angle>)
-
-**Tips and tricks:**
-
-  If you omit units, `rotateY` adds `deg` automatically.  
-  
-**Example:**
-
-    div {
-     .rotateY(45);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: rotateY(45deg);
-     -moz-transform: rotateY(45deg);
-     -opera-transform: rotateY(45deg);
-     -ms-transform: rotateY(45deg);
-     transform: rotateY(45deg);
-    }
 
 ### <a name="rotateZ"></a> &#8226; rotateZ
 **Summary:**
@@ -1886,7 +1812,41 @@ Default value: 0
      transform: rotateZ(45deg);
     }
 
-  ### <a name="saturate"></a> &#8226; saturate
+  
+### <a name="rotate3d"></a> &#8226; rotate3d
+**Summary:**
+
+The rotate3d()CSS function defines a transformation that moves the element around a fixed axe without deforming it.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#rotate3d())**
+
+**Syntax:**
+
+Default value: 0, 0, 0, 0
+
+    .rotate3d(<number>, <number>, <number>, <angle>)
+
+**Tips and tricks:**
+
+  If you omit angle unit, `rotate3d` adds `deg` automatically.  
+  
+**Example:**
+
+    div {
+     .rotate3d(1, 0, 0, 50);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotate3d(1, 0, 0, 50deg);
+     -moz-transform: rotate3d(1, 0, 0, 50deg);
+     -opera-transform: rotate3d(1, 0, 0, 50deg);
+     -ms-transform: rotate3d(1, 0, 0, 50deg);
+     transform: rotate3d(1, 0, 0, 50deg);
+    }
+
+
+### <a name="saturate"></a> &#8226; saturate
   **Summary:**
 
   Saturates the input image. The value of ‘amount’ defines the proportion of the conversion.
@@ -1917,117 +1877,6 @@ Default value: 0
      filter: saturate(45deg);
     }
 
-### <a name="scale"></a> &#8226; scale
-**Summary:**
-
-Specifies a 2D scaling operation described by [sx, sy]. If sy isn't specified, it is assumed to be equal to sx.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#scale)**
-
-**Syntax:**
-
-Default value: 1
-
-    .scale(<sx>[, <sy>]) 
-  
-**Example:**
-
-    div {
-     .scale(2);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: scale(2);
-     -moz-transform: scale(2);
-     -opera-transform: scale(2);
-     -ms-transform: scale(2);
-     transform: scale(2);
-    }
-
-### <a name="scale3d"></a> &#8226; scale3d
-**Summary:**
-
-The scale3d() CSS function modifies the size of an element. Because the amount of scaling is defined by a vector, it can resize different dimensions at different scales.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scale3d())**
-
-**Syntax:**
-
-Default value: 1, 1, 1
-
-    .scale3d(<sx>, <sy>, <sz>) 
-  
-**Example:**
-
-    div {
-     .scale3d(1.5, .2, 3);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: scale3d(1.5, 0.2, 3);
-     -moz-transform: scale3d(1.5, 0.2, 3);
-     -opera-transform: scale3d(1.5, 0.2, 3);
-     -ms-transform: scale3d(1.5, 0.2, 3);
-     transform: scale3d(1.5, 0.2, 3);
-    }
-
-### <a name="scaleX"></a> &#8226; scaleX
-**Summary:**
-
-Specifies a scale operation using the vector [sx, 1].
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#scaleX)**
-
-**Syntax:**
-
-Default value: 1
-
-    .scaleX(<sx>) 
-  
-**Example:**
-
-    div {
-     .scaleX(1.5);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: scaleX(1.5);
-     -moz-transform: scaleX(1.5);
-     -opera-transform: scaleX(1.5);
-     -ms-transform: scaleX(1.5);
-     transform: scaleX(1.5);
-    }
-
-### <a name="scaleY"></a> &#8226; scaleY
-**Summary:**
-
-Specifies a scale operation using the vector [1, sy].
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#scaleY)**
-
-**Syntax:**
-
-Default value: 1
-
-    .scaleY(<sy>) 
-  
-**Example:**
-
-    div {
-     .scaleY(1.5);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: scaleY(1.5);
-     -moz-transform: scaleY(1.5);
-     -opera-transform: scaleY(1.5);
-     -ms-transform: scaleY(1.5);
-     transform: scaleY(1.5);
-    }
 
 ### <a name="scaleZ"></a> &#8226; scaleZ
 **Summary:**
@@ -2057,6 +1906,36 @@ Default value: 1
      transform: scaleZ(1.5);
     }
 
+
+### <a name="scale3d"></a> &#8226; scale3d
+**Summary:**
+
+The scale3d() CSS function modifies the size of an element. Because the amount of scaling is defined by a vector, it can resize different dimensions at different scales.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scale3d())**
+
+**Syntax:**
+
+Default value: 1, 1, 1
+
+    .scale3d(<sx>, <sy>, <sz>) 
+  
+**Example:**
+
+    div {
+     .scale3d(1.5, .2, 3);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scale3d(1.5, 0.2, 3);
+     -moz-transform: scale3d(1.5, 0.2, 3);
+     -opera-transform: scale3d(1.5, 0.2, 3);
+     -ms-transform: scale3d(1.5, 0.2, 3);
+     transform: scale3d(1.5, 0.2, 3);
+    }
+
+
 ### <a name="selection"></a> &#8226; selection
 **Summary:**
 
@@ -2083,6 +1962,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
        color: #CA3636;
      }
     }
+
 
 ### <a name="sepia"></a> &#8226; sepia
 **Summary:**
@@ -2112,6 +1992,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia
      filter: sepia(50%);
     }
 
+
 ### <a name="size"></a> &#8226; size
 **Summary:**
 
@@ -2138,69 +2019,6 @@ This is helper mixin for fast dimensions setup.
      height: 50px;
     }
 
-### <a name="skew"></a> &#8226; skew
-**Summary:**
-
-Skews the element along the X and Y axes by the specified angles. If ay isn't provided, no skew is performed on the Y axis.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#skew)**
-
-**Syntax:**
-  
-  Default value: 0
-
-    .skew(<ax>[, <ay>]) 
-
-**Tips and tricks:**
-
-  If you omit units, `skew` adds `%` automatically. 
-  
-**Example:**
-
-    div {
-     .skew(20, 30);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: skew(20deg, 30deg);
-     -moz-transform: skew(20deg, 30deg);
-     -opera-transform: skew(20deg, 30deg);
-     -ms-transform: skew(20deg, 30deg);
-     transform: skew(20deg, 30deg);
-    }
-
-### <a name="skewX"></a> &#8226; skewX
-**Summary:**
-
-Skews the element along the X axis by the given angle.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#skewX)**
-
-**Syntax:**
-  
-  Default value: 0
-
-    .skewX(<angle>) 
-
-**Tips and tricks:**
-
-  If you omit units, `skewX` adds `%` automatically. 
-  
-**Example:**
-
-    div {
-     .skewX(20);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: skewX(20deg);
-     -moz-transform: skewX(20deg);
-     -opera-transform: skewX(20deg);
-     -ms-transform: skewX(20deg);
-     transform: skewX(20deg);
-    }
 
 ### <a name="skewY"></a> &#8226; skewY
 **Summary:**
@@ -2233,6 +2051,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
      -ms-transform: skewY(20deg);
      transform: skewY(20deg);
     }
+
 
 ### <a name="transform"></a> &#8226; transform
 **Summary:**
@@ -2271,6 +2090,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      transform: scale(.5) translate(10, 20);
     }
 
+
 ### <a name="transform-origin"></a> &#8226; transform-origin
 **Summary:**
 
@@ -2303,6 +2123,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      transform-origin: 50% 50%;
     }
 
+
 ### <a name="transform-style"></a> &#8226; transform-style
 **Summary:**
 
@@ -2330,6 +2151,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      -ms-transform-style: preserve-3d;
      transform-style: preserve-3d;
     }
+
 
 ### <a name="transition"></a> &#8226; transition
 **Summary:**
@@ -2370,6 +2192,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      transition: box-shadow 0.2s linear, color 0.4s 0.2s ease;
     }
 
+
 ### <a name="transition-delay"></a> &#8226; transition-delay
 **Summary:**
 
@@ -2406,6 +2229,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      -o-transition-delay: 200ms;
      transition-delay: 200ms;
     }
+
 
 ### <a name="transition-duration"></a> &#8226; transition-duration
 **Summary:**
@@ -2444,6 +2268,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      transition-duration: 6s;
     }
 
+
 ### <a name="transition-property"></a> &#8226; transition-property
 **Summary:**
 
@@ -2475,6 +2300,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      transition-property: box-shadow;
     }
 
+
 ### <a name="transition-timing-function"></a> &#8226; transition-timing-function
 **Summary:**
 
@@ -2502,36 +2328,38 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
     }
 
-### <a name="translate"></a> &#8226; translate
+
+### <a name="translateZ"></a> &#8226; translateZ
 **Summary:**
 
-Specifies a 2D translation by the vector [tx, ty]. If ty isn't specified, its value is assumed to be zero.
+Translates the element by the given amount along the Z axis.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translate)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translateZ)**
 
 **Syntax:**
   
   Default value: 0
 
-    .translate(<tx>[, <ty>])
+    .translateZ(<ty>)
 
 **Tips and tricks:**
 
-  If you omit units, `translate` adds `px` automatically.
+  If you omit units, `translateZ` adds `px` automatically.
 
 **Example:**
 
     div {
-     .translate(200);
+     .translateZ(20);
     }
     
     // Result
     div {
-     -webkit-transform: translate(200px);
-     -moz-transform: translate(200px);
-     -o-transform: translate(200px);
-     transform: translate(200px);
+     -webkit-transform: translateZ(20px);
+     -moz-transform: translateZ(20px);
+     -o-transform: translateZ(20px);
+     transform: translateZ(20px);
     }
+
 
 ### <a name="translate3d"></a> &#8226; translate3d
 **Summary:**
@@ -2564,98 +2392,6 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-fu
      transform: translate3d(20px, 30px, 10px);
     }
 
-### <a name="translateX"></a> &#8226; translateX
-**Summary:**
-
-Translates the element by the given amount along the X axis.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translateX)**
-
-**Syntax:**
-  
-  Default value: 0
-
-    .translateX(<tx>)
-
-**Tips and tricks:**
-
-  If you omit units, `translateX` adds `px` automatically.
-
-**Example:**
-
-    div {
-     .translateX(20);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: translateX(20px);
-     -moz-transform: translateX(20px);
-     -o-transform: translateX(20px);
-     transform: translateX(20px);
-    }
-
-### <a name="translateY"></a> &#8226; translateY
-**Summary:**
-
-Translates the element by the given amount along the Y axis.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translateY)**
-
-**Syntax:**
-  
-  Default value: 0
-
-    .translateY(<ty>)
-
-**Tips and tricks:**
-
-  If you omit units, `translateY` adds `px` automatically.
-
-**Example:**
-
-    div {
-     .translateY(20);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: translateY(20px);
-     -moz-transform: translateY(20px);
-     -o-transform: translateY(20px);
-     transform: translateY(20px);
-    }
-
-### <a name="translateZ"></a> &#8226; translateZ
-**Summary:**
-
-Translates the element by the given amount along the Z axis.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translateZ)**
-
-**Syntax:**
-  
-  Default value: 0
-
-    .translateZ(<ty>)
-
-**Tips and tricks:**
-
-  If you omit units, `translateZ` adds `px` automatically.
-
-**Example:**
-
-    div {
-     .translateZ(20);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: translateZ(20px);
-     -moz-transform: translateZ(20px);
-     -o-transform: translateZ(20px);
-     transform: translateZ(20px);
-    }
 
 ### <a name="user-select"></a> &#8226; user-select
 **Summary:**

@@ -4,6 +4,9 @@
 
 var backgroundImage = function backgroundImage(value) {
   value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var values = {
     top: 'to bottom',
     right: 'to left',
@@ -24,6 +27,9 @@ var backgroundImage = function backgroundImage(value) {
 
 backgroundImage.webkit = function backgroundImageWebkit(value) {
   value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var values = {
     'to bottom': 'top',
     'to left': 'right',
@@ -62,6 +68,9 @@ backgroundImage.webkit = function backgroundImageWebkit(value) {
 
 backgroundImage.moz = function backgroundImageMoz(value) {
   value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var values = {
     'to bottom': 'top',
     'to left': 'right',
@@ -100,6 +109,9 @@ backgroundImage.moz = function backgroundImageMoz(value) {
 
 backgroundImage.opera = function backgroundImageOpera(value) {
   value = value || 08121991;
+  if (value == 08121991) {
+    return value;
+  }
   var values = {
     'to bottom': 'top',
     'to left': 'right',

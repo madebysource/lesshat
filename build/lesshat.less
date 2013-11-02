@@ -1,10 +1,97 @@
-// nyan * =========================================================== * nyan
-// ian <                            LESSHat                            > ian
-// nyan * =========================================================== * nyan
+//  * =========================================================== * 
+//  <                            LESSHat                          > 
+//  * =========================================================== * 
 //
 // Made with Energy drinks in Prague, Czech Republic.
-// Handcrafted by Petr Brzek, madebysource.com
-// Add discount code TODO
+// Handcrafted by Petr Brzek, lesshat.com
+// Works great with CSS Hat csshat.com
+
+// TABLE OF MIXINS:
+	// align-content
+	// align-items
+	// align-self
+	// animation
+	// animation-delay
+	// animation-direction
+	// animation-duration
+	// animation-fill-mode
+	// animation-iteration-count
+	// animation-name
+	// animation-play-state
+	// animation-timing-function
+	// appearance
+	// backface-visibility
+	// background-clip
+	// background-image
+	// background-origin
+	// background-size
+	// blur
+	// border-bottom-left-radius
+	// border-bottom-right-radius
+	// border-image
+	// border-radius
+	// border-top-left-radius
+	// border-top-right-radius
+	// box-shadow
+	// box-sizing
+	// brightness
+	// column-count
+	// column-gap
+	// column-rule
+	// column-width
+	// columns
+	// contrast
+	// display
+	// drop-shadow
+	// filter
+	// flex
+	// flex-basis
+	// flex-direction
+	// flex-grow
+	// flex-shrink
+	// flex-wrap
+	// font-face
+	// grayscale
+	// hue-rotate
+	// invert
+	// justify-content
+	// keyframes
+	// opacity
+	// order
+	// perspective
+	// perspective-origin
+	// placeholder
+	// rotate
+	// rotate3d
+	// rotateX
+	// rotateY
+	// rotateZ
+	// saturate
+	// scale
+	// scale3d
+	// scaleX
+	// scaleY
+	// scaleZ
+	// selection
+	// sepia
+	// size
+	// skew
+	// skewX
+	// skewY
+	// transform
+	// transform-origin
+	// transform-style
+	// transition
+	// transition-delay
+	// transition-duration
+	// transition-property
+	// transition-timing-function
+	// translate
+	// translate3d
+	// translateX
+	// translateY
+	// translateZ
+	// user-select
 
 // Config supported browsers for your project
 @webkit: true;
@@ -453,10 +540,10 @@
   @w3c_local: true;
 
   @process_ms: ~`(function(value){function base64_encode(data){var o1,o2,o3,h1,h2,h3,h4,bits,b64="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",i=0,ac=0,enc="",tmp_arr=[];if(!data)return data;do o1=data.charCodeAt(i++),o2=data.charCodeAt(i++),o3=data.charCodeAt(i++),bits=o1<<16|o2<<8|o3,h1=63&bits>>18,h2=63&bits>>12,h3=63&bits>>6,h4=63&bits,tmp_arr[ac++]=b64.charAt(h1)+b64.charAt(h2)+b64.charAt(h3)+b64.charAt(h4);while(i<data.length);enc=tmp_arr.join("");var r=data.length%3;return(r?enc.slice(0,r-3):enc)+"===".slice(r||3)}if(value=value||8121991,8121991==value)return value;var gradients=/linear|radial/g.test(value)&&value.split(/,(?=\s*(?:linear|radial))/g),svg_gradients=[],values={"to bottom":'x1="0%" y1="0%" x2="0%" y2="100%"',"to left":'x1="100%" y1="0%" x2="0%" y2="0%"',"to top":'x1="0%" y1="100%" x2="0%" y2="0%"',"to right":'x1="0%" y1="0%" x2="100%" y2="0%"',get"top"(){return this["to bottom"]},get"180deg"(){return this["to bottom"]},get"right"(){return this["to left"]},get"270deg"(){return this["to left"]},get"bottom"(){return this["to top"]},get"0deg"(){return this["to top"]},get"left"(){return this["to right"]},get"90deg"(){return this["to right"]},"-45deg":'x1="0%" y1="0%" x2="100%" y2="100%"',"45deg":'x1="0%" y1="100%" x2="100%" y2="0%"',"ellipse at center":'cx="50%" cy="50%" r="75%"'},svg={uri_data:"url(data:image/svg+xml;base64,",xml:'<?xml version="1.0" ?>',svg_start:'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">',linear_gradient_start:'<linearGradient id="lesshat-generated" gradientUnits="userSpaceOnUse"',radial_gradient_start:'<radialGradient id="lesshat-generated" gradientUnits="userSpaceOnUse"',linear_gradient_end:"</linearGradient>",radial_gradient_end:"</radialGradient>",rect_linear:'<rect x="0" y="0" width="1" height="1" fill="url(#lesshat-generated)" />',rect_radial:'<rect x="-50" y="-50" width="101" height="101" fill="url(#lesshat-generated)" />',svg_end:"</svg>"};if(gradients.length){gradients.forEach(function(value){var obj={};Object.keys(values).some(function(inner_val){return value.indexOf(inner_val)>=0?(obj.svg_direction=values[inner_val],!0):(obj.svg_direction=!1,void 0)}),/linear/.test(value)?obj.svg_type="linear":/radial/.test(value)&&(obj.svg_type="radial");var colors_count=value.match(/rgb|#[a-zA-Z0-9]|hsl/g).length;if(obj.svg_stops=[],value.match(/#[a-zA-Z0-9]/g)&&value.match(/#[a-zA-Z0-9]/g).length==colors_count)if(value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g)&&value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g).length==colors_count)value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g).forEach(function(inner_val){inner_val=inner_val.split(" "),obj.svg_stops.push('<stop offset="'+inner_val[1]+'" stop-color="'+inner_val[0]+'" stop-opacity="1"/>')});else{var shares=Math.floor(100/(value.match(/#[a-zA-Z0-9]/g).length-1));value.match(/#[a-zA-Z0-9]+/g).forEach(function(inner_val,index){obj.svg_stops.push('<stop offset="'+shares*index+'%" stop-color="'+inner_val+'" stop-opacity="1"/>')})}if(value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g)&&value.match(/(?:rgb|rgba)?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).length==colors_count)if(value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g)&&value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g).length==colors_count)value.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+(\d+%)+/g,function(match,sub,sub_2,sub_3){obj.svg_stops.push('<stop offset="'+sub_3+'" stop-color="rgb('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')});else{var shares=Math.floor(100/(value.match(/(rgb|rgba)\(/g).length-1));value.match(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).forEach(function(element,index){element.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g,function(match,sub,sub_2){obj.svg_stops.push('<stop offset="'+shares*index+'%" stop-color="rgb('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')})})}if(value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g)&&value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).length==colors_count)if(value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g)&&value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g).length==colors_count)value.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g,function(match,sub,sub_2,sub_3){obj.svg_stops.push('<stop offset="'+sub_3+'" stop-color="hsl('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')});else{var shares=Math.floor(100/(value.match(/(hsl|hsla)\(/g).length-1));value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).forEach(function(element,index){element.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g,function(match,sub,sub_2){obj.svg_stops.push('<stop offset="'+shares*index+'%" stop-color="hsl('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')})})}svg_gradients.push(obj)});var syntax=[],passed=svg_gradients.every(function(element){for(var i in element)if(0==element[i]||0==element[i].length)return!1;return!0});if(!passed)return 8121991;svg_gradients.forEach(function(element,index){syntax[index]=svg.xml+svg.svg_start,"linear"==element.svg_type?(syntax[index]+=svg.linear_gradient_start+" "+element.svg_direction+">",element.svg_stops.forEach(function(value){syntax[index]+=value}),syntax[index]+=svg.linear_gradient_end,syntax[index]+=svg.rect_linear,syntax[index]+=svg.svg_end):"radial"==element.svg_type&&(syntax[index]+=svg.radial_gradient_start+" "+element.svg_direction+">",element.svg_stops.forEach(function(value){syntax[index]+=value}),syntax[index]+=svg.radial_gradient_end,syntax[index]+=svg.rect_radial,syntax[index]+=svg.svg_end)}),syntax.forEach(function(element,index){syntax[index]=svg.uri_data+base64_encode(element)+")"}),value=syntax.join(",")}return value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_webkit: ~`(function(value){value=value||8121991;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-webkit-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_moz: ~`(function(value){value=value||8121991;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-moz-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_opera: ~`(function(value){value=value||8121991;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-o-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process: ~`(function(value){value=value||8121991;var values={top:"to bottom",right:"to left",bottom:"to top",left:"to right"},values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0&&!new RegExp("to\\s+"+el,"g").test(value)?(value=value.replace(new RegExp(el),values[el]),!0):void 0}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_webkit: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-webkit-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-moz-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_opera: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-o-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={top:"to bottom",right:"to left",bottom:"to top",left:"to right"},values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0&&!new RegExp("to\\s+"+el,"g").test(value)?(value=value.replace(new RegExp(el),values[el]),!0):void 0}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and not (@process_ms = 08121991) { background-image: @process_ms; }

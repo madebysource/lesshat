@@ -1,11 +1,5 @@
 module.exports = function(grunt) {
   /**
-   * Load node modules
-   */
-  var fs = require('fs');
-  var path_global = require('path');
-
-  /**
    * Load tasks
    */
   grunt.loadNpmTasks('lesshat-devstack');
