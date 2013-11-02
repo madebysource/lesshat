@@ -1,3 +1,9 @@
+<!---
+If you want to edit README file, please do it in README-template.md.
+README.md file is automatically generated.
+{{ documentation }} syntax is replaced by all mixins documentation from mixins folder
+-->
+
 # LESS Hat 2.0 ![travis](https://travis-ci.org/PetrBrzek/LESSHat.png)
 ### Yeah, is finaly here! Unbelievable.
 
