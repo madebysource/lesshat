@@ -1,7 +1,7 @@
 ### <a name="background-image"></a> &#8226; background-image
 **Summary:**
 
-With background-image you can create prefixed linear or radial gradients. The CSS (linear|radial)-gradient() function creates an <image> which represents a linear|radial gradient of colors. The result of this function is an object of the CSS <gradient> data type.Like any other gradient, a CSS linear gradient is not a CSS <color> but an image with no intrinsic dimensions; that is, it has neither natural or preferred size, nor ratio. Its concrete size will match the one of the element it applies to.
+With the background-image you can create prefixed linear or radial gradients. The CSS (linear|radial)-gradient() function creates an `<image>` which represents a linear|radial gradient of colors. The result of this function is an object of the CSS `<gradient>` data type. Like any other gradient, a CSS linear gradient is not a CSS `<color>` but an image with no intrinsic dimensions; that is, it has neither natural or preferred size, nor ratio. Its concrete size will match the one of the element it applies to.
 
 Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/functions/linear-gradient)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)**
 
@@ -15,7 +15,7 @@ Default value: none
 
 The `background-image` mixin is the most robust mixin of all.     
 It generates `SVG` for Internet Explorer 9, old webkit, moz and opera syntax.  
-Always use W3C syntax for mixin. It can recalculates angle for older syntax, transform `to top` to `bottom` syntax and it can omit SVG syntax if it is impossible to express SVG e.g. when you call mixin with 55deg.  
+Always use W3C syntax for the mixin. It can recalculate angle for older syntax, transform `to top` to `bottom` syntax and it can omit SVG syntax if it's impossible to express SVG e.g. when you call mixin with 55deg.  
 If you call mixin without arguments, LESS Hat does not generate anything.  
 Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
 
@@ -34,4 +34,5 @@ Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
      background-image: -o-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
      background-image: linear-gradient(to bottom, #fb83fa 0%, #e93cec 100%);
     }
+
 

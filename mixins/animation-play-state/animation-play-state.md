@@ -25,3 +25,4 @@ Default value: running
      animation-play-state: paused;
     } 
 
+

@@ -13,7 +13,7 @@ Default value: 0
   
 **Tips and tricks:**
 
-If you omit units after time argument, `animation-duration` is trying to be smart and add properly value.
+If you omit units after time argument, `animation-duration` is trying to be smart and add proper value.
 
     if (time > 10) {
         time += 'ms';
@@ -35,3 +35,4 @@ If you omit units after time argument, `animation-duration` is trying to be smar
      animation-duration: 2000ms;
     }
   
+

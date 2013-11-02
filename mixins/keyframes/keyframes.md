@@ -3,7 +3,7 @@
 
 The @keyframes CSS at-rule lets authors control the intermediate steps in a CSS animation sequence by establishing keyframes (or waypoints) along the animation sequence that must be reached by certain points during the animation.  
   
-LESS CSS isn't great for complicated mixin like this one, so it is little bit tricky.
+LESS CSS isn't great for complicated mixin like this one, so it's little bit tricky.
 LESS CSS compiler doesn't allow to have properties in the root. It's better to understand the problem on the example.
 
     // There is no selector
@@ -27,7 +27,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
 
 **Tips and tricks:**
 
-  Properties inside `<keyframes-definition>` are automatically prefixed, if it is needed.
+  Properties inside `<keyframes-definition>` are automatically prefixed, if it's needed.
   
 **Example:**
 
@@ -53,4 +53,5 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
      @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };
      } 
     }
+
 

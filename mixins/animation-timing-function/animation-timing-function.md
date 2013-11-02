@@ -25,3 +25,4 @@ Default value: ease
      animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
     } 
 
+

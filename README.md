@@ -5,7 +5,7 @@ README.md file is automatically generated.
 -->
 
 # LESS Hat 2.0 ![travis](https://travis-ci.org/PetrBrzek/LESSHat.png)
-### Yeah, is finaly here! Unbelievable.
+### Yeah, it's finaly here! Unbelievable.
 
 ![LESS Hat 2.0](http://media.giphy.com/media/lI6nHr5hWXlu0/giphy.gif) 
 
@@ -20,7 +20,11 @@ README.md file is automatically generated.
 
 ---
 ## Intro
+Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become almost the most popular mixin library for the whole LESS CSS. 
 
+After a year, there is a new 2.0 version that brings robust workflow for editing, testing and creating mixins.
+
+Meet the best mixins in the world. Thanks to the LESS Hat 2.0 is LESS CSS finally usable for something.
 
 ### Features
 * Configurable – You can turn off/on which browser... TODO
@@ -127,7 +131,7 @@ Pracovali jsme dlouho na nove verzi, kterou jsme od zakladu prepsali, vytvorili 
 ### <a name="align-content"></a> &#8226; align-content
 **Summary:**
 
-The CSS align-content property aligns a flex container's lines within the flex container when there is extra space on the cross-axis. This property has no effect on single line flexible boxes.
+The CSS align-content property aligns a flex container's lines within the flex container when there is an extra space on the cross-axis. This property has no effect on the single line flexible boxes.
 
 Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/a/align-content/)**
 
@@ -149,6 +153,7 @@ Default value: stretch
      -ms-flex-line-pack: start;
      align-content: flex-start;
     } 
+
 
 
 ### <a name="align-items"></a> &#8226; align-items
@@ -180,6 +185,7 @@ Default value: stretch
     }
   
 
+
 ### <a name="align-self"></a> &#8226; align-self
 **Summary:**
 
@@ -205,6 +211,7 @@ Default value: auto
      -ms-align-self: start;
      align-self: flex-start;
     }
+
 
 
 ### <a name="animation"></a> &#8226; animation
@@ -233,6 +240,7 @@ Default value: none
      -opera-animation: nameAnimation 2s linear alternate;
      animation: nameAnimation 2s linear alternate;
     }
+
 
 
 ### <a name="animation-delay"></a> &#8226; animation-delay
@@ -273,6 +281,7 @@ If you omit units after time argument, `animation-delay` is trying to be smart a
     }
 
 
+
 ### <a name="animation-direction"></a> &#8226; animation-direction
 **Summary:**
 
@@ -301,6 +310,7 @@ Default value: normal
     }
 
 
+
 ### <a name="animation-duration"></a> &#8226; animation-duration
 **Summary:**
 
@@ -316,7 +326,7 @@ Default value: 0
   
 **Tips and tricks:**
 
-If you omit units after time argument, `animation-duration` is trying to be smart and add properly value.
+If you omit units after time argument, `animation-duration` is trying to be smart and add proper value.
 
     if (time > 10) {
         time += 'ms';
@@ -338,6 +348,7 @@ If you omit units after time argument, `animation-duration` is trying to be smar
      animation-duration: 2000ms;
     }
   
+
 
 ### <a name="animation-fill-mode"></a> &#8226; animation-fill-mode
 **Summary:**
@@ -365,6 +376,7 @@ Default value: none
      -opera-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
     }
+
 
 
 ### <a name="animation-iteration-count"></a> &#8226; animation-iteration-count
@@ -395,6 +407,7 @@ Default value: 1
     } 
 
 
+
 ### <a name="animation-name"></a> &#8226; animation-name
 **Summary:**
 
@@ -421,6 +434,7 @@ Default value: none
      -opera-animation-name: animation-1, animation-2;
      animation-name: animation-1, animation-2;
     } 
+
 
 
 ### <a name="animation-play-state"></a> &#8226; animation-play-state
@@ -451,6 +465,7 @@ Default value: running
     } 
 
 
+
 ### <a name="animation-timing-function"></a> &#8226; animation-timing-function
 **Summary:**
 
@@ -479,6 +494,7 @@ Default value: ease
     } 
 
 
+
 ### <a name="appearance"></a> &#8226; appearance
 **Summary:**
 
@@ -504,6 +520,7 @@ Default value: none
      -moz-appearance: none;
      appearance: none;
     } 
+
 
 
 ### <a name="backface-visibility"></a> &#8226; backface-visibility
@@ -535,6 +552,7 @@ Default value: none
     } 
 
 
+
 ### <a name="background-clip"></a> &#8226; background-clip
 **Summary:**
 
@@ -562,10 +580,11 @@ Default value: border-box
     } 
 
 
+
 ### <a name="background-image"></a> &#8226; background-image
 **Summary:**
 
-With background-image you can create prefixed linear or radial gradients. The CSS (linear|radial)-gradient() function creates an <image> which represents a linear|radial gradient of colors. The result of this function is an object of the CSS <gradient> data type.Like any other gradient, a CSS linear gradient is not a CSS <color> but an image with no intrinsic dimensions; that is, it has neither natural or preferred size, nor ratio. Its concrete size will match the one of the element it applies to.
+With the background-image you can create prefixed linear or radial gradients. The CSS (linear|radial)-gradient() function creates an `<image>` which represents a linear|radial gradient of colors. The result of this function is an object of the CSS `<gradient>` data type. Like any other gradient, a CSS linear gradient is not a CSS `<color>` but an image with no intrinsic dimensions; that is, it has neither natural or preferred size, nor ratio. Its concrete size will match the one of the element it applies to.
 
 Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/functions/linear-gradient)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)**
 
@@ -579,7 +598,7 @@ Default value: none
 
 The `background-image` mixin is the most robust mixin of all.     
 It generates `SVG` for Internet Explorer 9, old webkit, moz and opera syntax.  
-Always use W3C syntax for mixin. It can recalculates angle for older syntax, transform `to top` to `bottom` syntax and it can omit SVG syntax if it is impossible to express SVG e.g. when you call mixin with 55deg.  
+Always use W3C syntax for the mixin. It can recalculate angle for older syntax, transform `to top` to `bottom` syntax and it can omit SVG syntax if it's impossible to express SVG e.g. when you call mixin with 55deg.  
 If you call mixin without arguments, LESS Hat does not generate anything.  
 Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
 
@@ -598,6 +617,7 @@ Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
      background-image: -o-linear-gradient(top, #fb83fa 0%, #e93cec 100%);
      background-image: linear-gradient(to bottom, #fb83fa 0%, #e93cec 100%);
     }
+
 
 
 ### <a name="background-origin"></a> &#8226; background-origin
@@ -625,6 +645,7 @@ Default value: padding-box
        -moz-background-origin: content-box;
        background-origin: content-box;
       } 
+
 
 
 ### <a name="background-size"></a> &#8226; background-size
@@ -656,6 +677,7 @@ If you omit units, `background-size` adds `px` automatically.
      -moz-background-size: cover, 100%;
      background-size: cover, 100%;
     } 
+
 
 
 ### <a name="blur"></a> &#8226; blur (shorthand for filter property)
@@ -690,6 +712,7 @@ If you omit units, `blur` adds `px` automatically.
     } 
 
 
+
 ### <a name="border-bottom-left-radius"></a> &#8226; border-bottom-left-radius
 **Summary:**
 
@@ -706,7 +729,7 @@ Default value: 0
 **Tips and tricks:**
 
 If you omit units, `border-bottom-left-radius` adds `px` automatically. 
-If you want to use syntax like `10px \ 5px`, you have interpolate argument `~''` or LESS CSS divide it (yeah awesome feature!).
+If you want to use syntax like `10px \ 5px`, you have to interpolate argument `~''` or LESS CSS divides it (yeah awesome feature!).
 Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with older Safari. Here is some [resource](http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed).
   
 **Example:**
@@ -721,6 +744,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
      -moz-border-radius-bottomleft: 10px;
      border-bottom-left-radius: 10px;
     }   
+
 
 
 ### <a name="border-bottom-right-radius"></a> &#8226; border-bottom-right-radius
@@ -739,7 +763,7 @@ Default value: 0
 **Tips and tricks:**
 
 If you omit units, `border-bottom-right-radius` adds `px` automatically. 
-If you want to use syntax like `10px \ 5px`, you have interpolate argument `~''` or LESS CSS divide it (yeah awesome feature!).
+If you want to use syntax like `10px \ 5px`, you have to interpolate argument `~''` or LESS CSS divides it (yeah awesome feature!).
 Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with older Safari. Here is some [resource](http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed).
   
 **Example:**
@@ -754,6 +778,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
        -moz-border-radius-bottomright: 10px;
        border-bottom-right-radius: 10px;
       }   
+
 
 
 ### <a name="border-image"></a> &#8226; border-image
@@ -789,6 +814,7 @@ Default value: based on individual properties
     } 
 
 
+
 ### <a name="border-radius"></a> &#8226; border-radius
 **Summary:**
 
@@ -805,7 +831,7 @@ Default value: 0
 **Tips and tricks:**
 
   If you omit units, `border-radius` adds `px` automatically. 
-  If you want to use syntax like `10px \ 5px`, you have interpolate argument `~''` or LESS CSS divide it (yeah awesome feature!).
+  If you want to use syntax like `10px \ 5px`, you have to interpolate argument `~''` or LESS CSS divides it (yeah awesome feature!).
   Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with older Safari. Here is some [resource](http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed).
 
 **Example:**
@@ -820,6 +846,7 @@ Default value: 0
      -moz-border-radius: 5px;
      border-radius: 5px;
     } 
+
 
 
 ### <a name="border-top-left-radius"></a> &#8226; border-top-left-radius
@@ -838,7 +865,7 @@ Default value: 0
 **Tips and tricks:**
 
   If you omit units, `border-top-left-radius` adds `px` automatically. 
-  If you want to use syntax like `10px \ 5px`, you have interpolate argument `~''` or LESS CSS divide it (yeah awesome feature!).
+  If you want to use syntax like `10px \ 5px`, you have to interpolate argument `~''` or LESS CSS divides it (yeah awesome feature!).
   Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with older Safari. Here is some [resource](http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed).
 
 **Example:**
@@ -853,6 +880,7 @@ Default value: 0
      -moz-border-top-left-radius: 5px;
      border-top-left-radius: 5px;
     } 
+
 
 
 ### <a name="border-top-right-radius"></a> &#8226; border-top-right-radius
@@ -871,7 +899,7 @@ Default value: 0
 **Tips and tricks:**
 
   If you omit units, `border-top-right-radius` adds `px` automatically. 
-  If you want to use syntax like `10px \ 5px`, you have interpolate argument `~''` or LESS CSS divide it (yeah awesome feature!).
+  If you want to use syntax like `10px \ 5px`, you have to interpolate argument `~''` or LESS CSS divides it (yeah awesome feature!).
   Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with older Safari. Here is some [resource](http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed).
 
 **Example:**
@@ -886,6 +914,7 @@ Default value: 0
      -moz-border-top-right-radius: 5px;
      border-top-right-radius: 5px;
     } 
+
 
 
 ### <a name="box-shadow"></a> &#8226; box-shadow
@@ -919,6 +948,7 @@ Default value: none
     } 
 
 
+
 ### <a name="box-sizing"></a> &#8226; box-sizing
 **Summary:**
 
@@ -944,6 +974,7 @@ Default value: content-box
      -moz-box-sizing: padding-box;
      box-sizing: padding-box;
     }
+
 
 
 ### <a name="brightness"></a> &#8226; brightness (shorthand for filter property)
@@ -974,6 +1005,7 @@ Default value: 0
     } 
 
 
+
 ### <a name="column-count"></a> &#8226; column-count
 **Summary:**
 
@@ -999,6 +1031,7 @@ Default value: auto
      -moz-column-count: 0.5;
      column-count: 0.5;
     }   
+
 
 
 ### <a name="column-gap"></a> &#8226; column-gap
@@ -1032,6 +1065,7 @@ Default value: normal
     }   
 
 
+
 ### <a name="column-rule"></a> &#8226; column-rule
 **Summary:**
 
@@ -1061,6 +1095,7 @@ Default value: medium none black
      -moz-column-rule: 5px outset #ff00ff;
      column-rule: 5px outset #ff00ff;
     } 
+
 
 
 ### <a name="column-width"></a> &#8226; column-width
@@ -1094,6 +1129,7 @@ Default value: auto
     }  
 
 
+
 ### <a name="columns"></a> &#8226; columns
 **Summary:**
 
@@ -1123,6 +1159,7 @@ Default value: auto
      -moz-columns: 100px 3;
      columns: 100px 3;
     } 
+
 
 
 ### <a name="contrast"></a> &#8226; contrast
@@ -1157,6 +1194,7 @@ Default value: 100%
     } 
 
 
+
 ### <a name="display"></a> &#8226; display
 **Summary:**
 
@@ -1181,6 +1219,7 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/a-guide-to-flexbox/
      display: -webkit-flex;
      display: -moz-box;
     } 
+
 
 
 ### <a name="drop-shadow"></a> &#8226; drop-shadow
@@ -1213,6 +1252,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-
     } 
 
 
+
 ### <a name="filter"></a> &#8226; filter
 **Summary:**
 
@@ -1239,6 +1279,7 @@ Default value: none
      -ms-filter: grayscale(0.5) blur(10px);
      filter: grayscale(0.5) blur(10px);
     }
+
 
 
 ### <a name="flex"></a> &#8226; flex
@@ -1270,6 +1311,7 @@ Default value: 0 1 auto
     }
 
 
+
 ### <a name="flex-basis"></a> &#8226; flex-basis
 **Summary:**
 
@@ -1298,6 +1340,7 @@ Default value: auto
      -webkit-flex-basis: 100;
      flex-basis: 100px;
     }
+
 
 
 ### <a name="flex-direction"></a> &#8226; flex-direction
@@ -1331,6 +1374,7 @@ Default value: row
     }
 
 
+
 ### <a name="flex-grow"></a> &#8226; flex-grow
 **Summary:**
 
@@ -1357,6 +1401,7 @@ Default value: 0
     }
 
 
+
 ### <a name="flex-shrink"></a> &#8226; flex-shrink
 **Summary:**
 
@@ -1381,6 +1426,7 @@ Default value: 1
      -webkit-flex-shrink: 2;
      flex-shrink: 2;
     }
+
 
 
 ### <a name="flex-wrap"></a> &#8226; flex-wrap
@@ -1410,6 +1456,7 @@ Default value: nowrap
     }
 
 
+
 ### <a name="font-face"></a> &#8226; font-face
 **Summary:**
 
@@ -1435,6 +1482,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)*
      font-weight: bold;
      font-style: italic;
     }
+
 
 
 ### <a name="grayscale"></a> &#8226; grayscale
@@ -1469,6 +1517,7 @@ Default value: 0
     }
 
 
+
 ### <a name="hue-rotate"></a> &#8226; hue-rotate
 **Summary:**
 
@@ -1499,6 +1548,7 @@ Default value: 0
      -ms-filter: hue-rotate(50deg);
      filter: hue-rotate(50deg);
     }
+
 
 
 ### <a name="invert"></a> &#8226; invert
@@ -1533,6 +1583,7 @@ Default value: 0
     }
 
 
+
 ### <a name="justify-content"></a> &#8226; justify-content
 **Summary:**
 
@@ -1562,12 +1613,13 @@ Default value: flex-start
     }
 
 
+
 ### <a name="keyframes"></a> &#8226; keyframes
 **Summary:**
 
 The @keyframes CSS at-rule lets authors control the intermediate steps in a CSS animation sequence by establishing keyframes (or waypoints) along the animation sequence that must be reached by certain points during the animation.  
   
-LESS CSS isn't great for complicated mixin like this one, so it is little bit tricky.
+LESS CSS isn't great for complicated mixin like this one, so it's little bit tricky.
 LESS CSS compiler doesn't allow to have properties in the root. It's better to understand the problem on the example.
 
     // There is no selector
@@ -1591,7 +1643,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
 
 **Tips and tricks:**
 
-  Properties inside `<keyframes-definition>` are automatically prefixed, if it is needed.
+  Properties inside `<keyframes-definition>` are automatically prefixed, if it's needed.
   
 **Example:**
 
@@ -1617,6 +1669,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
      @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };
      } 
     }
+
 
 
 ### <a name="opacity"></a> &#8226; opacity
@@ -1654,6 +1707,7 @@ Default value: 1
     }
 
 
+
 ### <a name="order"></a> &#8226; order
 **Summary:**
 
@@ -1681,6 +1735,7 @@ Default value: 0
      -webkit-order: 1;
      order: 1;
     }
+
 
 
 ### <a name="perspective"></a> &#8226; perspective
@@ -1714,6 +1769,7 @@ Default value: none
     }
 
 
+
 ### <a name="perspective-origin"></a> &#8226; perspective-origin
 **Summary:**
 
@@ -1743,6 +1799,7 @@ Default value: 50% 50%
      -webkit-perspective-origin: top left;
      perspective-origin: top left;
     }
+
 
 
 ### <a name="placeholder"></a> &#8226; placeholder
@@ -1780,39 +1837,40 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/style-placeholder-t
     }
 
 
-### <a name="rotateZ"></a> &#8226; rotateZ
+
+### <a name="rotate"></a> &#8226; rotate
 **Summary:**
 
-The rotateZ() CSS function defines a transformation that moves the element around the z-axis without deforming it.
+Rotates the element clockwise around its origin by the specified angle. 
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotateZ)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotate)**
 
 **Syntax:**
 
 Default value: 0
 
-    .rotateZ(<angle>)
+    .rotate(<angle>)
 
 **Tips and tricks:**
 
-  If you omit units, `rotateZ` adds `deg` automatically.  
+  If you omit units, `rotate` adds `deg` automatically.  
   
 **Example:**
 
     div {
-     .rotateZ(45);
+     .rotate(45);
     }
     
     // Result
     div {
-     -webkit-transform: rotateZ(45deg);
-     -moz-transform: rotateZ(45deg);
-     -opera-transform: rotateZ(45deg);
-     -ms-transform: rotateZ(45deg);
-     transform: rotateZ(45deg);
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -opera-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
     }
 
-  
+
 ### <a name="rotate3d"></a> &#8226; rotate3d
 **Summary:**
 
@@ -1846,6 +1904,107 @@ Default value: 0, 0, 0, 0
     }
 
 
+
+### <a name="rotateX"></a> &#8226; rotateX
+**Summary:**
+
+The rotateX() CSS function defines a transformation that moves the element around the abscissa without deforming it.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotateX)**
+
+**Syntax:**
+
+Default value: 0
+
+    .rotateX(<angle>)
+
+**Tips and tricks:**
+
+  If you omit units, `rotateX` adds `deg` automatically.  
+  
+**Example:**
+
+    div {
+     .rotateX(45);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotateX(45deg);
+     -moz-transform: rotateX(45deg);
+     -opera-transform: rotateX(45deg);
+     -ms-transform: rotateX(45deg);
+     transform: rotateX(45deg);
+    }
+
+
+### <a name="rotateY"></a> &#8226; rotateY
+**Summary:**
+
+The rotateY() CSS function defines a transformation that moves the element around the ordinate without deforming it.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotateY)**
+
+**Syntax:**
+
+Default value: 0
+
+    .rotateY(<angle>)
+
+**Tips and tricks:**
+
+  If you omit units, `rotateY` adds `deg` automatically.  
+  
+**Example:**
+
+    div {
+     .rotateY(45);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotateY(45deg);
+     -moz-transform: rotateY(45deg);
+     -opera-transform: rotateY(45deg);
+     -ms-transform: rotateY(45deg);
+     transform: rotateY(45deg);
+    }
+
+
+### <a name="rotateZ"></a> &#8226; rotateZ
+**Summary:**
+
+The rotateZ() CSS function defines a transformation that moves the element around the z-axis without deforming it.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotateZ)**
+
+**Syntax:**
+
+Default value: 0
+
+    .rotateZ(<angle>)
+
+**Tips and tricks:**
+
+  If you omit units, `rotateZ` adds `deg` automatically.  
+  
+**Example:**
+
+    div {
+     .rotateZ(45);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: rotateZ(45deg);
+     -moz-transform: rotateZ(45deg);
+     -opera-transform: rotateZ(45deg);
+     -ms-transform: rotateZ(45deg);
+     transform: rotateZ(45deg);
+    }
+
+  
+
 ### <a name="saturate"></a> &#8226; saturate
   **Summary:**
 
@@ -1878,32 +2037,33 @@ Default value: 0, 0, 0, 0
     }
 
 
-### <a name="scaleZ"></a> &#8226; scaleZ
+
+### <a name="scale"></a> &#8226; scale
 **Summary:**
 
-The scaleZ() CSS function modifies the z-coordinate of each element point by a constant facto, except if this scale factor is 1, in which case the function is the identity transform.
+Specifies a 2D scaling operation described by [sx, sy]. If sy isn't specified, it is assumed to be equal to sx.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scaleZ())**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#scale)**
 
 **Syntax:**
 
 Default value: 1
 
-    .scaleZ(<sz>) 
+    .scale(<sx>[, <sy>]) 
   
 **Example:**
 
     div {
-     .scaleZ(1.5);
+     .scale(2);
     }
     
     // Result
     div {
-     -webkit-transform: scaleZ(1.5);
-     -moz-transform: scaleZ(1.5);
-     -opera-transform: scaleZ(1.5);
-     -ms-transform: scaleZ(1.5);
-     transform: scaleZ(1.5);
+     -webkit-transform: scale(2);
+     -moz-transform: scale(2);
+     -opera-transform: scale(2);
+     -ms-transform: scale(2);
+     transform: scale(2);
     }
 
 
@@ -1936,6 +2096,95 @@ Default value: 1, 1, 1
     }
 
 
+
+### <a name="scaleX"></a> &#8226; scaleX
+**Summary:**
+
+Specifies a scale operation using the vector [sx, 1].
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#scaleX)**
+
+**Syntax:**
+
+Default value: 1
+
+    .scaleX(<sx>) 
+  
+**Example:**
+
+    div {
+     .scaleX(1.5);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scaleX(1.5);
+     -moz-transform: scaleX(1.5);
+     -opera-transform: scaleX(1.5);
+     -ms-transform: scaleX(1.5);
+     transform: scaleX(1.5);
+    }
+
+
+### <a name="scaleY"></a> &#8226; scaleY
+**Summary:**
+
+Specifies a scale operation using the vector [1, sy].
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#scaleY)**
+
+**Syntax:**
+
+Default value: 1
+
+    .scaleY(<sy>) 
+  
+**Example:**
+
+    div {
+     .scaleY(1.5);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scaleY(1.5);
+     -moz-transform: scaleY(1.5);
+     -opera-transform: scaleY(1.5);
+     -ms-transform: scaleY(1.5);
+     transform: scaleY(1.5);
+    }
+
+
+### <a name="scaleZ"></a> &#8226; scaleZ
+**Summary:**
+
+The scaleZ() CSS function modifies the z-coordinate of each element point by a constant facto, except if this scale factor is 1, in which case the function is the identity transform.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scaleZ())**
+
+**Syntax:**
+
+Default value: 1
+
+    .scaleZ(<sz>) 
+  
+**Example:**
+
+    div {
+     .scaleZ(1.5);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: scaleZ(1.5);
+     -moz-transform: scaleZ(1.5);
+     -opera-transform: scaleZ(1.5);
+     -ms-transform: scaleZ(1.5);
+     transform: scaleZ(1.5);
+    }
+
+
+
 ### <a name="selection"></a> &#8226; selection
 **Summary:**
 
@@ -1962,6 +2211,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
        color: #CA3636;
      }
     }
+
 
 
 ### <a name="sepia"></a> &#8226; sepia
@@ -1993,6 +2243,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia
     }
 
 
+
 ### <a name="size"></a> &#8226; size
 **Summary:**
 
@@ -2017,6 +2268,73 @@ This is helper mixin for fast dimensions setup.
     div {
      width: 50px;
      height: 50px;
+    }
+
+
+
+### <a name="skew"></a> &#8226; skew
+**Summary:**
+
+Skews the element along the X and Y axes by the specified angles. If ay isn't provided, no skew is performed on the Y axis.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#skew)**
+
+**Syntax:**
+  
+  Default value: 0
+
+    .skew(<ax>[, <ay>]) 
+
+**Tips and tricks:**
+
+  If you omit units, `skew` adds `%` automatically. 
+  
+**Example:**
+
+    div {
+     .skew(20, 30);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: skew(20deg, 30deg);
+     -moz-transform: skew(20deg, 30deg);
+     -opera-transform: skew(20deg, 30deg);
+     -ms-transform: skew(20deg, 30deg);
+     transform: skew(20deg, 30deg);
+    }
+
+
+### <a name="skewX"></a> &#8226; skewX
+**Summary:**
+
+Skews the element along the X axis by the given angle.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#skewX)**
+
+**Syntax:**
+  
+  Default value: 0
+
+    .skewX(<angle>) 
+
+**Tips and tricks:**
+
+  If you omit units, `skewX` adds `%` automatically. 
+  
+**Example:**
+
+    div {
+     .skewX(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: skewX(20deg);
+     -moz-transform: skewX(20deg);
+     -opera-transform: skewX(20deg);
+     -ms-transform: skewX(20deg);
+     transform: skewX(20deg);
     }
 
 
@@ -2051,6 +2369,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
      -ms-transform: skewY(20deg);
      transform: skewY(20deg);
     }
+
 
 
 ### <a name="transform"></a> &#8226; transform
@@ -2091,6 +2410,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     }
 
 
+
 ### <a name="transform-origin"></a> &#8226; transform-origin
 **Summary:**
 
@@ -2124,6 +2444,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     }
 
 
+
 ### <a name="transform-style"></a> &#8226; transform-style
 **Summary:**
 
@@ -2151,6 +2472,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      -ms-transform-style: preserve-3d;
      transform-style: preserve-3d;
     }
+
 
 
 ### <a name="transition"></a> &#8226; transition
@@ -2193,6 +2515,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     }
 
 
+
 ### <a name="transition-delay"></a> &#8226; transition-delay
 **Summary:**
 
@@ -2229,6 +2552,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      -o-transition-delay: 200ms;
      transition-delay: 200ms;
     }
+
 
 
 ### <a name="transition-duration"></a> &#8226; transition-duration
@@ -2269,6 +2593,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     }
 
 
+
 ### <a name="transition-property"></a> &#8226; transition-property
 **Summary:**
 
@@ -2301,6 +2626,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     }
 
 
+
 ### <a name="transition-timing-function"></a> &#8226; transition-timing-function
 **Summary:**
 
@@ -2326,6 +2652,136 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
      -moz-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
      -o-transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
      transition-timing-function: cubic-bezier(0, 0, 1, 1), ease;
+    }
+
+
+
+### <a name="translate"></a> &#8226; translate
+**Summary:**
+
+Specifies a 2D translation by the vector [tx, ty]. If ty isn't specified, its value is assumed to be zero.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translate)**
+
+**Syntax:**
+  
+  Default value: 0
+
+    .translate(<tx>[, <ty>])
+
+**Tips and tricks:**
+
+  If you omit units, `translate` adds `px` automatically.
+
+**Example:**
+
+    div {
+     .translate(200);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translate(200px);
+     -moz-transform: translate(200px);
+     -o-transform: translate(200px);
+     transform: translate(200px);
+    }
+
+
+### <a name="translate3d"></a> &#8226; translate3d
+**Summary:**
+
+The translate3d() CSS function moves the position of the element in the 3D space.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#translate3d())**
+
+**Syntax:**
+  
+  Default value: 0
+
+    .translate3d(<tx>, <ty>, <tz>)
+
+**Tips and tricks:**
+
+  If you omit units, `translate3d` adds `px` automatically.
+
+**Example:**
+
+    div {
+     .translate3d(20, 30, 10);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translate3d(20px, 30px, 10px);
+     -moz-transform: translate3d(20px, 30px, 10px);
+     -o-transform: translate3d(20px, 30px, 10px);
+     transform: translate3d(20px, 30px, 10px);
+    }
+
+
+
+### <a name="translateX"></a> &#8226; translateX
+**Summary:**
+
+Translates the element by the given amount along the X axis.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translateX)**
+
+**Syntax:**
+  
+  Default value: 0
+
+    .translateX(<tx>)
+
+**Tips and tricks:**
+
+  If you omit units, `translateX` adds `px` automatically.
+
+**Example:**
+
+    div {
+     .translateX(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translateX(20px);
+     -moz-transform: translateX(20px);
+     -o-transform: translateX(20px);
+     transform: translateX(20px);
+    }
+
+
+### <a name="translateY"></a> &#8226; translateY
+**Summary:**
+
+Translates the element by the given amount along the Y axis.
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translateY)**
+
+**Syntax:**
+  
+  Default value: 0
+
+    .translateY(<ty>)
+
+**Tips and tricks:**
+
+  If you omit units, `translateY` adds `px` automatically.
+
+**Example:**
+
+    div {
+     .translateY(20);
+    }
+    
+    // Result
+    div {
+     -webkit-transform: translateY(20px);
+     -moz-transform: translateY(20px);
+     -o-transform: translateY(20px);
+     transform: translateY(20px);
     }
 
 
@@ -2360,37 +2816,6 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
      transform: translateZ(20px);
     }
 
-
-### <a name="translate3d"></a> &#8226; translate3d
-**Summary:**
-
-The translate3d() CSS function moves the position of the element in the 3D space.
-
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#translate3d())**
-
-**Syntax:**
-  
-  Default value: 0
-
-    .translate3d(<tx>, <ty>, <tz>)
-
-**Tips and tricks:**
-
-  If you omit units, `translate3d` adds `px` automatically.
-
-**Example:**
-
-    div {
-     .translate3d(20, 30, 10);
-    }
-    
-    // Result
-    div {
-     -webkit-transform: translate3d(20px, 30px, 10px);
-     -moz-transform: translate3d(20px, 30px, 10px);
-     -o-transform: translate3d(20px, 30px, 10px);
-     transform: translate3d(20px, 30px, 10px);
-    }
 
 
 ### <a name="user-select"></a> &#8226; user-select

@@ -1,31 +1,31 @@
-### <a name="translateZ"></a> &#8226; translateZ
+### <a name="translate"></a> &#8226; translate
 **Summary:**
 
-Translates the element by the given amount along the Z axis.
+Specifies a 2D translation by the vector [tx, ty]. If ty isn't specified, its value is assumed to be zero.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translateZ)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#translate)**
 
 **Syntax:**
   
   Default value: 0
 
-    .translateZ(<ty>)
+    .translate(<tx>[, <ty>])
 
 **Tips and tricks:**
 
-  If you omit units, `translateZ` adds `px` automatically.
+  If you omit units, `translate` adds `px` automatically.
 
 **Example:**
 
     div {
-     .translateZ(20);
+     .translate(200);
     }
     
     // Result
     div {
-     -webkit-transform: translateZ(20px);
-     -moz-transform: translateZ(20px);
-     -o-transform: translateZ(20px);
-     transform: translateZ(20px);
+     -webkit-transform: translate(200px);
+     -moz-transform: translate(200px);
+     -o-transform: translate(200px);
+     transform: translate(200px);
     }
 

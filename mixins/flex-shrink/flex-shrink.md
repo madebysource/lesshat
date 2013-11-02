@@ -23,3 +23,4 @@ Default value: 1
      flex-shrink: 2;
     }
 
+

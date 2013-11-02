@@ -14,7 +14,7 @@ Default value: 0
 **Tips and tricks:**
 
   If you omit units, `border-radius` adds `px` automatically. 
-  If you want to use syntax like `10px \ 5px`, you have interpolate argument `~''` or LESS CSS divide it (yeah awesome feature!).
+  If you want to use syntax like `10px \ 5px`, you have to interpolate argument `~''` or LESS CSS divides it (yeah awesome feature!).
   Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with older Safari. Here is some [resource](http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed).
 
 **Example:**
@@ -29,4 +29,5 @@ Default value: 0
      -moz-border-radius: 5px;
      border-radius: 5px;
     } 
+
 

@@ -1,32 +1,32 @@
-### <a name="skewY"></a> &#8226; skewY
+### <a name="skew"></a> &#8226; skew
 **Summary:**
 
-Skews the element along the Y axis by the given angle.
+Skews the element along the X and Y axes by the specified angles. If ay isn't provided, no skew is performed on the Y axis.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#skewY)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#skew)**
 
 **Syntax:**
   
   Default value: 0
 
-    .skewY(<angle>) 
+    .skew(<ax>[, <ay>]) 
 
 **Tips and tricks:**
 
-  If you omit units, `skewY` adds `%` automatically. 
+  If you omit units, `skew` adds `%` automatically. 
   
 **Example:**
 
     div {
-     .skewY(20);
+     .skew(20, 30);
     }
     
     // Result
     div {
-     -webkit-transform: skewY(20deg);
-     -moz-transform: skewY(20deg);
-     -opera-transform: skewY(20deg);
-     -ms-transform: skewY(20deg);
-     transform: skewY(20deg);
+     -webkit-transform: skew(20deg, 30deg);
+     -moz-transform: skew(20deg, 30deg);
+     -opera-transform: skew(20deg, 30deg);
+     -ms-transform: skew(20deg, 30deg);
+     transform: skew(20deg, 30deg);
     }
 
