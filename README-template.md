@@ -109,12 +109,24 @@ The structure of this repo is:
 		.calc(~'');
 		.selection(~'');
 		
-		// in some cases you have to interpolated border-radius or LESS CSS begins to play on calculator
+		// in some cases you have to interpolate border-radius or LESS CSS begins to play on calculator
 		.border-radius(~'20px / 40px');
 		
 
 
-## List of mixins:
+## <a name="contribute"></a> Contribute:
+1. Download this repo.
+2. NPM install.
+3. Now you have LESS Hat devstack (see [documentation](https://github.com/csshat/lesshat-devstack).)
+4. If you create new mixin, use grunt generate command! 
+5. If it's possible (almost always) have test coverage for new mixins, and never break existing tests.
+6. Commits should represent one logical change each. If a mixin goes through multiple iterations, squash your commits down to one.
+7.  Finally, commit some code and open a pull request.
+
+
+## <a name="documentation"></a> Documentation:
+
+### List of mixins:
 1. **[align-content](#align-content)** `flexbox`
 2. **[align-items](#align-items)** `flexbox`
 3. **[align-self](#align-self)** `flexbox`
@@ -204,5 +216,12 @@ The structure of this repo is:
 
 ***
 
-## <a name="documentation"></a> Documentation:
 {{ documentation }}
+
+
+## Big Thanks to:
+* **[Jan Kuca](http://www.jankuca.com/)** (help us with lesshat-devstack)
+* **[MOZILLA DEVELOPER NETWORK](https://developer.mozilla.org/)** (almost all summary are from MDN)
+* **[Angular UI router](https://github.com/angular-ui/ui-router)** (example of good github profile)
+* **[Marek Hrabe](https://twitter.com/marek)** (for coding lesshat.com)
+* **[Jan Vu Nam](http://dribbble.com/Vucek)** (for design lesshat.com and LESS Hat book icon)
