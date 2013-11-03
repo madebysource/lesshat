@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/csshat/lesshat/"
+    "url": "https://github.com/csshat/lesshat"
   },
   "bugs": {
     "url": "https://github.com/csshat/lesshat/issues"
@@ -35,9 +35,7 @@
     "grunt": "0.4.x",
     "grunt-cli": "*",
     "mocha": "*",
-    "grunt-prompt": "~0.1.2",
-    "grunt-bump": "0.0.11",
-    "grunt-conventional-changelog": "~1.0.0"
+    "grunt-prompt": "~0.1.2"
   },
   "scripts": {
     "test": "grunt"
