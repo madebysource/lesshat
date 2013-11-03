@@ -93,6 +93,7 @@ module.exports = function(grunt) {
   grunt.registerTask('version', ['prompt:version', 'iterate', 'build', 'mixins_update']);
   grunt.registerTask('dev', ['build', 'test']);
   grunt.registerTask('generate', ['prompt:generate', 'generator']);
+  grunt.registerTask('contrib', ['build', 'test', 'mixins_update', 'prefix', 'documentation']);
   grunt.registerTask('default', ['version','build', 'test', 'mixins_update', 'prefix', 'documentation']);
 
 };
