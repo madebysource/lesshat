@@ -67,6 +67,7 @@ Pracovali jsme dlouho na nove verzi, kterou jsme od zakladu prepsali, vytvorili 
 26. **[box-shadow](#box-shadow)**
 27. **[box-sizing](#box-sizing)**
 28. **[brightness](#brightness)** `filter`
+29. **[calc](#calc)**
 29. **[column-count](#column-count)**
 30. **[column-gap](#column-gap)**
 31. **[column-rule](#column-rule)**
