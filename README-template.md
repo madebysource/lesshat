@@ -12,30 +12,106 @@ README.md file is automatically generated.
 
 ---
 **[Download 2.0.0]()** (or **[Prefixed]()**) **|**
-**[Learn]() |**
-**[Get Help]() |**
-**[Report an Issue]() |**
-**[Changelog]() |**
-**[Contribute]()**
+**[Get Starded](#get-started) |**
+**[Contribute](#contribute) |**
+**[Documentation](#documentation) |**
 
 ---
 ## Intro
-Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become almost the most popular mixin library for the whole LESS CSS. 
+Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS world. 
 
-After a year, there is a new 2.0 version that brings robust workflow for editing, testing and creating mixins.
+After a year, there is a new, **completely rewritten 2.0 version** that brings 86 great mixins, robust workflow for editing, testing and creating new mixins.
 
-Meet the best mixins in the world. Thanks to the LESS Hat 2.0 is LESS CSS finally usable for something.
+Meet the best mixins library in the world. Thanks to the LESS Hat 2.0 is LESS CSS finally usable.
+
+If you would like to use CSS Hat for working with LESS Hat, but you still don't have one. We have some suprise for you on **[lesshat.com](http://lesshat.com)**
 
 ### Features
-* Configurable – You can turn off/on which browser... TODO
-* Unlimited number of anything, shadows, gradients, gradient swatches (in fact it's not unlimited, because you have limited computer memory)
-* All CSS3 properties
-* **Breaking changes:** use all mixins without interpolation `~''` (except **keyframes** mixin)
+* **Configuration** – You can turn off/on browser prefixes according to your needs.
+* **No restriction** – If it's possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.
+* **Standard naming convention** – In LESS Hat, mixins have names like all CSS3 properties. No `.rounded` or `.shadow`. It's stupid.
+* **Cross-browser** – LESS Hat takes care of exporting CSS for all available browsers.
+* **Bootstrap friendly** – You can now use prefixed LESS Hat version and gaily work with Bootstrap. Yeah it's that easy.
+* **Keyframes** – Although it's tricky as hell, but yeah LESS Hat has mixin for `.keyframes`
+* **Blank state ready** – If you call mixin without any arguments, LESS Hat does not pollute your CSS with empty properties. Instead LESS Hat generates nothing.
+* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generates new mixin with [GRUNT](http://gruntjs.com/). Know more about workflow in **[contribution](#contribution)** section.
 
-## Get started
-LESS Hat is universal mixins library for LESS CSS...
-Prvni verze mixinu se setkala v necekanym uspechem. 
-Pracovali jsme dlouho na nove verzi, kterou jsme od zakladu prepsali, vytvorili robusni worklow pro vytvareni mixinu, ktere jsme mohlli testovat diky frameworku mocha. Zminka o workflow, gruntu...
+## <a name="get-started"></a> Get started
+The structure of this repo is:  
+
+* **build folder** – there are ready-to-use lesshat.less or lesshat-prefixed.less mixins
+* **mixins folder** – developer version of mixins (more about that in **[contribution](#contribution)** section)
+* **.gitignore** – is a list of files that git will ignore. I know you know that, but it's convention. 
+* **.travis.yml** – Configuratin file for Travis CI. Travis CI is a hosted continuous integration service for the open source community.
+* **Gruntfle.js** – task runner. If you don't want to use lesshat-devstack ignore it.
+* **LICENCE** – self-explanatory
+* **README-template.md** – If you want to edit readme, edit it in this file. README.md is generated.
+* **README.md** – please don't edit this file. Either edit README-template.md or documentation inside mixins/<mixin-name> folder.
+* **Bower** – is like NPM for frontend. NPM is like Gems for JavaScript. I could go on forever…
+* **package.json** – contains meta data for NPM.
+
+### Structure of LESS Hat mixins
+1.	**Global prefix configuration**:
+
+		@webkit: true;
+		@moz: true;
+		@opera: true;
+		@ms: true;
+		@w3c: true;
+		
+	If you for example don't want to generate prefixes for opera, just turn it to false.
+	
+2. **Typical LESS Hat mixin**:
+
+		.supermixin(...) {
+
+  			@webkit_local: true;
+  			@w3c_local: true;
+
+  			@process: ~`(function(){})()`;
+
+  			.result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    			.inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-radius: @process;  }
+    			.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    			.inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { border-radius: @process;  }
+    			.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    			.inception(@signal, @arguments);
+  			}
+  			
+  			.result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  			.result(@arguments, 1, @webkit, @webkit_local);
+  			.result(@arguments, 3, @w3c, @w3c_local);
+		}
+		
+	At to top, there are local prefix configuration. So you can turn off/on browser for one specific mixin. This is quite useful.
+	
+	In @process variable is all magic. Please don't edit javascrpt directly in .less file. Instead use [lesshat-devstack](https://github.com/csshat/lesshat-devstack).
+	
+	If you call mixin without arguments, some mixins return CSS default value for specific property, but some mixins return magic number *08121991* (Yeah, it's like Lost, TV series, but numbers are different) and because of that LESS CSS generates nothing.
+
+	**Why 08121991 and not just 0 (zero)?**  
+	Some CSS properties have zero as default value. So we need more difficult number.
+	
+3. **Use (almost) every property without interpolation!**
+
+	Correct mixin calling:
+	
+			.background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%))
+		
+	Incorrect calling:
+	
+			.background-image(~'linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%)')
+			
+	Unfortunately, there are exceptions:
+	
+		.keyframes(~'');
+		.calc(~'');
+		.selection(~'');
+		
+		// in some cases you have to interpolated border-radius or LESS CSS begins to play on calculator
+		.border-radius(~'20px / 40px');
+		
 
 
 ## List of mixins:
@@ -128,5 +204,5 @@ Pracovali jsme dlouho na nove verzi, kterou jsme od zakladu prepsali, vytvorili 
 
 ***
 
-## Learn – documentation:
+## <a name="documentation"></a> Documentation:
 {{ documentation }}
