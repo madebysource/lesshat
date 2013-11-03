@@ -1006,6 +1006,34 @@ Default value: 0
 
 
 
+### <a name="calc"></a> &#8226; calc
+**Summary:**
+
+The calc() CSS function can be used anywhere a `<length>`, `<frequency>`, `<angle>`, `<time>`, `<number>`, or `<integer>` is required.With calc(), you can perform calculations to determine CSS property values.  
+
+**THIS MIXIN MUST BE INTERPOLATED ~''**  
+The `-lh-property: 0` junk line of code is a neccesary sacrifice due to the hack nature of this set of mixins. (via [less-properties](https://github.com/borodean/less-properties))
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)**
+
+**Syntax:**
+
+    .calc(<element>, ~'<expression>')
+  
+**Example:**
+
+    div {
+     .calc(width, ~'100% - 33px');
+    }
+    
+    // Result
+    div {
+     -lh-property: 0;
+     width:-webkit-calc(100% - 33px);
+     width:-moz-calc(100% - 33px);
+     width:calc(100% - 33px);
+    } 
+
 ### <a name="column-count"></a> &#8226; column-count
 **Summary:**
 
@@ -1629,7 +1657,7 @@ LESS CSS compiler doesn't allow to have properties in the root. It's better to u
   
     div { color: red; } // This is correct
 
-Therefore LESS Hat generates **placeholder** selector `lesshat-selector { pb: 0; }` with unknown property, which browsers ignore and after that, there is actually keyframes syntax.  
+Therefore LESS Hat generates **placeholder** selector `lesshat-selector { -lh-property: 0; }` with unknown property, which browsers ignore and after that, there is actually keyframes syntax.  
   
 And also because of bad architecture of LESS CSS language, keyframes definition has to be on single line.
 
@@ -1653,21 +1681,11 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
     
     // Result
     div {
-     lesshat-selector { pb: 0; } 
-     @-webkit-keyframes animationName{ 0%{ -webkit-transform: scale(1.5); color: blue; } 100%{ -webkit-transform: scale(2); color: red };
-     }
-     lesshat-selector {
-       pb: 0; } 
-     @-moz-keyframes animationName{ 0%{ -moz-transform: scale(1.5); color: blue; } 100%{ -moz-transform: scale(2); color: red };
-     }
-     lesshat-selector {
-       pb: 0; } 
-     @-o-keyframes animationName{ 0%{ -o-transform: scale(1.5); color: blue; } 100%{ -o-transform: scale(2); color: red };
-     }
-     lesshat-selector {
-       pb: 0; } 
-     @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };
-     } 
+     lesshat-selector {-lh-property: 0; } 
+     @-webkit-keyframes animationName{ 0%{ -webkit-transform: scale(1.5); color: blue; } 100%{ -webkit-transform: scale(2); color: red }}
+     @-moz-keyframes animationName{ 0%{ -moz-transform: scale(1.5); color: blue; } 100%{ -moz-transform: scale(2); color: red }}
+     @-o-keyframes animationName{ 0%{ -o-transform: scale(1.5); color: blue; } 100%{ -o-transform: scale(2); color: red }}
+     @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };} 
     }
 
 
@@ -2189,27 +2207,36 @@ Default value: 1
 **Summary:**
 
 The ::selection CSS pseudo-element applies rules to the portion of a document that has been highlighted.
+LESS CSS compiler doesn't allow to have properties in the root. It's better to understand the problem on the example.
+
+    // There is no selector
+    color: red;
+  
+    SyntaxError: properties must be inside selector blocks, they cannot be in the root. 
+  
+    div { color: red; } // This is correct
+
+Therefore LESS Hat generates **placeholder** selector `lesshat-selector { -lh-property: 0; }` with unknown property, which browsers ignore and after that, there is actually selection syntax.    
+  
+**THIS MIXIN MUST BE INTERPOLATED `~''`**
 
 Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)**
 
 **Syntax:**
 
-    .selection([<color>, <bg>, <element>, <shadow>]) 
+    .selection(<CSS properties>[, <element>]) 
   
 **Example:**
 
     div {
-     .selection(#CA3636);
+     .selection(~'color: blue; background: red');
     }
     
     // Result
     div {
-     ::selection {
-       color: #CA3636;
-     }
-     ::-moz-selection {
-       color: #CA3636;
-     }
+     lesshat-selector {-lh-property: 0;} 
+     ::selection{color: blue; background: red}
+     ::-moz-selection{color: blue; background: red;}
     }
 
 

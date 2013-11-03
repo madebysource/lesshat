@@ -85,7 +85,7 @@ var keyframes = function keyframes(value) {
   function syntax(start, selector, prefix) {
     var end = '}\n';
     var definition = value_temp.split(',');
-    var syntax = selector + ' ' + definition[0] + '{' + definition[1] + end;
+    var syntax = selector + ' ' + definition[0] + '{';
 
     if (prefix) {
       prefixedProperties.forEach(function(property, index) {
@@ -96,6 +96,8 @@ var keyframes = function keyframes(value) {
         }
       });
     }
+
+    syntax += definition[1] + end;
 
     if (start == 'start') {
       value = '0; } \n' + syntax;

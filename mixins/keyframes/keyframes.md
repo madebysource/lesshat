@@ -13,7 +13,7 @@ LESS CSS compiler doesn't allow to have properties in the root. It's better to u
   
     div { color: red; } // This is correct
 
-Therefore LESS Hat generates **placeholder** selector `lesshat-selector { pb: 0; }` with unknown property, which browsers ignore and after that, there is actually keyframes syntax.  
+Therefore LESS Hat generates **placeholder** selector `lesshat-selector { -lh-property: 0; }` with unknown property, which browsers ignore and after that, there is actually keyframes syntax.  
   
 And also because of bad architecture of LESS CSS language, keyframes definition has to be on single line.
 
@@ -37,21 +37,11 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
     
     // Result
     div {
-     lesshat-selector { pb: 0; } 
-     @-webkit-keyframes animationName{ 0%{ -webkit-transform: scale(1.5); color: blue; } 100%{ -webkit-transform: scale(2); color: red };
-     }
-     lesshat-selector {
-       pb: 0; } 
-     @-moz-keyframes animationName{ 0%{ -moz-transform: scale(1.5); color: blue; } 100%{ -moz-transform: scale(2); color: red };
-     }
-     lesshat-selector {
-       pb: 0; } 
-     @-o-keyframes animationName{ 0%{ -o-transform: scale(1.5); color: blue; } 100%{ -o-transform: scale(2); color: red };
-     }
-     lesshat-selector {
-       pb: 0; } 
-     @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };
-     } 
+     lesshat-selector {-lh-property: 0; } 
+     @-webkit-keyframes animationName{ 0%{ -webkit-transform: scale(1.5); color: blue; } 100%{ -webkit-transform: scale(2); color: red }}
+     @-moz-keyframes animationName{ 0%{ -moz-transform: scale(1.5); color: blue; } 100%{ -moz-transform: scale(2); color: red }}
+     @-o-keyframes animationName{ 0%{ -o-transform: scale(1.5); color: blue; } 100%{ -o-transform: scale(2); color: red }}
+     @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };} 
     }
 
 

@@ -35,6 +35,7 @@
 	// box-shadow
 	// box-sizing
 	// brightness
+	// calc
 	// column-count
 	// column-gap
 	// column-rule
@@ -880,6 +881,36 @@
 
 }
 
+.calc(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){function syntax(property,start){var end=");\n",definition=value_temp.split(","),syntax=definition[0]+":"+property+"("+(definition[1].trim()||0)+end;"start"==start?value="0;\n"+syntax:value+=syntax}value=value||8121991;var state="@{state}",value_temp=value;if(8121991==value)return value;switch(state){case"1":syntax("-webkit-calc","start"),syntax("-moz-calc"),syntax("calc");break;case"2":syntax("-webkit-calc","start"),syntax("-moz-calc");break;case"3":syntax("-webkit-calc","start"),syntax("calc");break;case"4":syntax("-webkit-calc","start");break;case"5":syntax("-moz-calc","start"),syntax("calc");break;case"6":syntax("-moz-calc","start");break;case"7":syntax("calc","start")}return value=value.replace(/;$/g,"")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  @state: 69; // Yeah totally random number
+
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 1; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state: 2; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 3; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state: 4; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 5; -lh-property: @process; }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state: 6; -lh-property: @process; }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 7; -lh-property: @process; }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@w3c_local = true) {}
+  .inception(@arguments);
+
+
+}
+
 .column-count(...) {
 
   @webkit_local: true;
@@ -1439,28 +1470,40 @@
   @opera_local: true;
   @w3c_local: true;
 
-  @process_webkit: ~`(function(value){if(value=value||8121991,8121991==value)return value;var prefixedProperties=["animation","background-size","border-","box-shadow","column","transform","filter"],prefix="-webkit-",selector="@-webkit-keyframes ",definition=value.split(",");return prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(definition[1]=definition[1].replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value="0; } \n"+selector+definition[0]+"{"+definition[1]})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_moz: ~`(function(value){if(value=value||8121991,8121991==value)return value;var prefixedProperties=["animation","background-size","border-","box-shadow","column","transform","filter"],prefix="-moz-",selector="@-moz-keyframes ",definition=value.split(",");return prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(definition[1]=definition[1].replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value="0; } \n"+selector+definition[0]+"{"+definition[1]})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_opera: ~`(function(value){if(value=value||8121991,8121991==value)return value;var prefixedProperties=["animation","background-size","border-","box-shadow","column","transform","filter"],prefix="-o-",selector="@-o-keyframes ",definition=value.split(",");return prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(definition[1]=definition[1].replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value="0; } \n"+selector+definition[0]+"{"+definition[1]})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process: ~`(function(value){if(value=value||8121991,8121991==value)return value;var selector="@keyframes ",definition=value.split(",");return value="0; } \n"+selector+definition[0]+"{"+definition[1]})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){function syntax(start,selector,prefix){var end="}\n",definition=value_temp.split(","),syntax=selector+" "+definition[0]+"{";prefix&&prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(definition[1]=definition[1].replace(new RegExp(property,"g"),function(match){return prefix+match}))}),syntax+=definition[1]+end,"start"==start?value="0; } \n"+syntax:"startend"==start?value="0; } \n"+syntax.replace(end,""):value+="end"==start?syntax.replace(end,""):syntax}value=value||8121991;var state="@{state}",value_temp=value;if(8121991==value)return value;var prefixedProperties=["animation","background-size","box-shadow","column","transform","filter"];switch(state){case"1":syntax("start","@-webkit-keyframes","-webkit-"),syntax(null,"@-moz-keyframes","-moz-"),syntax(null,"@-o-keyframes","-o-"),syntax("end","@keyframes");break;case"2":syntax("start","@-webkit-keyframes","-webkit-"),syntax(null,"@-moz-keyframes","-moz-"),syntax("end","@keyframes");break;case"3":syntax("start","@-webkit-keyframes","-webkit-"),syntax("end","@-moz-keyframes","-moz-");break;case"4":syntax("start","@-webkit-keyframes","-webkit-"),syntax("end","@-o-keyframes","-o-");break;case"5":syntax("start","@-webkit-keyframes","-webkit-"),syntax("end","@keyframes");break;case"6":syntax("startend","@-webkit-keyframes","-webkit-");break;case"7":syntax("start","@-moz-keyframes","-moz-"),syntax(null,"@-o-keyframes","-o-"),syntax("end","@keyframes");break;case"8":syntax("start","@-moz-keyframes","-moz-"),syntax("end","@-o-keyframes","-o-");break;case"9":syntax("start","@-moz-keyframes","-moz-"),syntax("end","@keyframes");break;case"10":syntax("startend","@-moz-keyframes","-moz-");break;case"11":syntax("start","@-o-keyframes","-o-"),syntax("end","@keyframes");break;case"12":syntax("startend","@-o-keyframes","-o-");break;case"13":syntax("startend","@keyframes")}return value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
-  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
-    .inception (@signal, @arguments) when (@signal = 1) and not (@process_webkit = 08121991) { lesshat-selector { pb: @process_webkit }  }
-		.inception (@signal, @arguments) when (@signal = 1) and (@process_webkit = 08121991) {} 
-    .inception (@signal, @arguments) when (@signal = 2) and not (@process_moz = 08121991) { lesshat-selector { pb: @process_moz }  }
-		.inception (@signal, @arguments) when (@signal = 2) and (@process_moz = 08121991) {} 
-    .inception (@signal, @arguments) when (@signal = 3) and not (@process_opera = 08121991) { lesshat-selector { pb: @process_opera }  }
-		.inception (@signal, @arguments) when (@signal = 3) and (@process_opera = 08121991) {} 
-    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { lesshat-selector { pb: @process }  }
-		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
-    .inception(@signal, @arguments);
-  }
-  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+  @state: 69; // Yeah totally random number
 
-  .result(@arguments, 1, @webkit, @webkit_local);
-  .result(@arguments, 2, @moz, @moz_local);
-  .result(@arguments, 3, @opera, @opera_local);
-  .result(@arguments, 4, @w3c, @w3c_local);
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 1; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:2; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:3; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:4; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:5; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:6; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:7; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:8; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:9; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:10; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:11; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:12; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:12; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true)  {}
+
+  .inception(@arguments);
+
 
 }
 
@@ -1968,50 +2011,26 @@
 
 }
 
-.selection(@color:08121991, @bg:08121991, @element:08121991, @shadow:08121991) {
-  .inception (@arguments) when not (@color = 08121991) and (@bg = 08121991) and (@element = 08121991) and (@shadow = 08121991)  {
-    ::selection {
-      color: @color;
-      }
-    ::-moz-selection {
-      color: @color;
-    }
-  }
-  .inception (@arguments) when not (@color = 08121991) and not (@bg = 08121991) and (@element = 08121991) and (@shadow = 08121991) {
-    ::selection {
-      color: @color;
-      background: @bg;
-      }
-    ::-moz-selection {
-      color: @color;
-      background: @bg;
-    }
-  }
-  .inception (@arguments) when not (@color = 08121991) and not (@bg = 08121991) and not (@element = 08121991) and (@shadow = 08121991) {
-    @{element}::selection {
-      color: @color;
-      background: @bg;
-      }
-    @{element}::-moz-selection {
-      color: @color;
-      background: @bg;
-    }
-  }
-  .inception (@arguments) when not (@color = 08121991) and not (@bg = 08121991) and not (@element = 08121991) and not (@shadow = 08121991) {
-    @{element}::selection {
-      color: @color;
-      background: @bg;
-      text-shadow: @shadow;
-    }
-    @{element}::-moz-selection {
-      color: @color;
-      background: @bg;
-      text-shadow: @shadow;
-    }
-  }
-  .inception (@arguments) when (@color = 08121991) and (@bg = 08121991) and (@element = 08121991) and (@shadow = 08121991) {}
-  
+.selection(...) {
+
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){function syntax(start,selector){var end="}\n",definition=value_temp.split(","),syntax=(definition[1]||"")+selector+"{"+definition[0]+end;"start"==start?value="0; } \n"+syntax:"startend"==start?value="0; } \n"+syntax.replace(end,""):value+="end"==start?syntax.replace(end,""):syntax}value=value||8121991;var state="@{state}",value_temp=value;if(8121991==value)return value;switch(state){case"1":syntax("start","::selection"),syntax("end","::-moz-selection");break;case"2":syntax("startend","::selection");break;case"3":syntax("startend","::-moz-selection")}return value=value.replace(/;$/g,"")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  @state: 69; // Yeah totally random number
+
+  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 1; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:2; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:3; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@moz_local = true) and not (@w3c_local = true) {}
+
   .inception(@arguments);
+
+
 }
 
 .sepia(...) {
