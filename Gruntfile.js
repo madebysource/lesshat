@@ -9,6 +9,8 @@ module.exports = function(grunt) {
    * Grunt config
    */
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
     generator: {
       settings: {
         mixin_name: null,
@@ -17,8 +19,26 @@ module.exports = function(grunt) {
       }
     },
 
+    version: {
+      settings: {
+        version: null
+      }
+    },
+
     prompt: {
-      shell: {
+      version: {
+        options: {
+          questions: [{
+            config: 'version.settings.version',
+            type: 'input',
+            validate: function(value) {
+              return (value && true);
+            },
+            message: 'LESS Hat next version number? Current is ' + '<%= pkg.version %>'.green + ':',
+          }],
+        }
+      },
+      generate: {
         options: {
           questions: [{
             config: 'generator.settings.mixin_name',
@@ -64,12 +84,15 @@ module.exports = function(grunt) {
       }
     }
 
-  });
+  });  
 
   /**
    * Register tasks
    */
-  grunt.registerTask('default', ['build', 'test', 'prefix', 'documentation']);
-  grunt.registerTask('generate', ['prompt', 'generator']);
+
+  grunt.registerTask('version', ['prompt:version', 'iterate', 'build', 'mixins_update']);
+  grunt.registerTask('dev', ['build', 'test']);
+  grunt.registerTask('generate', ['prompt:generate', 'generator']);
+  grunt.registerTask('default', ['version','build', 'test', 'mixins_update', 'prefix', 'documentation']);
 
 };

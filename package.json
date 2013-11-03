@@ -7,10 +7,12 @@
     "name": "Petr Brzek",
     "email": "petrbrzek@abdoc.net"
   },
-  "contributors": [{
-    "name": "Jan Kuca",
-    "url": "www.jankuca.com"
-  }],
+  "contributors": [
+    {
+      "name": "Jan Kuca",
+      "url": "www.jankuca.com"
+    }
+  ],
   "keywords": [
     "less",
     "mixins"
@@ -22,16 +24,20 @@
   "bugs": {
     "url": "https://github.com/csshat/lesshat/issues"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://github.com/csshat/lesshat/blob/master/LICENSE"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/csshat/lesshat/blob/master/LICENSE"
+    }
+  ],
   "devDependencies": {
     "lesshat-devstack": "git://github.com/csshat/lesshat-devstack",
     "grunt": "0.4.x",
     "grunt-cli": "*",
     "mocha": "*",
-    "grunt-prompt": "~0.1.2"
+    "grunt-prompt": "~0.1.2",
+    "grunt-bump": "0.0.11",
+    "grunt-conventional-changelog": "~1.0.0"
   },
   "scripts": {
     "test": "grunt"
