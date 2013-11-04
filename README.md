@@ -11,7 +11,7 @@ README.md file is automatically generated.
 
 
 ---
-**[Download 2.0.0]()** (or **[Prefixed]()**) **|**
+**[Download latest](https://raw.github.com/PetrBrzek/LESSHat/master/build/lesshat.less)** (or **[Prefixed](https://raw.github.com/PetrBrzek/LESSHat/master/build/lesshat-prefixed.less)**) **|**
 **[Get Starded](#get-started) |**
 **[Contribute](#contribute) |**
 **[Documentation](#documentation) |**
@@ -1763,18 +1763,14 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
   
 **Example:**
 
-    div {
-     .keyframes(~'animationName, 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red }');
-    }
+    .keyframes(~'animationName, 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red }');
     
     // Result
-    div {
      lesshat-selector {-lh-property: 0; } 
      @-webkit-keyframes animationName{ 0%{ -webkit-transform: scale(1.5); color: blue; } 100%{ -webkit-transform: scale(2); color: red }}
      @-moz-keyframes animationName{ 0%{ -moz-transform: scale(1.5); color: blue; } 100%{ -moz-transform: scale(2); color: red }}
      @-o-keyframes animationName{ 0%{ -o-transform: scale(1.5); color: blue; } 100%{ -o-transform: scale(2); color: red }}
      @keyframes animationName{ 0%{ transform: scale(1.5); color: blue; } 100%{ transform: scale(2); color: red };} 
-    }
 
 
 
@@ -1805,11 +1801,9 @@ Default value: 1
     
     // Result
     div {
-     -webkit-box-pack: flex-start;
-     -moz-box-pack: start;
-     -webkit-opacity: start;
-     -ms-flex-pack: flex-start;
-     opacity: flex-start;
+     -webkit-opacity: 0.5;
+     -moz-opacity: 0.5;
+     opacity: 0.5;
     }
 
 

@@ -25,11 +25,9 @@ Default value: 1
     
     // Result
     div {
-     -webkit-box-pack: flex-start;
-     -moz-box-pack: start;
-     -webkit-opacity: start;
-     -ms-flex-pack: flex-start;
-     opacity: flex-start;
+     -webkit-opacity: 0.5;
+     -moz-opacity: 0.5;
+     opacity: 0.5;
     }
 
 
