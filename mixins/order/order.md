@@ -3,7 +3,7 @@
 
 The CSS order property specifies the order used to lay out flex items in their flex container.  
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)**, **(CSS-Tricks)[http://css-tricks.com/almanac/properties/o/order/]**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/o/order/)**
 
 **Syntax:**
 

@@ -3,7 +3,7 @@
 
 The perspective CSS property determines the distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)**, **(CSS-Tricks)[http://css-tricks.com/almanac/properties/p/perspective/]**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/p/perspective/)**
 
 **Syntax:**
 

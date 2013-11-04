@@ -3,7 +3,7 @@
 
 Applies a linear multiplier to input image, making it appear more or less bright. A value of 0% will create an image that is completely black. A value of 100% leaves the input unchanged. Other values are linear multipliers on the effect. Values of an amount over 100% are allowed, providing brighter results. If the ‘amount’ parameter is missing, a value of 100% is used.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#brightness())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#brightness()">MDN</a>**
 
 **Syntax:**
 

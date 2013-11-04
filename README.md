@@ -775,7 +775,7 @@ If you omit units, `background-size` adds `px` automatically.
 
 Applies a Gaussian blur to the input image. The value of ‘radius’ defines the value of the standard deviation to the Gaussian function, or how many pixels on the screen blend into each other, so a larger value will create more blur. If no parameter is provided, then a value 0 is used. The parameter is specified as a CSS length, but does not accept percentage values.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur()">MDN</a>**
 
 **Syntax:**
 
@@ -1072,7 +1072,7 @@ Default value: content-box
 
 Applies a linear multiplier to input image, making it appear more or less bright. A value of 0% will create an image that is completely black. A value of 100% leaves the input unchanged. Other values are linear multipliers on the effect. Values of an amount over 100% are allowed, providing brighter results. If the ‘amount’ parameter is missing, a value of 100% is used.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#brightness())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#brightness()">MDN</a>**
 
 **Syntax:**
 
@@ -1285,7 +1285,7 @@ Default value: auto
 
 Adjusts the contrast of the input. A value of 0% will create an image that is completely black. A value of 100% leaves the input unchanged. Values of amount over 100% are allowed, providing results with less contrast. If the ‘amount’ parameter is missing, a value of 100% is used.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#contrast())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#contrast()">MDN</a>**
 
 **Syntax:**
 
@@ -1345,7 +1345,7 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 Applies a drop shadow effect to the input image. A drop shadow is effectively a blurred, offset version of the input image's alpha mask drawn in a particular color, composited below the image.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-shadow())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-shadow()">MDN</a>**
 
 **Syntax:**
 
@@ -1608,7 +1608,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)*
 
 Converts the input image to grayscale. The value of ‘amount’ defines the proportion of the conversion. A value of 100% is completely grayscale. A value of 0% leaves the input unchanged. Values between 0% and 100% are linear multipliers on the effect. If the ‘amount’ parameter is missing, a value of 100% is used.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#grayscale())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#grayscale()">MDN</a>**
 
 **Syntax:**
 
@@ -1641,7 +1641,7 @@ Default value: 0
 
 Applies a hue rotation on the input image. The value of ‘angle’ defines the number of degrees around the color circle the input samples will be adjusted. A value of 0deg leaves the input unchanged. If the ‘angle’ parameter is missing, a value of 0deg is used. Maximum value is 360deg.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#hue-rotate())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#hue-rotate()">MDN</a>**
 
 **Syntax:**
 
@@ -1674,7 +1674,7 @@ Default value: 0
 
 Inverts the samples in the input image. The value of ‘amount’ defines the proportion of the conversion. A value of 100% is completely inverted. A value of 0% leaves the input unchanged. Values between 0% and 100% are linear multipliers on the effect. If the ‘amount’ parameter is missing, a value of 100% is used.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#invert())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#invert()">MDN</a>**
 
 **Syntax:**
 
@@ -1815,7 +1815,7 @@ Default value: 1
 
 The CSS order property specifies the order used to lay out flex items in their flex container.  
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)**, **(CSS-Tricks)[http://css-tricks.com/almanac/properties/o/order/]**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/o/order/)**
 
 **Syntax:**
 
@@ -1845,7 +1845,7 @@ Default value: 0
 
 The perspective CSS property determines the distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)**, **(CSS-Tricks)[http://css-tricks.com/almanac/properties/p/perspective/]**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/p/perspective/)**
 
 **Syntax:**
 
@@ -1877,7 +1877,7 @@ Default value: none
 
 The perspective-origin CSS property determines the position the viewer is looking at. It is used as the vanishing point by the perspective property.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin)**, **(CSS-Tricks)[http://css-tricks.com/almanac/properties/p/perspective-origin/]**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/p/perspective-origin/)**
 
 **Syntax:**
 
@@ -1978,7 +1978,7 @@ Default value: 0
 
 The rotate3d()CSS function defines a transformation that moves the element around a fixed axe without deforming it.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#rotate3d())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#rotate3d()">MDN</a>**
 
 **Syntax:**
 
@@ -2112,7 +2112,7 @@ Default value: 0
 
   Saturates the input image. The value of ‘amount’ defines the proportion of the conversion.
 
-  Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#saturate())**
+  Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#saturate()">MDN</a>**
 
   **Syntax:**
 
@@ -2174,7 +2174,7 @@ Default value: 1
 
 The scale3d() CSS function modifies the size of an element. Because the amount of scaling is defined by a vector, it can resize different dimensions at different scales.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scale3d())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scale3d()">MDN</a>**
 
 **Syntax:**
 
@@ -2262,7 +2262,7 @@ Default value: 1
 
 The scaleZ() CSS function modifies the z-coordinate of each element point by a constant facto, except if this scale factor is 1, in which case the function is the identity transform.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scaleZ())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scaleZ()">MDN</a>**
 
 **Syntax:**
 
@@ -2330,7 +2330,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
 
 Converts the input image to Instagram like effect.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia()">MDN</a>**
 
 **Syntax:**
 
@@ -2804,7 +2804,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
 
 The translate3d() CSS function moves the position of the element in the 3D space.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#translate3d())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#translate3d()">MDN</a>**
 
 **Syntax:**
   

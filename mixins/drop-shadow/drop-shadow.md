@@ -3,7 +3,7 @@
 
 Applies a drop shadow effect to the input image. A drop shadow is effectively a blurred, offset version of the input image's alpha mask drawn in a particular color, composited below the image.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-shadow())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#drop-shadow()">MDN</a>**
 
 **Syntax:**
 

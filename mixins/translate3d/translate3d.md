@@ -3,7 +3,7 @@
 
 The translate3d() CSS function moves the position of the element in the 3D space.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#translate3d())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#translate3d()">MDN</a>**
 
 **Syntax:**
   

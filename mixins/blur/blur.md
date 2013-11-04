@@ -3,7 +3,7 @@
 
 Applies a Gaussian blur to the input image. The value of ‘radius’ defines the value of the standard deviation to the Gaussian function, or how many pixels on the screen blend into each other, so a larger value will create more blur. If no parameter is provided, then a value 0 is used. The parameter is specified as a CSS length, but does not accept percentage values.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#blur()">MDN</a>**
 
 **Syntax:**
 

@@ -3,7 +3,7 @@
 
 Adjusts the contrast of the input. A value of 0% will create an image that is completely black. A value of 100% leaves the input unchanged. Values of amount over 100% are allowed, providing results with less contrast. If the ‘amount’ parameter is missing, a value of 100% is used.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#contrast())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#contrast()">MDN</a>**
 
 **Syntax:**
 

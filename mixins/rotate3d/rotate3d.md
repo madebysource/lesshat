@@ -3,7 +3,7 @@
 
 The rotate3d()CSS function defines a transformation that moves the element around a fixed axe without deforming it.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#rotate3d())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#rotate3d()">MDN</a>**
 
 **Syntax:**
 

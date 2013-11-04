@@ -3,7 +3,7 @@
 
 The perspective-origin CSS property determines the position the viewer is looking at. It is used as the vanishing point by the perspective property.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin)**, **(CSS-Tricks)[http://css-tricks.com/almanac/properties/p/perspective-origin/]**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/p/perspective-origin/)**
 
 **Syntax:**
 

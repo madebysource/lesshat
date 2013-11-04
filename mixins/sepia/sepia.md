@@ -3,7 +3,7 @@
 
 Converts the input image to Instagram like effect.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#sepia()">MDN</a>**
 
 **Syntax:**
 

@@ -3,7 +3,7 @@
 
 The scale3d() CSS function modifies the size of an element. Because the amount of scaling is defined by a vector, it can resize different dimensions at different scales.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scale3d())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scale3d()">MDN</a>**
 
 **Syntax:**
 

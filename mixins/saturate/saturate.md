@@ -3,7 +3,7 @@
 
   Saturates the input image. The value of ‘amount’ defines the proportion of the conversion.
 
-  Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#saturate())**
+  Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#saturate()">MDN</a>**
 
   **Syntax:**
 

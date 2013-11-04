@@ -3,7 +3,7 @@
 
 The scaleZ() CSS function modifies the z-coordinate of each element point by a constant facto, except if this scale factor is 1, in which case the function is the identity transform.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scaleZ())**
+Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scaleZ()">MDN</a>**
 
 **Syntax:**
 
