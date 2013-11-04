@@ -5,7 +5,6 @@ README.md file is automatically generated.
 -->
 
 # LESS Hat 2.0 ![travis](https://travis-ci.org/PetrBrzek/LESSHat.png)
-### Yeah, it's finaly here! Unbelievable.
 
 
 ![LESS Hat 2.0](http://f.cl.ly/items/240x0i2S0B101F1d420t/lesshat-v2.0.png)
@@ -17,9 +16,9 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![LESS Hat 2.0](http://media.giphy.com/media/lI6nHr5hWXlu0/giphy.gif) ![LESS Hat 2.0](http://f.cl.ly/items/0y0M3O0L0d2h1G0Y3W23/yes.png)
-
+<br>
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
