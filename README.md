@@ -7,8 +7,8 @@ README.md file is automatically generated.
 # LESS Hat 2.0 ![travis](https://travis-ci.org/PetrBrzek/LESSHat.png)
 ### Yeah, it's finaly here! Unbelievable.
 
-![LESS Hat 2.0](http://media.giphy.com/media/lI6nHr5hWXlu0/giphy.gif) 
 
+![LESS Hat 2.0](http://f.cl.ly/items/240x0i2S0B101F1d420t/lesshat-v2.0.png)
 
 ---
 **[Download latest](https://raw.github.com/PetrBrzek/LESSHat/master/build/lesshat.less)** (or **[Prefixed](https://raw.github.com/PetrBrzek/LESSHat/master/build/lesshat-prefixed.less)**) **|**
@@ -17,14 +17,17 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![LESS Hat 2.0](http://media.giphy.com/media/lI6nHr5hWXlu0/giphy.gif) ![LESS Hat 2.0](http://f.cl.ly/items/0y0M3O0L0d2h1G0Y3W23/yes.png)
+
 ## Intro
-Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS world. 
+Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
 After a year, there is a new, **completely rewritten 2.0 version** that brings 86 great mixins, robust workflow for editing, testing and creating new mixins.
 
 Meet the best mixins library in the world. Thanks to the LESS Hat 2.0 is LESS CSS finally usable.
 
-If you would like to use CSS Hat for working with LESS Hat, but you still don't have one. We have some suprise for you on **[lesshat.com](http://lesshat.com)**
+If you would like to use CSS Hat for working with LESS Hat and you still don't have one, we have a suprise for you at **[lesshat.com](http://lesshat.com)** - Check it out!
 
 ### Features
 * **Configuration** – You can turn off/on browser prefixes according to your needs.
@@ -34,7 +37,7 @@ If you would like to use CSS Hat for working with LESS Hat, but you still don't 
 * **Bootstrap friendly** – You can now use prefixed LESS Hat version and gaily work with Bootstrap. Yeah it's that easy.
 * **Keyframes** – Although it's tricky as hell, but yeah LESS Hat has mixin for `.keyframes`
 * **Blank state ready** – If you call mixin without any arguments, LESS Hat does not pollute your CSS with empty properties. Instead LESS Hat generates nothing.
-* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generates new mixin with [GRUNT](http://gruntjs.com/). Know more about workflow in **[contribution](#contribution)** section.
+* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
 
 ## <a name="get-started"></a> Get started
 The structure of this repo is:  
@@ -42,7 +45,7 @@ The structure of this repo is:
 * **build folder** – there are ready-to-use lesshat.less or lesshat-prefixed.less mixins
 * **mixins folder** – developer version of mixins (more about that in **[contribution](#contribution)** section)
 * **.gitignore** – is a list of files that git will ignore. I know you know that, but it's convention. 
-* **.travis.yml** – Configuratin file for Travis CI. Travis CI is a hosted continuous integration service for the open source community.
+* **.travis.yml** – Configuration file for Travis CI. Travis CI is a hosted continuous integration service for the open source community.
 * **Gruntfle.js** – task runner. If you don't want to use lesshat-devstack ignore it.
 * **LICENCE** – self-explanatory
 * **README-template.md** – If you want to edit readme, edit it in this file. README.md is generated.
@@ -84,7 +87,7 @@ The structure of this repo is:
   			.result(@arguments, 3, @w3c, @w3c_local);
 		}
 		
-	At to top, there are local prefix configuration. So you can turn off/on browser for one specific mixin. This is quite useful.
+	At the top, there are a local prefix configurations. So you can turn off/on browser for one specific mixin. This is quite useful.
 	
 	In @process variable is all magic. Please don't edit javascrpt directly in .less file. Instead use [lesshat-devstack](https://github.com/csshat/lesshat-devstack).
 	
@@ -119,7 +122,7 @@ The structure of this repo is:
 2. NPM install.
 3. Now you have LESS Hat devstack (see [documentation](https://github.com/csshat/lesshat-devstack).)
 4. If you create new mixin, use grunt generate command! 
-5. If it's possible (almost always) have test coverage for new mixins, and never break existing tests.
+5. If it's possible (almost always) test the coverage for new mixins, and never break existing tests.
 6. Commits should represent one logical change each. If a mixin goes through multiple iterations, squash your commits down to one.
 7.  Finally, commit some code and open a pull request.
 
