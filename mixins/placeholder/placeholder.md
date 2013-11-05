@@ -17,19 +17,51 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/style-placeholder-t
     }
     
     // Result
-    div {
-     ::-webkit-input-placeholder {
+    div::-webkit-input-placeholder {
        color: #666666;
-     }
-     :-moz-placeholder {
+    }
+    div:-moz-placeholder {
        color: #666666;
-     }
-     ::-moz-placeholder {
+    }
+    div::-moz-placeholder {
        color: #666666;
-     }
-     :-ms-input-placeholder {
+    }
+    div:-ms-input-placeholder {
        color: #666666;
-     }
+    }
+    
+    // In root (outside of selectors)
+    .placeholder(#333333);
+
+    // Result
+    ::-webkit-input-placeholder {
+       color: #666666;
+    }
+    :-moz-placeholder {
+       color: #666666;
+    }
+    ::-moz-placeholder {
+       color: #666666;
+    }
+    :-ms-input-placeholder {
+       color: #666666;
+    }
+
+    // In root (outside of selectors)
+    .placeholder(#333333, textarea);
+
+    // Result
+    textarea::-webkit-input-placeholder {
+       color: #666666;
+    }
+    textarea:-moz-placeholder {
+       color: #666666;
+    }
+    textarea::-moz-placeholder {
+       color: #666666;
+    }
+    textarea:-ms-input-placeholder {
+       color: #666666;
     }
 
 

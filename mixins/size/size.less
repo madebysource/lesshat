@@ -16,13 +16,23 @@
 
 .size(@width, @height) {
   @unit: 'px';
-  .process(@width, @height) when (ispixel(@width)) and (ispixel(@height)), (isem(@width)) and (isem(@height)), (ispercentage(@width)) and (ispercentage(@height)) {
+  .process(@width, @height) when (ispixel(@width)) and (ispixel(@height)), (isem(@width)) and (isem(@height)), (ispercentage(@width)) and (ispercentage(@height)), (ispixel(@width)) and (ispercentage(@height)), (ispixel(@width)) and (isem(@height)), (ispercentage(@width)) and (ispixel(@height)), (ispercentage(@width)) and (isem(@height)), (isem(@width)) and (ispixel(@height)), (isem(@width)) and (ispercentage(@height)) {
     width: @width;
     height: @height;
   }
 
-  .process(@width, @height) when not (ispixel(@width)) and not (ispixel(@height)), (isem(@width)) and not (isem(@height)), (ispercentage(@width)) and not (ispercentage(@height)) {
+  .process(@width, @height) when not (ispixel(@width)) and not (ispixel(@height)) and not (ispercentage(@width)) and not (ispercentage(@height)) and not (isem(@width)) and not (isem(@height)) {
     width: ~`@{width} + @{unit}`;
+    height: ~`@{height} + @{unit}`;
+  }
+
+  .process(@width, @height) when not (ispixel(@width)) and not (ispercentage(@width)) and not (isem(@width)) {
+    width: ~`@{width} + @{unit}`;
+    height: @height;
+  }
+
+  .process(@width, @height) when not (ispixel(@height)) and not (ispercentage(@height)) and not (isem(@height)) {
+    width: @width;
     height: ~`@{height} + @{unit}`;
   }
 

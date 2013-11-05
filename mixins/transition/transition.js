@@ -5,7 +5,7 @@
 var transition = function transition(value) {
   value = value || 'all 0 ease 0';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
-  var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
   if (/^[-a-z0-9]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
@@ -13,9 +13,8 @@ var transition = function transition(value) {
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {
-      var match = parseFloat(match, 10);
 
-      if (match > 10) {
+      if (parseFloat(match, 10) > 10) {
         match += 'ms';
       } else {
         match += 's';
@@ -33,7 +32,7 @@ transition.webkit = function transition(value) {
   var prefixedProperties = ['background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-webkit-';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
-  var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
   if (/^[-a-z0-9]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
@@ -49,9 +48,8 @@ transition.webkit = function transition(value) {
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {
-      var match = parseFloat(match, 10);
 
-      if (match > 10) {
+      if (parseFloat(match, 10) > 10) {
         match += 'ms';
       } else {
         match += 's';
@@ -69,7 +67,7 @@ transition.moz = function transition(value) {
   var prefixedProperties = ['background-size', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-moz-';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
-  var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
   if (/^[-a-z0-9]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
@@ -85,9 +83,8 @@ transition.moz = function transition(value) {
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {
-      var match = parseFloat(match, 10);
 
-      if (match > 10) {
+      if (parseFloat(match, 10) > 10) {
         match += 'ms';
       } else {
         match += 's';
@@ -105,7 +102,7 @@ transition.opera = function transition(value) {
   var prefixedProperties = ['transform'];
   var prefix = '-o-';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
-  var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
   if (/^[-a-z0-9]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
@@ -121,9 +118,8 @@ transition.opera = function transition(value) {
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {
-      var match = parseFloat(match, 10);
 
-      if (match > 10) {
+      if (parseFloat(match, 10) > 10) {
         match += 'ms';
       } else {
         match += 's';

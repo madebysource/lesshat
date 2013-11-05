@@ -1923,19 +1923,51 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/style-placeholder-t
     }
     
     // Result
-    div {
-     ::-webkit-input-placeholder {
+    div::-webkit-input-placeholder {
        color: #666666;
-     }
-     :-moz-placeholder {
+    }
+    div:-moz-placeholder {
        color: #666666;
-     }
-     ::-moz-placeholder {
+    }
+    div::-moz-placeholder {
        color: #666666;
-     }
-     :-ms-input-placeholder {
+    }
+    div:-ms-input-placeholder {
        color: #666666;
-     }
+    }
+    
+    // In root (outside of selectors)
+    .placeholder(#333333);
+
+    // Result
+    ::-webkit-input-placeholder {
+       color: #666666;
+    }
+    :-moz-placeholder {
+       color: #666666;
+    }
+    ::-moz-placeholder {
+       color: #666666;
+    }
+    :-ms-input-placeholder {
+       color: #666666;
+    }
+
+    // In root (outside of selectors)
+    .placeholder(#333333, textarea);
+
+    // Result
+    textarea::-webkit-input-placeholder {
+       color: #666666;
+    }
+    textarea:-moz-placeholder {
+       color: #666666;
+    }
+    textarea::-moz-placeholder {
+       color: #666666;
+    }
+    textarea:-ms-input-placeholder {
+       color: #666666;
     }
 
 
@@ -2302,7 +2334,9 @@ LESS CSS compiler doesn't allow to have properties in the root. It's better to u
 
 Therefore LESS Hat generates **placeholder** selector `lesshat-selector { -lh-property: 0; }` with unknown property, which browsers ignore and after that, there is actually selection syntax.    
   
-**THIS MIXIN MUST BE INTERPOLATED `~''`**
+**THIS MIXIN MUST BE INTERPOLATED `~''`**  
+  
+Use this mixin outside of CSS selectors
 
 Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)**
 
@@ -2312,16 +2346,12 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
   
 **Example:**
 
-    div {
-     .selection(~'color: blue; background: red');
-    }
+    .selection(~'color: blue; background: red');
     
     // Result
-    div {
-     lesshat-selector {-lh-property: 0;} 
-     ::selection{color: blue; background: red}
-     ::-moz-selection{color: blue; background: red;}
-    }
+    lesshat-selector {-lh-property: 0;} 
+    ::selection{color: blue; background: red}
+    ::-moz-selection{color: blue; background: red;}
 
 
 

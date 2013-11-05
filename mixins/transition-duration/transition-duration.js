@@ -5,13 +5,12 @@
 var transitionDuration = function transitionDuration(value) {
   value = value || '0';
   var valueRegex = /ms|s/gi;
-  var numWithoutValue = /(?:\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {
-      var match = parseFloat(match, 10);
 
-      if (match > 10) {
+      if (parseFloat(match, 10) > 10) {
         match += 'ms';
       } else {
         match += 's';

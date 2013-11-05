@@ -13,7 +13,9 @@ LESS CSS compiler doesn't allow to have properties in the root. It's better to u
 
 Therefore LESS Hat generates **placeholder** selector `lesshat-selector { -lh-property: 0; }` with unknown property, which browsers ignore and after that, there is actually selection syntax.    
   
-**THIS MIXIN MUST BE INTERPOLATED `~''`**
+**THIS MIXIN MUST BE INTERPOLATED `~''`**  
+  
+Use this mixin outside of CSS selectors
 
 Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)**
 
@@ -23,15 +25,11 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
   
 **Example:**
 
-    div {
-     .selection(~'color: blue; background: red');
-    }
+    .selection(~'color: blue; background: red');
     
     // Result
-    div {
-     lesshat-selector {-lh-property: 0;} 
-     ::selection{color: blue; background: red}
-     ::-moz-selection{color: blue; background: red;}
-    }
+    lesshat-selector {-lh-property: 0;} 
+    ::selection{color: blue; background: red}
+    ::-moz-selection{color: blue; background: red;}
 
 
