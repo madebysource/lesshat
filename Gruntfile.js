@@ -2,13 +2,10 @@ module.exports = function (grunt) {
 
     var pkg = grunt.file.readJSON('package.json');
 
-    grunt.loadNpmTasks('grunt-recess');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
 
     grunt.initConfig({
@@ -32,29 +29,6 @@ module.exports = function (grunt) {
                 src: ['<%= src.less %>'],
                 dest: 'dist/style.less',
             },
-        },
-        copy: {
-            assets: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'src/assets/',
-                        src: '**',
-                        dest: 'dist/assets/',
-                    },
-                ],
-            },
-        },
-        recess: {
-            less: {
-                options: {
-                    compile: true,
-                    compress: true,
-                },
-                files: {
-                    'dist/style.css': ['dist/style.less'],
-                }
-            }
         },
         less: {
             styles: {
