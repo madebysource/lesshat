@@ -10,7 +10,7 @@ describe('transition-delay', function() {
     test.transitionDelay('200ms', '200ms', done);
   });
 
-  it('should return numbers with second and milisecond value', function(done) {
+  it('should return numbers with properly value', function(done) {
     test.transitionDelay('9, 200', '9s, 200ms', done);
   });
 
