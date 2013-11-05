@@ -84,29 +84,29 @@ var keyframes = function keyframes(value) {
 
   function syntax(start, selector, prefix) {
     var end = '}\n';
-    var definition = value_temp.split(',');
-    var syntax = selector + ' ' + definition[0] + '{';
+    var definition = value_temp.split(/([a-zA-Z0-9-]+),/g);
+    var keyframes = selector + ' ' + definition[1] + '{';
 
     if (prefix) {
       prefixedProperties.forEach(function(property, index) {
         if (value.indexOf(property) !== -1) {
-          definition[1] = definition[1].replace(new RegExp(property, 'g'), function(match) {
+          definition[2] = definition[2].replace(new RegExp(property, 'g'), function(match) {
             return prefix + match;
           })
         }
       });
     }
 
-    syntax += definition[1] + end;
+    keyframes += definition[2] + end;
 
     if (start == 'start') {
-      value = '0; } \n' + syntax;
+      value = '0; } \n' + keyframes;
     } else if (start == 'startend') {
-      value = '0; } \n' + syntax.replace(end, '');
+      value = '0; } \n' + keyframes.replace(end, '');
     } else if (start == 'end') {
-      value = value + syntax.replace(end, '');
+      value = value + keyframes.replace(end, '');
     } else {
-      value = value + syntax;
+      value = value + keyframes;
     }
 
   }
