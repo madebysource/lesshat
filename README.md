@@ -30,7 +30,7 @@ If you would like to use CSS Hat for working with LESS Hat and you still don't h
 
 ### Features
 * **Configuration** – You can turn off/on browser prefixes according to your needs.
-* **No restriction** – If it's possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.
+* **No restrictions** – If it's possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.
 * **Standard naming convention** – In LESS Hat, mixins have names like all CSS3 properties. No `.rounded` or `.shadow`. It's stupid.
 * **Cross-browser** – LESS Hat takes care of exporting CSS for all available browsers.
 * **Bootstrap friendly** – You can now use prefixed LESS Hat version and gaily work with Bootstrap. Yeah it's that easy.
