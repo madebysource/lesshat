@@ -10,7 +10,7 @@ README.md file is automatically generated.
 ![LESS Hat 2.0](http://f.cl.ly/items/240x0i2S0B101F1d420t/lesshat-v2.0.png)
 
 ---
-**[Download latest](https://raw.github.com/PetrBrzek/LESSHat/master/build/lesshat.less)** (or **[Prefixed](https://raw.github.com/PetrBrzek/LESSHat/master/build/lesshat-prefixed.less)**) **|**
+**[Download latest](https://raw.github.com/csshat/lesshat/master/build/lesshat.less)** (or **[Prefixed](https://raw.github.com/csshat/lesshat/master/build/lesshat-prefixed.less)**) **|**
 **[Get Starded](#get-started) |**
 **[Contribute](#contribute) |**
 **[Documentation](#documentation) |**
