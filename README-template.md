@@ -7,7 +7,7 @@ README.md file is automatically generated.
 # LESS Hat 2.0 [![Build Status](https://travis-ci.org/csshat/lesshat.png)](https://travis-ci.org/csshat/lesshat)
 
 
-![LESS Hat 2.0](http://f.cl.ly/items/240x0i2S0B101F1d420t/lesshat-v2.0.png)
+![LESS Hat 2.0](http://f.cl.ly/items/1b2U0t2X3i3l2z2a3m2I/Untitled-11.png)
 
 ---
 **[Download latest](https://raw.github.com/csshat/lesshat/master/build/lesshat.less)** (or **[Prefixed - great with Bootstrap](https://raw.github.com/csshat/lesshat/master/build/lesshat-prefixed.less)**) **|**
