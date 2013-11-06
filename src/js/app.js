@@ -1,3 +1,5 @@
+var _gaq = [['_setAccount', 'UA-5463802-47'], ['_trackPageview']];
+
 $(function () {
     var download = $('#download, #bottom-download');
     var logo = $('#logo');
@@ -31,6 +33,7 @@ $(function () {
                 second.find('input').focus();
             }, 3800);
         }, 300);
+        _gaq.push(['_trackEvent', 'Website', 'Download', this.id]);
         window.location = zip;
     });
 
