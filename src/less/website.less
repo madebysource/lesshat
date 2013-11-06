@@ -82,7 +82,7 @@ section {
 .shadow {
     div:first-child {
         height: 1000px;
-        background: #133787;
+        background: #1d2eac;
         opacity: .8;
         position: absolute;
         left: 50%;
@@ -184,7 +184,7 @@ section {
             .size(281px, 56px);
             border: 2px solid #fff;
             .border-radius(30px);
-            background-color: #2e60d0;
+            background-color: #3a4ff0;
             margin-bottom: 20px;
             color: #fff;
             font-size: 16px;
@@ -216,7 +216,7 @@ section {
 
             &:hover {
                 border-color: #5799ff;
-                background-color: #1f59d9;
+                background-color: #3a4ff0;
                 color: #5799ff;
 
                 i {
@@ -225,7 +225,7 @@ section {
             }
             &:active, &.downloaded {
                 border-color: fade(#5799ff, 0%);
-                background-color: #133b91;
+                background-color: #1d2eac;
                 color: #5799ff;
 
                 span {
@@ -294,7 +294,7 @@ section {
 }
 
 #testimonial {
-    background-color: #205ada;
+    background-color: #3a4ff0;
     padding: 60px 0;
     overflow: hidden;
     position: absolute;
@@ -302,7 +302,7 @@ section {
     width: 100%;
 
     h1 {
-        color: #133787;
+        color: #1d2eac;
         font-size: 30px;
         text-transform: uppercase;
         .proximabold;
@@ -335,6 +335,30 @@ section {
             font-size: 16px;
             text-decoration: none;
         }
+
+        &.joke {
+            text-align: right;
+            position: absolute;
+            right: 60px;
+            top: 120px;
+            width: 330px;
+            z-index: 100;
+            .transition(.1s);
+
+            span {
+                display: block;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    #testimonial p.joke {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .ribbon {
+        display: none;
     }
 }
 
@@ -589,7 +613,7 @@ section {
             background-image: url(/assets/csshat.png);
             background-size: 100%;
             position: absolute;
-            left: 0;
+            left: -9px;
             top: 42px;
         }
 
@@ -687,14 +711,15 @@ section {
 
                 thead {
                     th {
-                        text-align: left;
                         color: #fff;
                         border-bottom: 1px solid #303030;
                         border-left: 1px solid #303030;
+                        text-align: center;
 
                         &:first-child {
                             color: #ee1700;
                             border-left: none;
+                            text-align: left;
                         }
                     }
                 }
