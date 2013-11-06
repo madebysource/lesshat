@@ -1,7 +1,9 @@
 $(function () {
-    var download = $('#download');
+    var download = $('#download, #bottom-download');
     var logo = $('#logo');
     var second = $('#second');
+
+    var zip = 'https://github.com/csshat/lesshat/archive/v2.0.0.zip';
 
     var downloaded = false;
 
@@ -29,6 +31,7 @@ $(function () {
                 second.find('input').focus();
             }, 3800);
         }, 300);
+        window.location = zip;
     });
 
     $('#hat [source-subscribe]').each(function (id, form) {

@@ -87,7 +87,7 @@ section {
         position: absolute;
         left: 50%;
         width: 263px;
-        top: 380px;
+        top: 360px;
         .transform-origin(top left);
         .transform(~'translateX(234px) rotate(-39deg)');
         z-index: 5;
@@ -107,7 +107,8 @@ section {
 
 #top {
     background-color: #1a4dbf;
-    padding: 90px 0 70px;
+    padding: 70px 0;
+    height: 700px;
     overflow: hidden;
 
     .container {
@@ -135,6 +136,14 @@ section {
         strong {
             .proximabold;
         }
+    }
+    h3 {
+        color: #5799ff;
+        font-size: 16px;
+        .proximabold;
+        position: absolute;
+        right: 0;
+        top: 20px;
     }
     .logo {
         position: absolute;
@@ -222,9 +231,10 @@ section {
                 .proximabold;
                 position: relative;
                 display: inline-block;
-                color: #000;
-                font-size: 16px;
                 .transition(.1s);
+                text-decoration: none;
+                color: #000;
+                font-size: 18px;
 
                 &:after {
                     display: block;
@@ -350,7 +360,7 @@ section {
 
     form {
         position: relative;
-        .size(368px, 50px);
+        .size(450px, 50px);
         .border-radius(3px);
         .transition(.1s);
         overflow: hidden;
@@ -443,8 +453,8 @@ section {
         }
         &.loading {
             pointer-events: none;
-            opacity: .8;
-            .transition(.3s);
+            opacity: 0;
+            .transition(.1s);
         }
     }
 
@@ -531,6 +541,7 @@ section {
             width: 300px;
             margin-right: 30px;
             font-size: 16px;
+            vertical-align: top;
 
             &:last-child {
                 margin-right: 0;
@@ -545,6 +556,18 @@ section {
             padding: 60px 0 0 330px;
             overflow: hidden;
             height: 315px;
+
+            > a {
+                color: #ee1700;
+                font-size: 14px;
+                text-transform: uppercase;
+                text-decoration: none;
+                .proxima;
+
+                strong {
+                    .proximabold;
+                }
+            }
         }
 
         .csshat {
@@ -568,17 +591,11 @@ section {
             font-size: 16px;
             margin-bottom: 20px;
             line-height: 25px;
-        }
 
-        a {
-            color: #ee1700;
-            font-size: 14px;
-            text-transform: uppercase;
-            text-decoration: none;
-            .proxima;
-
-            strong {
-                .proximabold;
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
             }
         }
     }
@@ -734,6 +751,28 @@ footer {
         overflow: hidden;
     }
 
+    >.container {
+        height: 160px;
+
+        p {
+            color: #a5a5a5;
+            .proxima;
+            position: absolute;
+            right: 0;
+            top: 20px;
+            width: 410px;
+            line-height: 25px;
+
+            a {
+                color: #fff;
+                .proximabold;
+                text-decoration: none;
+                display: inline-block;
+                position: relative;
+            }
+        }
+    }
+
     .logo {
         display: block;
         .size(160px, 21px);
@@ -798,44 +837,6 @@ footer {
             }
         }
     }
-
-    ul {
-        float: right;
-        list-style: none;
-        margin-bottom: 50px;
-
-        li {
-            float: left;
-            width: 130px;
-            padding-left: 20px;
-
-            &:last-child {
-                width: auto;
-            }
-
-            strong {
-                .proximabold;
-                color: #a6a6a6;
-                font-size: 18px;
-                line-height: 30px;
-            }
-
-            a {
-                display: block;
-                .proxima;
-                color: #a6a6a6;
-                text-decoration: none;
-                line-height: 24px;
-                font-size: 14px;
-                .transition(.1s);
-
-                &:hover {
-                    color: lighten(#a6a6a6, 50%);
-                    .translateX(3px);
-                }
-            }
-        }
-    }
 }
 
 .bottom {
@@ -850,10 +851,10 @@ footer {
         margin-bottom: 20px;
         text-align: center;
 
-        &:first-child:before {
+        &:before {
             content: '“';
         }
-        &:last-child:after {
+        &:after {
             content: '”';
         }
 
@@ -890,4 +891,37 @@ footer {
     }
 }
 
-.keyframes(~'shake, 0% {transform:translateX(0)} 10% {transform:translateX(-8px)} 20% {transform:translateX(8px)} 30% {transform:translateX(-8px)} 40% {transform:translateX(8px)} 50% {transform:translateX(-8px)} 60% {transform:translateX(8px)} 70% {transform:translateX(-8px)} 80% {transform:translateX(8px)} 90%{transform:translateX(-8px)} 100% {transform:translateX(0)} ');
+.buttons {
+    iframe:first-child, iframe.star {
+        width: 90px !important;
+        height: 20px !important;
+        position: relative;
+        top: 5px;
+        left: 7px;
+    }
+    .star {
+        display: inline-block;
+        margin-right: 8px;
+    }
+    .flattr {
+        background-image: url(data:image/png;base64,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);
+        display: inline-block;
+        .size(53px, 20px);
+        position: relative;
+        top: 0px;
+        margin: 0 4px;
+        text-indent: -999999px;
+    }
+}
+
+code {
+    display: inline-block;
+    background: #333;
+    border-radius: 3px;
+    padding: 1px 7px 0 5px;
+    box-shadow: inset 0 0 0 1px #1f1f1f;
+    font-family: consolas, monospace;
+    font-size: 15px;
+}
+
+.keyframes(~'shake, 0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-8px)} 20%,40%,60%,80%{transform:translateX(8px)}');
