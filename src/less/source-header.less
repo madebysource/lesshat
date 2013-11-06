@@ -1,0 +1,114 @@
+// this file is available at https://gist.github.com/marekhrabe/7265433
+
+// variables - change only these
+@headerBg: #1f1f1f;
+@headerText: #a4a4a4;
+@headerActive: #ee1700;
+@headerNotification: #579aff;
+
+// computed
+@headerDivider: fade(@headerText, 22%);
+
+// styles
+header {
+    display: block;
+    background: @headerBg;
+    height: 70px;
+    color: @headerText;
+    overflow: hidden;
+    font-size: 14px;
+
+    .logo {
+        line-height: 70px;
+        text-transform: uppercase;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            border: 0;
+            height: 70px;
+            position: relative;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAAAPCAMAAADkiNBTAAACYVBMVEXu7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7////4+Pjz8/P5+fn4+Pj////w8PD////////////////////////////////////////////////////z8/P////////////////////////////////////////////////u7u719fX////////////29vb9/f3////z8/P////5+fn////////6+vrw8PDz8/P////////////////////w8PD7+/v29vbx8fH////////////////////////////////v7+/19fX39/f7+/v////////u7u7w8PDw8PD19fX4+Pj////////////////////////////////////////8/Pzz8/Pv7+/////////////////////////39/f////////////y8vL09PT6+vrx8fHx8fH////+/v76+vr////v7+/////x8fH////////w8PD////////////////////////////////////////////////////////////////v7+/x8fH09PT39/f////////////////////////z8/P////6+vr19fXv7+/////////39/f////////////4+Pj////////////////////////////////////v7+/////09PT+/v75+fn////////////////////////////y8vL////9/f319fX////////////u7u4AAADv7+/v7+/6+vr9/f35+fn7+/v4+Pj8/Pz+/v739/fx8fH///+lOdu+AAAAv3RSTlP+/vv+/P79/jG807a5QOibHUg1YkF1oBiTSyh21mNWW4ucH3qYMhNfIPjLiU0ux6Vt1Fe4ITuy7tkwfTklPeysxecrnoV4hmxeSffIvq0OOvnp7cm9ljw+fpWABD8cRKjX8lSBBTZFEcAXU3HgzrHh45qjsFnvJORuSusDeXQsl08td2BqKV0zjpIv9ubQwQZvZ40WCNgHs830GxDCg1iduwwJj1yEGmgBAvFm0qG1glJkEg9pWt4ip8yImR7+AH106F8AAALoSURBVHjavZTlbxtBEMWtKKrKzMzMzMzMgYa5YWZmZmaG2o7tcHzRWkns2H5/VW93T5c6stp+aX+SPfNGM343uycriA1PDcKdQfJPsXV8awVwV3PbpujvKwjVbdkDxUwdrOqJEqp1zUykFApKltwQhIe8e+SY0BnFspmcNr0+9XkeE06FnaqVK4oCljrmglP2bESu7TGD84UqjZGL+TSqRoFp1jQGjNN4tMgC4BrrXADjk5gPdUAivGLRsUX8TAD36pjD7HAmL9cbEJ2p3avMzf4qqligyXVfb58j8MKOY0UcYHBpzxLTYMD8qqPjzec+UbQDE+3Li7UqIERyrKn0CifkCtBISL+uwQoRfnBumK8lMq+xcJnGLCDGjuMMoGrhncNAPo2SmFtPY6AFYdSxe7xzAUgi5ByQwzpqzwOYYakP4LtNHn2PSJ68xAf7jlNS50cYhuSxUpTwpA4GxZCHmm0UN0RGLDB0s9u/eEl2rHEAZmO03XxiHhM8+QHD7x0tvJNTgpJJxm7MKa6DElF4hJBEoIiQSc0FducO0vH09ywDYN1aQAX+2hG/OjpCxqgAUKZzZ/VQIJ2Qclo3NWjr5X6/DR1WwKwTU6OtY+2fd5S6rXqJXuq4v4uVb7HxyTmYG6tGiC1dSm9EsoeN4IUmJPPfVTEZAiTJjlLDCSJTB5O8gMICYD6oMp6QR0AvIY8f3JwkdnBGmfh9FqYaQthzddKoguU7jQ3AcVvH+4C/PKwGBmTHd9FWUBLUJvbeLN1uUKv1cCooWLMWbaIaAEI3uW2uSgbaCdelu2J1nkAjsXVMBAxtSuWWQ/S0AwDzyQxBPRyWEKgQT6y3fAGMHju7jULCgS6TckBS5p5B9jyHJV0av8TRLwgMftFPjJBoVvD3MW2Cqjw7jt9cXaaGW1tX6d253qjxbC2fci4mEjsrtwtC344Kft0ZQr48GKxu9Zpevc6HO+j6TulTx06nL/6vnqn2vkr+Bz8BrqqTxTV0e0gAAAAASUVORK5CYII=);
+            width: 122px;
+            background-position: left center;
+            background-repeat: no-repeat;
+            text-indent: -999999px;
+            cursor: pointer;
+
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                .size (1px, 29px);
+                background-color: @headerDivider;
+                pointer-events: none;
+                top: 20px;
+                right: -17px;
+            }
+        }
+        strong {
+            padding-left: 40px;
+            font-weight: bold;
+            color: @headerActive;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 70px;
+
+        a {
+            display: inline-block;
+            height: 70px;
+            vertical-align: top;
+            text-align: center;
+            line-height: 70px;
+            color: @headerText;
+            border: 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-left: 35px;
+            .transition(.1s);
+
+            * {
+                cursor: pointer;
+            }
+
+            &:hover {
+                color: contrast(@headerBg, darken(@headerText, 15%), lighten(@headerText, 15%));
+            }
+
+            &.active {
+                color: @headerActive;
+            }
+        }
+        .divider {
+            display: inline-block;
+            .size (1px, 29px);
+            background-color: @headerDivider;
+            pointer-events: none;
+            position: relative;
+            top: 20px;
+            right: -12px;
+        }
+        .notifications {
+            display: none;
+            background-color: @headerNotification;
+            color: @headerBg;
+            .size(24px);
+            .border-radius(12px);
+            line-height: 24px;
+            position: relative;
+            top: 22px;
+            margin-left: 20px;
+
+            &:hover {
+                color: @headerBg;
+                background-color: fadeout(@headerNotification, 5%);
+            }
+        }
+    }
+}
