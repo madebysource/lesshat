@@ -14,7 +14,7 @@ var transitionProperty = function transitionProperty(value) {
 
 transitionProperty.webkit = function transitionProperty(value) {
   value = value || 'all';
-  var prefixedProperties = ['background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
+  var prefixedProperties = ['background-size', 'border-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-top-left-radius', 'border-top-right-radius', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-webkit-';
 
   if (/^[-a-z0-9]*,/.test(value)) {

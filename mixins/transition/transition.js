@@ -29,7 +29,7 @@ var transition = function transition(value) {
 
 transition.webkit = function transition(value) {
   value = value || 'all 0 ease 0';
-  var prefixedProperties = ['background-size', 'border-', 'box-shadow', 'column', 'transform', 'filter'];
+  var prefixedProperties = ['background-size', 'border-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-top-left-radius', 'border-top-right-radius', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-webkit-';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
