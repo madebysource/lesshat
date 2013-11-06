@@ -1,0 +1,8 @@
+mixin = fn
+mixin[vendor] = fn
+mixin.alias = string|[...]
+mixin.vendors = []
+mixin.vendors[vendor] = boolean
+mixin.result = { property: '...', value: '...{{ result| escape_result }}...', prefixed: boolean, strip: '...', [vendor]: { ... } } | string (less file url)
+mixin.appendCSS = { all: '...', [vendor]: '...' }
+mixin.prependCSS = { all: '...', [vendor]: '...' }

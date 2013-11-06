@@ -1,0 +1,2652 @@
+//  * =========================================================== * 
+//  <                            LESSHat                          > 
+//  * =========================================================== * 
+//
+// Made with Energy drinks in Prague, Czech Republic.
+// Handcrafted by Petr Brzek, lesshat.com
+// Works great with CSS Hat csshat.com
+
+// version: v2.0.0 (2013-11-06)
+
+// TABLE OF MIXINS:
+	// align-content
+	// align-items
+	// align-self
+	// animation
+	// animation-delay
+	// animation-direction
+	// animation-duration
+	// animation-fill-mode
+	// animation-iteration-count
+	// animation-name
+	// animation-play-state
+	// animation-timing-function
+	// appearance
+	// backface-visibility
+	// background-clip
+	// background-image
+	// background-origin
+	// background-size
+	// blur
+	// border-bottom-left-radius
+	// border-bottom-right-radius
+	// border-image
+	// border-radius
+	// border-top-left-radius
+	// border-top-right-radius
+	// box-shadow
+	// box-sizing
+	// brightness
+	// calc
+	// column-count
+	// column-gap
+	// column-rule
+	// column-width
+	// columns
+	// contrast
+	// display
+	// drop-shadow
+	// filter
+	// flex
+	// flex-basis
+	// flex-direction
+	// flex-grow
+	// flex-shrink
+	// flex-wrap
+	// font-face
+	// grayscale
+	// hue-rotate
+	// invert
+	// justify-content
+	// keyframes
+	// opacity
+	// order
+	// perspective
+	// perspective-origin
+	// placeholder
+	// rotate
+	// rotate3d
+	// rotateX
+	// rotateY
+	// rotateZ
+	// saturate
+	// scale
+	// scale3d
+	// scaleX
+	// scaleY
+	// scaleZ
+	// selection
+	// sepia
+	// size
+	// skew
+	// skewX
+	// skewY
+	// transform
+	// transform-origin
+	// transform-style
+	// transition
+	// transition-delay
+	// transition-duration
+	// transition-property
+	// transition-timing-function
+	// translate
+	// translate3d
+	// translateX
+	// translateY
+	// translateZ
+	// user-select
+
+// Config supported browsers for your project
+@webkit: true;
+@moz: true;
+@opera: true;
+@ms: true;
+@w3c: true;
+
+.align-content(...) {
+
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"stretch"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_ms: ~`(function(value){return value=value||"stretch","flex-start"==value?value="start":"flex-end"==value?value="end":"space-between"==value?value="justify":"space-around"==value&&(value="distribute"),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-align-content: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_ms = 08121991) { -ms-flex-line-pack: @process_ms; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_ms = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { align-content: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @ms, @ms_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.align-items(...) {
+
+  @olderwebkit_local: true;
+  @moz_local: true;
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"stretch"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){return value=value||"stretch","flex-start"==value?value="start":"flex-end"==value&&(value="end"),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_ms: ~`(function(value){return value=value||"stretch","flex-start"==value?value="start":"flex-end"==value&&(value="end"),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-box-align: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_moz = 08121991) { -moz-box-align: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process_ms = 08121991) { -webkit-align-items: @process_ms; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process_ms = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-flex-align: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { align-items: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, true, @olderwebkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @webkit, @webkit_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.align-self(...) {
+
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"auto"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_ms: ~`(function(value){return value=value||"auto","flex-start"==value?value="start":"flex-end"==value&&(value="end"),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-align-self: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_ms = 08121991) { -ms-align-self: @process_ms; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_ms = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { align-self: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @ms, @ms_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.animation(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"none",/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-delay(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-direction(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"normal"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-direction: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-direction: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-direction: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-direction: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-duration(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var valueRegex=/ms|s/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-fill-mode(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"none"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-fill-mode: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-fill-mode: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-fill-mode: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-fill-mode: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-iteration-count(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"0"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-iteration-count: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-iteration-count: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-iteration-count: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-iteration-count: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-name(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"none"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-name: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-name: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-name: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-name: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-play-state(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"running"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-play-state: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-play-state: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-play-state: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-play-state: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.animation-timing-function(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"ease"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-animation-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-animation-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-animation-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { animation-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.appearance(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"none"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-appearance: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-appearance: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { appearance: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.backface-visibility(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"visible"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-backface-visibility: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-backface-visibility: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-backface-visibility: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-backface-visibility: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { backface-visibility: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.background-clip(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"border-box"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-background-clip: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-background-clip: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { background-clip: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.background-image(...) {
+
+  @ms_local: true;
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process_ms: ~`(function(value){function base64_encode(data){var o1,o2,o3,h1,h2,h3,h4,bits,b64="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",i=0,ac=0,enc="",tmp_arr=[];if(!data)return data;do o1=data.charCodeAt(i++),o2=data.charCodeAt(i++),o3=data.charCodeAt(i++),bits=o1<<16|o2<<8|o3,h1=63&bits>>18,h2=63&bits>>12,h3=63&bits>>6,h4=63&bits,tmp_arr[ac++]=b64.charAt(h1)+b64.charAt(h2)+b64.charAt(h3)+b64.charAt(h4);while(i<data.length);enc=tmp_arr.join("");var r=data.length%3;return(r?enc.slice(0,r-3):enc)+"===".slice(r||3)}if(value=value||8121991,8121991==value)return value;var gradients=/linear|radial/g.test(value)&&value.split(/,(?=\s*(?:linear|radial))/g),svg_gradients=[],values={"to bottom":'x1="0%" y1="0%" x2="0%" y2="100%"',"to left":'x1="100%" y1="0%" x2="0%" y2="0%"',"to top":'x1="0%" y1="100%" x2="0%" y2="0%"',"to right":'x1="0%" y1="0%" x2="100%" y2="0%"',get"top"(){return this["to bottom"]},get"180deg"(){return this["to bottom"]},get"right"(){return this["to left"]},get"270deg"(){return this["to left"]},get"bottom"(){return this["to top"]},get"0deg"(){return this["to top"]},get"left"(){return this["to right"]},get"90deg"(){return this["to right"]},"-45deg":'x1="0%" y1="0%" x2="100%" y2="100%"',"45deg":'x1="0%" y1="100%" x2="100%" y2="0%"',"ellipse at center":'cx="50%" cy="50%" r="75%"'},svg={uri_data:"url(data:image/svg+xml;base64,",xml:'<?xml version="1.0" ?>',svg_start:'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">',linear_gradient_start:'<linearGradient id="lesshat-generated" gradientUnits="userSpaceOnUse"',radial_gradient_start:'<radialGradient id="lesshat-generated" gradientUnits="userSpaceOnUse"',linear_gradient_end:"</linearGradient>",radial_gradient_end:"</radialGradient>",rect_linear:'<rect x="0" y="0" width="1" height="1" fill="url(#lesshat-generated)" />',rect_radial:'<rect x="-50" y="-50" width="101" height="101" fill="url(#lesshat-generated)" />',svg_end:"</svg>"};if(gradients.length){gradients.forEach(function(value){var obj={};Object.keys(values).some(function(inner_val){return value.indexOf(inner_val)>=0?(obj.svg_direction=values[inner_val],!0):(obj.svg_direction=!1,void 0)}),/linear/.test(value)?obj.svg_type="linear":/radial/.test(value)&&(obj.svg_type="radial");var colors_count=value.match(/rgb|#[a-zA-Z0-9]|hsl/g).length;if(obj.svg_stops=[],value.match(/#[a-zA-Z0-9]/g)&&value.match(/#[a-zA-Z0-9]/g).length==colors_count)if(value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g)&&value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g).length==colors_count)value.match(/#[a-zA-Z0-9]+\s+(\d+%)/g).forEach(function(inner_val){inner_val=inner_val.split(" "),obj.svg_stops.push('<stop offset="'+inner_val[1]+'" stop-color="'+inner_val[0]+'" stop-opacity="1"/>')});else{var shares=Math.floor(100/(value.match(/#[a-zA-Z0-9]/g).length-1));value.match(/#[a-zA-Z0-9]+/g).forEach(function(inner_val,index){obj.svg_stops.push('<stop offset="'+shares*index+'%" stop-color="'+inner_val+'" stop-opacity="1"/>')})}if(value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g)&&value.match(/(?:rgb|rgba)?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).length==colors_count)if(value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g)&&value.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g).length==colors_count)value.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+(\d+%)+/g,function(match,sub,sub_2,sub_3){obj.svg_stops.push('<stop offset="'+sub_3+'" stop-color="rgb('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')});else{var shares=Math.floor(100/(value.match(/(rgb|rgba)\(/g).length-1));value.match(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).forEach(function(element,index){element.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g,function(match,sub,sub_2){obj.svg_stops.push('<stop offset="'+shares*index+'%" stop-color="rgb('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')})})}if(value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g)&&value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).length==colors_count)if(value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g)&&value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g).length==colors_count)value.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g,function(match,sub,sub_2,sub_3){obj.svg_stops.push('<stop offset="'+sub_3+'" stop-color="hsl('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')});else{var shares=Math.floor(100/(value.match(/(hsl|hsla)\(/g).length-1));value.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).forEach(function(element,index){element.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g,function(match,sub,sub_2){obj.svg_stops.push('<stop offset="'+shares*index+'%" stop-color="hsl('+sub+')" stop-opacity="'+(sub_2||1)+'"/>')})})}svg_gradients.push(obj)});var syntax=[],passed=svg_gradients.every(function(element){for(var i in element)if(0==element[i]||0==element[i].length)return!1;return!0});if(!passed)return 8121991;svg_gradients.forEach(function(element,index){syntax[index]=svg.xml+svg.svg_start,"linear"==element.svg_type?(syntax[index]+=svg.linear_gradient_start+" "+element.svg_direction+">",element.svg_stops.forEach(function(value){syntax[index]+=value}),syntax[index]+=svg.linear_gradient_end,syntax[index]+=svg.rect_linear,syntax[index]+=svg.svg_end):"radial"==element.svg_type&&(syntax[index]+=svg.radial_gradient_start+" "+element.svg_direction+">",element.svg_stops.forEach(function(value){syntax[index]+=value}),syntax[index]+=svg.radial_gradient_end,syntax[index]+=svg.rect_radial,syntax[index]+=svg.svg_end)}),syntax.forEach(function(element,index){syntax[index]=svg.uri_data+base64_encode(element)+")"}),value=syntax.join(",")}return value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_webkit: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-webkit-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-moz-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_opera: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={"to bottom":"top","to left":"right","to top":"bottom","to right":"left","ellipse at center":"center, ellipse cover","circle closest-side":"center center, circle contain","circle farthest-corner":"center center, circle cover","circle farthest-side":"center center, circle cover","ellipse closest-side":"center center, ellipse contain","ellipse farthest-corner":"center center, ellipse cover","ellipse farthest-side":"center center, ellipse cover"},radial_regexp=/(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g,values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0?(value=value.replace(new RegExp(el+"(?![ a-z0-9])","g"),values[el]),!0):(radial_regexp.test(value)&&(value=value.replace(radial_regexp,function(match,sub,sub2,sub3,sub4){return sub.trim()+sub3.trim()+" "+sub4.trim()+","+sub2.replace(/closest-side/g,"contain").replace(/farthest-corner/g,"cover").trim()})),void 0)}),value=value.replace(/(\d+)\s*deg/g,function(match,sub){return 90-sub+"deg"}).replace(/(linear|radial)-gradient/g,"-o-$1-gradient")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){if(value=value||8121991,8121991==value)return value;var values={top:"to bottom",right:"to left",bottom:"to top",left:"to right"},values_keys=Object.keys(values);return values_keys.some(function(el){return value.indexOf(el)>=0&&!new RegExp("to\\s+"+el,"g").test(value)?(value=value.replace(new RegExp(el),values[el]),!0):void 0}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process_ms = 08121991) { background-image: @process_ms; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process_ms = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_webkit = 08121991) { background-image: @process_webkit; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_webkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process_moz = 08121991) { background-image: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process_opera = 08121991) { background-image: @process_opera; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process_opera = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { background-image: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @ms, @ms_local);
+  .result(@arguments, 2, @webkit, @webkit_local);
+  .result(@arguments, 3, @moz, @moz_local);
+  .result(@arguments, 4, @opera, @opera_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.background-origin(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value||"padding-box"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-background-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-background-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { background-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.background-size(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"auto auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-background-size: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-background-size: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { background-size: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.blur(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: blur(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: blur(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: blur(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: blur(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.border-bottom-left-radius(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-bottom-left-radius: @process; -webkit-background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-border-radius-bottomleft: @process; -moz-background-clip: padding;  }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { border-bottom-left-radius: @process; background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.border-bottom-right-radius(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-bottom-right-radius: @process; -webkit-background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-border-radius-bottomright: @process; -moz-background-clip: padding;  }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { border-bottom-right-radius: @process; background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.border-image(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||8121991,/^[a-z(.)]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-image: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-border-image: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-border-image: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { border-image: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.border-radius(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-radius: @process; -webkit-background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-border-radius: @process; -moz-background-clip: padding;  }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { border-radius: @process; background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.border-top-left-radius(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-top-left-radius: @process; -webkit-background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-border-radius-topleft: @process; -moz-background-clip: padding;  }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { border-top-left-radius: @process; background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.border-top-right-radius(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-top-right-radius: @process; -webkit-background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-border-radius-topright: @process; -moz-background-clip: padding;  }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { border-top-right-radius: @process; background-clip: padding-box;  }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.box-shadow(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-box-shadow: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-box-shadow: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { box-shadow: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.box-sizing(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"content-box"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-box-sizing: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-box-sizing: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { box-sizing: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.brightness(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: brightness(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: brightness(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: brightness(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: brightness(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.calc(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){function syntax(property,start){var end=");\n",definition=value_temp.split(","),syntax=definition[0]+":"+property+"("+(definition[1].trim()||0)+end;"start"==start?value="0;\n"+syntax:value+=syntax}value=value||8121991;var state="@{state}",value_temp=value;if(8121991==value)return value;switch(state){case"1":syntax("-webkit-calc","start"),syntax("-moz-calc"),syntax("calc");break;case"2":syntax("-webkit-calc","start"),syntax("-moz-calc");break;case"3":syntax("-webkit-calc","start"),syntax("calc");break;case"4":syntax("-webkit-calc","start");break;case"5":syntax("-moz-calc","start"),syntax("calc");break;case"6":syntax("-moz-calc","start");break;case"7":syntax("calc","start")}return value=value.replace(/;$/g,"")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  @state: 69; // Yeah totally random number
+
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 1; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state: 2; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 3; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state: 4; -lh-property: @process; }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 5; -lh-property: @process; }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state: 6; -lh-property: @process; }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 7; -lh-property: @process; }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@w3c_local = true) {}
+  .inception(@arguments);
+
+
+}
+
+.column-count(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"auto"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-column-count: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-column-count: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { column-count: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.column-gap(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"normal";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-column-gap: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-column-gap: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { column-gap: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.column-rule(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"medium none black";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-column-rule: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-column-rule: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { column-rule: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.column-width(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-column-width: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-column-width: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { column-width: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.columns(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"auto auto";var numRegex=/^\d+$/;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,""),value=value.split(" ")),numRegex.test(value[0])&&(value[0]=value[0]+"px"),value.join(" ")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-columns: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-columns: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { columns: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.contrast(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: ~"contrast(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: ~"contrast(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: ~"contrast(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: ~"contrast(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.display(...) {
+
+  @oldwebkit_local: true;
+  @moz_local: true;
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process_oldwebkit: ~`(function(value){return value="flex"==value||"inline-flex"==value?"-webkit-box":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){return value="flex"==value?"-ms-flexbox":"inline-flex"==value?"-ms-inline-flexbox":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_webkit: ~`(function(value){return value="flex"==value||"inline-flex"==value?"-webkit-"+value:8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_ms: ~`(function(value){return value="flex"==value||"inline-flex"==value?"-moz-box":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){return("flex"!=value||"inline-flex"!=value)&&(value=8121991),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process_oldwebkit = 08121991) { display: @process_oldwebkit; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process_oldwebkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_moz = 08121991) { display: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process_webkit = 08121991) { display: @process_webkit; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process_webkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process_ms = 08121991) { display: @process_ms; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process_ms = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { display: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, true, @oldwebkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @webkit, @webkit_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.drop-shadow(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){if(value=value||8121991,8121991==value)return value;var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9()]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: drop-shadow(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: drop-shadow(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: drop-shadow(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: drop-shadow(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.filter(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"none",/^[-a-zA-Z0-9().]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.flex(...) {
+
+  @olderwebkit_local: true;
+  @moz_local: true;
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process_olderwebkit: ~`(function(value){return value=value.match(/^\d+/)[0]||"0"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){return value=value.match(/^\d+/)[0]||"0"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){return value=value||"0 1 auto",/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process_olderwebkit = 08121991) { -webkit-box-flex: @process_olderwebkit; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process_olderwebkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_moz = 08121991) { -moz-box-flex: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -webkit-flex: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-flex: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { flex: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, true, @olderwebkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @webkit, @webkit_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.flex-basis(...) {
+
+  @webkit_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-flex-basis: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { flex-basis: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @w3c, @w3c_local);
+
+}
+
+.flex-direction(...) {
+
+  @oldestwebkit_local: true;
+  @oldermoz_local: true;
+  @olderwebkit_local: true;
+  @moz_local: true;
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process_oldestwebkit: ~`(function(value){return value="row"==value||"column"==value?"normal":"row-reverse"==value||"column-reverse"==value?"reverse":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_oldermoz: ~`(function(value){return value="row"==value||"column"==value?"normal":"row-reverse"==value||"column-reverse"==value?"reverse":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_olderwebkit: ~`(function(value){return value="row"==value||"row-reverse"==value?"horizontal":"column"==value||"column-reverse"==value?"vertical":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){return value="row"==value||"row-reverse"==value?"horizontal":"column"==value||"column-reverse"==value?"vertical":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){return value=value||"row"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process_oldestwebkit = 08121991) { -webkit-box-direction: @process_oldestwebkit; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process_oldestwebkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_oldermoz = 08121991) { -moz-box-direction: @process_oldermoz; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_oldermoz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process_olderwebkit = 08121991) { -webkit-box-orient: @process_olderwebkit; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process_olderwebkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process_moz = 08121991) { -moz-box-orient: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { -webkit-flex-direction: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 6) and not (@process = 08121991) { -ms-flex-direction: @process; }
+		.inception (@signal, @arguments) when (@signal = 6) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 7) and not (@process = 08121991) { flex-direction: @process; }
+		.inception (@signal, @arguments) when (@signal = 7) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, true, @oldestwebkit_local);
+  .result(@arguments, 2, true, @oldermoz_local);
+  .result(@arguments, 3, true, @olderwebkit_local);
+  .result(@arguments, 4, @moz, @moz_local);
+  .result(@arguments, 5, @webkit, @webkit_local);
+  .result(@arguments, 6, @ms, @ms_local);
+  .result(@arguments, 7, @w3c, @w3c_local);
+
+}
+
+.flex-grow(...) {
+
+  @webkit_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"0"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-flex-grow: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { flex-grow: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @w3c, @w3c_local);
+
+}
+
+.flex-shrink(...) {
+
+  @webkit_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-flex-shrink: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { flex-shrink: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @w3c, @w3c_local);
+
+}
+
+.flex-wrap(...) {
+
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"nowrap"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-flex-wrap: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -ms-flex-wrap: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { flex-wrap: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @ms, @ms_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.font-face(@fontname, @fontfile, @fontweight:normal, @fontstyle:normal) {
+
+  font-family: "@{fontname}";
+  src: url("@{fontfile}-webfont.eot");
+  src: url("@{fontfile}-webfont.eot?#iefix") format("embedded-opentype"),
+       url("@{fontfile}-webfont.woff") format("woff"),
+       url("@{fontfile}-webfont.ttf") format("truetype"),
+       url("@{fontfile}-webfont.svg#@{fontname}") format("svg");
+  font-weight: @fontweight;
+  font-style: @fontstyle;
+  
+}
+
+.grayscale(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: grayscale(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: grayscale(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: grayscale(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: grayscale(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.hue-rotate(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: hue-rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: hue-rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: hue-rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: hue-rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.invert(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: invert(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: invert(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: invert(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: invert(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.justify-content(...) {
+
+  @oldestwebkit_local: true;
+  @moz_local: true;
+  @webkit_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"flex-start"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){return value=value||"start","flex-start"==value?value="start":"flex-end"==value?value="end":("space-between"==value||"space-around"==value)&&(value="justify"),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_ms: ~`(function(value){return value=value||"start","flex-start"==value?value="start":"flex-end"==value?value="end":"space-between"==value?value="justify":"space-around"==value&&(value="distribute"),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-box-pack: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_moz = 08121991) { -moz-box-pack: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process_ms = 08121991) { -webkit-justify-content: @process_ms; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process_ms = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-flex-pack: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { justify-content: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, true, @oldestwebkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @webkit, @webkit_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.keyframes(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){function syntax(start,selector,prefix){var end="}\n",definition=value_temp.split(/([a-zA-Z0-9-]+),/g),keyframes=selector+" "+definition[1]+"{";prefix&&prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(definition[2]=definition[2].replace(new RegExp(property,"g"),function(match){return prefix+match}))}),keyframes+=definition[2]+end,"start"==start?value="0; } \n"+keyframes:"startend"==start?value="0; } \n"+keyframes.replace(end,""):value+="end"==start?keyframes.replace(end,""):keyframes}value=value||8121991;var state="@{state}",value_temp=value;if(8121991==value)return value;var prefixedProperties=["animation","background-size","box-shadow","column","transform","filter"];switch(state){case"1":syntax("start","@-webkit-keyframes","-webkit-"),syntax(null,"@-moz-keyframes","-moz-"),syntax(null,"@-o-keyframes","-o-"),syntax("end","@keyframes");break;case"2":syntax("start","@-webkit-keyframes","-webkit-"),syntax(null,"@-moz-keyframes","-moz-"),syntax("end","@keyframes");break;case"3":syntax("start","@-webkit-keyframes","-webkit-"),syntax("end","@-moz-keyframes","-moz-");break;case"4":syntax("start","@-webkit-keyframes","-webkit-"),syntax("end","@-o-keyframes","-o-");break;case"5":syntax("start","@-webkit-keyframes","-webkit-"),syntax("end","@keyframes");break;case"6":syntax("startend","@-webkit-keyframes","-webkit-");break;case"7":syntax("start","@-moz-keyframes","-moz-"),syntax(null,"@-o-keyframes","-o-"),syntax("end","@keyframes");break;case"8":syntax("start","@-moz-keyframes","-moz-"),syntax("end","@-o-keyframes","-o-");break;case"9":syntax("start","@-moz-keyframes","-moz-"),syntax("end","@keyframes");break;case"10":syntax("startend","@-moz-keyframes","-moz-");break;case"11":syntax("start","@-o-keyframes","-o-"),syntax("end","@keyframes");break;case"12":syntax("startend","@-o-keyframes","-o-");break;case"13":syntax("startend","@keyframes")}return value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  @state: 69; // Yeah totally random number
+
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 1; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:2; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:3; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:4; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:5; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:6; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:7; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:8; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:9; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:10; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:11; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:12; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and (@opera_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:12; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@webkit_local = true) and not (@moz_local = true) and not (@opera_local = true) and not (@w3c_local = true)  {}
+
+  .inception(@arguments);
+
+
+}
+
+.opacity(...) {
+
+  @ms_local: false;
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process_ms: ~`(function(value){return value=value||"filter: alpha(opacity=100)","alpha(opacity="+Math.floor(100*value)+")"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){return value=value||"1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process_ms = 08121991) {  zoom: 1; filter: @process_ms; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process_ms = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -webkit-opacity: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -moz-opacity: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { opacity: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @ms, @ms_local);
+  .result(@arguments, 2, @webkit, @webkit_local);
+  .result(@arguments, 3, @moz, @moz_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.order(...) {
+
+  @olderwebkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @webkit_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"0"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-box-ordinal-group: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-box-ordinal-group: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-flex-order: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -webkit-order: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { order: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, true, @olderwebkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @webkit, @webkit_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.perspective(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"none";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-perspective: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-perspective: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { perspective: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.perspective-origin(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"50% 50%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-perspective-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-perspective-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { perspective-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @w3c, @w3c_local);
+
+}
+
+.placeholder(@color:hotpink, @element: 08121991) {
+  .inception (@arguments) when not (@element = 08121991) {
+    @{element}::-webkit-input-placeholder {
+       color: @color;
+    } 
+    @{element}:-moz-placeholder {
+       color: @color;  
+    }
+    @{element}::-moz-placeholder {
+       color: @color;  
+    }
+    @{element}:-ms-input-placeholder {
+       color: @color;  
+    }
+  }
+  .inception (@arguments) when (@element = 08121991) {
+    &::-webkit-input-placeholder {
+       color: @color;
+    }
+    &:-moz-placeholder {
+       color: @color;  
+    }
+    &::-moz-placeholder {
+       color: @color;  
+    }
+    &:-ms-input-placeholder {  
+       color: @color;  
+    }
+  }
+  .inception(@arguments);
+}
+
+.rotate(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: rotate(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.rotate3d(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"0, 0, 0, 0",value=value.replace(/,\s*\d+$/,function(match){return match+"deg"})})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: rotate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: rotate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: rotate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: rotate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: rotate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.rotateX(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: rotateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: rotateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: rotateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: rotateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: rotateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.rotateY(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: rotateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: rotateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: rotateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: rotateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: rotateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.rotateZ(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: rotateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: rotateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: rotateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: rotateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: rotateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.saturate(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: ~"saturate(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: ~"saturate(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: ~"saturate(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: ~"saturate(@{process})"; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.scale(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: scale(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: scale(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: scale(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: scale(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: scale(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.scale3d(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"1, 1, 1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: scale3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: scale3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: scale3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: scale3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: scale3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.scaleX(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: scaleX(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: scaleX(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: scaleX(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: scaleX(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: scaleX(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.scaleY(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: scaleY(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: scaleY(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: scaleY(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: scaleY(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: scaleY(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.scaleZ(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"1"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: scaleZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: scaleZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: scaleZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: scaleZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: scaleZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.selection(...) {
+
+  @moz_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){function syntax(start,selector){var end="}\n",definition=value_temp.split(","),syntax=(definition[1]||"")+selector+"{"+definition[0]+end;"start"==start?value="0; } \n"+syntax:"startend"==start?value="0; } \n"+syntax.replace(end,""):value+="end"==start?syntax.replace(end,""):syntax}value=value||8121991;var state="@{state}",value_temp=value;if(8121991==value)return value;switch(state){case"1":syntax("start","::selection"),syntax("end","::-moz-selection");break;case"2":syntax("startend","::selection");break;case"3":syntax("startend","::-moz-selection")}return value=value.replace(/;$/g,"")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  @state: 69; // Yeah totally random number
+
+  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 1; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:2; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:3; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when not (@moz_local = true) and not (@w3c_local = true) {}
+
+  .inception(@arguments);
+
+
+}
+
+.sepia(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-filter: sepia(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-filter: sepia(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-filter: sepia(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { filter: sepia(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.size(@square) {
+  @unit: 'px';
+  .process(@square) when (ispixel(@square)), (isem(@square)), (ispercentage(@square)) {
+    width: @square;
+    height: @square;
+  }
+
+  .process(@square) when not (ispixel(@square)) and not (isem(@square)) and not (ispercentage(@square)) {
+    width: ~`@{square} + @{unit}`;
+    height: ~`@{square} + @{unit}`;
+  }
+
+  .process(@square);
+
+}
+
+.size(@width, @height) {
+  @unit: 'px';
+  .process(@width, @height) when (ispixel(@width)) and (ispixel(@height)), (isem(@width)) and (isem(@height)), (ispercentage(@width)) and (ispercentage(@height)), (ispixel(@width)) and (ispercentage(@height)), (ispixel(@width)) and (isem(@height)), (ispercentage(@width)) and (ispixel(@height)), (ispercentage(@width)) and (isem(@height)), (isem(@width)) and (ispixel(@height)), (isem(@width)) and (ispercentage(@height)) {
+    width: @width;
+    height: @height;
+  }
+
+  .process(@width, @height) when not (ispixel(@width)) and not (ispixel(@height)) and not (ispercentage(@width)) and not (ispercentage(@height)) and not (isem(@width)) and not (isem(@height)) {
+    width: ~`@{width} + @{unit}`;
+    height: ~`@{height} + @{unit}`;
+  }
+
+  .process(@width, @height) when not (ispixel(@width)) and not (ispercentage(@width)) and not (isem(@width)) {
+    width: ~`@{width} + @{unit}`;
+    height: @height;
+  }
+
+  .process(@width, @height) when not (ispixel(@height)) and not (ispercentage(@height)) and not (isem(@height)) {
+    width: @width;
+    height: ~`@{height} + @{unit}`;
+  }
+
+  .process(@width, @height);
+
+}
+
+.skew(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: skew(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: skew(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: skew(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: skew(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: skew(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.skewX(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: skewX(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: skewX(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: skewX(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: skewX(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: skewX(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.skewY(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: skewY(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: skewY(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: skewY(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: skewY(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: skewY(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.transform(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"none";var functions={translate:"px",rotate:"deg",rotate3d:"deg",skew:"deg"};/^\w*\(?[a-z0-9.]*\)?/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,""));for(var i in functions)value.indexOf(i)>=0&&(value=value.replace(new RegExp(i+"[\\w]?\\([a-z0-9, %]*\\)"),function(match){var regex=/(\d+\.?\d*)(?!\w|%)/g;return"rotate3d"==i&&(regex=/,\s*\d+$/),match.replace(regex,function(innerMatch){return innerMatch+functions[i]})}));return value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.transform-origin(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"50% 50% 0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform-origin: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.transform-style(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"flat"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform-style: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform-style: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform-style: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform-style: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform-style: @process; }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.transition(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process_webkit: ~`(function(value){value=value||"all 0 ease 0";var prefixedProperties=["background-size","border-","box-shadow","column","transform","filter"],prefix="-webkit-",valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){value=value||"all 0 ease 0";var prefixedProperties=["background-size","box-shadow","column","transform","filter"],prefix="-moz-",valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_opera: ~`(function(value){value=value||"all 0 ease 0";var prefixedProperties=["transform"],prefix="-o-",valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"all 0 ease 0";var valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process_webkit = 08121991) { -webkit-transition: @process_webkit; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process_webkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_moz = 08121991) { -moz-transition: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process_opera = 08121991) { -o-transition: @process_opera; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process_opera = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { transition: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.transition-delay(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transition-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transition-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transition-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { transition-delay: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.transition-duration(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var valueRegex=/ms|s/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transition-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transition-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transition-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { transition-duration: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.transition-property(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process_webkit: ~`(function(value){value=value||"all";var prefixedProperties=["background-size","border-","box-shadow","column","transform","filter"],prefix="-webkit-";return/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){value=value||"all";var prefixedProperties=["background-size","box-shadow","column","transform","filter"],prefix="-moz-";return/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_opera: ~`(function(value){value=value||"all";var prefixedProperties=["transform"],prefix="-o-";return/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){return value=value||"all",/^[-a-z0-9]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process_webkit = 08121991) { -webkit-transition-property: @process_webkit; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process_webkit = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process_moz = 08121991) { -moz-transition-property: @process_moz; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process_moz = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process_opera = 08121991) { -o-transition-property: @process_opera; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process_opera = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { transition-property: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.transition-timing-function(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"ease"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transition-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transition-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transition-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { transition-timing-function: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+.translate(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: translate(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: translate(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: translate(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: translate(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: translate(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.translate3d(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0, 0, 0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: translate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: translate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: translate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: translate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: translate3d(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.translateX(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: translateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: translateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: translateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: translateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: translateX(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.translateY(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: translateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: translateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: translateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: translateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: translateY(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.translateZ(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @opera_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-transform: translateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-transform: translateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -o-transform: translateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { -ms-transform: translateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 5) and not (@process = 08121991) { transform: translateZ(@process); }
+		.inception (@signal, @arguments) when (@signal = 5) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @opera, @opera_local);
+  .result(@arguments, 4, @ms, @ms_local);
+  .result(@arguments, 5, @w3c, @w3c_local);
+
+}
+
+.user-select(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"auto"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-user-select: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and not (@process = 08121991) { -moz-user-select: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { -ms-user-select: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and not (@process = 08121991) { user-select: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and (@process = 08121991) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
+// What is the magic number 08121991?

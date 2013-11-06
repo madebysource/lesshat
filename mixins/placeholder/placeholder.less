@@ -1,0 +1,31 @@
+.placeholder(@color:hotpink, @element: 08121991) {
+  .inception (@arguments) when not (@element = 08121991) {
+    @{element}::-webkit-input-placeholder {
+       color: @color;
+    } 
+    @{element}:-moz-placeholder {
+       color: @color;  
+    }
+    @{element}::-moz-placeholder {
+       color: @color;  
+    }
+    @{element}:-ms-input-placeholder {
+       color: @color;  
+    }
+  }
+  .inception (@arguments) when (@element = 08121991) {
+    &::-webkit-input-placeholder {
+       color: @color;
+    }
+    &:-moz-placeholder {
+       color: @color;  
+    }
+    &::-moz-placeholder {
+       color: @color;  
+    }
+    &:-ms-input-placeholder {  
+       color: @color;  
+    }
+  }
+  .inception(@arguments);
+}
