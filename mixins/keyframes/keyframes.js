@@ -84,7 +84,7 @@ var keyframes = function keyframes(value) {
 
   function syntax(start, selector, prefix) {
     var end = '}\n';
-    var definition = value_temp.split(/([a-zA-Z0-9-]+),/g);
+    var definition = value_temp.split(/(^[a-zA-Z0-9-]+),/g);
     var keyframes = selector + ' ' + definition[1] + '{';
 
     if (prefix) {
