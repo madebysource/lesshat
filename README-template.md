@@ -224,6 +224,7 @@ The structure of this repo is:
 ## Big Thanks to:
 * **[Jan Kuca](http://www.jankuca.com/)** (help us with lesshat-devstack)
 * **[MOZILLA DEVELOPER NETWORK](https://developer.mozilla.org/)** (almost all summary are from MDN)
+* **[CSS-Tricks](http://css-tricks.com/)** (their CSS almanac is great resource)
 * **[Angular UI router](https://github.com/angular-ui/ui-router)** (example of good github profile)
 * **[Marek Hrabe](https://twitter.com/marek)** (for coding lesshat.com)
 * **[Jan Vu Nam](http://dribbble.com/Vucek)** (for design lesshat.com and LESS Hat book icon)
