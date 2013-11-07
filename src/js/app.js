@@ -5,7 +5,7 @@ $(function () {
     var logo = $('#logo');
     var second = $('#second');
 
-    var zip = 'https://github.com/csshat/lesshat/archive/v2.0.1.zip';
+    var zip = 'https://github.com/csshat/lesshat/archive/v2.0.2.zip';
 
     var downloaded = false;
 
