@@ -1,7 +1,7 @@
 {
   "name": "less-hat-website",
   "description": "LESS Hat 2.0 presentation website.",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "author": "Marek Hrabe <marekhrabe@abdoc.net> (http://github.com/marekhrabe)",
   "homepage": "http://lesshat.com/",
   "main": "index.html",
