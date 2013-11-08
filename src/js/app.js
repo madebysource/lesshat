@@ -1,11 +1,26 @@
 var _gaq = [['_setAccount', 'UA-5463802-47'], ['_trackPageview']];
 
+var zip = null;
+var relseseId = null;
+var autoDownload = false;
+
+var releases = function (response) {
+    var latest = response.data[0];
+    zip = latest.zipball_url;
+    relseseId = latest.tag_name.match(/[0-9]+\.[0-9]+\.[0-9]+/);
+
+    document.getElementById('download').getElementsByTagName('strong')[0].innerHTML = relseseId;
+
+    if (autoDownload) {
+        clearTimeout(autoDownload);
+        window.location = zip;
+    }
+};
+
 $(function () {
     var download = $('#download, #bottom-download');
     var logo = $('#logo');
     var second = $('#second');
-
-    var zip = 'https://github.com/csshat/lesshat/archive/v2.0.0.zip';
 
     var downloaded = false;
 
@@ -34,7 +49,14 @@ $(function () {
             }, 3800);
         }, 300);
         _gaq.push(['_trackEvent', 'Website', 'Download', this.id]);
-        window.location = zip;
+
+        if (zip) {
+            window.location = zip;
+        } else {
+            autoDownload = setTimeout(function () {
+                window.location = 'https://github.com/csshat/lesshat/releases/latest';
+            }, 3000);
+        }
     });
 
     $('#hat [source-subscribe]').each(function (id, form) {
