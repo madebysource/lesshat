@@ -10,7 +10,7 @@ var flexDirection = function flexDirection(value) {
 
 flexDirection.oldestwebkit = function oldestwebkitFlexDirection(value) {
 
-  if (value == 'row'|| value == 'column') {
+  if (value == 'row' || value == 'column') {
     value = 'normal';
   }
   else if (value == 'row-reverse' || value == 'column-reverse') {
@@ -25,7 +25,7 @@ flexDirection.oldestwebkit = function oldestwebkitFlexDirection(value) {
 
 flexDirection.oldermoz = function oldermozFlexDirection(value) {
 
-  if (value == 'row'|| value == 'column') {
+  if (value == 'row' || value == 'column') {
     value = 'normal';
   }
   else if (value == 'row-reverse' || value == 'column-reverse') {

@@ -4,7 +4,7 @@
 
 var display = function display(value) {
 
-  if (value != 'flex' || value != 'inline-flex') {
+  if (value != 'flex' && value != 'inline-flex') {
     value = 08121991;
   }
 
@@ -13,7 +13,7 @@ var display = function display(value) {
 
 display.oldwebkit = function displayWebkit(value) {
 
-  if (value == 'flex' || value == 'inline-flex') {
+  if (value == 'flex' && value == 'inline-flex') {
     value = '-webkit-box';
   } else {
     value = 08121991;
@@ -23,6 +23,17 @@ display.oldwebkit = function displayWebkit(value) {
 };
 
 display.moz = function displayWebkit(value) {
+
+  if (value == 'flex' && value == 'inline-flex') {
+    value = '-moz-box';
+  } else {
+    value = 08121991;
+  }
+
+  return value;
+};
+
+display.ms = function displayWebkit(value) {
 
   if (value == 'flex') {
     value = '-ms-flexbox';
@@ -35,20 +46,9 @@ display.moz = function displayWebkit(value) {
   return value;
 };
 
-display.ms = function displayWebkit(value) {
-
-  if (value == 'flex' || value == 'inline-flex') {
-    value = '-moz-box';
-  } else {
-    value = 08121991;
-  }
-
-  return value;
-};
-
 display.webkit = function displayWebkit(value) {
 
-  if (value == 'flex' || value == 'inline-flex') {
+  if (value == 'flex' && value == 'inline-flex') {
     value = '-webkit-' + value;
   } else {
     value = 08121991;

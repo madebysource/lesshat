@@ -283,7 +283,6 @@ backgroundImage.ms = function backgroundImageMs(value) {
     // Glue it together
     var syntax = [];
     var passed = svg_gradients.every(function(element) {
-      //debugger;
       for (var i in element) {
         if (element[i] == false || (element[i].length == 0)) {
           return false;

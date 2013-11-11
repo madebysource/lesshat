@@ -1,11 +1,11 @@
   @state: 69; // Yeah totally random number
 
-  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state: 1; lesshat-selector { -lh-property: @process; } }
-  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
-  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and not (@process = 08121991)  { @state:2; lesshat-selector { -lh-property: @process; } }
-  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and (@process = 08121991)  {}
-  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and not (@process = 08121991)  { @state:3; lesshat-selector { -lh-property: @process; } }
-  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and (@process = 08121991)  {}
+  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process))  { @state: 1; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@moz_local = true) and (@w3c_local = true) and not (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process))  {}
+  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process))  { @state:2; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when not (@moz_local = true) and (@w3c_local = true) and not (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process))  {}
+  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process))  { @state:3; lesshat-selector { -lh-property: @process; } }
+  .inception (@arguments) when (@moz_local = true) and not (@w3c_local = true) and not (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process))  {}
   .inception (@arguments) when not (@moz_local = true) and not (@w3c_local = true) {}
 
   .inception(@arguments);
