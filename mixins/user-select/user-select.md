@@ -1,7 +1,7 @@
 ### <a name="user-select"></a> &#8226; user-select
 **Summary:**
 
-Translates the element by the given amount along the Z axis.
+Controls the appearance (only) of selection.
 
 Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)**
 
