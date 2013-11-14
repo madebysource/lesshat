@@ -4,12 +4,28 @@
 
 var transition = function transition(value) {
   value = value || 'all 0 ease 0';
+  var valueCopy = value;
+  var prefixes = ['-webkit-', '-moz-', '-o-'];
+  var prefixedProperties = ['column', 'transform', 'filter'];
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
   if (/^[-a-z0-9]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
+
+  // value = '';
+  // prefixes.forEach(function (prefix) {
+  //   prefixedProperties.forEach(function(property, index) {
+  //     if (valueCopy.indexOf(property) !== -1) {
+  //       value += valueCopy.replace(new RegExp(property, 'g'), function(match) {
+  //         return prefix + match;
+  //       }) + ', ';
+  //     }
+  //   });
+  // });
+
+  // value += valueCopy;
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {

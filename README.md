@@ -16,7 +16,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v2.0.4 (2013-11-11)
+### Current version: v2.0.4 (2013-11-15)
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
@@ -97,11 +97,11 @@ The structure of this repo is:
 
 	Correct mixin calling:
 	
-			.background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%))
+		.background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%))
 		
 	Incorrect calling:
 	
-			.background-image(~'linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%)')
+		.background-image(~'linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%)')
 			
 	Unfortunately, there are exceptions:
 	

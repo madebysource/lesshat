@@ -1,11 +1,11 @@
 .font-face(@fontname, @fontfile, @fontweight:normal, @fontstyle:normal) {
 
   font-family: "@{fontname}";
-  src: url("@{fontfile}-webfont.eot");
-  src: url("@{fontfile}-webfont.eot?#iefix") format("embedded-opentype"),
-       url("@{fontfile}-webfont.woff") format("woff"),
-       url("@{fontfile}-webfont.ttf") format("truetype"),
-       url("@{fontfile}-webfont.svg#@{fontname}") format("svg");
+  src: url("@{fontfile}.eot");
+  src: url("@{fontfile}.eot?#iefix") format("embedded-opentype"),
+       url("@{fontfile}.woff") format("woff"),
+       url("@{fontfile}.ttf") format("truetype"),
+       url("@{fontfile}.svg#@{fontname}") format("svg");
   font-weight: @fontweight;
   font-style: @fontstyle;
   

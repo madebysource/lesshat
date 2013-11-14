@@ -97,11 +97,11 @@ The structure of this repo is:
 
 	Correct mixin calling:
 	
-			.background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%))
+		.background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%))
 		
 	Incorrect calling:
 	
-			.background-image(~'linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%)')
+		.background-image(~'linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%)')
 			
 	Unfortunately, there are exceptions:
 	

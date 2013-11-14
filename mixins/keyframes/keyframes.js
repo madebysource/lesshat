@@ -7,17 +7,19 @@ var keyframes = function keyframes(value) {
   // States
   // 1 - all
   // 2 - webkit, moz, w3c
-  // 3 - webkit, moz
-  // 4 - webkit, opera
-  // 5 - webkit, w3c
-  // 6 - webkit
-  // 7 - moz, opera, w3c
-  // 8 - moz, opera
-  // 9 - moz, w3c
-  // 10 - moz
-  // 11 - opera, w3c
-  // 12 - opera
-  // 13 - w3c
+  // 3 - webkit, moz, opera
+  // 4 - webkit, opera, w3c
+  // 5 - webkit, moz
+  // 6 - webkit, opera
+  // 7 - webkit, w3c
+  // 8 - webkit
+  // 9 - moz, opera, w3c
+  // 10 - moz, opera
+  // 11 - moz, w3c
+  // 12 - moz
+  // 13 - opera, w3c
+  // 14 - opera
+  // 15 - w3c
 
   value = value || 08121991;
   var state = '@{state}';
@@ -25,7 +27,7 @@ var keyframes = function keyframes(value) {
   if (value == 08121991) {
     return value;
   }
-  var prefixedProperties = ['animation', 'background-size', 'box-shadow', 'column', 'transform', 'filter'];
+  var prefixedProperties = ['animation', 'transform', 'filter'];
 
   switch (state) {
     case '1':
@@ -41,43 +43,53 @@ var keyframes = function keyframes(value) {
       break;
     case '3':
       syntax('start', '@-webkit-keyframes', '-webkit-');
-      syntax('end', '@-moz-keyframes', '-moz-');
+      syntax(null, '@-moz-keyframes', '-moz-');
+      syntax('end', '@-o-keyframes', '-o-');
       break;
     case '4':
       syntax('start', '@-webkit-keyframes', '-webkit-');
-      syntax('end', '@-o-keyframes', '-o-');
+      syntax(null, '@-o-keyframes', '-o-');
+      syntax('end', '@keyframes');
       break;
     case '5':
       syntax('start', '@-webkit-keyframes', '-webkit-');
-      syntax('end', '@keyframes');
+      syntax('end', '@-moz-keyframes', '-moz-');
       break;
     case '6':
-      syntax('startend', '@-webkit-keyframes', '-webkit-');
+      syntax('start', '@-webkit-keyframes', '-webkit-');
+      syntax('end', '@-o-keyframes', '-o-');
       break;
     case '7':
+      syntax('start', '@-webkit-keyframes', '-webkit-');
+      syntax('end', '@keyframes');
+      break;
+    case '8':
+      syntax('startend', '@-webkit-keyframes', '-webkit-');
+      break;
+    case '9':
       syntax('start', '@-moz-keyframes', '-moz-');
       syntax(null, '@-o-keyframes', '-o-');
       syntax('end', '@keyframes');
       break;
-    case '8':
+    case '10':
       syntax('start', '@-moz-keyframes', '-moz-');
       syntax('end', '@-o-keyframes', '-o-');
       break;
-    case '9':
+    case '11':
       syntax('start', '@-moz-keyframes', '-moz-');
       syntax('end', '@keyframes');
       break;
-    case '10':
+    case '12':
       syntax('startend', '@-moz-keyframes', '-moz-');
       break;
-    case '11':
+    case '13':
       syntax('start', '@-o-keyframes', '-o-');
       syntax('end', '@keyframes');
       break;
-    case '12':
+    case '14':
       syntax('startend', '@-o-keyframes', '-o-');
       break;
-    case '13':
+    case '15':
       syntax('startend', '@keyframes');
       break;
   }
@@ -86,14 +98,34 @@ var keyframes = function keyframes(value) {
     var end = '}\n';
     var definition = value_temp.split(/(^[a-zA-Z0-9-]+),/g);
     var keyframes = selector + ' ' + definition[1] + '{';
+    var prefixes = ['-webkit-', '-moz-', '-ms-', ''];
 
     if (prefix) {
       prefixedProperties.forEach(function(property, index) {
         if (value.indexOf(property) !== -1) {
           definition[2] = definition[2].replace(new RegExp(property, 'g'), function(match) {
             return prefix + match;
-          })
+          });
         }
+      });
+    } else {
+      definition[2] = definition[2].replace(/{([^}]+)}/g, function(match, sub) {
+        var subSplit = sub.split(';');
+        subSplit.forEach(function(css, index) {
+          prefixedProperties.forEach(function(property) {
+            if (css.indexOf(property) !== -1) {
+              subSplit[index] = '';
+              prefixes.forEach(function(vendor) {
+                subSplit[index] += css.trim().replace(new RegExp(property, 'g'), function(match) {
+                  return vendor + match;
+                }) + ';';
+              });
+            }
+          });
+        });
+
+        var temp = subSplit.join('');
+        return match.replace(sub, temp);
       });
     }
 
