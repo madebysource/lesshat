@@ -4,8 +4,7 @@
 
 var transition = function transition(value) {
   value = value || 'all 0 ease 0';
-  var valueCopy = value;
-  var prefixes = ['-webkit-', '-moz-', '-o-'];
+  var prefixes = ['-webkit-', '-moz-', '-o-', ''];
   var prefixedProperties = ['column', 'transform', 'filter'];
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
@@ -14,18 +13,25 @@ var transition = function transition(value) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
-  // value = '';
-  // prefixes.forEach(function (prefix) {
-  //   prefixedProperties.forEach(function(property, index) {
-  //     if (valueCopy.indexOf(property) !== -1) {
-  //       value += valueCopy.replace(new RegExp(property, 'g'), function(match) {
-  //         return prefix + match;
-  //       }) + ', ';
-  //     }
-  //   });
-  // });
+  var subSplit = value.split(/(?:,)(?![^(]*\))/g);
+  subSplit.forEach(function(css, index) {
+    prefixedProperties.forEach(function(property) {
+      if (css.indexOf(property) !== -1) {
+        subSplit[index] = '';
+        prefixes.forEach(function(vendor, i) {
+          subSplit[index] += css.trim().replace(new RegExp(property, 'g'), function(match) {
+            return vendor + match;
+          });
 
-  // value += valueCopy;
+          if (i < prefixes.length - 1) {
+            subSplit[index] += ',';
+          }
+        });
+      }
+    });
+  });
+
+  value = subSplit.join(',');
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {

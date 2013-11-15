@@ -4,10 +4,28 @@
 
 var transitionProperty = function transitionProperty(value) {
   value = value || 'all';
+  var prefixes = ['-webkit-', '-moz-', '-o-', ''];
+  var prefixedProperties = ['column', 'transform', 'filter'];
+  var subSplit = value.split(/(?:,)(?![^(]*\))/g);
+  subSplit.forEach(function(css, index) {
+    prefixedProperties.forEach(function(property) {
+      if (css.indexOf(property) !== -1) {
+        subSplit[index] = '';
+        prefixes.forEach(function(vendor, i) {
+          subSplit[index] += css.trim().replace(new RegExp(property, 'g'), function(match) {
+            return vendor + match;
+          });
 
-  if (/^[-a-z0-9]*,/.test(value)) {
-    value = value.replace(/(?:,)(?![^(]*\))/g, '');
-  }
+          if (i < prefixes.length - 1) {
+            subSplit[index] += ',';
+          }
+        });
+      }
+    });
+  });
+
+  value = subSplit.join(',');
+
 
   return value;
 };
