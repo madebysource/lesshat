@@ -5,7 +5,7 @@
 var animation = function animation(value) {
   value = value || 'none';
 
-  if (/^[-a-zA-Z0-9]*,/.test(value)) {
+  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 

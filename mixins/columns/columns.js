@@ -6,7 +6,7 @@ var columns = function columns(value) {
   value = value || 'auto auto';
   var numRegex = /^\d+$/;
 
-  if (/^[-a-zA-Z0-9]*,/.test(value)) {
+  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
     value = value.split(' ');
   }

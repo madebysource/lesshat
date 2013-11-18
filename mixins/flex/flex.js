@@ -5,7 +5,7 @@
 var flex = function flex(value) {
   value = value || '0 1 auto';
 
-  if (/^[-a-zA-Z0-9]*,/.test(value)) {
+  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 

@@ -35,7 +35,7 @@ transitionProperty.webkit = function transitionProperty(value) {
   var prefixedProperties = ['background-size', 'border-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-top-left-radius', 'border-top-right-radius', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-webkit-';
 
-  if (/^[-a-z0-9]*,/.test(value)) {
+  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
@@ -55,7 +55,7 @@ transitionProperty.moz = function transitionProperty(value) {
   var prefixedProperties = ['background-size', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-moz-';
 
-  if (/^[-a-z0-9]*,/.test(value)) {
+  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
@@ -75,7 +75,7 @@ transitionProperty.opera = function transitionProperty(value) {
   var prefixedProperties = ['transform'];
   var prefix = '-o-';
 
-  if (/^[-a-z0-9]*,/.test(value)) {
+  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
