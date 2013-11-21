@@ -5,7 +5,7 @@
 var translate3d = function translate3d(value) {
   value = value || '0, 0, 0';
   var numRegex = /\d/gi;
-  var numWithoutValue = /(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;
 
   if (numRegex.test(value)) {
     value = value.replace(numWithoutValue, function(match) {

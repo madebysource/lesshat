@@ -18,4 +18,8 @@ describe('animation-duration', function() {
     test.animationDuration('5', '5s', done);
   });
 
+  it('should return the same value', function(done) {
+    test.animationDuration('.3s', '0.3s', done);
+  });
+
 });

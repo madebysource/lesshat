@@ -5,7 +5,7 @@
 var sepia = function sepia(value) {
   value = value || '100%';
   var numRegex = /\d/gi;
-  var numWithoutValue = /(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;
 
   if (numRegex.test(value)) {
     value = value.replace(numWithoutValue, function(match) {

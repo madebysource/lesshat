@@ -5,7 +5,7 @@
 var columnWidth = function columnWidth(value) {
   value = value || 'auto';
   var numRegex = /\d/gi;
-  var numWithoutValue = /(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;
 
   if (numRegex.test(value)) {
     value = value.replace(numWithoutValue, function(match) {

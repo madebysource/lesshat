@@ -5,7 +5,7 @@
 var animationDelay = function animationDelay(value) {
   value = value || '0';
   var valueRegex = /(?:\d)(?:ms|s)/gi;
-  var numWithoutValue = /(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;
 
   if (!valueRegex.test(value) && value !== '0') {
     value = value.replace(numWithoutValue, function(match) {

@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v2.0.7 (2013-11-18)
+// version: v2.0.8 (2013-11-21)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -226,7 +226,7 @@
   @opera_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-animation-delay: @process; }
@@ -284,7 +284,7 @@
   @opera_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var valueRegex=/ms|s/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var valueRegex=/ms|s/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-animation-duration: @process; }
@@ -602,7 +602,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"auto auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"auto auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-background-size: @process; }
@@ -628,7 +628,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: blur(@process); }
@@ -656,7 +656,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-border-bottom-left-radius: @process; -webkit-background-clip: padding-box;  }
@@ -681,7 +681,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-border-bottom-right-radius: @process; -webkit-background-clip: padding-box;  }
@@ -735,7 +735,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-border-radius: @process; -webkit-background-clip: padding-box;  }
@@ -760,7 +760,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-border-top-left-radius: @process; -webkit-background-clip: padding-box;  }
@@ -785,7 +785,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-border-top-right-radius: @process; -webkit-background-clip: padding-box;  }
@@ -810,7 +810,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-box-shadow: @process; }
@@ -971,7 +971,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"normal";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"normal";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-column-gap: @process; }
@@ -996,7 +996,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"medium none black";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"medium none black";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-column-rule: @process; }
@@ -1021,7 +1021,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-column-width: @process; }
@@ -1072,7 +1072,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: ~"contrast(@{process})"; }
@@ -1138,7 +1138,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){if(value=value||8121991,8121991==value)return value;var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){if(value=value||8121991,8121991==value)return value;var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: drop-shadow(@process); }
@@ -1229,7 +1229,7 @@
   @webkit_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"auto";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-flex-basis: @process; }
@@ -1377,7 +1377,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: grayscale(@process); }
@@ -1406,7 +1406,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: hue-rotate(@process); }
@@ -1435,7 +1435,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: invert(@process); }
@@ -1730,7 +1730,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"none";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"none";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-perspective: @process; }
@@ -1755,7 +1755,7 @@
   @moz_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"50% 50%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"50% 50%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-perspective-origin: @process; }
@@ -1814,7 +1814,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: rotate(@process); }
@@ -1880,7 +1880,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: rotateX(@process); }
@@ -1913,7 +1913,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: rotateY(@process); }
@@ -1946,7 +1946,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: rotateZ(@process); }
@@ -1978,7 +1978,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: ~"saturate(@{process})"; }
@@ -2203,7 +2203,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"100%";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-filter: sepia(@process); }
@@ -2275,7 +2275,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: skew(@process); }
@@ -2308,7 +2308,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: skewX(@process); }
@@ -2341,7 +2341,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"deg"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: skewY(@process); }
@@ -2407,7 +2407,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"50% 50% 0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"50% 50% 0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"%"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform-origin: @process; }
@@ -2504,7 +2504,7 @@
   @opera_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var valueRegex=/(?:\d)(?:ms|s)/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transition-delay: @process; }
@@ -2533,7 +2533,7 @@
   @opera_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var valueRegex=/ms|s/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var valueRegex=/ms|s/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return valueRegex.test(value)||"0"===value||(value=value.replace(numWithoutValue,function(match){return match+=parseFloat(match,10)>10?"ms":"s"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transition-duration: @process; }
@@ -2624,7 +2624,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: translate(@process); }
@@ -2657,7 +2657,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0, 0, 0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0, 0, 0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: translate3d(@process); }
@@ -2690,7 +2690,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: translateX(@process); }
@@ -2723,7 +2723,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: translateY(@process); }
@@ -2756,7 +2756,7 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){value=value||"0";var numRegex=/\d/gi,numWithoutValue=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return numRegex.test(value)&&(value=value.replace(numWithoutValue,function(match){return match+"px"})),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-transform: translateZ(@process); }

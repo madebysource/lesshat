@@ -5,7 +5,7 @@
 var perspectiveOrigin = function perspectiveOrigin(value) {
   value = value || '50% 50%';
   var numRegex = /\d/gi;
-  var numWithoutValue = /(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;
 
   if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');

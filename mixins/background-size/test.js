@@ -10,4 +10,8 @@ describe('background-size', function() {
     test.backgroundSize('400 300', '400px 300px', done);
   });
 
+  it('should return the same value', function(done) {
+    test.backgroundSize('.25em cover', '0.25em cover', done);
+  });
+
 });

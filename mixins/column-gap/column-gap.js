@@ -5,7 +5,7 @@
 var columnGap = function columnGap(value) {
   value = value || 'normal';
   var numRegex = /\d/gi;
-  var numWithoutValue = /(?:\s|^)(\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
+  var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;
 
   if (numRegex.test(value)) {
     value = value.replace(numWithoutValue, function(match) {
