@@ -23,7 +23,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
   And also properties inside `transition` definition are automatically prefixed, if it is needed.  
   **W3C property value is appending all prefixed values.**  
-  Why? Some browsers support W3C unprefixed property, but value must be sometimes prefixed.
+  Why? Some browsers support W3C unprefixed properties, but values must be sometimes prefixed.
   Let's consider this example:
 
     div {
