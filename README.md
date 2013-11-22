@@ -2777,7 +2777,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 **Example:**
 
     div {
-     .transition-property(box-shadow);
+     .transition-property(transform);
     }
     
     // Result
