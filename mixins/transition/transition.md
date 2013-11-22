@@ -21,7 +21,19 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
           time += 's';
         }
 
-  And also properties inside `transition` definition are automatically prefixed, if it is needed.
+  And also properties inside `transition` definition are automatically prefixed, if it is needed.  
+  **W3C property value is appending all prefixed values.**  
+  Why? Some browsers support W3C unprefixed property, but value must be sometimes prefixed.
+  Let's consider this example:
+
+    div {
+    -webkit-transition: -webkit-filter .3s ease;
+    -moz-transition: -moz-filter .3s ease;
+    -o-transition: filter .3s ease;
+
+    // There is a problem! Webkit needs -webkit-filter property
+    transition: filter .3s ease;
+    }
 
 **Example:**
 

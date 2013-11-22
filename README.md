@@ -16,7 +16,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v2.0.8 (2013-11-21)
+### Current version: v2.0.9 (2013-11-22)
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
@@ -2637,7 +2637,19 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
           time += 's';
         }
 
-  And also properties inside `transition` definition are automatically prefixed, if it is needed.
+  And also properties inside `transition` definition are automatically prefixed, if it is needed.  
+  **W3C property value is appending all prefixed values.**  
+  Why? Some browsers support W3C unprefixed property, but value must be sometimes prefixed.
+  Let's consider this example:
+
+    div {
+    -webkit-transition: -webkit-filter .3s ease;
+    -moz-transition: -moz-filter .3s ease;
+    -o-transition: filter .3s ease;
+
+    // There is a problem! Webkit needs -webkit-filter property
+    transition: filter .3s ease;
+    }
 
 **Example:**
 
@@ -2748,7 +2760,19 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 **Tips and tricks:**
 
-  And also properties inside `transition-property` definition are automatically prefixed, if it is needed.
+  And also properties inside `transition-property` definition are automatically prefixed, if it is needed.  
+  **W3C property value is appending all prefixed values.**  
+  Why? Some browsers support W3C unprefixed property, but value must be sometimes prefixed.
+  Let's consider this example:
+
+    div {
+    -webkit-transition: -webkit-filter .3s ease;
+    -moz-transition: -moz-filter .3s ease;
+    -o-transition: filter .3s ease;
+
+    // There is a problem! Webkit needs -webkit-filter property
+    transition: filter .3s ease;
+    }
 
 **Example:**
 
@@ -2758,10 +2782,10 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     
     // Result
     div {
-     -webkit-transition-property: -webkit-box-shadow;
-     -moz-transition-property: -moz-box-shadow;
-     -o-transition-property: box-shadow;
-     transition-property: box-shadow;
+     -webkit-transition-property: -webkit-transform;
+     -moz-transition-property: -moz-transform;
+     -o-transition-property: -o-transform;
+     transition-property: -webkit-transform,-moz-transform,-o-transform,transform;
     }
 
 

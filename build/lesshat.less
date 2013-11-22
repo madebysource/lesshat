@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v2.0.8 (2013-11-21)
+// version: v2.0.9 (2013-11-22)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -2562,9 +2562,9 @@
   @opera_local: true;
   @w3c_local: true;
 
-  @process_webkit: ~`(function(value){value=value||"all";var prefixedProperties=["background-size","border-radius","border-bottom-left-radius","border-bottom-right-radius","border-top-left-radius","border-top-right-radius","box-shadow","column","transform","filter"],prefix="-webkit-";return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_moz: ~`(function(value){value=value||"all";var prefixedProperties=["background-size","box-shadow","column","transform","filter"],prefix="-moz-";return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_opera: ~`(function(value){value=value||"all";var prefixedProperties=["transform"],prefix="-o-";return/^[-a-zA-Z0-9().\/]*,/.test(value)&&(value=value.replace(/(?:,)(?![^(]*\))/g,"")),prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_webkit: ~`(function(value){value=value||"all";var prefixedProperties=["background-size","border-radius","border-bottom-left-radius","border-bottom-right-radius","border-top-left-radius","border-top-right-radius","box-shadow","column","transform","filter"],prefix="-webkit-";return prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){value=value||"all";var prefixedProperties=["background-size","box-shadow","column","transform","filter"],prefix="-moz-";return prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_opera: ~`(function(value){value=value||"all";var prefixedProperties=["transform"],prefix="-o-";return prefixedProperties.forEach(function(property){-1!==value.indexOf(property)&&(value=value.replace(new RegExp(property,"g"),function(match){return prefix+match}))}),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
   @process: ~`(function(value){value=value||"all";var prefixes=["-webkit-","-moz-","-o-",""],prefixedProperties=["column","transform","filter"],subSplit=value.split(/(?:,)(?![^(]*\))/g);return subSplit.forEach(function(css,index){prefixedProperties.forEach(function(property){-1!==css.indexOf(property)&&(subSplit[index]="",prefixes.forEach(function(vendor,i){subSplit[index]+=css.trim().replace(new RegExp(property,"g"),function(match){return vendor+match}),i<prefixes.length-1&&(subSplit[index]+=",")}))})}),value=subSplit.join(",")})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {

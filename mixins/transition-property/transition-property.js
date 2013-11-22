@@ -35,10 +35,6 @@ transitionProperty.webkit = function transitionProperty(value) {
   var prefixedProperties = ['background-size', 'border-radius', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-top-left-radius', 'border-top-right-radius', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-webkit-';
 
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
-    value = value.replace(/(?:,)(?![^(]*\))/g, '');
-  }
-
   prefixedProperties.forEach(function(property, index) {
     if (value.indexOf(property) !== -1) {
       value = value.replace(new RegExp(property, 'g'), function(match) {
@@ -55,10 +51,6 @@ transitionProperty.moz = function transitionProperty(value) {
   var prefixedProperties = ['background-size', 'box-shadow', 'column', 'transform', 'filter'];
   var prefix = '-moz-';
 
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
-    value = value.replace(/(?:,)(?![^(]*\))/g, '');
-  }
-
   prefixedProperties.forEach(function(property, index) {
     if (value.indexOf(property) !== -1) {
       value = value.replace(new RegExp(property, 'g'), function(match) {
@@ -74,10 +66,6 @@ transitionProperty.opera = function transitionProperty(value) {
   value = value || 'all';
   var prefixedProperties = ['transform'];
   var prefix = '-o-';
-
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
-    value = value.replace(/(?:,)(?![^(]*\))/g, '');
-  }
 
   prefixedProperties.forEach(function(property, index) {
     if (value.indexOf(property) !== -1) {
