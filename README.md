@@ -16,7 +16,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v2.0.9 (2013-11-22)
+### Current version: v2.0.9 (2013-11-25)
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
@@ -44,7 +44,7 @@ The structure of this repo is:
 * **.gitignore** – is a list of files that git will ignore. I know you know that, but it's convention. 
 * **.travis.yml** – Configuration file for Travis CI. Travis CI is a hosted continuous integration service for the open source community.
 * **Gruntfle.js** – task runner. If you don't want to use lesshat-devstack ignore it.
-* **LICENCE** – self-explanatory
+* **LICENSE** – self-explanatory
 * **README-template.md** – If you want to edit readme, edit it in this file. README.md is generated.
 * **README.md** – please don't edit this file. Either edit README-template.md or documentation inside mixins/<mixin-name> folder.
 * **Bower** – is like NPM for frontend. NPM is like Gems for JavaScript. I could go on forever…
