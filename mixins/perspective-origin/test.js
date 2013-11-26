@@ -10,4 +10,8 @@ describe('perspective-origin', function() {
     test.perspectiveOrigin('50 50', '50% 50%', done);
   });
 
+  it('should return the same value', function(done) {
+    test.perspectiveOrigin('50% 50%', '50% 50%', done);
+  });
+
 });

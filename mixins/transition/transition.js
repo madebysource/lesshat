@@ -9,7 +9,7 @@ var transition = function transition(value) {
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
+  if (/^[^, ]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
@@ -56,7 +56,7 @@ transition.webkit = function transition(value) {
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
+  if (/^[^, ]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
@@ -91,7 +91,7 @@ transition.moz = function transition(value) {
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
+  if (/^[^, ]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
@@ -126,7 +126,7 @@ transition.opera = function transition(value) {
   var valueRegex = /(?:\d)(?:ms|s)/gi;
   var numWithoutValue = /(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%)/gi;
 
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
+  if (/^[^, ]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 

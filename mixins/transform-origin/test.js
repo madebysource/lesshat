@@ -10,4 +10,8 @@ describe('transform-origin', function() {
     test.transformOrigin('50 50', '50% 50%', done);
   });
 
+  it('should return the same value', function(done) {
+    test.transformOrigin('50% 50%', '50% 50%', done);
+  });
+
 });

@@ -5,7 +5,7 @@
 var borderImage = function borderImage(value) {
   value = value || 08121991;
 
-  if (/^[-a-zA-Z0-9().\/]*,/.test(value)) {
+  if (/^[^, ]*,/.test(value)) {
     value = value.replace(/(?:,)(?![^(]*\))/g, '');
   }
 
