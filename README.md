@@ -11,7 +11,7 @@ README.md file is automatically generated.
 
 ---
 **[Download latest](https://raw.github.com/csshat/lesshat/master/build/lesshat.less)** (or **[Prefixed - great with Bootstrap](https://raw.github.com/csshat/lesshat/master/build/lesshat-prefixed.less)**) **|**
-**[Get Starded](#get-started) |**
+**[Get Started](#get-started) |**
 **[Contribute](#contribute) |**
 **[Documentation](#documentation) |**
 
