@@ -16,7 +16,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v2.0.10 (2013-12-02)
+### Current version: v2.0.11 (2013-12-04)
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
@@ -1759,7 +1759,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
 
 **Tips and tricks:**
 
-  Properties inside `<keyframes-definition>` are automatically prefixed, if it's needed.
+  Properties inside `<keyframes-definition>` are automatically prefixed, if it's needed.  
+  Keyframes mixin supports prefix configuration but it's computationally demanding so it is commented out and all prefixes are rendered. Feel free to uncommented that if you need it.
   
 **Example:**
 

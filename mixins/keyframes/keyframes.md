@@ -27,7 +27,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyfram
 
 **Tips and tricks:**
 
-  Properties inside `<keyframes-definition>` are automatically prefixed, if it's needed.
+  Properties inside `<keyframes-definition>` are automatically prefixed, if it's needed.  
+  Keyframes mixin supports prefix configuration but it's computationally demanding so it is commented out and all prefixes are rendered. Feel free to uncommented that if you need it.
   
 **Example:**
 
