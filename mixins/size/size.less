@@ -1,4 +1,4 @@
-.size(@square:auto) {
+.size(@square) {
   @unit: 'px';
   .process(@square) when (ispixel(@square)), (isem(@square)), (ispercentage(@square)), (iskeyword(@square)) {
     width: @square;
@@ -14,7 +14,7 @@
 
 }
 
-.size(@width:auto, @height:auto) {
+.size(@width, @height) {
   @unit: 'px';
   .process(@width, @height) when (ispixel(@width)) and (ispixel(@height)), (isem(@width)) and (isem(@height)), (ispercentage(@width)) and (ispercentage(@height)), (iskeyword(@width)) and (iskeyword(@height)) {
     width: @width;
