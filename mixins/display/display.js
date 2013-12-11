@@ -4,7 +4,7 @@
 
 var display = function display(value) {
 
-  if (value != 'flex' || value != 'inline-flex') {
+  if (value != 'flex' && value != 'inline-flex') {
     value = 08121991;
   }
 
