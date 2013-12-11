@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v2.0.11 (2013-12-04)
+// version: v2.0.12 (2013-12-11)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -1102,11 +1102,11 @@
   @ms_local: true;
   @w3c_local: true;
 
-  @process_oldwebkit: ~`(function(value){return value="flex"==value&&"inline-flex"==value?"-webkit-box":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_moz: ~`(function(value){return value="flex"==value&&"inline-flex"==value?"-moz-box":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process_webkit: ~`(function(value){return value="flex"==value&&"inline-flex"==value?"-webkit-"+value:8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_oldwebkit: ~`(function(value){return value="flex"==value||"inline-flex"==value?"-webkit-box":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_moz: ~`(function(value){return value="flex"==value||"inline-flex"==value?"-moz-box":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process_webkit: ~`(function(value){return value="flex"==value||"inline-flex"==value?"-webkit-"+value:8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
   @process_ms: ~`(function(value){return value="flex"==value?"-ms-flexbox":"inline-flex"==value?"-ms-inline-flexbox":8121991})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
-  @process: ~`(function(value){return"flex"!=value&&"inline-flex"!=value&&(value=8121991),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(value){return("flex"!=value||"inline-flex"!=value)&&(value=8121991),value})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
 
   .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
     .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process_oldwebkit)) and not (iscolor(@process_oldwebkit)) and not (isnumber(@process_oldwebkit)) and not (iskeyword(@process_oldwebkit)) and not (isurl(@process_oldwebkit)) and not (ispixel(@process_oldwebkit)) and not (ispercentage(@process_oldwebkit)) and not (isem(@process_oldwebkit)) { display: @process_oldwebkit; }
