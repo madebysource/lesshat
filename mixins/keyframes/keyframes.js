@@ -124,7 +124,7 @@ var keyframes = function keyframes(value) {
           });
         });
 
-        var temp = subSplit.join('');
+        var temp = subSplit.join(';').replace(/;;/g, ';');
         return match.replace(sub, temp);
       });
     }
