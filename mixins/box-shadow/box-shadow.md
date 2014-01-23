@@ -9,7 +9,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/box-s
 
 Default value: none
 
-    .box-shadow(offset-x offset-y blur-radius color, offset-x offset-y blur-radius color)
+    .box-shadow(<offset-x> <offset-y> spread blur-radius color inset, …)
 
 **Tips and tricks:**
 

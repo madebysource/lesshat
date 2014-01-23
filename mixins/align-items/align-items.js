@@ -8,7 +8,7 @@ var alignItems = function alignItems(value) {
   return value;
 };
 
-alignItems.olderWebkit = function olderWebkitalignItems(value) {
+alignItems.olderwebkit = function olderWebkitalignItems(value) {
   value = value || 'stretch';
 
   if (value == 'flex-start') {

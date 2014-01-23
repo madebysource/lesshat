@@ -9,7 +9,7 @@ var translate3d = function translate3d(value) {
 
   if (numRegex.test(value)) {
     value = value.replace(numWithoutValue, function(match) {
-      return match + 'px';
+      return (match == 0) && match || match + 'px';
     });
   }
 

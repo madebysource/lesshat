@@ -9,7 +9,7 @@ var skewX = function skewX(value) {
 
   if (numRegex.test(value)) {
     value = value.replace(numWithoutValue, function(match) {
-      return match + 'deg';
+      return (match == 0) && match || match + 'deg';
     });
   }
 

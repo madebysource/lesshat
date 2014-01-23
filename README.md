@@ -15,7 +15,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v2.0.13 (2013-12-13)
+### Current version: v2.0.14 (2014-01-23)
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
@@ -1015,7 +1015,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/box-s
 
 Default value: none
 
-    .box-shadow(offset-x offset-y blur-radius color, offset-x offset-y blur-radius color)
+    .box-shadow(<offset-x> <offset-y> spread blur-radius color inset, …)
 
 **Tips and tricks:**
 

@@ -9,7 +9,7 @@ var sepia = function sepia(value) {
 
   if (numRegex.test(value)) {
     value = value.replace(numWithoutValue, function(match) {
-      return match + '%';
+      return (match == 0) && match || match + '%';
     });
   }
 
