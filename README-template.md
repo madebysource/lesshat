@@ -173,6 +173,7 @@ The structure of this repo is:
 44. **[font-face](#font-face)**
 45. **[grayscale](#grayscale)** `filter`
 46. **[hue-rotate](#hue-rotate)** `filter`
+47. **[hyphens](#hyphens)**
 47. **[invert](#invert)** `filter`
 48. **[justify-content](#justify-content)** `flexbox`
 49. **[keyframes](#keyframes)**
