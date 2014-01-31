@@ -15,7 +15,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v2.0.14 (2014-01-23)
+### Current version: v2.0.15 (2014-01-31)
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
@@ -1665,6 +1665,32 @@ Default value: 0
     }
 
 
+
+### <a name="hyphens"></a> &#8226; hyphens
+**Summary:**
+
+The hyphens CSS property tells the browser how to go about splitting words to improve the layout of text when line-wrapping. 
+
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)**
+
+**Syntax:**
+
+Default value: manual
+
+    .hyphens(none | manual | auto)
+  
+**Example:**
+
+    div {
+     .hyphens(none);
+    }
+    
+    // Result
+    div {
+     -webkit-hyphens: none;
+     -moz-hyphens: none;
+     -ms-hyphens: none;
+    } 
 
 ### <a name="invert"></a> &#8226; invert
 **Summary:**

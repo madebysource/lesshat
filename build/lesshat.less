@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v2.0.14 (2014-01-23)
+// version: v2.0.15 (2014-01-31)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -56,6 +56,7 @@
 	// font-face
 	// grayscale
 	// hue-rotate
+	// hyphens
 	// invert
 	// justify-content
 	// keyframes
@@ -1429,6 +1430,35 @@
 
 }
 
+.hyphens(...) {
+
+  @webkit_local: true;
+  @moz_local: true;
+  @ms_local: true;
+  @w3c_local: true;
+
+  @process: ~`(function(value){return value=value||"manual"})((function(){var args="@{arguments}";return args=args.replace(/^\[|\]$/g,"")})())`;
+
+  .result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
+    .inception (@signal, @arguments) when (@signal = 1) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -webkit-hyphens: @process; }
+		.inception (@signal, @arguments) when (@signal = 1) and not (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) {} 
+    .inception (@signal, @arguments) when (@signal = 2) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -moz-hyphens: @process; }
+		.inception (@signal, @arguments) when (@signal = 2) and not (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) {} 
+    .inception (@signal, @arguments) when (@signal = 3) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { -ms-hyphens: @process; }
+		.inception (@signal, @arguments) when (@signal = 3) and not (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) {} 
+    .inception (@signal, @arguments) when (@signal = 4) and (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) { hyphens: @process; }
+		.inception (@signal, @arguments) when (@signal = 4) and not (isstring(@process)) and not (iscolor(@process)) and not (isnumber(@process)) and not (iskeyword(@process)) and not (isurl(@process)) and not (ispixel(@process)) and not (ispercentage(@process)) and not (isem(@process)) {} 
+    .inception(@signal, @arguments);
+  }
+  .result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
+
+  .result(@arguments, 1, @webkit, @webkit_local);
+  .result(@arguments, 2, @moz, @moz_local);
+  .result(@arguments, 3, @ms, @ms_local);
+  .result(@arguments, 4, @w3c, @w3c_local);
+
+}
+
 .invert(...) {
 
   @webkit_local: true;
@@ -2248,23 +2278,29 @@
 
 .size(@width, @height) {
   @unit: 'px';
-  .process(@width, @height) when (ispixel(@width)) and (ispixel(@height)), (isem(@width)) and (isem(@height)), (ispercentage(@width)) and (ispercentage(@height)), (iskeyword(@width)) and (iskeyword(@height)) {
-    width: @width;
-    height: @height;
+  .process(@width, @height) when (ispixel(@width)), (isem(@width)), (ispercentage(@width)), (iskeyword(@width)) {
+    .kittens(@height) when (ispixel(@height)), (isem(@height)), (ispercentage(@height)), (iskeyword(@height)) {
+      width: @width;
+      height: @height;
+    }
+    .kittens(@height) when not (ispixel(@height)) and not (isem(@height)) and not (ispercentage(@height)) and not (iskeyword(@height)) {
+      width: @width;
+      height: ~`@{height} + @{unit}`;
+    }
+    .kittens(@height);
   }
 
-  .process(@width, @height) when not (ispixel(@width)) and not (ispixel(@height)) and not (isem(@width)) and not (isem(@height)) and not (ispercentage(@width)) and not (ispercentage(@height)) and not (iskeyword(@width)) and not (iskeyword(@height)) {
+  .process(@width, @height) when (ispixel(@height)), (isem(@height)), (ispercentage(@height)), (iskeyword(@height)) {
+    .kittens(@width) when (ispixel(@width)), (isem(@width)), (ispercentage(@width)), (iskeyword(@width)) {}
+    .kittens(@width) when not (ispixel(@width)) and not (isem(@width)) and not (ispercentage(@width)) and not (iskeyword(@width)) {
+      width: ~`@{width} + @{unit}`;
+      height: @height;
+    }
+    .kittens(@width);
+  }
+
+  .process(@width, @height) when not (ispixel(@width)) and not (isem(@width)) and not (ispercentage(@width)) and not (iskeyword(@width)) and not (ispixel(@height)) and not (isem(@height)) and not (ispercentage(@height)) and not (iskeyword(@height))  {
     width: ~`@{width} + @{unit}`;
-    height: ~`@{height} + @{unit}`;
-  }
-
-  .process(@width, @height) when not (ispixel(@width)) and (ispixel(@height)), not (isem(@width)) and (isem(@height)), not (ispercentage(@width)) and (ispercentage(@height)), not (iskeyword(@width)) and (iskeyword(@height)) {
-    width: ~`@{width} + @{unit}`;
-    height: @height;
-  }
-
-  .process(@width, @height) when (ispixel(@width)) and not (ispixel(@height)), (isem(@width)) and not (isem(@height)), (ispercentage(@width)) and not (ispercentage(@height)), (iskeyword(@width)) and not (iskeyword(@height)) {
-    width: @width;
     height: ~`@{height} + @{unit}`;
   }
 

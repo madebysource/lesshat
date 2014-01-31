@@ -1,4 +1,4 @@
-.size(@square) {
+ .size(@square) {
   @unit: 'px';
   .process(@square) when (ispixel(@square)), (isem(@square)), (ispercentage(@square)), (iskeyword(@square)) {
     width: @square;
@@ -16,23 +16,29 @@
 
 .size(@width, @height) {
   @unit: 'px';
-  .process(@width, @height) when (ispixel(@width)) and (ispixel(@height)), (isem(@width)) and (isem(@height)), (ispercentage(@width)) and (ispercentage(@height)), (iskeyword(@width)) and (iskeyword(@height)) {
-    width: @width;
-    height: @height;
+  .process(@width, @height) when (ispixel(@width)), (isem(@width)), (ispercentage(@width)), (iskeyword(@width)) {
+    .kittens(@height) when (ispixel(@height)), (isem(@height)), (ispercentage(@height)), (iskeyword(@height)) {
+      width: @width;
+      height: @height;
+    }
+    .kittens(@height) when not (ispixel(@height)) and not (isem(@height)) and not (ispercentage(@height)) and not (iskeyword(@height)) {
+      width: @width;
+      height: ~`@{height} + @{unit}`;
+    }
+    .kittens(@height);
   }
 
-  .process(@width, @height) when not (ispixel(@width)) and not (ispixel(@height)) and not (isem(@width)) and not (isem(@height)) and not (ispercentage(@width)) and not (ispercentage(@height)) and not (iskeyword(@width)) and not (iskeyword(@height)) {
+  .process(@width, @height) when (ispixel(@height)), (isem(@height)), (ispercentage(@height)), (iskeyword(@height)) {
+    .kittens(@width) when (ispixel(@width)), (isem(@width)), (ispercentage(@width)), (iskeyword(@width)) {}
+    .kittens(@width) when not (ispixel(@width)) and not (isem(@width)) and not (ispercentage(@width)) and not (iskeyword(@width)) {
+      width: ~`@{width} + @{unit}`;
+      height: @height;
+    }
+    .kittens(@width);
+  }
+
+  .process(@width, @height) when not (ispixel(@width)) and not (isem(@width)) and not (ispercentage(@width)) and not (iskeyword(@width)) and not (ispixel(@height)) and not (isem(@height)) and not (ispercentage(@height)) and not (iskeyword(@height))  {
     width: ~`@{width} + @{unit}`;
-    height: ~`@{height} + @{unit}`;
-  }
-
-  .process(@width, @height) when not (ispixel(@width)) and (ispixel(@height)), not (isem(@width)) and (isem(@height)), not (ispercentage(@width)) and (ispercentage(@height)), not (iskeyword(@width)) and (iskeyword(@height)) {
-    width: ~`@{width} + @{unit}`;
-    height: @height;
-  }
-
-  .process(@width, @height) when (ispixel(@width)) and not (ispixel(@height)), (isem(@width)) and not (isem(@height)), (ispercentage(@width)) and not (ispercentage(@height)), (iskeyword(@width)) and not (iskeyword(@height)) {
-    width: @width;
     height: ~`@{height} + @{unit}`;
   }
 
