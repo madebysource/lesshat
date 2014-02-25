@@ -83,4 +83,8 @@ $(function () {
     });
 
     AdobeEdge.launchComposition('hat');
+
+    // Randm shoutout
+    var $loveEl = $('.love');
+    $loveEl[Math.floor(Math.random() * $loveEl.length)].classList.add('active');
 });
