@@ -20,7 +20,7 @@ Default value: auto
     // Result
     div {
      -webkit-align-self: flex-start;
-     -ms-align-self: start;
+     -ms-flex-item-align: start;
      align-self: flex-start;
     }
 
