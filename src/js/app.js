@@ -1,20 +1,3 @@
-var _gaq = [
-    ['_setAccount', 'UA-5463802-55'],
-    ['_setDomainName', '.madebysource.com'],
-    ['_setAllowLinker', true],
-    ['_trackPageview'],
-    ['b._setAccount','UA-5463802-47'],
-    ['b._trackPageview']
-];
-
-var links = document.querySelectorAll('a[href*="madebysource.com"], a[href*="csshat.com"]');
-for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function () {
-        _gaq.push(['_link', this.href]);
-        return false;
-    });
-}
-
 var zip = null;
 var relseseId = null;
 var autoDownload = false;
@@ -63,7 +46,7 @@ $(function () {
                 second.find('input').focus();
             }, 3800);
         }, 300);
-        _gaq.push(['_trackEvent', 'Website', 'Download', this.id]);
+        ga('send', 'event', 'Website', 'Download', this.id);
 
         if (zip) {
             window.location = zip;
