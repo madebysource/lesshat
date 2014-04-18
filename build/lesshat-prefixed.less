@@ -495,12 +495,12 @@
 .lh-justify-content(...) {
   @process_oldestWebkit: ~`(function(e){return e=e||"start","flex-start"==e?e="start":"flex-end"==e?e="end":("space-between"==e||"space-around"==e)&&(e="justify"),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   @process_moz: ~`(function(e){return e=e||"start","flex-start"==e?e="start":"flex-end"==e?e="end":("space-between"==e||"space-around"==e)&&(e="justify"),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
-  @process: ~`(function(e){return e=e||"flex-start"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   @process_ms: ~`(function(e){return e=e||"start","flex-start"==e?e="start":"flex-end"==e?e="end":"space-between"==e?e="justify":"space-around"==e&&(e="distribute"),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
+  @process: ~`(function(e){return e=e||"flex-start"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-box-pack: @process_oldestWebkit;
   -moz-box-pack: @process_moz;
-  -webkit-justify-content: @process;
   -ms-flex-pack: @process_ms;
+  -webkit-justify-content: @process;
   justify-content: @process;
 }
 
