@@ -82,7 +82,7 @@ justifyContent.ms = function msjustifyContent(value) {
  * For which browsers is this mixin specified
  */
 
-justifyContent.vendors = ['oldestwebkit','moz','webkit','ms'];
+justifyContent.vendors = ['oldestwebkit','moz','ms','webkit'];
 
 /**
  * Export mixin
