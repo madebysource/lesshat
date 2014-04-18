@@ -13,13 +13,22 @@ var flex = function flex(value) {
 };
 
 flex.olderwebkit = function olderwebkitflex(value) {
-  value = value.match(/^\d+/)[0] || '0';
+  if (/^\d+/.test(value)) {
+    value = value.match(/^\d+/)[0];
+  } else if (value == '') {
+    value = '0';
+  }
 
   return value;
 };
 
 flex.moz = function mozflex(value) {
-  value = value.match(/^\d+/)[0] || '0';
+  if (/^\d+/.test(value)) {
+    value = value.match(/^\d+/)[0];
+  } else if (value == '') {
+    value = '0';
+  }
+
 
   return value;
 };

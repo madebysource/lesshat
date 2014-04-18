@@ -4,9 +4,9 @@ README.md file is automatically generated.
 {{ documentation }} syntax is replaced by all mixins documentation from mixins folder
 -->
 
-# LESS Hat 2.0 [![Build Status](https://travis-ci.org/csshat/lesshat.png)](https://travis-ci.org/csshat/lesshat)
+# LESS Hat 3.0 [![Build Status](https://travis-ci.org/csshat/lesshat.png)](https://travis-ci.org/csshat/lesshat)
 
-![LESS Hat 2.0](http://f.cl.ly/items/1b2U0t2X3i3l2z2a3m2I/Untitled-11.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
+![LESS Hat 2.0](http://f.cl.ly/items/353w1A2z0u3C323J152t/Untitled-11-1.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
 
 ---
 **[Download latest](https://raw.github.com/csshat/lesshat/master/build/lesshat.less)** (or **[Prefixed - great with Bootstrap](https://raw.github.com/csshat/lesshat/master/build/lesshat-prefixed.less)**) **|**
@@ -16,17 +16,25 @@ README.md file is automatically generated.
 
 ---
 ### Current version: v{{ version }}
+
+## What's new?
+* Compiling LESS Hat is much more faster (up to 60× times). 
+	* Here is a benchmark comparing LESS Hat 2.0.15 and LESS Hat 3. Thanks to [Pixelass](https://github.com/pixelass/more-or-less/) for this test.
+	  ![](http://f.cl.ly/items/2a2Z1r1s0U3d2G1U3F3W/bench.png)
+	* The main reason why LESS Hat 2.0.15 was so slow are LESS CSS Mixin Guards. LESS Hat used Mixin Guards for configurations browser prefixes. LESS Hat 3 dropped this feature. If you still want to use prefix configurations use LESS Hat 2.0.15. You can download it [here](https://github.com/csshat/lesshat/archive/v2.0.15.zip).
+* A lot of bug fixes...
+
 ## Intro
 Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
-After a year, there is a new, **completely rewritten 2.0 version** that brings 86 great mixins, robust workflow for editing, testing and creating new mixins.
+After a year, there is a new, **completely rewritten 3.0 version** that brings 86 great mixins, robust workflow for editing, testing and creating new mixins.
 
-Meet the best mixins library in the world. Thanks to the LESS Hat 2.0 is LESS CSS finally usable.
+Meet the best mixins library in the world. Thanks to the LESS Hat 3.0 is LESS CSS finally usable.
 
 If you would like to use CSS Hat for working with LESS Hat and you still don't have one, we have a suprise for you at **[lesshat.com](http://lesshat.com)** - Check it out!
 
 ### Features
-* **Configuration** – You can turn off/on browser prefixes according to your needs.
+* <del>**Configuration** – You can turn off/on browser prefixes according to your needs.</del> **LESS Hat 3.0 dropped this feature. Read more in 'What's new'.**
 * **No restrictions** – If it's possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.
 * **Standard naming convention** – In LESS Hat, mixins have names like all CSS3 properties. No `.rounded` or `.shadow`. It's stupid.
 * **Cross-browser** – LESS Hat takes care of exporting CSS for all available browsers.
@@ -63,34 +71,13 @@ The structure of this repo is:
 2. **Typical LESS Hat mixin**:
 
 		.supermixin(...) {
-
-  			@webkit_local: true;
-  			@w3c_local: true;
-
   			@process: ~`(function(){})()`;
-
-  			.result (@arguments, @signal, @boolean, @local_boolean) when (@boolean = true) and (@local_boolean = true) {
-    			.inception (@signal, @arguments) when (@signal = 1) and not (@process = 08121991) { -webkit-border-radius: @process;  }
-    			.inception (@signal, @arguments) when (@signal = 1) and (@process = 08121991) {} 
-    			.inception (@signal, @arguments) when (@signal = 3) and not (@process = 08121991) { border-radius: @process;  }
-    			.inception (@signal, @arguments) when (@signal = 3) and (@process = 08121991) {} 
-    			.inception(@signal, @arguments);
-  			}
   			
-  			.result (@arguments, @signal, @boolean, @local_boolean) when not (@boolean = true), not (@local_boolean = true) {}
-
-  			.result(@arguments, 1, @webkit, @webkit_local);
-  			.result(@arguments, 3, @w3c, @w3c_local);
+  			-webkit-border-radius: @process;
+  			border-radius: @process;
 		}
-		
-	At the top, there are a local prefix configurations. So you can turn off/on browser for one specific mixin. This is quite useful.
 	
 	In @process variable is all magic. Please don't edit javascrpt directly in .less file. Instead use [lesshat-devstack](https://github.com/csshat/lesshat-devstack).
-	
-	If you call mixin without arguments, some mixins return CSS default value for specific property, but some mixins return magic number *08121991* (Yeah, it's like Lost, TV series, but numbers are different) and because of that LESS CSS generates nothing.
-
-	**Why 08121991 and not just 0 (zero)?**  
-	Some CSS properties have zero as default value. So we need more difficult number.
 	
 3. **Use (almost) every property without interpolation!**
 

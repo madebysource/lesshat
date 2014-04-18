@@ -64,7 +64,7 @@ justifyContent.ms = function msjustifyContent(value) {
  */
 
  justifyContent.result = {
-  oldestwebkit: {
+  oldestWebkit: {
     property: '-webkit-box-pack',
     prefixed: false
   },
@@ -82,7 +82,7 @@ justifyContent.ms = function msjustifyContent(value) {
  * For which browsers is this mixin specified
  */
 
-justifyContent.vendors = ['oldestwebkit','moz','webkit','ms'];
+justifyContent.vendors = ['oldestWebkit','moz','webkit','ms'];
 
 /**
  * Export mixin

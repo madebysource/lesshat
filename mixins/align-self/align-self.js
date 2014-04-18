@@ -21,6 +21,17 @@ alignSelf.ms = function msalignSelf(value) {
 };
 
 /**
+ * Older syntax have different properties
+ */
+
+ alignSelf.result = {
+  ms: {
+    property: '-ms-flex-item-align',
+    prefixed: false
+  }
+ };
+
+/**
  * For which browsers is this mixin specified
  */
 

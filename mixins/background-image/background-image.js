@@ -16,7 +16,7 @@ var backgroundImage = function backgroundImage(value) {
 
   var values_keys = Object.keys(values);
   values_keys.some(function(el) {
-    if (value.indexOf(el) >= 0 && !(new RegExp('to\\s+' + el, 'g')).test(value)) {
+    if (value.indexOf(el) >= 0 && !(new RegExp('to\\s+' + el + '|at\\s+' + el, 'g')).test(value)) {
       value = value.replace(new RegExp(el), values[el]);
       return true;
     }
@@ -43,7 +43,7 @@ backgroundImage.webkit = function backgroundImageWebkit(value) {
     'ellipse farthest-corner': 'center center, ellipse cover',
     'ellipse farthest-side': 'center center, ellipse cover'
   };
-  var radial_regexp = /(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g;
+  var radial_regexp = /(radial-gradient\()([a-z- ]+)at\s+(\w+%?)\s*(\w*%?)/g;
 
   var values_keys = Object.keys(values);
   values_keys.some(function(el) {
@@ -84,7 +84,7 @@ backgroundImage.moz = function backgroundImageMoz(value) {
     'ellipse farthest-corner': 'center center, ellipse cover',
     'ellipse farthest-side': 'center center, ellipse cover'
   };
-  var radial_regexp = /(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g;
+  var radial_regexp = /(radial-gradient\()([a-z- ]+)at\s+(\w+%?)\s*(\w*%?)/g;
 
   var values_keys = Object.keys(values);
   values_keys.some(function(el) {
@@ -125,7 +125,7 @@ backgroundImage.opera = function backgroundImageOpera(value) {
     'ellipse farthest-corner': 'center center, ellipse cover',
     'ellipse farthest-side': 'center center, ellipse cover'
   };
-  var radial_regexp = /(radial-gradient\()([a-z- ]+)at\s+(\w+)\s*(\w*)/g;
+  var radial_regexp = /(radial-gradient\()([a-z- ]+)at\s+(\w+%?)\s*(\w*%?)/g;
 
   var values_keys = Object.keys(values);
   values_keys.some(function(el) {
@@ -175,13 +175,13 @@ backgroundImage.ms = function backgroundImageMs(value) {
     get 'bottom' () {
       return this['to top'];
     },
+    get '90deg' () {
+      return this['to right'];
+    },
     get '0deg' () {
       return this['to top']
     },
     get 'left' () {
-      return this['to right'];
-    },
-    get '90deg' () {
       return this['to right'];
     },
     '-45deg': 'x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"',
