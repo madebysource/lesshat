@@ -58,17 +58,8 @@ The structure of this repo is:
 * **package.json** – contains meta data for NPM.
 
 ### Structure of LESS Hat mixins
-1.	**Global prefix configuration**:
-
-		@webkit: true;
-		@moz: true;
-		@opera: true;
-		@ms: true;
-		@w3c: true;
-		
-	If you for example don't want to generate prefixes for opera, just turn it to false.
 	
-2. **Typical LESS Hat mixin**:
+1. **Typical LESS Hat mixin**:
 
 		.supermixin(...) {
   			@process: ~`(function(){})()`;
@@ -79,7 +70,7 @@ The structure of this repo is:
 	
 	In @process variable is all magic. Please don't edit javascrpt directly in .less file. Instead use [lesshat-devstack](https://github.com/csshat/lesshat-devstack).
 	
-3. **Use (almost) every property without interpolation!**
+2. **Use (almost) every property without interpolation!**
 
 	Correct mixin calling:
 	
