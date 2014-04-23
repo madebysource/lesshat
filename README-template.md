@@ -4,7 +4,7 @@ README.md file is automatically generated.
 {{ documentation }} syntax is replaced by all mixins documentation from mixins folder
 -->
 
-# LESS Hat 3.0 [![Build Status](https://travis-ci.org/csshat/lesshat.png)](https://travis-ci.org/csshat/lesshat)
+# LESS Hat 3.0 [![Build Status](https://travis-ci.org/csshat/lesshat.png)](https://travis-ci.org/madebysource/lesshat)
 
 ![LESS Hat 2.0](http://f.cl.ly/items/353w1A2z0u3C323J152t/Untitled-11-1.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
 
