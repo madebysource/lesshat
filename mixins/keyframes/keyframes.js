@@ -134,7 +134,7 @@ var keyframes = function keyframes(value) {
     if (start == 'start') {
       value = '0; } \n' + keyframes;
     } else if (start == 'startend') {
-      value = '0; } \n' + keyframes.slice(0,end.length);
+      value = '0; } \n' + keyframes.slice(0,-end.length);
     } else if (start == 'end') {
       value = value + keyframes.slice(0,-end.length) + '} \nlesshat-selector { -lh-property: 0 ';
     } else {
