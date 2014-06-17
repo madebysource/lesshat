@@ -186,7 +186,10 @@ backgroundImage.ms = function backgroundImageMs(value) {
     },
     '-45deg': 'x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"',
     '45deg': 'x1=\"0%\" y1=\"100%\" x2=\"100%\" y2=\"0%\"',
-    'ellipse at center': 'cx=\"50%\" cy=\"50%\" r=\"75%\"'
+    'ellipse at center': 'cx=\"50%\" cy=\"50%\" r=\"75%\"',
+    get '135deg' () {
+      return this['-45deg'];
+    }
   };
   var svg = {
     uri_data: 'url(data:image/svg+xml;base64,',
@@ -228,53 +231,45 @@ backgroundImage.ms = function backgroundImageMs(value) {
       // Colors
       var colors_count = gradient.match(/rgb|#[a-zA-Z0-9]|hsl/g).length;
       obj.svg_stops = [];
+
+      // replace
+      gradient = gradient.replace(/transparent/g, 'rgba(0,0,0,0)');
+
       // hex
-      if (gradient.match(/#[a-zA-Z0-9]/g) && (gradient.match(/#[a-zA-Z0-9]/g).length == colors_count)) {
-        // Are there percentages?
-        if (gradient.match((/#[a-zA-Z0-9]+\s+(\d+%)/g)) && gradient.match((/#[a-zA-Z0-9]+\s+(\d+%)/g)).length == colors_count) {
-          gradient.match(/#[a-zA-Z0-9]+\s+(\d+%)/g).forEach(function(inner_val) {
+      if (gradient.match(/#[a-zA-Z0-9]/g)) {
+          gradient.match(/(#[a-zA-Z0-9]+)\s*(\d+%)?/g).forEach(function(inner_val) {
             inner_val = inner_val.split(' ');
-            obj.svg_stops.push('<stop offset=\"' + inner_val[1] + '\" stop-color=\"' + inner_val[0] + '\" stop-opacity=\"1\"/>');
+            obj.svg_stops.push('<stop offset=\"' + (inner_val[1] || false) + '\" stop-color=\"' + inner_val[0] + '\" stop-opacity=\"1\"/>');
           });
-        } else {
-          var shares = Math.floor(100 / (gradient.match(/#[a-zA-Z0-9]/g).length - 1));
-          gradient.match(/#[a-zA-Z0-9]+/g).forEach(function(inner_val, index) {
-            obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"' + inner_val + '\" stop-opacity=\"1\"/>');
-          });
-        }
       }
       // Rgb(a)
-      if (gradient.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g) && (gradient.match(/(?:rgb|rgba)?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).length == colors_count)) {
-        // Are there percentages?
-        if (gradient.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g) && (gradient.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+\d+%+/g).length) == colors_count) {
-          gradient.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s+(\d+%)+/g, function(match, sub, sub_2, sub_3) {
-            obj.svg_stops.push('<stop offset=\"' + sub_3 + '\" stop-color=\"rgb(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
+      if (gradient.match(/rgba?\(\d+,\s*\d+,\s*\d+(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g)) {
+          gradient.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)\s*(\d+%)?/g, function(match, sub, sub_2, sub_3) {
+            obj.svg_stops.push('<stop offset=\"' + (sub_3 || false) + '\" stop-color=\"rgb(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
           });
-        } else {
-          var shares = Math.floor(100 / (gradient.match(/(rgb|rgba)\(/g).length - 1));
-          gradient.match(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g).forEach(function(element, index) {
-            element.replace(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*(0|1|\.\d+|0\.\d+))?\)/g, function(match, sub, sub_2, sub_3) {
-              obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"rgb(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
-            });
-          });
-        }
       }
       // Hsl(a)
-      if (gradient.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g) && (gradient.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).length == colors_count)) {
-        // Are there percentages?
-        if (gradient.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g) && (gradient.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g).length) == colors_count) {
-          gradient.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)+/g, function(match, sub, sub_2, sub_3) {
-            obj.svg_stops.push('<stop offset=\"' + sub_3 + '\" stop-color=\"hsl(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
+      if (gradient.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g)) {
+          gradient.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)\s*(\d+%)?/g, function(match, sub, sub_2, sub_3) {
+            obj.svg_stops.push('<stop offset=\"' + (sub_3 || false) + '\" stop-color=\"hsl(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
           });
-        } else {
-          var shares = Math.floor(100 / (gradient.match(/(hsl|hsla)\(/g).length - 1));
-          gradient.match(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g).forEach(function(element, index) {
-            element.replace(/hsla?\((\d+,\s*\d+%,\s*\d+%),\s*(0|1|\.\d+|0\.\d+)\)/g, function(match, sub, sub_2, sub_3) {
-              obj.svg_stops.push('<stop offset=\"' + (shares * index) + '%\" stop-color=\"hsl(' + sub + ')\" stop-opacity=\"' + (sub_2 || 1) + '\"/>');
-            });
-          });
-        }
       }
+
+      var shares = Math.floor(100 / (colors_count - 1));
+      obj.svg_stops.forEach(function(el, i) {
+        if (/offset="false"/.test(el)) {
+          obj.svg_stops[i] = el.replace(/offset="false"/, 'offset="' + (shares * i) + '%"');
+        }
+      });
+
+      obj.svg_stops.sort(function(a, b) {
+        a = a.match(/offset="(\d+)%"/);
+        b = b.match(/offset="(\d+)%"/);
+
+        if (a.length == 2 && b.length == 2) {
+          return a[1] - b[1];
+        }
+      });
 
       // save to array
       svg_gradients.push(obj);
