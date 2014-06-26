@@ -31,7 +31,7 @@ If you omit units after time argument, `animation-duration` is trying to be smar
     div {
      -webkit-animation-duration: 2000ms;
      -moz-animation-duration: 2000ms;
-     -opera-animation-duration: 2000ms;
+     -o-animation-duration: 2000ms;
      animation-duration: 2000ms;
     }
   

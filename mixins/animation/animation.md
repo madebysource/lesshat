@@ -21,7 +21,7 @@ Default value: none
     div {
      -webkit-animation: nameAnimation 2s linear alternate;
      -moz-animation: nameAnimation 2s linear alternate;
-     -opera-animation: nameAnimation 2s linear alternate;
+     -o-animation: nameAnimation 2s linear alternate;
      animation: nameAnimation 2s linear alternate;
     }
 

@@ -12,7 +12,7 @@ var transformStyle = function transformStyle(value) {
  * For which browsers is this mixin specified
  */
 
-transformStyle.vendors = ['webkit', 'moz', 'opera', 'ms'];
+transformStyle.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 
 /**

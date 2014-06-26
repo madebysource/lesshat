@@ -25,8 +25,8 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
     div {
      -webkit-transform: skew(20deg, 30deg);
      -moz-transform: skew(20deg, 30deg);
-     -opera-transform: skew(20deg, 30deg);
      -ms-transform: skew(20deg, 30deg);
+     -o-transform: skew(20deg, 30deg);
      transform: skew(20deg, 30deg);
     }
 

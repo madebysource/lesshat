@@ -29,7 +29,7 @@ skew.result = {
  * For which browsers is this mixin specified
  */
 
-skew.vendors = ['webkit', 'moz', 'opera', 'ms'];
+skew.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

@@ -30,8 +30,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     div {
      -webkit-transform: scale(.5) translate(10, 20);
      -moz-transform: scale(.5) translate(10, 20);
-     -opera-transform: scale(.5) translate(10, 20);
      -ms-transform: scale(.5) translate(10, 20);
+     -o-transform: scale(.5) translate(10, 20);
      transform: scale(.5) translate(10, 20);
     }
 

@@ -29,7 +29,7 @@ translate3d.result = {
  * For which browsers is this mixin specified
  */
 
-translate3d.vendors = ['webkit', 'moz', 'opera', 'ms'];
+translate3d.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

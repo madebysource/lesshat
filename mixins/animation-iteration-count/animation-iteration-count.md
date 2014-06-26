@@ -21,7 +21,7 @@ Default value: 1
     div {
      -webkit-animation-iteration-count: 3;
      -moz-animation-iteration-count: 3;
-     -opera-animation-iteration-count: 3;
+     -o-animation-iteration-count: 3;
      animation-iteration-count: 3;
     } 
 

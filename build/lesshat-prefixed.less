@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v3.0.2 (2014-06-17)
+// version: v3.0.2 (2014-06-26)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -208,8 +208,8 @@
   @process: ~`(function(r){return r||"visible"})((function(){var r="@{arguments}";return r=r.replace(/^\[|\]$/g,"")})())`;
   -webkit-backface-visibility: @process;
   -moz-backface-visibility: @process;
-  -o-backface-visibility: @process;
   -ms-backface-visibility: @process;
+  -o-backface-visibility: @process;
   backface-visibility: @process;
 }
 
@@ -580,8 +580,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"deg"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: rotate(@process);
   -moz-transform: rotate(@process);
-  -o-transform: rotate(@process);
   -ms-transform: rotate(@process);
+  -o-transform: rotate(@process);
   transform: rotate(@process);
 }
 
@@ -589,8 +589,8 @@
   @process: ~`(function(e){return e=e||"0, 0, 0, 0",e=e.replace(/,\s*\d+$/,function(e){return e+"deg"})})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: rotate3d(@process);
   -moz-transform: rotate3d(@process);
-  -o-transform: rotate3d(@process);
   -ms-transform: rotate3d(@process);
+  -o-transform: rotate3d(@process);
   transform: rotate3d(@process);
 }
 
@@ -598,8 +598,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"deg"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: rotateX(@process);
   -moz-transform: rotateX(@process);
-  -o-transform: rotateX(@process);
   -ms-transform: rotateX(@process);
+  -o-transform: rotateX(@process);
   transform: rotateX(@process);
 }
 
@@ -607,8 +607,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"deg"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: rotateY(@process);
   -moz-transform: rotateY(@process);
-  -o-transform: rotateY(@process);
   -ms-transform: rotateY(@process);
+  -o-transform: rotateY(@process);
   transform: rotateY(@process);
 }
 
@@ -616,8 +616,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"deg"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: rotateZ(@process);
   -moz-transform: rotateZ(@process);
-  -o-transform: rotateZ(@process);
   -ms-transform: rotateZ(@process);
+  -o-transform: rotateZ(@process);
   transform: rotateZ(@process);
 }
 
@@ -633,8 +633,8 @@
   @process: ~`(function(e){return e=e||"1"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: scale(@process);
   -moz-transform: scale(@process);
-  -o-transform: scale(@process);
   -ms-transform: scale(@process);
+  -o-transform: scale(@process);
   transform: scale(@process);
 }
 
@@ -642,8 +642,8 @@
   @process: ~`(function(e){return e=e||"1, 1, 1"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: scale3d(@process);
   -moz-transform: scale3d(@process);
-  -o-transform: scale3d(@process);
   -ms-transform: scale3d(@process);
+  -o-transform: scale3d(@process);
   transform: scale3d(@process);
 }
 
@@ -651,8 +651,8 @@
   @process: ~`(function(e){return e=e||"1"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: scaleX(@process);
   -moz-transform: scaleX(@process);
-  -o-transform: scaleX(@process);
   -ms-transform: scaleX(@process);
+  -o-transform: scaleX(@process);
   transform: scaleX(@process);
 }
 
@@ -660,8 +660,8 @@
   @process: ~`(function(e){return e=e||"1"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: scaleY(@process);
   -moz-transform: scaleY(@process);
-  -o-transform: scaleY(@process);
   -ms-transform: scaleY(@process);
+  -o-transform: scaleY(@process);
   transform: scaleY(@process);
 }
 
@@ -669,8 +669,8 @@
   @process: ~`(function(e){return e=e||"1"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: scaleZ(@process);
   -moz-transform: scaleZ(@process);
-  -o-transform: scaleZ(@process);
   -ms-transform: scaleZ(@process);
+  -o-transform: scaleZ(@process);
   transform: scaleZ(@process);
 }
 
@@ -740,8 +740,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"deg"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: skew(@process);
   -moz-transform: skew(@process);
-  -o-transform: skew(@process);
   -ms-transform: skew(@process);
+  -o-transform: skew(@process);
   transform: skew(@process);
 }
 
@@ -749,8 +749,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"deg"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: skewX(@process);
   -moz-transform: skewX(@process);
-  -o-transform: skewX(@process);
   -ms-transform: skewX(@process);
+  -o-transform: skewX(@process);
   transform: skewX(@process);
 }
 
@@ -758,8 +758,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"deg"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: skewY(@process);
   -moz-transform: skewY(@process);
-  -o-transform: skewY(@process);
   -ms-transform: skewY(@process);
+  -o-transform: skewY(@process);
   transform: skewY(@process);
 }
 
@@ -767,8 +767,8 @@
   @process: ~`(function(e){e=e||"none";var r={translate:"px",rotate:"deg",rotate3d:"deg",skew:"deg"};/^\w*\(?[a-z0-9.]*\)?/.test(e)&&(e=e.replace(/(?:,)(?![^(]*\))/g,""));for(var t in r)e.indexOf(t)>=0&&(e=e.replace(new RegExp(t+"[\\w]?\\([a-z0-9, %]*\\)"),function(e){var n=/(\d+\.?\d*)(?!\w|%)/g;return"rotate3d"==t&&(n=/,\s*\d+$/),e.replace(n,function(e){return e+r[t]})}));return e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: @process;
   -moz-transform: @process;
-  -o-transform: @process;
   -ms-transform: @process;
+  -o-transform: @process;
   transform: @process;
 }
 
@@ -776,8 +776,8 @@
   @process: ~`(function(e){e=e||"50% 50% 0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[^, ]*,/.test(e)&&(e=e.replace(/(?:,)(?![^(]*\))/g,"")),r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"%"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform-origin: @process;
   -moz-transform-origin: @process;
-  -o-transform-origin: @process;
   -ms-transform-origin: @process;
+  -o-transform-origin: @process;
   transform-origin: @process;
 }
 
@@ -785,8 +785,8 @@
   @process: ~`(function(e){return e=e||"flat"})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform-style: @process;
   -moz-transform-style: @process;
-  -o-transform-style: @process;
   -ms-transform-style: @process;
+  -o-transform-style: @process;
   transform-style: @process;
 }
 
@@ -840,8 +840,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: translate(@process);
   -moz-transform: translate(@process);
-  -o-transform: translate(@process);
   -ms-transform: translate(@process);
+  -o-transform: translate(@process);
   transform: translate(@process);
 }
 
@@ -849,8 +849,8 @@
   @process: ~`(function(e){e=e||"0, 0, 0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: translate3d(@process);
   -moz-transform: translate3d(@process);
-  -o-transform: translate3d(@process);
   -ms-transform: translate3d(@process);
+  -o-transform: translate3d(@process);
   transform: translate3d(@process);
 }
 
@@ -858,8 +858,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: translateX(@process);
   -moz-transform: translateX(@process);
-  -o-transform: translateX(@process);
   -ms-transform: translateX(@process);
+  -o-transform: translateX(@process);
   transform: translateX(@process);
 }
 
@@ -867,8 +867,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: translateY(@process);
   -moz-transform: translateY(@process);
-  -o-transform: translateY(@process);
   -ms-transform: translateY(@process);
+  -o-transform: translateY(@process);
   transform: translateY(@process);
 }
 
@@ -876,8 +876,8 @@
   @process: ~`(function(e){e=e||"0";var r=/\d/gi,t=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return r.test(e)&&(e=e.replace(t,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
   -webkit-transform: translateZ(@process);
   -moz-transform: translateZ(@process);
-  -o-transform: translateZ(@process);
   -ms-transform: translateZ(@process);
+  -o-transform: translateZ(@process);
   transform: translateZ(@process);
 }
 

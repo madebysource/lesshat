@@ -25,6 +25,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
     div {
      -webkit-transform: translateX(20px);
      -moz-transform: translateX(20px);
+     -ms-transform: translateX(20px);
      -o-transform: translateX(20px);
      transform: translateX(20px);
     }

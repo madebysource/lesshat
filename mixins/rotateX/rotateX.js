@@ -29,7 +29,7 @@ rotateX.result = {
  * For which browsers is this mixin specified
  */
 
-rotateX.vendors = ['webkit', 'moz', 'opera', 'ms'];
+rotateX.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

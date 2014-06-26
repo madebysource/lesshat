@@ -21,8 +21,8 @@ Default value: none
     div {
      -webkit-backface-visibility: none;
      -moz-backface-visibility: none;
-     -o-backface-visibility: none;
      -ms-backface-visibility: none;
+     -o-backface-visibility: none;
      backface-visibility: none;
     } 
 

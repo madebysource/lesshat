@@ -15,7 +15,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v3.0.2 (2014-06-17)
+### Current version: v3.0.2 (2014-06-26)
 
 ## What's new?
 * Compiling LESS Hat is much more faster (up to 60× times). 
@@ -303,7 +303,7 @@ Default value: none
     div {
      -webkit-animation: nameAnimation 2s linear alternate;
      -moz-animation: nameAnimation 2s linear alternate;
-     -opera-animation: nameAnimation 2s linear alternate;
+     -o-animation: nameAnimation 2s linear alternate;
      animation: nameAnimation 2s linear alternate;
     }
 
@@ -342,7 +342,7 @@ If you omit units after time argument, `animation-delay` is trying to be smart a
     div {
      -webkit-animation-delay: 2s, 200ms;
      -moz-animation-delay: 2s, 200ms;
-     -opera-animation-delay: 2s, 200ms;
+     -o-animation-delay: 2s, 200ms;
      animation-delay: 2s, 200ms;
     }
 
@@ -371,7 +371,7 @@ Default value: normal
     div {
      -webkit-animation-direction: reverse, alternate;
      -moz-animation-direction: reverse, alternate;
-     -opera-animation-direction: reverse, alternate;
+     -o-animation-direction: reverse, alternate;
      animation-direction: reverse, alternate;
     }
 
@@ -410,7 +410,7 @@ If you omit units after time argument, `animation-duration` is trying to be smar
     div {
      -webkit-animation-duration: 2000ms;
      -moz-animation-duration: 2000ms;
-     -opera-animation-duration: 2000ms;
+     -o-animation-duration: 2000ms;
      animation-duration: 2000ms;
     }
   
@@ -439,7 +439,7 @@ Default value: none
     div {
      -webkit-animation-fill-mode: forwards;
      -moz-animation-fill-mode: forwards;
-     -opera-animation-fill-mode: forwards;
+     -o-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
     }
 
@@ -468,7 +468,7 @@ Default value: 1
     div {
      -webkit-animation-iteration-count: 3;
      -moz-animation-iteration-count: 3;
-     -opera-animation-iteration-count: 3;
+     -o-animation-iteration-count: 3;
      animation-iteration-count: 3;
     } 
 
@@ -497,7 +497,7 @@ Default value: none
     div {
      -webkit-animation-name: animation-1, animation-2;
      -moz-animation-name: animation-1, animation-2;
-     -opera-animation-name: animation-1, animation-2;
+     -o-animation-name: animation-1, animation-2;
      animation-name: animation-1, animation-2;
     } 
 
@@ -526,7 +526,7 @@ Default value: running
     div {
      -webkit-animation-play-state: paused;
      -moz-animation-play-state: paused;
-     -opera-animation-play-state: paused;
+     -o-animation-play-state: paused;
      animation-play-state: paused;
     } 
 
@@ -555,7 +555,7 @@ Default value: ease
     div {
      -webkit-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
      -moz-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-     -opera-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+     -o-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
      animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
     } 
 
@@ -612,8 +612,8 @@ Default value: none
     div {
      -webkit-backface-visibility: none;
      -moz-backface-visibility: none;
-     -o-backface-visibility: none;
      -ms-backface-visibility: none;
+     -o-backface-visibility: none;
      backface-visibility: none;
     } 
 
@@ -875,7 +875,7 @@ Default value: based on individual properties
     div {
      -webkit-border-image: url(border.png) 61 45 62 54 repeat;
      -moz-border-image: url(border.png) 61 45 62 54 repeat;
-     -opera-border-image: url(border.png) 61 45 62 54 repeat;
+     -o-border-image: url(border.png) 61 45 62 54 repeat;
      border-image: url(border.png) 61 45 62 54 repeat;
     } 
 
@@ -2002,8 +2002,8 @@ Default value: 0
     div {
      -webkit-transform: rotate(45deg);
      -moz-transform: rotate(45deg);
-     -opera-transform: rotate(45deg);
      -ms-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
      transform: rotate(45deg);
     }
 
@@ -2035,8 +2035,8 @@ Default value: 0, 0, 0, 0
     div {
      -webkit-transform: rotate3d(1, 0, 0, 50deg);
      -moz-transform: rotate3d(1, 0, 0, 50deg);
-     -opera-transform: rotate3d(1, 0, 0, 50deg);
      -ms-transform: rotate3d(1, 0, 0, 50deg);
+     -o-transform: rotate3d(1, 0, 0, 50deg);
      transform: rotate3d(1, 0, 0, 50deg);
     }
 
@@ -2069,8 +2069,8 @@ Default value: 0
     div {
      -webkit-transform: rotateX(45deg);
      -moz-transform: rotateX(45deg);
-     -opera-transform: rotateX(45deg);
      -ms-transform: rotateX(45deg);
+     -o-transform: rotateX(45deg);
      transform: rotateX(45deg);
     }
 
@@ -2102,8 +2102,8 @@ Default value: 0
     div {
      -webkit-transform: rotateY(45deg);
      -moz-transform: rotateY(45deg);
-     -opera-transform: rotateY(45deg);
      -ms-transform: rotateY(45deg);
+     -o-transform: rotateY(45deg);
      transform: rotateY(45deg);
     }
 
@@ -2135,8 +2135,8 @@ Default value: 0
     div {
      -webkit-transform: rotateZ(45deg);
      -moz-transform: rotateZ(45deg);
-     -opera-transform: rotateZ(45deg);
      -ms-transform: rotateZ(45deg);
+     -o-transform: rotateZ(45deg);
      transform: rotateZ(45deg);
     }
 
@@ -2198,8 +2198,8 @@ Default value: 1
     div {
      -webkit-transform: scale(2);
      -moz-transform: scale(2);
-     -opera-transform: scale(2);
      -ms-transform: scale(2);
+     -o-transform: scale(2);
      transform: scale(2);
     }
 
@@ -2227,8 +2227,8 @@ Default value: 1, 1, 1
     div {
      -webkit-transform: scale3d(1.5, 0.2, 3);
      -moz-transform: scale3d(1.5, 0.2, 3);
-     -opera-transform: scale3d(1.5, 0.2, 3);
      -ms-transform: scale3d(1.5, 0.2, 3);
+     -o-transform: scale3d(1.5, 0.2, 3);
      transform: scale3d(1.5, 0.2, 3);
     }
 
@@ -2257,8 +2257,8 @@ Default value: 1
     div {
      -webkit-transform: scaleX(1.5);
      -moz-transform: scaleX(1.5);
-     -opera-transform: scaleX(1.5);
      -ms-transform: scaleX(1.5);
+     -o-transform: scaleX(1.5);
      transform: scaleX(1.5);
     }
 
@@ -2286,8 +2286,8 @@ Default value: 1
     div {
      -webkit-transform: scaleY(1.5);
      -moz-transform: scaleY(1.5);
-     -opera-transform: scaleY(1.5);
      -ms-transform: scaleY(1.5);
+     -o-transform: scaleY(1.5);
      transform: scaleY(1.5);
     }
 
@@ -2315,8 +2315,8 @@ Default value: 1
     div {
      -webkit-transform: scaleZ(1.5);
      -moz-transform: scaleZ(1.5);
-     -opera-transform: scaleZ(1.5);
      -ms-transform: scaleZ(1.5);
+     -o-transform: scaleZ(1.5);
      transform: scaleZ(1.5);
     }
 
@@ -2443,8 +2443,8 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
     div {
      -webkit-transform: skew(20deg, 30deg);
      -moz-transform: skew(20deg, 30deg);
-     -opera-transform: skew(20deg, 30deg);
      -ms-transform: skew(20deg, 30deg);
+     -o-transform: skew(20deg, 30deg);
      transform: skew(20deg, 30deg);
     }
 
@@ -2476,8 +2476,8 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
     div {
      -webkit-transform: skewX(20deg);
      -moz-transform: skewX(20deg);
-     -opera-transform: skewX(20deg);
      -ms-transform: skewX(20deg);
+     -o-transform: skewX(20deg);
      transform: skewX(20deg);
     }
 
@@ -2509,8 +2509,8 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
     div {
      -webkit-transform: skewY(20deg);
      -moz-transform: skewY(20deg);
-     -opera-transform: skewY(20deg);
      -ms-transform: skewY(20deg);
+     -o-transform: skewY(20deg);
      transform: skewY(20deg);
     }
 
@@ -2548,8 +2548,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     div {
      -webkit-transform: scale(.5) translate(10, 20);
      -moz-transform: scale(.5) translate(10, 20);
-     -opera-transform: scale(.5) translate(10, 20);
      -ms-transform: scale(.5) translate(10, 20);
+     -o-transform: scale(.5) translate(10, 20);
      transform: scale(.5) translate(10, 20);
     }
 
@@ -2582,8 +2582,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     div {
      -webkit-transform-origin: 50% 50%;
      -moz-transform-origin: 50% 50%;
-     -opera-transform-origin: 50% 50%;
      -ms-transform-origin: 50% 50%;
+     -o-transform-origin: 50% 50%;
      transform-origin: 50% 50%;
     }
 
@@ -2612,8 +2612,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     div {
      -webkit-transform-style: preserve-3d;
      -moz-transform-style: preserve-3d;
-     -opera-transform-style: preserve-3d;
      -ms-transform-style: preserve-3d;
+     -o-transform-style: preserve-3d;
      transform-style: preserve-3d;
     }
 
@@ -2851,6 +2851,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
     div {
      -webkit-transform: translate(200px);
      -moz-transform: translate(200px);
+     -ms-transform: translate(200px);
      -o-transform: translate(200px);
      transform: translate(200px);
     }
@@ -2883,6 +2884,7 @@ Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform
     div {
      -webkit-transform: translate3d(20px, 30px, 10px);
      -moz-transform: translate3d(20px, 30px, 10px);
+     -ms-transform: translate3d(20px, 30px, 10px);
      -o-transform: translate3d(20px, 30px, 10px);
      transform: translate3d(20px, 30px, 10px);
     }
@@ -2916,6 +2918,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
     div {
      -webkit-transform: translateX(20px);
      -moz-transform: translateX(20px);
+     -ms-transform: translateX(20px);
      -o-transform: translateX(20px);
      transform: translateX(20px);
     }
@@ -2948,6 +2951,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
     div {
      -webkit-transform: translateY(20px);
      -moz-transform: translateY(20px);
+     -ms-transform: translateY(20px);
      -o-transform: translateY(20px);
      transform: translateY(20px);
     }
@@ -2980,6 +2984,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#tr
     div {
      -webkit-transform: translateZ(20px);
      -moz-transform: translateZ(20px);
+     -ms-transform: translateZ(20px);
      -o-transform: translateZ(20px);
      transform: translateZ(20px);
     }

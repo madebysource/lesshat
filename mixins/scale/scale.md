@@ -21,8 +21,8 @@ Default value: 1
     div {
      -webkit-transform: scale(2);
      -moz-transform: scale(2);
-     -opera-transform: scale(2);
      -ms-transform: scale(2);
+     -o-transform: scale(2);
      transform: scale(2);
     }
 

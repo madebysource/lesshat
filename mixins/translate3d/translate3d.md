@@ -25,6 +25,7 @@ Resources: **<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform
     div {
      -webkit-transform: translate3d(20px, 30px, 10px);
      -moz-transform: translate3d(20px, 30px, 10px);
+     -ms-transform: translate3d(20px, 30px, 10px);
      -o-transform: translate3d(20px, 30px, 10px);
      transform: translate3d(20px, 30px, 10px);
     }

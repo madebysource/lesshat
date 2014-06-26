@@ -29,7 +29,7 @@ translateX.result = {
  * For which browsers is this mixin specified
  */
 
-translateX.vendors = ['webkit', 'moz', 'opera', 'ms'];
+translateX.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

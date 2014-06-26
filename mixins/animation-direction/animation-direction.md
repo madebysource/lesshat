@@ -21,7 +21,7 @@ Default value: normal
     div {
      -webkit-animation-direction: reverse, alternate;
      -moz-animation-direction: reverse, alternate;
-     -opera-animation-direction: reverse, alternate;
+     -o-animation-direction: reverse, alternate;
      animation-direction: reverse, alternate;
     }
 
