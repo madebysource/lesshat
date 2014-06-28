@@ -25,8 +25,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     div {
      -webkit-transform-origin: 50% 50%;
      -moz-transform-origin: 50% 50%;
-     -opera-transform-origin: 50% 50%;
      -ms-transform-origin: 50% 50%;
+     -o-transform-origin: 50% 50%;
      transform-origin: 50% 50%;
     }
 

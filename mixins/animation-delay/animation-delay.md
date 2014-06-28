@@ -31,7 +31,7 @@ If you omit units after time argument, `animation-delay` is trying to be smart a
     div {
      -webkit-animation-delay: 2s, 200ms;
      -moz-animation-delay: 2s, 200ms;
-     -opera-animation-delay: 2s, 200ms;
+     -o-animation-delay: 2s, 200ms;
      animation-delay: 2s, 200ms;
     }
 

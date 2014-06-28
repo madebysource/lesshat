@@ -10,7 +10,7 @@ var backfaceVisibility = function backfaceVisibility(value) {
  * For which browsers is this mixin specified
  */
 
-backfaceVisibility.vendors = ['webkit', 'moz', 'opera', 'ms'];
+backfaceVisibility.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

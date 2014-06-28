@@ -25,8 +25,8 @@ Default value: 0, 0, 0, 0
     div {
      -webkit-transform: rotate3d(1, 0, 0, 50deg);
      -moz-transform: rotate3d(1, 0, 0, 50deg);
-     -opera-transform: rotate3d(1, 0, 0, 50deg);
      -ms-transform: rotate3d(1, 0, 0, 50deg);
+     -o-transform: rotate3d(1, 0, 0, 50deg);
      transform: rotate3d(1, 0, 0, 50deg);
     }
 

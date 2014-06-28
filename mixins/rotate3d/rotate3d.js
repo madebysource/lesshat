@@ -24,7 +24,7 @@ rotate3d.result = {
  * For which browsers is this mixin specified
  */
 
-rotate3d.vendors = ['webkit', 'moz', 'opera', 'ms'];
+rotate3d.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

@@ -26,7 +26,7 @@ Default value: based on individual properties
     div {
      -webkit-border-image: url(border.png) 61 45 62 54 repeat;
      -moz-border-image: url(border.png) 61 45 62 54 repeat;
-     -opera-border-image: url(border.png) 61 45 62 54 repeat;
+     -o-border-image: url(border.png) 61 45 62 54 repeat;
      border-image: url(border.png) 61 45 62 54 repeat;
     } 
 

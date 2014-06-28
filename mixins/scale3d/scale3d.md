@@ -21,8 +21,8 @@ Default value: 1, 1, 1
     div {
      -webkit-transform: scale3d(1.5, 0.2, 3);
      -moz-transform: scale3d(1.5, 0.2, 3);
-     -opera-transform: scale3d(1.5, 0.2, 3);
      -ms-transform: scale3d(1.5, 0.2, 3);
+     -o-transform: scale3d(1.5, 0.2, 3);
      transform: scale3d(1.5, 0.2, 3);
     }
 

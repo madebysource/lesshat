@@ -21,8 +21,8 @@ Default value: 1
     div {
      -webkit-transform: scaleY(1.5);
      -moz-transform: scaleY(1.5);
-     -opera-transform: scaleY(1.5);
      -ms-transform: scaleY(1.5);
+     -o-transform: scaleY(1.5);
      transform: scaleY(1.5);
     }
 

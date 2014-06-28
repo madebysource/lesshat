@@ -25,8 +25,8 @@ Default value: 0
     div {
      -webkit-transform: rotate(45deg);
      -moz-transform: rotate(45deg);
-     -opera-transform: rotate(45deg);
      -ms-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
      transform: rotate(45deg);
     }
 

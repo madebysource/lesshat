@@ -21,7 +21,7 @@ scale.result = {
  * For which browsers is this mixin specified
  */
 
-scale.vendors = ['webkit', 'moz', 'opera', 'ms'];
+scale.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

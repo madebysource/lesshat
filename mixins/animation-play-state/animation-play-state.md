@@ -21,7 +21,7 @@ Default value: running
     div {
      -webkit-animation-play-state: paused;
      -moz-animation-play-state: paused;
-     -opera-animation-play-state: paused;
+     -o-animation-play-state: paused;
      animation-play-state: paused;
     } 
 

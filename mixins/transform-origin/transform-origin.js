@@ -24,7 +24,7 @@ var transformOrigin = function transformOrigin(value) {
  * For which browsers is this mixin specified
  */
 
-transformOrigin.vendors = ['webkit', 'moz', 'opera', 'ms'];
+transformOrigin.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 
 /**

@@ -21,7 +21,7 @@ Default value: none
     div {
      -webkit-animation-fill-mode: forwards;
      -moz-animation-fill-mode: forwards;
-     -opera-animation-fill-mode: forwards;
+     -o-animation-fill-mode: forwards;
      animation-fill-mode: forwards;
     }
 

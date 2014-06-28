@@ -21,8 +21,8 @@ Default value: 1
     div {
      -webkit-transform: scaleX(1.5);
      -moz-transform: scaleX(1.5);
-     -opera-transform: scaleX(1.5);
      -ms-transform: scaleX(1.5);
+     -o-transform: scaleX(1.5);
      transform: scaleX(1.5);
     }
 

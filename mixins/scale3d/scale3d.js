@@ -21,7 +21,7 @@ scale3d.result = {
  * For which browsers is this mixin specified
  */
 
-scale3d.vendors = ['webkit', 'moz', 'opera', 'ms'];
+scale3d.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 /**
  * Export mixin

@@ -21,8 +21,8 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
     div {
      -webkit-transform-style: preserve-3d;
      -moz-transform-style: preserve-3d;
-     -opera-transform-style: preserve-3d;
      -ms-transform-style: preserve-3d;
+     -o-transform-style: preserve-3d;
      transform-style: preserve-3d;
     }
 

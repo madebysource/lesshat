@@ -37,7 +37,7 @@ var transform = function transform(value) {
  * For which browsers is this mixin specified
  */
 
-transform.vendors = ['webkit', 'moz', 'opera', 'ms'];
+transform.vendors = ['webkit', 'moz', 'ms', 'opera'];
 
 
 /**
