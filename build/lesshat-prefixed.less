@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v3.0.2 (2014-06-26)
+// version: v3.0.3 (2014-07-18)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -65,6 +65,7 @@
 	// perspective
 	// perspective-origin
 	// placeholder
+	// position
 	// rotate
 	// rotate3d
 	// rotateX
@@ -574,6 +575,62 @@
     }
   }
   .inception(@arguments);
+}
+
+.lh-position(@position: '', @top: '', @right: '', @bottom: '', @left: '') when (iskeyword(@position)) and not (@position = static ) {
+
+  // default unit
+  @unit: 'px';
+
+  position: @position;
+
+  .mix-top(@top) when (isnumber(@top)) {
+    // with unit
+    .mix(@top) when not (unit(@top) = @top) {
+      top:  @top;
+    }
+    // without unit
+    .mix(@top) when (unit(@top) = @top) {
+      top: ~`@{top} + @{unit}`;
+    }
+    .mix(@top);
+  }
+
+  .mix-right(@right) when (isnumber(@right)) {
+    .mix(@right) when not (unit(@right) = @right) {
+      right:  @right;
+    }
+    .mix(@right) when (unit(@right) = @right) {
+      right: ~`@{right} + @{unit}`;
+    }
+    .mix(@right);
+  }
+
+  .mix-bottom(@bottom) when (isnumber(@bottom)) {
+    .mix(@bottom) when not (unit(@bottom) = @bottom) {
+      bottom:  @bottom;
+    }
+    .mix(@bottom) when (unit(@bottom) = @bottom) {
+      bottom: ~`@{bottom} + @{unit}`;
+    }
+    .mix(@bottom);
+  }
+
+  .mix-left(@left) when (isnumber(@left)) {
+    .mix(@left) when not (unit(@left) = @left) {
+      left:  @left;
+    }
+    .mix(@left) when (unit(@left) = @left) {
+      left: ~`@{left} + @{unit}`;
+    }
+    .mix(@left);
+  }
+
+  // get top right bottom left
+  .mix-top(@top);
+  .mix-right(@right);
+  .mix-bottom(@bottom);
+  .mix-left(@left);
 }
 
 .lh-rotate(...) {
