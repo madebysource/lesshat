@@ -2,9 +2,12 @@
 
   // default unit
   @unit: 'px';
-
-  position: @position;
-
+  
+  // for keyword: auto
+  .mix-top(@top) when (iskeyword(@top)) {
+    top:  @top;
+  }
+  // for number, percent, em, rem, px
   .mix-top(@top) when (isnumber(@top)) {
     // with unit
     .mix(@top) when not (unit(@top) = @top) {
@@ -17,6 +20,9 @@
     .mix(@top);
   }
 
+  .mix-right(@right) when (iskeyword(@right)) {
+    right:  @right;
+  }
   .mix-right(@right) when (isnumber(@right)) {
     .mix(@right) when not (unit(@right) = @right) {
       right:  @right;
@@ -26,7 +32,10 @@
     }
     .mix(@right);
   }
-
+  
+  .mix-bottom(@bottom) when (iskeyword(@bottom)) {
+    bottom:  @bottom;
+  }
   .mix-bottom(@bottom) when (isnumber(@bottom)) {
     .mix(@bottom) when not (unit(@bottom) = @bottom) {
       bottom:  @bottom;
@@ -37,6 +46,9 @@
     .mix(@bottom);
   }
 
+  .mix-left(@left) when (iskeyword(@left)) {
+    left:  @left;
+  }
   .mix-left(@left) when (isnumber(@left)) {
     .mix(@left) when not (unit(@left) = @left) {
       left:  @left;
@@ -46,7 +58,8 @@
     }
     .mix(@left);
   }
-
+  
+  position: @position;
   // get top right bottom left
   .mix-top(@top);
   .mix-right(@right);

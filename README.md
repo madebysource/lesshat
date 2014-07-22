@@ -15,7 +15,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v3.0.3 (2014-07-18)
+### Current version: v3.0.3 (2014-07-22)
 
 ## What's new?
 * Compiling LESS Hat is much more faster (up to 60× times). 
