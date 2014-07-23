@@ -10,11 +10,11 @@
   // for number, percent, em, rem, px
   .mix-top(@top) when (isnumber(@top)) {
     // with unit
-    .mix(@top) when not (unit(@top) = @top) {
+    .mix(@top) when (ispixel(@top)), (isem(@top)), (ispercentage(@top)), (isunit(@top, 'rem')) {
       top:  @top;
     }
     // without unit
-    .mix(@top) when (unit(@top) = @top) {
+    .mix(@top) when (default()) {
       top: ~`@{top} + @{unit}`;
     }
     .mix(@top);
@@ -24,10 +24,10 @@
     right:  @right;
   }
   .mix-right(@right) when (isnumber(@right)) {
-    .mix(@right) when not (unit(@right) = @right) {
+    .mix(@right) when (ispixel(@right)), (isem(@right)), (ispercentage(@right)), (isunit(@right, 'rem')) {
       right:  @right;
     }
-    .mix(@right) when (unit(@right) = @right) {
+    .mix(@right) when (default()) {
       right: ~`@{right} + @{unit}`;
     }
     .mix(@right);
@@ -37,10 +37,10 @@
     bottom:  @bottom;
   }
   .mix-bottom(@bottom) when (isnumber(@bottom)) {
-    .mix(@bottom) when not (unit(@bottom) = @bottom) {
+    .mix(@bottom) when (ispixel(@bottom)), (isem(@bottom)), (ispercentage(@bottom)), (isunit(@bottom, 'rem')) {
       bottom:  @bottom;
     }
-    .mix(@bottom) when (unit(@bottom) = @bottom) {
+    .mix(@bottom) when (default()) {
       bottom: ~`@{bottom} + @{unit}`;
     }
     .mix(@bottom);
@@ -50,10 +50,10 @@
     left:  @left;
   }
   .mix-left(@left) when (isnumber(@left)) {
-    .mix(@left) when not (unit(@left) = @left) {
+    .mix(@left) when (ispixel(@left)), (isem(@left)), (ispercentage(@left)), (isunit(@left, 'rem')) {
       left:  @left;
     }
-    .mix(@left) when (unit(@left) = @left) {
+    .mix(@left) when (default()) {
       left: ~`@{left} + @{unit}`;
     }
     .mix(@left);

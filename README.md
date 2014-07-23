@@ -15,7 +15,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v3.0.3 (2014-07-22)
+### Current version: v3.0.3 (2014-07-23)
 
 ## What's new?
 * Compiling LESS Hat is much more faster (up to 60× times). 
@@ -160,38 +160,37 @@ The structure of this repo is:
 52. **[perspective](#perspective)**
 53. **[perspective-origin](#perspective-origin)**
 54. **[placeholder](#placeholder)**
-55. **[position](#position)**
-56. **[rotate](#rotate)** `transform`
-57. **[rotate3d](#rotate3d)** `transform`
-58. **[rotateX](#rotateX)** `transform`
-59. **[rotateY](#rotateY)** `transform`
-60. **[rotateZ](#rotateZ)** `transform`
-61. **[saturate](#saturate)** `filter`
-62. **[scale](#scale)** `transform`
-63. **[scale3d](#scale3d)** `transform`
-64. **[scaleX](#scaleX)** `transform`
-65. **[scaleY](#scaleY)** `transform`
-66. **[scaleZ](#scaleZ)** `transform`
-67. **[selection](#selection)**
-68. **[sepia](#sepia)** `filter`
-69. **[size](#size)** `width, height`
-70. **[skew](#skew)** `transform`
-71. **[skewX](#skewX)** `transform`
-72. **[skewY](#skewY)** `transform`
-73. **[transform](#transform)**
-74. **[transform-origin](#transform-origin)**
-75. **[transform-style](#transform-style)**
-76. **[transition](#transition)**
-77. **[transition-delay](#transition-delay)**
-78. **[transition-duration](#transition-duration)**
-79. **[transition-property](#transition-property)**
-80. **[transition-timing-function](#transition-timing-function)**
-81. **[translate](#translate)** `transform`
-82. **[translate3d](#translate3d)** `transform`
-83. **[translateX](#translateX)** `transform`
-84. **[translateY](#translateY)** `transform`
-85. **[translateZ](#translateZ)** `transform`
-86. **[user-select](#user-select)**
+55. **[rotate](#rotate)** `transform`
+56. **[rotate3d](#rotate3d)** `transform`
+57. **[rotateX](#rotateX)** `transform`
+58. **[rotateY](#rotateY)** `transform`
+59. **[rotateZ](#rotateZ)** `transform`
+60. **[saturate](#saturate)** `filter`
+61. **[scale](#scale)** `transform`
+62. **[scale3d](#scale3d)** `transform`
+63. **[scaleX](#scaleX)** `transform`
+64. **[scaleY](#scaleY)** `transform`
+65. **[scaleZ](#scaleZ)** `transform`
+66. **[selection](#selection)**
+67. **[sepia](#sepia)** `filter`
+68. **[size](#size)** `width, height`
+69. **[skew](#skew)** `transform`
+70. **[skewX](#skewX)** `transform`
+71. **[skewY](#skewY)** `transform`
+72. **[transform](#transform)**
+73. **[transform-origin](#transform-origin)**
+74. **[transform-style](#transform-style)**
+75. **[transition](#transition)**
+76. **[transition-delay](#transition-delay)**
+77. **[transition-duration](#transition-duration)**
+78. **[transition-property](#transition-property)**
+79. **[transition-timing-function](#transition-timing-function)**
+80. **[translate](#translate)** `transform`
+81. **[translate3d](#translate3d)** `transform`
+82. **[translateX](#translateX)** `transform`
+83. **[translateY](#translateY)** `transform`
+84. **[translateZ](#translateZ)** `transform`
+85. **[user-select](#user-select)**
 
 ***
 
