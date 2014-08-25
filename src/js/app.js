@@ -52,7 +52,7 @@ $(function () {
             window.location = zip;
         } else {
             autoDownload = setTimeout(function () {
-                window.location = 'https://github.com/madebysource/lesshat/archive/v3.0.2.zip';
+                window.location = 'https://github.com/csshat/lesshat/releases/latest';
             }, 3000);
         }
     });
