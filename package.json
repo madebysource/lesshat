@@ -11,8 +11,14 @@
     {
       "name": "Jan Kuca",
       "url": "www.jankuca.com"
+    },
+    {
+      "name": "Marek Hrabe",
+      "email": "marekhrabe@abdoc.net",
+      "url": "https://github.com/marekhrabe"
     }
   ],
+  "bin": "bin/lesshat.js",
   "keywords": [
     "less",
     "mixins"
@@ -39,5 +45,8 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "less-minimal": "^1.7.4"
   }
 }
