@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v3.0.3 (2014-07-23)
+// version: v3.0.3 (2014-09-01)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -280,9 +280,9 @@
 
 .lh-border-radius(...) {
   @process: ~`(function(e){e=e||"0";var t=/\d/gi,r=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[^, ]*,/.test(e)&&(e=e.replace(/(?:,)(?![^(]*\))/g,"")),t.test(e)&&(e=e.replace(r,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
-  -webkit-border-radius: @process; -webkit-background-clip: padding-box; 
-  -moz-border-radius: @process; -moz-background-clip: padding; 
-  border-radius: @process; background-clip: padding-box; 
+  -webkit-border-radius: @process;
+  -moz-border-radius: @process;
+  border-radius: @process;
 }
 
 .lh-border-top-left-radius(...) {

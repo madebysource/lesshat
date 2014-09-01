@@ -30,11 +30,11 @@ borderRadius.vendors = ['webkit', 'moz'];
  * Append CSS
  */
 
-borderRadius.appendCSS = {
-  all: 'background-clip: padding-box',
-  webkit: '-webkit-background-clip: padding-box',
-  moz: '-moz-background-clip: padding'
-};
+// borderRadius.appendCSS = {
+//   all: 'background-clip: padding-box',
+//   webkit: '-webkit-background-clip: padding-box',
+//   moz: '-moz-background-clip: padding'
+// };
 
 /**
  * Export mixin
