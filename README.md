@@ -15,7 +15,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v3.0.2 (2014-06-26)
+### Current version: v3.0.3 (2014-09-01)
 
 ## What's new?
 * Compiling LESS Hat is much more faster (up to 60× times). 
@@ -1971,6 +1971,38 @@ Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/style-placeholder-t
     }
     textarea:-ms-input-placeholder {
        color: #666666;
+    }
+
+
+
+### <a name="position"></a> &#8226; position
+**Summary:**
+
+This is helper mixin for fast position setup.
+
+**Syntax:**
+
+    .position(<position>, [<top>,<right>,<bottom>,<left>]) 
+
+**Tips and tricks:**
+
+  - When you call mixin with only one argument, second will be the same.
+  Also you can omit units and `position` adds `px` automatically.  
+  - When set `position` to `static` you will get nothing. See more: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position#Values).
+  - You can use named variable to specify special side's offset.
+  
+**Example:**
+
+    div {
+     .position(absolute, 20, 30px, @left: 40px);
+    }
+    
+    // Result
+    div {
+     position: absolute;
+     top: 20px;
+     right: 30px;
+     left: 40px;
     }
 
 

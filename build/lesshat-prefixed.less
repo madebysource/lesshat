@@ -6,7 +6,7 @@
 // Handcrafted by Petr Brzek, lesshat.com
 // Works great with CSS Hat csshat.com
 
-// version: v3.0.2 (2014-06-26)
+// version: v3.0.3 (2014-09-01)
 
 // TABLE OF MIXINS:
 	// align-content
@@ -65,6 +65,7 @@
 	// perspective
 	// perspective-origin
 	// placeholder
+	// position
 	// rotate
 	// rotate3d
 	// rotateX
@@ -279,9 +280,9 @@
 
 .lh-border-radius(...) {
   @process: ~`(function(e){e=e||"0";var t=/\d/gi,r=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[^, ]*,/.test(e)&&(e=e.replace(/(?:,)(?![^(]*\))/g,"")),t.test(e)&&(e=e.replace(r,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
-  -webkit-border-radius: @process; -webkit-background-clip: padding-box; 
-  -moz-border-radius: @process; -moz-background-clip: padding; 
-  border-radius: @process; background-clip: padding-box; 
+  -webkit-border-radius: @process;
+  -moz-border-radius: @process;
+  border-radius: @process;
 }
 
 .lh-border-top-left-radius(...) {
@@ -574,6 +575,75 @@
     }
   }
   .inception(@arguments);
+}
+
+.lh-position(@position: '', @top: '', @right: '', @bottom: '', @left: '') when (iskeyword(@position)) and not (@position = static ) {
+
+  // default unit
+  @unit: 'px';
+  
+  // for keyword: auto
+  .mix-top(@top) when (iskeyword(@top)) {
+    top:  @top;
+  }
+  // for number, percent, em, rem, px
+  .mix-top(@top) when (isnumber(@top)) {
+    // with unit
+    .mix(@top) when (ispixel(@top)), (isem(@top)), (ispercentage(@top)), (isunit(@top, 'rem')) {
+      top:  @top;
+    }
+    // without unit
+    .mix(@top) when (default()) {
+      top: ~`@{top} + @{unit}`;
+    }
+    .mix(@top);
+  }
+
+  .mix-right(@right) when (iskeyword(@right)) {
+    right:  @right;
+  }
+  .mix-right(@right) when (isnumber(@right)) {
+    .mix(@right) when (ispixel(@right)), (isem(@right)), (ispercentage(@right)), (isunit(@right, 'rem')) {
+      right:  @right;
+    }
+    .mix(@right) when (default()) {
+      right: ~`@{right} + @{unit}`;
+    }
+    .mix(@right);
+  }
+  
+  .mix-bottom(@bottom) when (iskeyword(@bottom)) {
+    bottom:  @bottom;
+  }
+  .mix-bottom(@bottom) when (isnumber(@bottom)) {
+    .mix(@bottom) when (ispixel(@bottom)), (isem(@bottom)), (ispercentage(@bottom)), (isunit(@bottom, 'rem')) {
+      bottom:  @bottom;
+    }
+    .mix(@bottom) when (default()) {
+      bottom: ~`@{bottom} + @{unit}`;
+    }
+    .mix(@bottom);
+  }
+
+  .mix-left(@left) when (iskeyword(@left)) {
+    left:  @left;
+  }
+  .mix-left(@left) when (isnumber(@left)) {
+    .mix(@left) when (ispixel(@left)), (isem(@left)), (ispercentage(@left)), (isunit(@left, 'rem')) {
+      left:  @left;
+    }
+    .mix(@left) when (default()) {
+      left: ~`@{left} + @{unit}`;
+    }
+    .mix(@left);
+  }
+  
+  position: @position;
+  // get top right bottom left
+  .mix-top(@top);
+  .mix-right(@right);
+  .mix-bottom(@bottom);
+  .mix-left(@left);
 }
 
 .lh-rotate(...) {
