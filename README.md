@@ -816,7 +816,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
 ### <a name="border-bottom-right-radius"></a> &#8226; border-bottom-right-radius
 **Summary:**
 
-The border-bottom-right-radius CSS property sets the rounding of the bottom-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
+The border-bottom-right-radius CSS property sets the rounding of the bottom-right corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
 
 Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius)**
 
