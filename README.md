@@ -57,6 +57,70 @@ The structure of this repo is:
 * **Bower** – is like NPM for frontend. NPM is like Gems for JavaScript. I could go on forever…
 * **package.json** – contains meta data for NPM.
 
+### Add LESS Hat to your project
+
+	// Manual download
+	@import "lesshat.less"
+
+	// OR via bower
+	@import "../bower-components/lesshat/build/lesshat.less
+
+	// Usage
+	div {
+	  .border-radius(5px);
+	}
+
+	// Result
+	div {
+	  -webkit-border-radius: 5px;
+	  -moz-border-radius: 5px;
+	  border-radius: 5px;
+	}
+
+In some cases, LESS Hat will be used with other front-end CSS frameworks such as
+[Twitter Bootstrap](http://getbootstrap.com/). However, some of Bootstrap's
+mixins collide with the LESS Hat mixins. For people using LESS Hat with
+Bootstrap, we've provided a prefixed version of our library.
+
+	// bootstrap
+	@import "../bower-components/bootstrap/less/bootstrap.less";
+
+	// prefixed-lesshat
+	// mixins are prefixed with ".lh-"
+	@import "../bower-components/lesshat/build/lesshat-prefixed.less";
+
+	// Usage
+	div {
+	  .lh-border-radius(5px);
+	}
+
+	// Result
+	div {
+	  -webkit-border-radius: 5px;
+	  -moz-border-radius: 5px;
+	  border-radius: 5px;
+	}
+
+Alternatively, some users may wish to create their own namespace for the
+LESS Hat.
+
+	// Create custom namespace for LESS Hat
+	#poly {
+	  @import "../bower-components/lesshat/build/lesshat.less";
+	}
+
+	// Usage
+	div {
+	  #poly.border-radius(5px);
+	}
+
+	// Result
+	div {
+	  -webkit-border-radius: 5px;
+	  -moz-border-radius: 5px;
+	  border-radius: 5px;
+	}
+
 ### Structure of LESS Hat mixins
 	
 1. **Typical LESS Hat mixin**:
