@@ -15,7 +15,7 @@ README.md file is automatically generated.
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v3.0.2 (2014-06-26)
+### Current version: v3.0.2 (2015-01-17)
 
 ## What's new?
 * Compiling LESS Hat is much more faster (up to 60× times). 
@@ -25,7 +25,7 @@ README.md file is automatically generated.
 * A lot of bug fixes...
 
 ## Intro
-Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](http://www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
+Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
 
 After a year, there is a new, **completely rewritten 3.0 version** that brings 86 great mixins, robust workflow for editing, testing and creating new mixins.
 
@@ -816,7 +816,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
 ### <a name="border-bottom-right-radius"></a> &#8226; border-bottom-right-radius
 **Summary:**
 
-The border-bottom-right-radius CSS property sets the rounding of the bottom-right corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
+The border-bottom-right-radius CSS property sets the rounding of the bottom-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
 
 Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius)**
 
