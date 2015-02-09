@@ -89,7 +89,21 @@ The structure of this repo is:
 		// in some cases you have to interpolate border-radius or LESS CSS begins to play on calculator
 		.border-radius(~'20px / 40px');
 		
+### LESS Hat plugin for less.js
 
+This [plugin](https://github.com/bassjobsen/less-plugin-lesshat) for less.js imports Lesshat mixins before your custom Less code. 
+
+**install**
+
+```
+npm install less-plugin-lesshat
+```
+
+**usage**
+
+```
+lessc custom.less --lesshat
+```
 
 ## <a name="contribute"></a> Contribute:
 1. Download this repo.
