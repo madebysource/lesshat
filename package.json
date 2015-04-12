@@ -39,5 +39,6 @@
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "less": "build/lesshat.less"
 }
