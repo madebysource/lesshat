@@ -47,6 +47,14 @@ var google_remarketing_only = true;
 
 <body>
 
+<div id="flash">
+  <div class="f-container">
+    <p>Easily explore Photoshop/Sketch designs and get assets and measurements faster</p>
+    <a href="http://avocode.com/?utm_source=lesshat&utm_medium=link&utm_campaign=avcd_flash"><span>Download Avocode now</span></a>
+    <button id="f-cls"></button>
+  </div>
+</div>
+
 <div class="ribbon">
     <a href="http://github.com/csshat/lesshat" target="blank">
         <span>Fork me on Github</span>
@@ -326,3 +334,5 @@ window._fbq = window._fbq || [];
 window._fbq.push(['track', 'PixelInitialized', {}]);
 </script>
 <noscript><img height="1" width="1" border="0" alt="" style="display:none" src="https://www.facebook.com/tr?id=734613796561703&amp;ev=NoScript" /></noscript>
+
+<script>!function(a,b,c,d){var e=a?a.getItem("flash"):null,f=b.querySelector("a"),g=function(c,d){b.className="";try{a&&a.setItem("flash",1)}catch(e){}return d?d():void 0};e||(b.className="show"),f.addEventListener("click",function(a){a.preventDefault(),g(null,function(){location.href=d})}),c.addEventListener("click",g)}(window.localStorage,document.getElementById("flash"),document.getElementById("f-cls"),document.querySelector("#flash a").getAttribute("href"));</script>
