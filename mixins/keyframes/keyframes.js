@@ -142,7 +142,7 @@ var keyframes = function keyframes(value) {
     }
 
   }
-
+  value = value + "}\n.lh-dummy { -lh-property:0";
   return value;
 };
 
