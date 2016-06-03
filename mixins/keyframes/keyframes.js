@@ -143,7 +143,7 @@ var keyframes = function keyframes(value) {
 
   }
 
-  return value;
+  return value + '}\n[not-existing] {\n  zoom: 1';
 };
 
 
