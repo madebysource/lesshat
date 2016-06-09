@@ -1,8 +1,8 @@
 {
   "name": "lesshat",
-  "description": "Most advanced LESS CSS mixins library",
-  "version": "3.0.2",
-  "homepage": "http://lesshat.com/",
+  "description": "Most advanced LESS mixins library",
+  "version": "3.0.3",
+  "homepage": "http://lesshat.com",
   "author": {
     "name": "Petr Brzek",
     "email": "petrbrzek@abdoc.net"
@@ -11,33 +11,39 @@
     {
       "name": "Jan Kuca",
       "url": "www.jankuca.com"
+    },
+    {
+      "name": "Michel Boudreau",
+      "email": "michelboudreau@gmail.com"
     }
   ],
   "keywords": [
+    "lesshat",
     "less",
+    "css",
     "mixins"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/csshat/lesshat"
+    "url": "https://github.com/madebysource/lesshat"
   },
   "bugs": {
-    "url": "https://github.com/csshat/lesshat/issues"
+    "url": "https://github.com/madebysource/lesshat/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/csshat/lesshat/blob/master/LICENSE"
+      "url": "https://github.com/madebysource/lesshat/blob/master/LICENSE"
     }
   ],
   "devDependencies": {
-    "lesshat-devstack": "git://github.com/csshat/lesshat-devstack",
-    "grunt": "0.4.x",
-    "grunt-cli": "*",
-    "mocha": "1.12.0",
-    "grunt-prompt": "~0.1.2"
+    "grunt": "^1.0.1",
+    "grunt-prompt": "^1.3.3",
+    "lesshat-devstack": "madebysource/lesshat-devstack",
+    "mocha": "1.12.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt"
   }
 }

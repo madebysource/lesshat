@@ -1,21 +1,14 @@
-<!---
-If you want to edit README file, please do it in README-template.md.
-README.md file is automatically generated.
-{{ documentation }} syntax is replaced by all mixins documentation from mixins folder
--->
+# LESS Hat [![Build Status](https://travis-ci.org/madebysource/lesshat.png)](https://travis-ci.org/madebysource/lesshat)
 
-# LESS Hat 3.0 [![Build Status](https://travis-ci.org/madebysource/lesshat.png)](https://travis-ci.org/madebysource/lesshat)
-
-![LESS Hat 2.0](http://f.cl.ly/items/353w1A2z0u3C323J152t/Untitled-11-1.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
+![LESS Hat](http://f.cl.ly/items/353w1A2z0u3C323J152t/Untitled-11-1.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
 
 ---
-**[Download latest](https://raw.github.com/csshat/lesshat/master/build/lesshat.less)** (or **[Prefixed - great with Bootstrap](https://raw.github.com/csshat/lesshat/master/build/lesshat-prefixed.less)**) **|**
 **[Get Started](#get-started) |**
 **[Contribute](#contribute) |**
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v3.0.2 (2014-06-26)
+### Current version: v3.0.3 (2016-06-09)
 
 ## What's new?
 * Compiling LESS Hat is much more faster (up to 60× times). 

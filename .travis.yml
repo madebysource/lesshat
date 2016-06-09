@@ -1,3 +1,16 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.12'
+- '4'
+- '5'
+matrix:
+  fast_finish: true
+deploy:
+- provider: npm
+  skip_cleanup: true
+  email: michelboudreau@gmail.com
+  api_key:
+    secure: ajdycgAb05TWDL5t9edoclvYo1wIHxDYEYLXM02GXtoGeLEajGjxer09CDvPFUoG6W3QP8zqvh1Aw2t8BDxns92bxqFOxiC5fmildxbAkfqd1wwMQoHMs74onqf4GBwuoctif6b5he1M+tQ45W6BC1cgZZaSYXlsXq5NogDxFkA=
+  on:
+    branch: master
+    tags: true
