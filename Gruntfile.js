@@ -4,12 +4,28 @@ module.exports = function (grunt) {
 	 */
 	grunt.loadNpmTasks('lesshat-devstack');
 	grunt.loadNpmTasks('grunt-prompt');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-mkdir');
 
 	/**
 	 * Grunt config
 	 */
 	grunt.initConfig({
 		pkg: require('./package.json'),
+
+		clean: {
+			build: {
+				src: ['build']
+			}
+		},
+
+		mkdir: {
+			build: {
+				options: {
+					create: ['build']
+				}
+			}
+		},
 
 		generator: {
 			settings: {
@@ -93,9 +109,10 @@ module.exports = function (grunt) {
 	 */
 
 	grunt.registerTask('version', ['prompt:version', 'iterate', 'build', 'mixins_update']);
-	grunt.registerTask('dev', ['build', 'test']);
+	grunt.registerTask('setup', ['clean', 'mkdir']);
+	grunt.registerTask('dev', ['setup', 'build', 'test']);
 	grunt.registerTask('generate', ['prompt:generate', 'generator']);
-	grunt.registerTask('contrib', ['build', 'test', 'mixins_update', 'prefix', 'documentation']);
-	grunt.registerTask('default', ['version', 'build', 'test', 'mixins_update', 'prefix', 'documentation', 'git']);
+	grunt.registerTask('contrib', ['setup', 'build', 'test', 'mixins_update', 'prefix', 'documentation']);
+	grunt.registerTask('default', ['setup', 'version', 'build', 'test', 'mixins_update', 'prefix', 'documentation', 'git']);
 
 };
