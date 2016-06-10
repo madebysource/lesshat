@@ -1,7 +1,7 @@
 {
   "name": "lesshat",
   "description": "Most advanced LESS mixins library",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "homepage": "http://lesshat.com",
   "author": {
     "name": "Petr Brzek",
@@ -46,6 +46,6 @@
   },
   "scripts": {
     "test": "grunt dev",
-    "build": "grunt"
+    "build": "grunt default"
   }
 }

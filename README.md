@@ -1,24 +1,31 @@
-# LESS Hat [![Build Status](https://travis-ci.org/madebysource/lesshat.png)](https://travis-ci.org/madebysource/lesshat)
+<!---
+If you want to edit README file, please do it in README-template.md.
+README.md file is automatically generated.
+{{ documentation }} syntax is replaced by all mixins documentation from mixins folder
+-->
 
-![LESS Hat](http://f.cl.ly/items/353w1A2z0u3C323J152t/Untitled-11-1.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
+# LESS Hat 3.0 [![Build Status](https://travis-ci.org/madebysource/lesshat.png)](https://travis-ci.org/madebysource/lesshat)
+
+![LESS Hat 2.0](http://f.cl.ly/items/353w1A2z0u3C323J152t/Untitled-11-1.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
 
 ---
+**[Download latest](https://raw.github.com/csshat/lesshat/master/build/lesshat.less)** (or **[Prefixed - great with Bootstrap](https://raw.github.com/csshat/lesshat/master/build/lesshat-prefixed.less)**) **|**
 **[Get Started](#get-started) |**
 **[Contribute](#contribute) |**
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v3.0.3 (2016-06-09)
+### Current version: v4.0.0 (2016-06-10)
 
 ## What's new?
-* Compiling LESS Hat is much more faster (up to 60× times). 
+* Compiling LESS Hat is much more faster (up to 60× times).
 	* Here is a benchmark comparing LESS Hat 2.0.15 and LESS Hat 3. Thanks to [Pixelass](https://github.com/pixelass/more-or-less/) for this test.
 	  ![](http://f.cl.ly/items/2a2Z1r1s0U3d2G1U3F3W/bench.png)
 	* The main reason why LESS Hat 2.0.15 was so slow are LESS CSS Mixin Guards. LESS Hat used Mixin Guards for configurations browser prefixes. LESS Hat 3 dropped this feature. If you still want to use prefix configurations use LESS Hat 2.0.15. You can download it [here](https://github.com/csshat/lesshat/archive/v2.0.15.zip).
 * A lot of bug fixes...
 
 ## Intro
-Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](http://www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS. 
+Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS.
 
 After a year, there is a new, **completely rewritten 3.0 version** that brings 86 great mixins, robust workflow for editing, testing and creating new mixins.
 
@@ -37,11 +44,11 @@ If you would like to use CSS Hat for working with LESS Hat and you still don't h
 * **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
 
 ## <a name="get-started"></a> Get started
-The structure of this repo is:  
+The structure of this repo is:
 
 * **build folder** – there are ready-to-use lesshat.less or lesshat-prefixed.less mixins
 * **mixins folder** – developer version of mixins (more about that in **[contribution](#contribution)** section)
-* **.gitignore** – is a list of files that git will ignore. I know you know that, but it's convention. 
+* **.gitignore** – is a list of files that git will ignore. I know you know that, but it's convention.
 * **.travis.yml** – Configuration file for Travis CI. Travis CI is a hosted continuous integration service for the open source community.
 * **Gruntfle.js** – task runner. If you don't want to use lesshat-devstack ignore it.
 * **LICENSE** – self-explanatory
@@ -51,44 +58,44 @@ The structure of this repo is:
 * **package.json** – contains meta data for NPM.
 
 ### Structure of LESS Hat mixins
-	
+
 1. **Typical LESS Hat mixin**:
 
 		.supermixin(...) {
   			@process: ~`(function(){})()`;
-  			
+
   			-webkit-border-radius: @process;
   			border-radius: @process;
 		}
-	
+
 	In @process variable is all magic. Please don't edit javascrpt directly in .less file. Instead use [lesshat-devstack](https://github.com/csshat/lesshat-devstack).
-	
+
 2. **Use (almost) every property without interpolation!**
 
 	Correct mixin calling:
-	
+
 		.background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%))
-		
+
 	Incorrect calling:
-	
+
 		.background-image(~'linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%)')
-			
+
 	Unfortunately, there are exceptions:
-	
+
 		.keyframes(~'');
 		.calc(~'');
 		.selection(~'');
-		
+
 		// in some cases you have to interpolate border-radius or LESS CSS begins to play on calculator
 		.border-radius(~'20px / 40px');
-		
+
 
 
 ## <a name="contribute"></a> Contribute:
 1. Download this repo.
 2. NPM install.
 3. Now you have LESS Hat devstack (see [documentation](https://github.com/csshat/lesshat-devstack).)
-4. If you create new mixin, use grunt generate command! 
+4. If you create new mixin, use grunt generate command!
 5. If it's possible (almost always) test the coverage for new mixins, and never break existing tests.
 6. Commits should represent one logical change each. If a mixin goes through multiple iterations, squash your commits down to one.
 7.  Finally, commit some code and open a pull request.
@@ -809,7 +816,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
 ### <a name="border-bottom-right-radius"></a> &#8226; border-bottom-right-radius
 **Summary:**
 
-The border-bottom-right-radius CSS property sets the rounding of the bottom-right corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
+The border-bottom-right-radius CSS property sets the rounding of the bottom-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
 
 Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius)**
 

@@ -5,12 +5,21 @@ node_js:
 - '5'
 matrix:
   fast_finish: true
+env:
+  global:
+  - secure: "aJ5yN0TQJZFF0gdp2+WHq9nLvbZqs7T5/4owiS0eZ+DjO0+8sMc2prW1O56t/raY2+BdijPePwTQVxRpkOYX4YvDE7jDfARESKr15x8LUijdl6Fo47TM0l8w742zpg5bu3D2z8UoAQJxAlli7MsLfz9a4pi6AgBdkfuLqxqpXFo="
+script:
+- npm run build
+before_deploy:
+- echo "registry=https://registry.npmjs.org/" > build/.npmrc
+- echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> build/.npmrc
+- echo "//registry.npmjs.org/:username=mboudreau" >> build/.npmrc
+- echo "//registry.npmjs.org/:email=michelboudreau@gmail.com" >> build/.npmrc
+- echo "//registry.npmjs.org/:always-auth=true" >> build/.npmrc
 deploy:
-- provider: npm
+- provider: script
+  script: npm publish build/
   skip_cleanup: true
-  email: michelboudreau@gmail.com
-  api_key:
-    secure: ajdycgAb05TWDL5t9edoclvYo1wIHxDYEYLXM02GXtoGeLEajGjxer09CDvPFUoG6W3QP8zqvh1Aw2t8BDxns92bxqFOxiC5fmildxbAkfqd1wwMQoHMs74onqf4GBwuoctif6b5he1M+tQ45W6BC1cgZZaSYXlsXq5NogDxFkA=
   on:
     branch: master
     tags: true
