@@ -1,10 +1,6 @@
 language: node_js
 node_js:
-- '0.12'
-- '4'
-- '5'
-matrix:
-  fast_finish: true
+- 'stable'
 env:
   global:
   - secure: "aJ5yN0TQJZFF0gdp2+WHq9nLvbZqs7T5/4owiS0eZ+DjO0+8sMc2prW1O56t/raY2+BdijPePwTQVxRpkOYX4YvDE7jDfARESKr15x8LUijdl6Fo47TM0l8w742zpg5bu3D2z8UoAQJxAlli7MsLfz9a4pi6AgBdkfuLqxqpXFo="
