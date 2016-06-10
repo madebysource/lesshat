@@ -11,16 +11,18 @@ env:
 script:
 - npm run build
 before_deploy:
-- echo "registry=https://registry.npmjs.org/" > build/.npmrc
-- echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> build/.npmrc
-- echo "//registry.npmjs.org/:username=mboudreau" >> build/.npmrc
-- echo "//registry.npmjs.org/:email=michelboudreau@gmail.com" >> build/.npmrc
-- echo "//registry.npmjs.org/:always-auth=true" >> build/.npmrc
+- echo "registry=https://registry.npmjs.org/" > .npmrc
+- echo "//registry.npmjs.org/:_authToken=${NPM_KEY}" >> .npmrc
+- echo "//registry.npmjs.org/:username=mboudreau" >> .npmrc
+- echo "//registry.npmjs.org/:email=michelboudreau@gmail.com" >> .npmrc
+- echo "//registry.npmjs.org/:always-auth=true" >> .npmrc
 - cp README.md package.json LICENSE build/
 deploy:
 - provider: script
-  script: npm publish build/
+  script: npm publish build/ --access public
   skip_cleanup: true
   on:
     branch: master
     tags: true
+after_failure:
+- find . -iname '*.log' -print0 | xargs -0 cat
