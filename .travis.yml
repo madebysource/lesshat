@@ -16,6 +16,7 @@ before_deploy:
 - echo "//registry.npmjs.org/:username=mboudreau" >> build/.npmrc
 - echo "//registry.npmjs.org/:email=michelboudreau@gmail.com" >> build/.npmrc
 - echo "//registry.npmjs.org/:always-auth=true" >> build/.npmrc
+- cp README.md package.json LICENSE build/
 deploy:
 - provider: script
   script: npm publish build/
