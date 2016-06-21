@@ -2,7 +2,7 @@ module.exports = function (grunt) {
 	/**
 	 * Load tasks
 	 */
-	grunt.loadNpmTasks('lesshat-devstack');
+	grunt.loadTasks('tasks');
 	grunt.loadNpmTasks('grunt-prompt');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-mkdir');

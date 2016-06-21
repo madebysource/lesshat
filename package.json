@@ -1,7 +1,7 @@
 {
   "name": "lesshat",
   "description": "Most advanced LESS mixins library",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "homepage": "http://lesshat.com",
   "author": {
     "name": "Petr Brzek",
@@ -41,8 +41,9 @@
     "grunt-contrib-clean": "^1.0.0",
     "grunt-mkdir": "^1.0.0",
     "grunt-prompt": "^1.3.3",
-    "lesshat-devstack": "madebysource/lesshat-devstack",
-    "mocha": "1.12.0"
+    "mocha": "2.5.3",
+    "uglify-js": "~2.6.3",
+    "less": "^2.7.1"
   },
   "scripts": {
     "test": "grunt dev",
