@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 		grunt.log.ok('Folder created – DONE');
 
 		// Create files inside folder
-		var srcDir = path.resolve(__dirname, '..', 'src');
+		var srcDir = path.resolve(__dirname, 'src');
 
 		// Check whether mixin template exists
 		if (fs.existsSync(path.resolve(srcDir, 'mixin-template.js'))) {

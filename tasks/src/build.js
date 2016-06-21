@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var LESSGenerator = require('./less-generator');
 var MixinLoader = require('./mixin-loader');
-var mixinsDir = path.resolve(__dirname, '..', 'mixins');
+var mixinsDir = path.resolve(__dirname, '..', '..', 'mixins');
 
 var chunks = [];
 

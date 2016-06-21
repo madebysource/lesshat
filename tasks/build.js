@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', function () {
 		var done = this.async();
-		var buildFile = path.resolve(__dirname, '..', 'src', 'build.js');
+		var buildFile = path.resolve(__dirname, 'src', 'build.js');
 		var buildOutput = path.resolve(__dirname, '..', 'build', 'lesshat.less');
 		var proc = exec('node ' + buildFile + ' > ' + buildOutput);
 

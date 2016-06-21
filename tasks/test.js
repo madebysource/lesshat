@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('test', function () {
 		var done = this.async();
 		var mixinsDir = path.resolve(__dirname, '..', 'mixins');
-		var setupFile = path.resolve(__dirname, '..', 'src', 'test-env.js');
+		var setupFile = path.resolve(__dirname, 'src', 'test-env.js');
 
 		var listTests = exec('find ' + mixinsDir + ' -name test.js');
 		var test_list_data = '';
