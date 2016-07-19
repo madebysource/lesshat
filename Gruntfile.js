@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 				vendors: null
 			}
 		},
-
+		
 		version: {
 			settings: {
 				version: null
@@ -113,6 +113,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('dev', ['setup', 'build', 'test']);
 	grunt.registerTask('generate', ['prompt:generate', 'generator']);
 	grunt.registerTask('contrib', ['setup', 'build', 'test', 'mixins_update', 'prefix', 'documentation']);
-	grunt.registerTask('default', ['setup', /*'version',*/ 'build', 'test', 'mixins_update', 'prefix', 'documentation']);
+	grunt.registerTask('default', ['setup', 'build', 'test', 'mixins_update', 'prefix', 'documentation']);
 
 };

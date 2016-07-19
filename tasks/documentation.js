@@ -22,7 +22,15 @@ module.exports = function (grunt) {
 		
 		if (fs.existsSync(path.resolve(__dirname, '..', 'README-template.md'))) {
 			var template = fs.readFileSync(path.resolve(__dirname, '..', 'README-template.md'), 'utf8');
-			template = template.replace(/{{\s*documentation\s*}}$/gm, fileArray.join('\n')).replace(/{{\s*version\s*}}/gm, version + ' ' + '(' + grunt.template.today('yyyy-mm-dd') + ')');
+			template =
+				"<!---\n"  +
+				"If you want to edit README file, please do it in README-template.md.\n" +
+				"README.md file is automatically generated.\n" +
+				"{{ documentation }} syntax is replaced by all mixins documentation from mixins folder\n" +
+				"-->\n\n" + template;
+			template = template.replace(/{{\s*documentation\s*}}$/gm, fileArray.join('\n'))
+				.replace(/{{\s*version\s*}}/gm, version)
+				.replace(/{{\s*date\s*}}/gm, '(' + grunt.template.today('yyyy-mm-dd') + ')');
 			fs.writeFileSync(path.resolve(__dirname, '..', 'README.md'), template);
 			grunt.log.ok('Documentation generated – DONE');
 		} else {

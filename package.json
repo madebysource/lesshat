@@ -4,8 +4,8 @@
   "version": "4.1.0",
   "homepage": "http://lesshat.com",
   "author": {
-    "name": "Petr Brzek",
-    "email": "petrbrzek@abdoc.net"
+    "name": "Michel Boudreau",
+    "email": "michelboudreau@gmail.com"
   },
   "contributors": [
     {
@@ -13,8 +13,8 @@
       "url": "www.jankuca.com"
     },
     {
-      "name": "Michel Boudreau",
-      "email": "michelboudreau@gmail.com"
+      "name": "Petr Brzek",
+      "email": "petrbrzek@abdoc.net"
     }
   ],
   "keywords": [

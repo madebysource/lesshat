@@ -1,65 +1,54 @@
-<!---
-If you want to edit README file, please do it in README-template.md.
-README.md file is automatically generated.
-{{ documentation }} syntax is replaced by all mixins documentation from mixins folder
--->
+# lesshat [![Build Status](https://travis-ci.org/madebysource/lesshat.png)](https://travis-ci.org/madebysource/lesshat)
 
-# LESS Hat 4.0 [![Build Status](https://travis-ci.org/madebysource/lesshat.png)](https://travis-ci.org/madebysource/lesshat)
-
-![LESS Hat 4.0](http://f.cl.ly/items/353w1A2z0u3C323J152t/Untitled-11-1.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
+![lesshat](https://raw.github.com/madebysource/lesshat/master/lesshat.png) ![Analytics](https://ga-beacon.appspot.com/UA-46020418-6/lesshat/readme?pixel)
 
 ---
-**[Download latest](https://raw.github.com/csshat/lesshat/master/build/lesshat.less)** (or **[Prefixed - great with Bootstrap](https://raw.github.com/csshat/lesshat/master/build/lesshat-prefixed.less)**) **|**
+**[Download latest](https://registry.npmjs.org/lesshat/-/lesshat-{{ version }}.tgz) |**
 **[Get Started](#get-started) |**
+**[Introduction](#intro) |**
 **[Contribute](#contribute) |**
 **[Documentation](#documentation) |**
 
 ---
-### Current version: v{{ version }}
-
-## What's new?
-* Compiling LESS Hat is much more faster (up to 60× times).
-	* Here is a benchmark comparing LESS Hat 2.0.15 and LESS Hat 3. Thanks to [Pixelass](https://github.com/pixelass/more-or-less/) for this test.
-	  ![](http://f.cl.ly/items/2a2Z1r1s0U3d2G1U3F3W/bench.png)
-	* The main reason why LESS Hat 2.0.15 was so slow are LESS CSS Mixin Guards. LESS Hat used Mixin Guards for configurations browser prefixes. LESS Hat 3 dropped this feature. If you still want to use prefix configurations use LESS Hat 2.0.15. You can download it [here](https://github.com/csshat/lesshat/archive/v2.0.15.zip).
-* A lot of bug fixes...
-
-## Intro
-Why LESS Hat? In August 2012, while we were developing and extending [CSS Hat](www.csshat.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS.
-
-After a year, there is a new, **completely rewritten 3.0 version** that brings 86 great mixins, robust workflow for editing, testing and creating new mixins.
-
-Meet the best mixins library in the world. Thanks to the LESS Hat 3.0 is LESS CSS finally usable.
-
-If you would like to use CSS Hat for working with LESS Hat and you still don't have one, we have a suprise for you at **[lesshat.com](http://lesshat.com)** - Check it out!
-
-### Features
-* <del>**Configuration** – You can turn off/on browser prefixes according to your needs.</del> **LESS Hat 3.0 dropped this feature. Read more in 'What's new'.**
-* **No restrictions** – If it's possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.
-* **Standard naming convention** – In LESS Hat, mixins have names like all CSS3 properties. No `.rounded` or `.shadow`. It's stupid.
-* **Cross-browser** – LESS Hat takes care of exporting CSS for all available browsers.
-* **Bootstrap friendly** – You can now use prefixed LESS Hat version and gaily work with Bootstrap. Yeah it's that easy.
-* **Keyframes** – Although it's tricky as hell, but yeah LESS Hat has mixin for `.keyframes`
-* **Blank state ready** – If you call mixin without any arguments, LESS Hat does not pollute your CSS with empty properties. Instead LESS Hat generates nothing.
-* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
+### Current version: v{{ version }} {{ date }}
 
 ## <a name="get-started"></a> Get started
-The structure of this repo is:
+To use lesshat, you need [node/npm installed](https://nodejs.org/) then run `npm install lesshat --save` to install and save lesshat into your package.json.  From here, you just need to reference the `node_modules/lesshat/lesshat.less` file within any of your project less files.  You can also use the prefixed version available at `node_module/lesshat/lesshat-prefixed.less` if you're worried about mixin name conflicts with other library.
 
-* **build folder** – there are ready-to-use lesshat.less or lesshat-prefixed.less mixins
-* **mixins folder** – developer version of mixins (more about that in **[contribution](#contribution)** section)
-* **.gitignore** – is a list of files that git will ignore. I know you know that, but it's convention.
-* **.travis.yml** – Configuration file for Travis CI. Travis CI is a hosted continuous integration service for the open source community.
-* **Gruntfle.js** – task runner. If you don't want to use lesshat-devstack ignore it.
-* **LICENSE** – self-explanatory
-* **README-template.md** – If you want to edit readme, edit it in this file. README.md is generated.
-* **README.md** – please don't edit this file. Either edit README-template.md or documentation inside mixins/<mixin-name> folder.
-* **Bower** – is like NPM for frontend. NPM is like Gems for JavaScript. I could go on forever…
-* **package.json** – contains meta data for NPM.
+### Bower
+As of version 4, lesshat has removed support for Bower by removing the build folder from the repository.  [There are many reasons that Bower is considered inadequate for dependency management](https://medium.com/@nickheiner/why-my-team-uses-npm-instead-of-bower-eecfe1b9afcb) and since people already use npm for dependency management simply to install Bower, another dependency manager, it felt a bit redundant.
 
-### Structure of LESS Hat mixins
+Even if Bower isn't supported, it can still be used with the tarball uploaded to npm.  You can add the dependency to your bower.json file like this:
 
-1. **Typical LESS Hat mixin**:
+```
+"dependencies": {
+    "lesshat": "https://registry.npmjs.org/lesshat/-/lesshat-4.0.1.tgz"
+}
+```
+
+You can also use the command line to install it by running `bower install lesshat=https://registry.npmjs.org/lesshat/-/lesshat-4.0.1.tgz --save`.
+
+After that, you can reference the less file directly the same way as the npm version with a slight path difference. The only downside is that bower will not update automatically because it doesn't support semantic versioning with files.
+
+*You should really consider using npm instead of bower.*
+
+## <a name="intro"></a> Introduction
+Why lesshat? In August 2012, while we were developing and extending [CSS Hat](www.madebysource.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS.
+
+Meet the best mixins library in the world.
+
+### Features
+* **No restrictions** – If it's possible in CSS, it must be possible to be done with a mixin. Unlimited number of anything, shadows, gradients, gradient swatches.
+* **Standard naming convention** – In lesshat, mixins have names like all CSS3 properties. No `.rounded` or `.shadow`. It's stupid.
+* **Cross-browser** – lesshat takes care of exporting CSS for all available browsers.
+* **Bootstrap friendly** – You can now use prefixed lesshat version and gaily work with Bootstrap. Yeah it's that easy.
+* **Keyframes** – Although it's tricky as hell, but yeah lesshat has mixin for `.keyframes`
+* **Blank state ready** – If you call mixin without any arguments, lesshat does not pollute your CSS with empty properties. Instead lesshat generates nothing.
+* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
+
+### Structure of lesshat mixins
+
+1. **Typical lesshat mixin**:
 
 		.supermixin(...) {
   			@process: ~`(function(){})()`;
@@ -68,7 +57,7 @@ The structure of this repo is:
   			border-radius: @process;
 		}
 
-	In @process variable is all magic. Please don't edit javascrpt directly in .less file. Instead use [lesshat-devstack](https://github.com/csshat/lesshat-devstack).
+	In @process variable is all magic. Please don't edit javascript directly in .less file. Instead use [lesshat-devstack](https://github.com/madebysource/lesshat-devstack).
 
 2. **Use (almost) every property without interpolation!**
 
@@ -92,13 +81,11 @@ The structure of this repo is:
 
 
 ## <a name="contribute"></a> Contribute:
-1. Download this repo.
-2. NPM install.
-3. Now you have LESS Hat devstack (see [documentation](https://github.com/csshat/lesshat-devstack).)
-4. If you create new mixin, use grunt generate command!
-5. If it's possible (almost always) test the coverage for new mixins, and never break existing tests.
-6. Commits should represent one logical change each. If a mixin goes through multiple iterations, squash your commits down to one.
-7.  Finally, commit some code and open a pull request.
+1. Fork this repo
+2. run `npm install`
+3. If you create new mixin, please add tests and documentation on how to use it
+4. Always test your changes and make sure that the documentation is being added to the README.md by running `grunt`
+6. Finally, commit your changes and create a pull request
 
 
 ## <a name="documentation"></a> Documentation:
@@ -203,4 +190,4 @@ The structure of this repo is:
 * **[CSS-Tricks](http://css-tricks.com/)** (their CSS almanac is great resource)
 * **[Angular UI router](https://github.com/angular-ui/ui-router)** (example of good github profile)
 * **[Marek Hrabe](https://twitter.com/marek)** (for coding lesshat.com)
-* **[Jan Vu Nam](http://dribbble.com/Vucek)** (for design lesshat.com and LESS Hat book icon)
+* **[Jan Vu Nam](http://dribbble.com/Vucek)** (for design lesshat.com and lesshat book icon)
