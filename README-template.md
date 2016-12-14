@@ -44,7 +44,7 @@ Meet the best mixins library in the world.
 * **Bootstrap friendly** – You can now use prefixed lesshat version and gaily work with Bootstrap. Yeah it's that easy.
 * **Keyframes** – Although it's tricky as hell, but yeah lesshat has mixin for `.keyframes`
 * **Blank state ready** – If you call mixin without any arguments, lesshat does not pollute your CSS with empty properties. Instead lesshat generates nothing.
-* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
+* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://mochajs.org/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
 
 ### Structure of lesshat mixins
 
