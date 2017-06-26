@@ -18,7 +18,7 @@ README.md file is automatically generated.
 ### Current version: v4.1.0 (2016-07-19)
 
 ## <a name="get-started"></a> Get started
-To use lesshat, you need [node/npm installed](https://nodejs.org/) then run `npm install lesshat --save` to install and save lesshat into your package.json.  From here, you just need to reference the `node_modules/lesshat/lesshat.less` within your 
+To use lesshat, you need [node/npm installed](https://nodejs.org/) then run `npm install lesshat --save` to install and save lesshat into your package.json.  From here, you just need to reference the `node_modules/lesshat/lesshat.less` within your `.less` stylesheets.
 
 ### Bower
 
