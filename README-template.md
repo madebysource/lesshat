@@ -33,7 +33,7 @@ After that, you can reference the less file directly the same way as the npm ver
 *You should really consider using npm instead of bower.*
 
 ## <a name="intro"></a> Introduction
-Why lesshat? In August 2012, while we were developing and extending [CSS Hat](www.madebysource.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS.
+Why lesshat? In August 2012, while we were developing and extending [CSS Hat](https://madebysource.com/) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS.
 
 Meet the best mixins library in the world.
 
@@ -44,7 +44,7 @@ Meet the best mixins library in the world.
 * **Bootstrap friendly** – You can now use prefixed lesshat version and gaily work with Bootstrap. Yeah it's that easy.
 * **Keyframes** – Although it's tricky as hell, but yeah lesshat has mixin for `.keyframes`
 * **Blank state ready** – If you call mixin without any arguments, lesshat does not pollute your CSS with empty properties. Instead lesshat generates nothing.
-* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://mochajs.org/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
+* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [Mocha](http://mochajs.org/), generate new mixin with [Ggrunt](http://gruntjs.com/). Find out more about the workflow in **[Contribute](#contribute)** section.
 
 ### Structure of lesshat mixins
 
@@ -187,7 +187,7 @@ Meet the best mixins library in the world.
 ## Big Thanks to:
 * **[Jan Kuca](http://www.jankuca.com/)** (help us with lesshat-devstack)
 * **[MOZILLA DEVELOPER NETWORK](https://developer.mozilla.org/)** (almost all summary are from MDN)
-* **[CSS-Tricks](http://css-tricks.com/)** (their CSS almanac is great resource)
+* **[CSS-Tricks](https://css-tricks.com/)** (their CSS almanac is great resource)
 * **[Angular UI router](https://github.com/angular-ui/ui-router)** (example of good github profile)
 * **[Marek Hrabe](https://twitter.com/marek)** (for coding lesshat.com)
 * **[Jan Vu Nam](http://dribbble.com/Vucek)** (for design lesshat.com and lesshat book icon)
