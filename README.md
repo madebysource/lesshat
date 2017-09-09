@@ -23,7 +23,7 @@ To use lesshat, you need [node/npm installed](https://nodejs.org/) then run `npm
 ### Bower
 
 ## <a name="intro"></a> Introduction
-Why lesshat? In August 2012, while we were developing and extending [CSS Hat](www.madebysource.com) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS.
+Why lesshat? In August 2012, while we were developing and extending [CSS Hat](https://madebysource.com/) for LESS we needed universal mixins. Unfortunately, none of available were good enough that would satisfy our needs and that’s  why we created new custom ones on our own, which have become the most popular mixin library for the whole LESS CSS.
 
 Meet the best mixins library in the world.
 
@@ -34,7 +34,7 @@ Meet the best mixins library in the world.
 * **Bootstrap friendly** – You can now use prefixed lesshat version and gaily work with Bootstrap. Yeah it's that easy.
 * **Keyframes** – Although it's tricky as hell, but yeah lesshat has mixin for `.keyframes`
 * **Blank state ready** – If you call mixin without any arguments, lesshat does not pollute your CSS with empty properties. Instead lesshat generates nothing.
-* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [MOCHA](http://visionmedia.github.io/mocha/), generate new mixin with [GRUNT](http://gruntjs.com/). Find out more about the workflow in **[contribution](#contribution)** section.
+* **Workflow** – **No more one line editing!** We created developer friendly worklow for editing and creating mixins. You can test mixins with [Mocha](http://mochajs.org/), generate new mixin with [Grunt](http://gruntjs.com/). Find out more about the workflow in **[Contribute](#Contribute)** section.
 
 ### Structure of lesshat mixins
 
@@ -178,7 +178,7 @@ Meet the best mixins library in the world.
 
 The CSS align-content property aligns a flex container's lines within the flex container when there is an extra space on the cross-axis. This property has no effect on the single line flexible boxes.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/a/align-content/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/a/align-content/)**
 
 **Syntax:**
 
@@ -206,7 +206,7 @@ Default value: stretch
 
 The CSS align-items property aligns flex items of the current flex line the same way as justify-content but in the perpendicular direction.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/a/align-items/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/a/align-items/)**
 
 **Syntax:**
 
@@ -236,7 +236,7 @@ Default value: stretch
 
 The align-self CSS property aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/a/align-self/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/a/align-self/)**
 
 **Syntax:**
 
@@ -264,7 +264,7 @@ Default value: auto
 
 Shorthand to define a CSS animation, setting all parameters at once.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation/animation)**, **[CSS3files](http://www.css3files.com/animation/)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation/)**, **[CSS3files](http://www.css3files.com/animation/)**
 
 **Syntax:**
 
@@ -293,7 +293,7 @@ Default value: none
 
 Defines a length of time to elapse before an animation starts, allowing an animation to begin execution some time after it is applied.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-delay)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-delay/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay)**
 
 **Syntax:**
 
@@ -332,7 +332,7 @@ If you omit units after time argument, `animation-delay` is trying to be smart a
 
 The animation-direction CSS property indicates whether the animation should play in reverse on alternate cycles.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-direction)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-direction/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction)**
 
 **Syntax:**
 
@@ -361,7 +361,7 @@ Default value: normal
 
 The animation-duration CSS property specifies the length of time that an animation should take to complete one cycle.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-duration)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-duration/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration)**
 
 **Syntax:**
 
@@ -400,7 +400,7 @@ If you omit units after time argument, `animation-duration` is trying to be smar
 
 The animation-fill-mode CSS property specifies how a CSS animation should apply styles to its target before and after it is executing.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-fill-mode)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-fill-mode/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)**
 
 **Syntax:**
 
@@ -429,7 +429,7 @@ Default value: none
 
 The animation-iteration-count CSS property specifies how a CSS animation should apply styles to its target before and after it is executing.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-iteration-count)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-iteration-count/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count)**
 
 **Syntax:**
 
@@ -458,7 +458,7 @@ Default value: 1
 
 The animation-name CSS property specifies a list of animations that should be applied to the selected element. Each name indicates a @keyframes at-rule that defines the property values for the animation sequence.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-name)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-name/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)**
 
 **Syntax:**
 
@@ -487,7 +487,7 @@ Default value: none
 
 The animation-play-state CSS property determines whether an animation is running or paused. You can query this property's value to determine whether or not the animation is currently running; in addition, you can set its value to pause and resume playback of an animation.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-play-state)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-play-state/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state)**
 
 **Syntax:**
 
@@ -516,7 +516,7 @@ Default value: running
 
 The animation-timing-function CSS property determines whether an animation is running or paused. You can query this property's value to determine whether or not the animation is currently running; in addition, you can set its value to pause and resume playback of an animation.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/animation-timing-function)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/animation-timing-function/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function)**
 
 **Syntax:**
 
@@ -545,7 +545,7 @@ Default value: ease
 
 Allows changing the style of any element to platform-based interface elements or vice versa.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/appearance)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/a/appearance/)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/appearance/)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/a/appearance/)**
 
 **Syntax:**
 
@@ -573,7 +573,7 @@ Default value: none
 
 The CSS backface-visibility property determines whether or not the back face of the element is visible when facing the user. The back face of an element always is a transparent background, letting, when visible, a mirror image of the front face be displayed.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/backface-visibility)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/backface-visibility/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility)**
 
 **Syntax:**
 
@@ -603,7 +603,7 @@ Default value: none
 
 The background-clip CSS property specifies whether an element's background, either the color or image, extends underneath its border.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/background-clip)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/background-clip/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip)**
 
 **Syntax:**
 
@@ -631,7 +631,7 @@ Default value: border-box
 
 With the background-image you can create prefixed linear or radial gradients. The CSS (linear|radial)-gradient() function creates an `<image>` which represents a linear|radial gradient of colors. The result of this function is an object of the CSS `<gradient>` data type. Like any other gradient, a CSS linear gradient is not a CSS `<color>` but an image with no intrinsic dimensions; that is, it has neither natural or preferred size, nor ratio. Its concrete size will match the one of the element it applies to.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/functions/linear-gradient)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/functions/linear-gradient/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)**
 
 **Syntax:**
 
@@ -670,7 +670,7 @@ Great online gradient [generator](http://www.colorzilla.com/gradient-editor/).
 
 The background-origin CSS property determines the background positioning area, that is the position of the origin of an image specified using the background-image CSS property.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/background-origin)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/background-origin/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin)**
 
 **Syntax:**
 
@@ -698,7 +698,7 @@ Default value: padding-box
 
 The background-size CSS property specifies the size of the background images. The size of the image can be fully constrained or only partially in order to preserve its intrinsic ratio.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/background-size)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/background-size/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)**
 
 **Syntax:**
 
@@ -763,7 +763,7 @@ If you omit units, `blur` adds `px` automatically.
 
 The border-bottom-left-radius CSS property sets the rounding of the bottom-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/border-radius/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius)**
 
 **Syntax:**
 
@@ -797,7 +797,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
 
 The border-bottom-right-radius CSS property sets the rounding of the bottom-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/border-radius/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius)**
 
 **Syntax:**
 
@@ -831,7 +831,7 @@ Also LESS Hat adds `background-clip: padding-box`, because it fixes problem with
 
 The border-image CSS property allows drawing an image on the borders of elements. This makes drawing complex looking widgets much simpler than it has been and removes the need for nine boxes in some cases.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/border-radius/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image)**
 
 **Syntax:**
 
@@ -865,7 +865,7 @@ Default value: based on individual properties
 
 The border-radius CSS property allows Web authors to define how rounded border corners are. The curve of each corner is defined using one or two radii, defining its shape: circle or ellipse.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/border-radius/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)**
 
 **Syntax:**
 
@@ -899,7 +899,7 @@ Default value: 0
 
 The border-top-left-radius CSS property sets the rounding of the top-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-top-left-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/border-top-left-radius/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius)**
 
 **Syntax:**
 
@@ -933,7 +933,7 @@ Default value: 0
 
 The border-top-right-radius CSS property sets the rounding of the top-right corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/border-top-right-radius)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/border-top-right-radius/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius)**
 
 **Syntax:**
 
@@ -967,7 +967,7 @@ Default value: 0
 
 The box-shadow CSS property describes one or more shadow effects as a comma-separated list. It allows casting a drop shadow from the frame of almost any element. If a border-radius is specified on the element with a box shadow, the box shadow takes on the same rounded corners. The z-ordering of multiple box shadows is the same as multiple text shadows (the first specified shadow is on top).
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/box-shadow)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/box-shadow/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)**
 
 **Syntax:**
 
@@ -999,7 +999,7 @@ Default value: none
 
 The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/box-sizing)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)**
+Resources: **[WebPlatform](http://docs.webplatform.org/css/properties/box-sizing)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)**
 
 **Syntax:**
 
@@ -1084,7 +1084,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)**
 
 The column-count CSS property describes the number of columns of the element.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/column-count)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-count)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/column-count/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-count)**
 
 **Syntax:**
 
@@ -1112,7 +1112,7 @@ Default value: auto
 
 The column-gap CSS property sets the size of the gap between columns for elements which are specified to display as a multi-column element.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/column-gap)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/column-gap/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap)**
 
 **Syntax:**
 
@@ -1144,7 +1144,7 @@ Default value: normal
 
 In multi-column layouts, the column-rule CSS property specifies a straight line, or "rule", to be drawn between each column.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/column-rule)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/column-rule/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule)**
 
 **Syntax:**
 
@@ -1176,7 +1176,7 @@ Default value: medium none black
 
 The column-width CSS property suggests an optimal column width. This is not a absolute value but a mere hint. Browser will adjust the width of the column around that suggested value, allowing to achieve scalable designs that fit different screen size.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/column-width)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-width)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/column-width/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-width)**
 
 **Syntax:**
 
@@ -1208,7 +1208,7 @@ Default value: auto
 
 The columns CSS property is a shorthand property allowing to set both the column-width and the column-count properties at the same time.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/columns)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/columns)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/columns/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/columns)**
 
 **Syntax:**
 
@@ -1273,7 +1273,7 @@ Default value: 100%
 
 The display CSS property specifies the type of rendering box used for an element. This mixin is specifically for flexbox purpose.
 
-Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/a-guide-to-flexbox/)**
+Resources: **[CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)**
 
 **Syntax:**
 
@@ -1360,7 +1360,7 @@ Default value: none
 
 The flex CSS property specifies ability of a flex item to alter their dimensions to fill the available space. Flex items can be stretched to use available space proportional to their flex grow factor or their flex shrink factor to prevent overflow.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/f/flex/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/f/flex/)**
 
 **Syntax:**
 
@@ -1390,7 +1390,7 @@ Default value: 0 1 auto
 
 The CSS flex-basis property specifies the flex basis which is the initial main size of a flex item.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/f/flex-basis/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/f/flex-basis/)**
 
 **Syntax:**
 
@@ -1421,7 +1421,7 @@ Default value: auto
 
 The CSS flex-direction property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/f/flex-direction/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/f/flex-direction/)**
 
 **Syntax:**
 
@@ -1453,7 +1453,7 @@ Default value: row
 
 The CSS flex-grow property specifies the flex grow factor of a flex item.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/f/flex-grow/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/f/flex-grow/)**
 
 **Syntax:**
 
@@ -1480,7 +1480,7 @@ Default value: 0
 
 The CSS flex-shrink property specifies the flex shrink factor of a flex item.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/f/flex-shrink/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/f/flex-shrink/)**
 
 **Syntax:**
 
@@ -1507,7 +1507,7 @@ Default value: 1
 
 The CSS flex-wrap property specifies whether the children are forced into a single line or if the items can be flowed on multiple lines.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/f/flex-wrap/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/f/flex-wrap/)**
 
 **Syntax:**
 
@@ -1688,7 +1688,7 @@ Default value: 0
 
 The CSS justify-content property defines how a browser distributes available space between and around elements when aligning flex items in the main-axis of the current line. 
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/j/justify-content/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/j/justify-content/)**
 
 **Syntax:**
 
@@ -1734,7 +1734,7 @@ And also because of bad architecture of LESS CSS language, keyframes definition 
 
 **THIS MIXIN MUST BE INTERPOLATED `~''`**
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/atrules/@keyframes)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/atrules/keyframes/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)**
 
 **Syntax:**
 
@@ -1797,7 +1797,7 @@ Default value: 1
 
 The CSS order property specifies the order used to lay out flex items in their flex container.  
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/o/order/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/o/order/)**
 
 **Syntax:**
 
@@ -1827,7 +1827,7 @@ Default value: 0
 
 The perspective CSS property determines the distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/p/perspective/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/p/perspective/)**
 
 **Syntax:**
 
@@ -1859,7 +1859,7 @@ Default value: none
 
 The perspective-origin CSS property determines the position the viewer is looking at. It is used as the vanishing point by the perspective property.
 
-Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin)**, **[CSS-Tricks](http://css-tricks.com/almanac/properties/p/perspective-origin/)**
+Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin)**, **[CSS-Tricks](https://css-tricks.com/almanac/properties/p/perspective-origin/)**
 
 **Syntax:**
 
@@ -1892,7 +1892,7 @@ Default value: 50% 50%
 Placeholder is the short hint displayed in the input field before the user clicked to it.
 Default placeholder text in inputs has a light gray color (so far). 
 
-Resources: **[CSS-Tricks](http://css-tricks.com/snippets/css/style-placeholder-text/)**
+Resources: **[CSS-Tricks](https://css-tricks.com/almanac/selectors/p/placeholder-shown/)**
 
 **Syntax:**
 
@@ -2500,7 +2500,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#sk
 
 The CSS transform property lets you modify the coordinate space of the CSS visual formatting model. 
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transform)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transform/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)**
 
 **Syntax:**
   
@@ -2539,7 +2539,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 The transform-origin CSS property lets you modify the origin for transformations of an element.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transform-origin)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transform-origin/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)**
 
 **Syntax:**
   
@@ -2573,7 +2573,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 The transform-style CSS property determines if the children of the element are positioned in the 3D-space or are flattened in the plane of the element.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transform-style)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transform-style/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style)**
 
 **Syntax:**
   
@@ -2603,7 +2603,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 The CSS transition property is a shorthand property for transition-property, transition-duration, transition-timing-function, and transition-delay. It allows to define the transition between two states of an element.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transition)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transition/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)**
 
 **Syntax:**
   
@@ -2656,7 +2656,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 The transition-delay CSS property specifies the amount of time to wait between a change being requested to a property that is to be transitioned and the start of the transition effect.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transition-delay)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transition-delay/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay)**
 
 **Syntax:**
   
@@ -2695,7 +2695,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 The transition-duration CSS property specifies the number of seconds or milliseconds a transition animation should take to complete. By default, the value is 0s, meaning that no animation will occur.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transition-duration)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transition-duration/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration)**
 
 **Syntax:**
   
@@ -2734,7 +2734,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 The transition-property CSS property is used to specify the names of CSS properties to which a transition effect should be applied.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transition-property)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transition-property/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property)**
 
 **Syntax:**
   
@@ -2779,7 +2779,7 @@ Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/trans
 
 The CSS transition-timing-function property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated. This in essence lets you establish an acceleration curve, so that the speed of the transition can vary over its duration.
 
-Resources: **[WebPlatform](http://docs.webplatform.org/wiki/css/properties/transition-timing-function)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)**
+Resources: **[WebPlatform](https://webplatform.github.io/docs/css/properties/transition-timing-function/)**, **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)**
 
 **Syntax:**
   
@@ -3002,7 +3002,7 @@ Resources: **[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)
 ## Big Thanks to:
 * **[Jan Kuca](http://www.jankuca.com/)** (help us with lesshat-devstack)
 * **[MOZILLA DEVELOPER NETWORK](https://developer.mozilla.org/)** (almost all summary are from MDN)
-* **[CSS-Tricks](http://css-tricks.com/)** (their CSS almanac is great resource)
+* **[CSS-Tricks](https://css-tricks.com/)** (their CSS almanac is great resource)
 * **[Angular UI router](https://github.com/angular-ui/ui-router)** (example of good github profile)
 * **[Marek Hrabe](https://twitter.com/marek)** (for coding lesshat.com)
 * **[Jan Vu Nam](http://dribbble.com/Vucek)** (for design lesshat.com and lesshat book icon)
