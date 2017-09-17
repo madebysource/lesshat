@@ -1291,6 +1291,7 @@ Resources: **[CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox
      display: -ms-flexbox;
      display: -webkit-flex;
      display: -moz-box;
+     display: flex;
     } 
 
 
