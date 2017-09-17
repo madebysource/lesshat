@@ -59,7 +59,7 @@ backgroundImage.webkit = function backgroundImageWebkit(value) {
     }
   });
 
-  value = value.replace(/(\d+)\s*deg/g, function(match, sub) {
+  value = value.replace(/(-?\d+)\s*deg/g, function(match, sub) {
     return 90 - sub + 'deg';
   }).replace(/(linear|radial)-gradient/g, '-webkit-$1-gradient');
 
@@ -100,7 +100,7 @@ backgroundImage.moz = function backgroundImageMoz(value) {
     }
   });
 
-  value = value.replace(/(\d+)\s*deg/g, function(match, sub) {
+  value = value.replace(/(-?\d+)\s*deg/g, function(match, sub) {
     return 90 - sub + 'deg';
   }).replace(/(linear|radial)-gradient/g, '-moz-$1-gradient');
 
@@ -141,7 +141,7 @@ backgroundImage.opera = function backgroundImageOpera(value) {
     }
   });
 
-  value = value.replace(/(\d+)\s*deg/g, function(match, sub) {
+  value = value.replace(/(-?\d+)\s*deg/g, function(match, sub) {
     return 90 - sub + 'deg';
   }).replace(/(linear|radial)-gradient/g, '-o-$1-gradient');
 
